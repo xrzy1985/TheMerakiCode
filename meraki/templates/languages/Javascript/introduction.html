@@ -1,0 +1,296 @@
+{% extends "header.html" %}
+
+{% block body %}
+<!--=================================================================================================================================
+
+White space         : &nbsp;
+bold tag            : <b></b>
+Indent              : <p style="text-indent: 50px;">    </p>
+Horz Bar with \n    : <br><hr class="ones"><br>
+hyper link          : <a href="/location/">TEXT</a>
+bootstrap glyphs    : <span class="glyph-goes-here" aria-hidden="true"></span>
+image               : <img src="{{url_for('static', filename='photos/cover.jpg') }}">
+DL of static file   : <a href="/static/resume/Resume30August2016.doc">Here</a>
+
+use .container for containing responsive fixed width containers
+unable to be nested
+
+    <div class="container">
+    ...
+    </div>
+
+use .container-fluid for a full width container, which will span across the entire viewport
+
+    <div class="container-fluid">
+    ...
+    </div>
+
+<p style="text-indent: 50px;">
+
+</p>
+=================================================================================================================================-->
+-->
+
+        <br><br><br><h3 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Javascript/javascript.png') }}">
+        Welcome to the Javascript Introduction Homepage, <b>{{un}}</b>!</h3>
+
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+        <p class="intro">
+            <center><b>
+                Javascript | Programming language of the World Wide Web
+            </b></center>
+        </p>
+
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+        <p style="text-indent: 50px;">
+            <b>Javascript</b> is an easy to learn programming language used by HTML to give web applications additional
+            functionality. Javascript, referred to as JS too, is a way to program the exact behavior of a web
+            application. JS works along side HTML and CSS to create a triade of success. JS was created by Brendan Eich
+            in 1995, and the official name of the language is ECMAScript. JS and Java are two different languages completely.
+            So, what can JS do exactly?
+
+            <p id="js_introduction1">JS can change the text located on this line dynamically with the click of a
+
+            <button type="button" onclick='document.getElementById("js_introduction1").innerHTML = "Javascript can do many different things, mate."'>button</button>.</p>
+
+        --The code to change text with a button is located below--
+
+        </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+        <div style="margin-left: 100px;">
+
+            <p>
+            	&lt;div id="js_introduction1"&gt;JS can change the text located on this line
+            	dynamically with the click of a
+            </p>
+            <br/>
+            <p>
+            	&lt;button type="button"
+            	onclick='document.getElementById("js_introduction1").innerHTML =
+            	"Javascript can do many different things,
+            	mate."'&gt;button&lt;/button&gt;.&lt;/div&gt;
+            </p>
+            <br/>
+
+        </div>
+
+        <p id="js_introduction2">
+            <b>Notice how JS, </b> uses the getElementById function to change the innerHTML, which is what
+            is hard coded in the element, to change the value of the DOM element. JS can be used to change the
+            HTML styles of a web application; CSS.
+
+            <br>
+
+        </p>
+
+        <button type="button" onclick='document.getElementById("js_introduction2").style.fontSize = "25px"; document.getElementById("js_introduction3").innerHTML = "Below will be the code used to change the font and change the text of a null element."'>Click here to see how JS can alter the CSS</button>.
+
+        <br><br>
+
+        <p id="js_introduction3"></p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <div style="margin-left: 100px;" id="tutorial1">
+
+        <p>
+            &lt;p id="abc1"&gt;
+        </p>
+        <br/>
+        <p>
+            text will go here
+        </p>
+        <br/>
+        <p>
+            &lt;br&gt;
+        </p>
+        <br/>
+        <p>
+            &lt;/p&gt;
+        </p>
+        <br/>
+        <br/>
+        <p>
+            &lt;button type="button"
+            onclick='document.getElementById("abc1").style.fontSize = "25px";
+        </p>
+        <br/>
+        <p>
+            document.getElementById("abc2").innerHTML = "Text that will appear on the
+            element below"'&gt;BTN-Text&lt;/button&gt;.&lt;/p&gt;
+        </p>
+        <br/>
+        <br/>
+        <p>
+            &lt;p style="margin-left: 50px;" id="abc2"&gt;&lt;/p&gt;
+        </p>
+
+    </div>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <p style="text-indent: 50px;">
+        <b>Javascript</b> can be used to make elements disappear or just revert back to a null state, <button type="button" onclick='document.getElementById("tutorial1").style.display="none"'>Click here to find out</button>
+
+    </p>
+
+    <br>
+
+    <p>
+
+        The code to hide the text within an element is located below. Once the button is clicked, the element marked with id tutorial1
+        will revert back to a null state.
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <div style="margin-left: 100px;">
+
+        <p>
+        &lt;!DOCTYPE html&gt;
+        </p>
+        <br/>
+        <p>
+            &lt;html&gt;
+        </p>
+        <br/>
+        <p>
+            &lt;body&gt;
+        </p>
+        <br/>
+        <br/>
+        <p>
+            &lt;h2&gt;JS can be used to hide elements&lt;/h2&gt;
+        </p>
+        <br/>
+        <br/>
+        <p>
+            &lt;p id="tutorial1"&gt;JavaScript can hide HTML elements by id and
+            etc&lt;/p&gt;
+        </p>
+        <br/>
+        <br/>
+        <p>
+            &lt;button type="button"
+            onclick="document.getElementById('tutorial1').style.display='none'"&gt;Hide&lt;/button&gt;
+        </p>
+        <br/>
+        <br/>
+        <br/>
+        <p>
+            &lt;/body&gt;
+        </p>
+        <br/>
+        <p>
+            &lt;/html&gt;
+        </p>
+        <br/>
+
+    </div>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <p id="tutorial2" style="display:none;">BOOOOoooOOooOooOOoo..</p>
+
+    <p>
+
+        Javascript can show hidden HTML elements with ease,
+
+        <button type="button" onclick="document.getElementById('tutorial2').style.display='block'">Click here</button>
+
+    </p>
+
+    <br>
+
+    <p>
+        The code to show hidden elements is located below. The element id names must match up in order for the
+        elements information to changed.
+    </p>
+
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <div style="margin-left: 100px;">
+
+        <p>
+            &lt;p id="tutorial2"
+            style="display:none;"&gt;BOOOOoooOOooOooOOoo..&lt;/p&gt;
+        </p>
+        <br/>
+        <br/>
+        <p>
+            &lt;p&gt;
+        </p>
+        <br/>
+        <br/>
+        <p>
+            Javascript can show hidden HTML elements with ease,
+        </p>
+        <br/>
+        <br/>
+        <p>
+            &lt;button type="button"
+            onclick="document.getElementById('tutorial2').style.display='block'"&gt;Click
+            here&lt;/button&gt;
+        </p>
+        <br/>
+        <br/>
+        <p>
+            &lt;/p&gt;
+        </p>
+
+    </div>
+
+
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+        <h3 style="text-align: center;">Next, we will look </h3>
+
+        <p style="text-align: center;">Just follow the buttons to continue the tutorial, {{un}}</p>
+
+
+        <br>
+
+        <a href="/Java/final_thoughts"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Java - Final Thoughts
+        </button></a>
+
+        <a href="/Javascript/installation"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        Javascript - Installation <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        </button></a>
+
+{% endblock %}

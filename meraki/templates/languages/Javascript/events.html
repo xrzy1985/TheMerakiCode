@@ -1,0 +1,1116 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<!-- The import required for AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<!--=================================================================================================================================
+
+White space         : &nbsp;
+bold tag            : <b></b>
+Indent              : <p style="text-indent: 50px;">    </p>
+Horz Bar with \n    : <br><hr class="ones"><br>
+hyper link          : <a href="/location/">TEXT</a>
+bootstrap glyphs    : <span class="glyph-goes-here" aria-hidden="true"></span>
+image               : <img src="{{url_for('static', filename='photos/cover.jpg') }}">
+DL of static file   : <a href="/static/resume/Resume30August2016.doc">Here</a>
+
+use .container for containing responsive fixed width containers
+unable to be nested
+
+    <div class="container">
+    ...
+    </div>
+
+use .container-fluid for a full width container, which will span across the entire viewport
+
+    <div class="container-fluid">
+    ...
+    </div>
+
+<p style="text-indent: 50px;">
+
+</p>
+
+<ul>
+    <li>
+        <b>
+
+        </b>
+        Text <br>
+    </li>
+</ul>
+
+=================================================================================================================================-->
+
+    <br><br><br><h3 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Javascript/javascript.png') }}">
+    Welcome to the Javascript Events Homepage, <b>{{un}}</b>!</h3>
+
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+    <p class="intro">
+        <center><b>
+            Javascript | The things that can and will happen
+        </b></center>
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Events</h3>
+
+    <p>
+
+        Javascript will react to certain events that are triggered during the execution of the HTML page. The HTML event can be
+        something that a user intends to do, does, or something the browser does. A few examples of Javascript events are when
+        HTML web pages finish loading, HTML input fields are changed, or an HTML button is clicked on. The events are there to
+        signal the use of some kind of task. Javascript allows a programmer to execute code based on when events are detected.
+        HTML allows event handler attributes to be added to HTML elements with accompanied Javascript code either linked to or
+        within script elements. Let us take a look at the creation of a button within HTML, and we will add some Javascript
+        code to it.
+
+        <br><br>
+
+        <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp;&nbsp;&nbsp; &lt;body&gt;<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button onclick="document.getElementById('tutorial').innerHTML=Date()"&gt;Time&lt;/button&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        <br><br>
+
+        You can use single or double quotation marks, but you must remember the order in which you use them. The code above illustrates
+        how to change the content within the element using the id, tutorial. The time is displayed using a button, the button triggers
+        an event, and the event is handled using our Javascript function Date(). We will see now how to change the content of an element
+        with content already present.
+
+        <br><br>
+
+        <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp; &lt;body&gt;<br /><br />&nbsp; &nbsp;&nbsp; &nbsp;&lt;button onclick="this.innerHTML=Date()"&gt;Time&lt;/button&gt;<br /><br />&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        <br><br>
+
+        The code above is pretty simple. A simple HTML document with HTML, body, and button elements. The button has some text present
+        before clicking the button. After the button is pushed, we change the text on the button, and we can do this with any element
+        we want to. I just picked the button because I was lazy. The next example will show how we can change the text inside an element
+        that has content already.
+
+        <br><br>
+
+        <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp;&nbsp;&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button onclick="displayDate()"&gt;Time&lt;/button&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function displayDate() {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML = Date();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="tutorial"&gt;This text will be changed once you click the button&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>HTML DOM events</h3>
+
+    <p>
+
+        HTML DOM events allow Javascript to register different event handlers on elements in any HTML document. Events are commonly
+        used in conjunction with functions. The function will not be executed before the event has been triggered. The event could
+        be a button click, mouse click, or a mouse hover.
+
+        <br><br>
+
+        <b>What can Javascript Do?</b>
+
+        <br><br>
+
+        Javascript built in event handlers can be used to handle and verify user input, verify user actions, and deal with all
+        browser actions. The following is a list of <b>DOM Events</b> available inside Javascript:
+
+        <br><br>
+
+            <h2>Mouse Events</h2>
+            <table class="w3-table-all notranslate">
+            <tbody>
+            <tr>
+            <th style="width: 20%;">Event</th>
+            <th>Description</th>
+            <th style="width: 6%;">DOM</th>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onclick.asp">onclick</a></td>
+            <td>The event occurs when the user clicks on an element</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_oncontextmenu.asp">oncontextmenu</a></td>
+            <td>The event occurs when the user right-clicks on an element to open a context menu</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_ondblclick.asp">ondblclick</a></td>
+            <td>The event occurs when the user double-clicks on an element</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onmousedown.asp">onmousedown</a></td>
+            <td>The event occurs when the user presses a mouse button over an element</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onmouseenter.asp">onmouseenter</a></td>
+            <td>The event occurs when the pointer is moved onto an element</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onmouseleave.asp">onmouseleave</a></td>
+            <td>The event occurs when the pointer is moved out of an element</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onmousemove.asp">onmousemove</a></td>
+            <td>The event occurs when the pointer is moving while it is over an element</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onmouseover.asp">onmouseover</a></td>
+            <td>The event occurs when the pointer is moved onto an element, or onto one of its children</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onmouseout.asp">onmouseout</a></td>
+            <td>The event occurs when a user moves the mouse pointer out of an element, or out of one of its children</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onmouseup.asp">onmouseup</a></td>
+            <td>The event occurs when a user releases a mouse button over an element</td>
+            <td>2</td>
+            </tr>
+            </tbody>
+            </table>
+            <h2>Keyboard Events</h2>
+            <table id="table2" class="w3-table-all notranslate">
+            <tbody>
+            <tr>
+            <th style="width: 20%;">Event</th>
+            <th>Description</th>
+            <th style="width: 6%;">DOM</th>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onkeydown.asp">onkeydown</a></td>
+            <td>The event occurs when the user is pressing a key</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onkeypress.asp">onkeypress</a></td>
+            <td>The event occurs when the user presses a key</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onkeyup.asp">onkeyup</a></td>
+            <td>The event occurs when the user releases a key</td>
+            <td>2</td>
+            </tr>
+            </tbody>
+            </table>
+            <hr />
+            <div style="overflow: auto; text-align: center;">&nbsp;</div>
+            <hr />
+            <h2>Frame/Object Events</h2>
+            <table class="w3-table-all notranslate">
+            <tbody>
+            <tr>
+            <th style="width: 20%;">Event</th>
+            <th>Description</th>
+            <th style="width: 6%;">DOM</th>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onabort.asp">onabort</a></td>
+            <td>The event occurs when the loading of a resource has been aborted</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onbeforeunload.asp">onbeforeunload</a></td>
+            <td>The event occurs before the document is about to be unloaded</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onerror.asp">onerror</a></td>
+            <td>The event occurs when an error occurs while loading an external file</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onhashchange.asp">onhashchange</a></td>
+            <td>The event occurs when there has been changes to the anchor part of a URL</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onload.asp">onload</a></td>
+            <td>The event occurs when an object has loaded</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onpageshow.asp">onpageshow</a></td>
+            <td>The event occurs when the user navigates to a webpage</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onpagehide.asp">onpagehide</a></td>
+            <td>The event occurs when the user navigates away from a webpage</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onresize.asp">onresize</a></td>
+            <td>The event occurs when the document view is resized</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onscroll.asp">onscroll</a></td>
+            <td>The event occurs when an element's scrollbar is being scrolled</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onunload.asp">onunload</a></td>
+            <td>The event occurs once a page has unloaded (for &lt;body&gt;)</td>
+            <td>2</td>
+            </tr>
+            </tbody>
+            </table>
+            <h2>Form Events</h2>
+            <table class="w3-table-all notranslate">
+            <tbody>
+            <tr>
+            <th style="width: 20%;">Event</th>
+            <th>Description</th>
+            <th style="width: 6%;">DOM</th>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onblur.asp">onblur</a></td>
+            <td>The event occurs when an element loses focus</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onchange.asp">onchange</a></td>
+            <td>The event occurs when the content of a form element, the selection, or the checked state have changed (for &lt;input&gt;, &lt;keygen&gt;, &lt;select&gt;, and &lt;textarea&gt;)</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onfocus.asp">onfocus</a></td>
+            <td>The event occurs when an element gets focus</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onfocusin.asp">onfocusin</a></td>
+            <td>The event occurs when an element is about to get focus</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onfocusout.asp">onfocusout</a></td>
+            <td>The event occurs when an element is about to lose focus</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_oninput.asp">oninput</a></td>
+            <td>The event occurs when an element gets user input</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_oninvalid.asp">oninvalid</a></td>
+            <td>The event occurs when an element is invalid</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onreset.asp">onreset</a></td>
+            <td>The event occurs when a form is reset</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onsearch.asp">onsearch</a></td>
+            <td>The event occurs when the user writes something in a search field (for &lt;input="search"&gt;)</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onselect.asp">onselect</a></td>
+            <td>The event occurs after the user selects some&nbsp;text (for &lt;input&gt; and &lt;textarea&gt;)</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onsubmit.asp">onsubmit</a></td>
+            <td>The event occurs when a form is submitted</td>
+            <td>2</td>
+            </tr>
+            </tbody>
+            </table>
+            <h2>Drag Events</h2>
+            <table class="w3-table-all notranslate">
+            <tbody>
+            <tr>
+            <th style="width: 20%;">Event</th>
+            <th>Description</th>
+            <th style="width: 6%;">DOM</th>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_ondrag.asp">ondrag</a></td>
+            <td>The event occurs when an element is being dragged</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_ondragend.asp">ondragend</a></td>
+            <td>The event occurs when the user has finished dragging an element</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_ondragenter.asp">ondragenter</a></td>
+            <td>The event occurs when the dragged element enters the drop target</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_ondragleave.asp">ondragleave</a></td>
+            <td>The event occurs when the dragged element leaves the drop target</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_ondragover.asp">ondragover</a></td>
+            <td>The event occurs when the dragged element is over the drop target</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_ondragstart.asp">ondragstart</a></td>
+            <td>The event occurs when the user starts to drag an element</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_ondrop.asp">ondrop</a></td>
+            <td>The event occurs when the dragged element is dropped on the drop target</td>
+            <td>3</td>
+            </tr>
+            </tbody>
+            </table>
+            <h2>Clipboard Events</h2>
+            <table class="w3-table-all notranslate">
+            <tbody>
+            <tr>
+            <th style="width: 20%;">Event</th>
+            <th>Description</th>
+            <th style="width: 6%;">DOM</th>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_oncopy.asp">oncopy</a></td>
+            <td>The event occurs when the user copies the content of an element</td>
+            <td>&nbsp;</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_oncut.asp">oncut</a></td>
+            <td>The event occurs when the user cuts the content of an element</td>
+            <td>&nbsp;</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onpaste.asp">onpaste</a></td>
+            <td>The event occurs when the user pastes some content in an element</td>
+            <td>&nbsp;</td>
+            </tr>
+            </tbody>
+            </table>
+            <h2>Print Events</h2>
+            <table class="w3-table-all notranslate">
+            <tbody>
+            <tr>
+            <th style="width: 20%;">Event</th>
+            <th>Description</th>
+            <th style="width: 6%;">DOM</th>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onafterprint.asp">onafterprint</a></td>
+            <td>The event occurs when a page has started printing, or if the print dialogue box has been closed</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onbeforeprint.asp">onbeforeprint</a></td>
+            <td>The event occurs when a page is about to be printed</td>
+            <td>3</td>
+            </tr>
+            </tbody>
+            </table>
+            <h2>Media Events</h2>
+            <table class="w3-table-all notranslate">
+            <tbody>
+            <tr>
+            <th style="width: 20%;">Event</th>
+            <th>Description</th>
+            <th style="width: 6%;">DOM</th>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onabort_media.asp">onabort</a></td>
+            <td>The event occurs when the loading of a media is aborted</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_oncanplay.asp">oncanplay</a></td>
+            <td>The event occurs when the browser can start playing the media (when it has buffered enough to begin)</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_oncanplaythrough.asp">oncanplaythrough</a></td>
+            <td>The event occurs when the browser can play through the media without stopping for buffering</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_ondurationchange.asp">ondurationchange</a></td>
+            <td>The event occurs when the duration of the media is changed</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td>onemptied</td>
+            <td>The event occurs when something bad happens and the media file is suddenly unavailable (like unexpectedly disconnects)</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onended.asp">onended</a></td>
+            <td>The event occurs when the media has reach the end (useful for messages like "thanks for listening")</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onerror_media.asp">onerror</a></td>
+            <td>The event occurs when an error occurred during the loading of a media file</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onloadeddata.asp">onloadeddata</a></td>
+            <td>The event occurs when media data is loaded</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onloadedmetadata.asp">onloadedmetadata</a></td>
+            <td>The event occurs when meta data (like dimensions and duration) are loaded</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onloadstart.asp">onloadstart</a></td>
+            <td>The event occurs when the browser starts looking for the specified media</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onpause.asp">onpause</a></td>
+            <td>The event occurs when the media is paused either by the user or programmatically</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onplay.asp">onplay</a></td>
+            <td>The event occurs when the media has been started or is no longer paused</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onplaying.asp">onplaying</a></td>
+            <td>The event occurs when the media is playing after having been paused or stopped for buffering</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onprogress.asp">onprogress</a></td>
+            <td>The event occurs when the browser is in the process of getting the media data (downloading the media)</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onratechange.asp">onratechange</a></td>
+            <td>The event occurs when the playing speed of the media is changed</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onseeked.asp">onseeked</a></td>
+            <td>The event occurs when the user is finished moving/skipping to a new position in the media</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onseeking.asp">onseeking</a></td>
+            <td>The event occurs when the user starts moving/skipping to a new position in the media</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onstalled.asp">onstalled</a></td>
+            <td>The event occurs when the browser is trying to get media data, but data is not available</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onsuspend.asp">onsuspend</a></td>
+            <td>The event occurs when the browser is intentionally not getting media data</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_ontimeupdate.asp">ontimeupdate</a></td>
+            <td>The event occurs when the playing position has changed (like when the user fast forwards to a different point in the media)</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onvolumechange.asp">onvolumechange</a></td>
+            <td>The event occurs when the volume of the media has changed (includes setting the volume to "mute")</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onwaiting.asp">onwaiting</a></td>
+            <td>The event occurs when the media has paused but is expected to resume (like when the media pauses to buffer more data)</td>
+            <td>3</td>
+            </tr>
+            </tbody>
+            </table>
+            <h2>Animation Events</h2>
+            <table class="w3-table-all notranslate">
+            <tbody>
+            <tr>
+            <th style="width: 20%;">Event</th>
+            <th>Description</th>
+            <th style="width: 6%;">DOM</th>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_animationend.asp">animationend</a></td>
+            <td>The event occurs when a CSS animation has completed</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_animationiteration.asp">animationiteration</a></td>
+            <td>The event occurs when a CSS animation is repeated</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_animationstart.asp">animationstart</a></td>
+            <td>The event occurs when a CSS animation has started</td>
+            <td>3</td>
+            </tr>
+            </tbody>
+            </table>
+            <h2>Transition Events</h2>
+            <table class="w3-table-all notranslate">
+            <tbody>
+            <tr>
+            <th style="width: 20%;">Event</th>
+            <th>Description</th>
+            <th style="width: 6%;">DOM</th>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_transitionend.asp">transitionend</a></td>
+            <td>The event occurs when a CSS transition has completed</td>
+            <td>3</td>
+            </tr>
+            </tbody>
+            </table>
+            <h2>Server-Sent Events</h2>
+            <table class="w3-table-all notranslate">
+            <tbody>
+            <tr>
+            <th style="width: 20%;">Event</th>
+            <th>Description</th>
+            <th style="width: 6%;">DOM</th>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onerror_sse.asp">onerror</a></td>
+            <td>The event occurs when an error occurs with the event source</td>
+            <td>&nbsp;</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onmessage_sse.asp">onmessage</a></td>
+            <td>The event occurs when a message is received through the event source</td>
+            <td>&nbsp;</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onopen_sse.asp">onopen</a></td>
+            <td>The event occurs when a connection with the event source is opened</td>
+            <td>&nbsp;</td>
+            </tr>
+            </tbody>
+            </table>
+            <h2>Misc Events</h2>
+            <table class="w3-table-all notranslate">
+            <tbody>
+            <tr>
+            <th style="width: 20%;">Event</th>
+            <th>Description</th>
+            <th style="width: 6%;">DOM</th>
+            </tr>
+            <tr>
+            <td>onmessage</td>
+            <td>The event occurs when a message is received through or from an object (WebSocket, Web Worker, Event Source or a child frame or a parent window)</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td>onmousewheel</td>
+            <td><span class="deprecated">Deprecated.</span> Use the <a href="https://www.w3schools.com/jsref/event_onwheel.asp">onwheel</a> event instead</td>
+            <td>&nbsp;</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_ononline.asp">ononline</a></td>
+            <td>The event occurs when the browser starts to work online</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onoffline.asp">onoffline</a></td>
+            <td>The event occurs when the browser starts to work offline</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td>onpopstate</td>
+            <td>The event occurs when the window's history changes</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onshow.asp">onshow</a></td>
+            <td>The event occurs when a &lt;menu&gt; element is shown as a context menu</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td>onstorage</td>
+            <td>The event occurs when a Web Storage area is updated</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_ontoggle.asp">ontoggle</a></td>
+            <td>The event occurs when the user opens or closes the &lt;details&gt; element</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_onwheel.asp">onwheel</a></td>
+            <td>The event occurs when the mouse wheel rolls up or down over an element</td>
+            <td>3</td>
+            </tr>
+            </tbody>
+            </table>
+            <h2>Touch Events</h2>
+            <table class="w3-table-all notranslate">
+            <tbody>
+            <tr>
+            <th style="width: 20%;">Event</th>
+            <th>Description</th>
+            <th style="width: 6%;">DOM</th>
+            </tr>
+            <tr>
+            <td>ontouchcancel</td>
+            <td>The event occurs when the touch is interrupted</td>
+            <td>&nbsp;</td>
+            </tr>
+            <tr>
+            <td>ontouchend</td>
+            <td>The event occurs when a finger is removed from a touch screen</td>
+            <td>&nbsp;</td>
+            </tr>
+            <tr>
+            <td>ontouchmove</td>
+            <td>The event occurs when a finger is dragged across the screen</td>
+            <td>&nbsp;</td>
+            </tr>
+            <tr>
+            <td>ontouchstart</td>
+            <td>The event occurs when a finger is placed on a touch screen</td>
+            <td>&nbsp;</td>
+            </tr>
+            </tbody>
+            </table>
+            <h2>Event Object</h2>
+            <h3>Constants</h3>
+            <table id="table5" class="w3-table-all notranslate">
+            <tbody>
+            <tr>
+            <th style="width: 20%;">Constant</th>
+            <th>Description</th>
+            <th style="width: 6%;">DOM</th>
+            </tr>
+            <tr>
+            <td>CAPTURING_PHASE</td>
+            <td>The current event phase is the capture phase (1)</td>
+            <td>1</td>
+            </tr>
+            <tr>
+            <td>AT_TARGET</td>
+            <td>The current event is in the target phase, i.e. it is being evaluated at the event target (2)</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td>BUBBLING_PHASE</td>
+            <td>The current event phase is the bubbling phase (3)</td>
+            <td>3</td>
+            </tr>
+            </tbody>
+            </table>
+            <h3>Properties</h3>
+            <table class="w3-table-all notranslate">
+            <tbody>
+            <tr>
+            <th style="width: 20%;">Property</th>
+            <th>Description</th>
+            <th style="width: 6%;">DOM</th>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_bubbles.asp">bubbles</a></td>
+            <td>Returns whether or not a specific event is a bubbling event</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_cancelable.asp">cancelable</a></td>
+            <td>Returns whether or not an event can have its default action prevented</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_currenttarget.asp">currentTarget</a></td>
+            <td>Returns the element whose event listeners triggered the event</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_defaultprevented.asp">defaultPrevented</a></td>
+            <td>Returns whether or not the preventDefault() method was called for the event</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_eventphase.asp">eventPhase</a></td>
+            <td>Returns which phase of the event flow is currently being evaluated</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_istrusted.asp">isTrusted</a></td>
+            <td>Returns whether or not an event is trusted</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_target.asp">target</a></td>
+            <td>Returns the element that triggered the event</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_timestamp.asp">timeStamp</a></td>
+            <td>Returns the time (in milliseconds relative to the epoch) at which the event was created</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_type.asp">type</a></td>
+            <td>Returns the name of the event</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_view.asp">view</a></td>
+            <td>Returns a reference to the Window object where the event occured</td>
+            <td>2</td>
+            </tr>
+            </tbody>
+            </table>
+            <h3>Methods</h3>
+            <div class="w3-responsive">
+            <table id="table3" class="w3-table-all notranslate">
+            <tbody>
+            <tr>
+            <th style="width: 28%;">Method</th>
+            <th>Description</th>
+            <th style="width: 6%;">DOM</th>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_preventdefault.asp">preventDefault()</a></td>
+            <td>Cancels the event if it is cancelable, meaning that the default action that belongs to the event will not occur</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_stopimmediatepropagation.asp">stopImmediatePropagation()</a></td>
+            <td>Prevents other listeners of the same event from being called</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td>stopPropagation()</td>
+            <td>Prevents further propagation of an event during event flow</td>
+            <td>2</td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            <h2>MouseEvent Object</h2>
+            <table class="w3-table-all notranslate">
+            <tbody>
+            <tr>
+            <th style="width: 20%;">Property</th>
+            <th>Description</th>
+            <th style="width: 6%;">DOM</th>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_altkey.asp">altKey</a></td>
+            <td>Returns whether the "ALT" key was pressed when the mouse event was triggered</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_button.asp">button</a></td>
+            <td>Returns which mouse button was pressed when the mouse event was triggered</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_buttons.asp">buttons</a></td>
+            <td>Returns which mouse buttons were pressed when the mouse event was triggered</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_clientx.asp">clientX</a></td>
+            <td>Returns the horizontal coordinate of the mouse pointer, relative to the current window, when the mouse event was triggered</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_clienty.asp">clientY</a></td>
+            <td>Returns the vertical coordinate of the mouse pointer, relative to the current window, when the mouse event was triggered</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_ctrlkey.asp">ctrlKey</a></td>
+            <td>Returns whether the "CTRL" key was pressed when the mouse event was triggered</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_detail.asp">detail</a></td>
+            <td>Returns a number that indicates how many times the mouse was clicked</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_metakey.asp">metaKey</a></td>
+            <td>Returns whether the "META" key was pressed when an event was triggered</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_pagex.asp">pageX</a></td>
+            <td>Returns the horizontal coordinate of the mouse pointer, relative to the document, when the mouse event was triggered</td>
+            <td>&nbsp;</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_pagey.asp">pageY</a></td>
+            <td>Returns the vertical coordinate of the mouse pointer, relative to the document, when the mouse event was triggered</td>
+            <td>&nbsp;</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_relatedtarget.asp">relatedTarget</a></td>
+            <td>Returns the element related to the element that triggered the mouse event</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_screenx.asp">screenX</a></td>
+            <td>Returns the horizontal coordinate of the mouse pointer, relative to the screen, when an event was triggered</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_screeny.asp">screenY</a></td>
+            <td>Returns the vertical coordinate of the mouse pointer, relative to the screen, when an event was triggered</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_shiftkey.asp">shiftKey</a></td>
+            <td>Returns whether the "SHIFT" key was pressed when an event was triggered</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_which.asp">which</a></td>
+            <td>Returns which mouse button was pressed when the mouse event was triggered</td>
+            <td>2</td>
+            </tr>
+            </tbody>
+            </table>
+            <h2>KeyboardEvent Object</h2>
+            <table class="w3-table-all notranslate">
+            <tbody>
+            <tr>
+            <th style="width: 20%;">Property</th>
+            <th>Description</th>
+            <th style="width: 6%;">DOM</th>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_key_altkey.asp">altKey</a></td>
+            <td>Returns whether the "ALT" key was pressed when the key event was triggered</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_key_ctrlkey.asp">ctrlKey</a></td>
+            <td>Returns whether the "CTRL" key was pressed when the key event was triggered</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_key_charcode.asp">charCode</a></td>
+            <td>Returns the Unicode character code of the key that triggered the onkeypress event</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_key_key.asp">key</a></td>
+            <td>Returns the key value of the key represented by the event</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_key_keycode.asp">keyCode</a></td>
+            <td>Returns the Unicode character code of the key that triggered the onkeypress event, or the Unicode key code of the key that triggered the onkeydown or onkeyup event</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_key_location.asp">location</a></td>
+            <td>Returns the location of a key on the keyboard or device</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_key_metakey.asp">metaKey</a></td>
+            <td>Returns whether the "meta" key was pressed when the key event was triggered</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_key_shiftkey.asp">shiftKey</a></td>
+            <td>Returns whether the "SHIFT" key was pressed when the key event was triggered</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_key_which.asp">which</a></td>
+            <td>Returns the Unicode character code of the key that triggered the onkeypress event, or the Unicode key code of the key that triggered the onkeydown or onkeyup event</td>
+            <td>2</td>
+            </tr>
+            </tbody>
+            </table>
+            <h2>HashChangeEvent Object</h2>
+            <table class="w3-table-all notranslate">
+            <tbody>
+            <tr>
+            <th style="width: 20%;">Property</th>
+            <th>Description</th>
+            <th style="width: 6%;">DOM</th>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_hashchange_newurl.asp">newURL</a></td>
+            <td>Returns the URL of the document, after the hash has been changed</td>
+            <td>&nbsp;</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_hashchange_oldurl.asp">oldURL</a></td>
+            <td>Returns the URL of the document, before the hash was changed</td>
+            <td>&nbsp;</td>
+            </tr>
+            </tbody>
+            </table>
+            <h2>PageTransitionEvent Object</h2>
+            <table class="w3-table-all notranslate">
+            <tbody>
+            <tr>
+            <th style="width: 20%;">Property</th>
+            <th>Description</th>
+            <th style="width: 6%;">DOM</th>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_pagetransition_persisted.asp">persisted</a></td>
+            <td>Returns whether the webpage was cached by the browser</td>
+            <td>&nbsp;</td>
+            </tr>
+            </tbody>
+            </table>
+            <h2>FocusEvent Object</h2>
+            <table class="w3-table-all notranslate">
+            <tbody>
+            <tr>
+            <th style="width: 20%;">Property</th>
+            <th>Description</th>
+            <th style="width: 6%;">DOM</th>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_focus_relatedtarget.asp">relatedTarget</a></td>
+            <td>Returns the element related to the element that triggered the event</td>
+            <td>3</td>
+            </tr>
+            </tbody>
+            </table>
+            <h2>AnimationEvent Object</h2>
+            <table class="w3-table-all notranslate">
+            <tbody>
+            <tr>
+            <th style="width: 20%;">Property</th>
+            <th>Description</th>
+            <th style="width: 6%;">DOM</th>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_animation_animationName.asp">animationName</a></td>
+            <td>Returns the name of the animation</td>
+            <td>&nbsp;</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_animation_elapsedtime.asp">elapsedTime</a></td>
+            <td>Returns the number of seconds an animation has been running</td>
+            <td>&nbsp;</td>
+            </tr>
+            </tbody>
+            </table>
+            <h2>TransitionEvent Object</h2>
+            <table class="w3-table-all notranslate">
+            <tbody>
+            <tr>
+            <th style="width: 20%;">Property</th>
+            <th>Description</th>
+            <th style="width: 6%;">DOM</th>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_transition_propertyName.asp">propertyName</a></td>
+            <td>Returns the name of the CSS property associated with the transition</td>
+            <td>&nbsp;</td>
+            </tr>
+            <tr>
+            <td><a href="https://www.w3schools.com/jsref/event_transition_elapsedtime.asp">elapsedTime</a></td>
+            <td>Returns the number of seconds a transition has been running</td>
+            <td>&nbsp;</td>
+            </tr>
+            </tbody>
+            </table>
+            <h2>WheelEvent Object</h2>
+            <table class="w3-table-all notranslate">
+            <tbody>
+            <tr>
+            <th style="width: 20%;">Property</th>
+            <th>Description</th>
+            <th style="width: 6%;">DOM</th>
+            </tr>
+            <tr>
+            <td>deltaX</td>
+            <td>Returns the horizontal scroll amount of a mouse wheel (x-axis)</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td>deltaY</td>
+            <td>Returns the vertical scroll amount of a mouse wheel (y-axis)</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td>deltaZ</td>
+            <td>Returns the scroll amount of a mouse wheel for the z-axis</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td>deltaMode</td>
+            <td>Returns a number that represents the unit of measurements for delta values (pixels, lines or pages)</td>
+            <td>3</td>
+            </tr>
+            </tbody>
+            </table>
+
+        <br><br>
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Additional DOM</h3>
+
+    <p>
+
+        I plan on creating a whole series of steps related to the DOM objects within Javascript. This is just a quick once over
+        for the moment. In the future, I plan on using DOM methods, documents, elements, animations, nodes, collections, and node lists.
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3 style="text-align: center;">Next, we will take a look at Strings within Javascript.</h3>
+
+    <p style="text-align: center;">Just follow the buttons to continue the tutorial, {{un}}</p>
+
+
+    <br>
+
+    <a href="/Javascript/scope"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Javascript - Scope
+    </button></a>
+
+    <a href="/Javascript/strings"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+    Javascript - Strings <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+{% endblock %}

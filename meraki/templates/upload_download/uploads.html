@@ -1,0 +1,96 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<div>
+
+<ul class="nav nav-pills" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Upload a Profile Photo</a></li>
+    <li role="presentation"><a href="#file" aria-controls="file" role="tab" data-toggle="tab">Upload a File to be encrypted</a></li>
+</ul>
+
+<div class="tab-content">
+
+    <div role="tabpanel" class="tab-pane fade in active" id="home">
+
+        <br><hr class="ones"><br>
+
+            <h3 align="center">This is the Upload section of Meraki.</h3>
+            <br>
+            <h4 align="center">You can upload a profile photo by clicking on the Upload a Profile Photo tab, or</h4>
+            <br>
+            <h4 align="center">You can upload a file by clicking on the Upload a File to be encrypted tab</h4>
+
+
+        <br><hr class="ones"><br>
+
+    </div>
+
+    <div role="tabpanel" class="tab-pane fade" id="profile">
+
+        <br><br>
+            <div class="uploads_photo" style="padding-top: 25px;padding-right: 25px;padding-bottom: 25px;padding-left: 25px;">
+                <form align="center" action="{{ url_for('upload_profile_photo') }}" method="POST" enctype="multipart/form-data">
+                    <h3>Type in your first and last name below</h3>
+                    <b>First Name: </b><input type="text" name="f_name"><br>
+                    <br>
+                    <b>Last Name: </b><input type="text" name="l_name"><br>
+                    <h3>Choose a file from your hard drive to become your profile photo, mate.</h3>
+
+<!--
+                    <input type="file" name="file" />
+
+-->
+                    <div class="form-group">
+                        <label for="exampleInputFile">Click on Browse to upload the file, and then click on Submit Query.</label>
+                        <input type="file" name="file" id="exampleInputFile">
+                        <p style="color: blue;" class="help-block">Will not accept .exe, .py, .js, or any extension related to CS.</p>
+                    </div>
+                    <input type="submit" class="btn btn-primary"/>
+                </form>
+            </div>
+
+
+    </div>
+
+    <div role="tabpanel" class="tab-pane fade" id="file">
+        <br><br>
+            <div class="uploads_file" style=" color: white; padding-top: 25px;padding-right: 25px;padding-bottom: 25px;padding-left: 25px;">
+                <h4>First, you must enter a pass phrase, and successfully upload a file.</h4>
+
+                <h3>
+                    <form align="center" action="{{ url_for('upload_file') }}" method="POST" enctype="multipart/form-data">
+                        <span class="glyphicon glyphicon-lock" aria-hidden="true"></span> <b>Passphrase:</b> <input type="text" name="key"><br>
+
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Choose A User
+                                <span class="caret"></span>
+                            </button>
+                                <ul style="color: black;" class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                {% for row in file_query %}
+                                    <tr>
+                                        {% for val in row %}
+                                            <li><input type="radio" name="send_to" value={{val}}> &nbsp;&nbsp;{{val}}</li><br>
+                                        {% endfor %}
+                                    </tr>
+                                {% endfor %}
+                                </ul>
+                        </div>
+
+                        <br>
+                        <span style="color: black;">
+                        <input type="file" name="file" />
+                        <br>
+                        <input type="submit" /></span>
+                    </form>
+                </h3>
+
+                <br>
+                <h6>Information on the AES block cipher used for encryption can be found at the official <b><a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard">AES</a></b> block Cipher Wiki</h6>
+            </div>
+    </div>
+</div>
+
+{% endblock %}

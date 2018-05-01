@@ -1,0 +1,510 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<!-- The import required for AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+
+
+<!--=================================================================================================================================
+
+White space         : &nbsp;
+bold tag            : <b></b>
+Indent              : <p style="text-indent: 50px;">    </p>
+Horz Bar with \n    : <br><hr class="ones"><br>
+hyper link          : <a href="/location/">TEXT</a>
+bootstrap glyphs    : <span class="glyph-goes-here" aria-hidden="true"></span>
+image               : <img src="{{url_for('static', filename='photos/cover.jpg') }}">
+DL of static file   : <a href="/static/resume/Resume30August2016.doc">Here</a>
+
+use .container for containing responsive fixed width containers
+unable to be nested
+
+    <div class="container">
+    ...
+    </div>
+
+use .container-fluid for a full width container, which will span across the entire viewport
+
+    <div class="container-fluid">
+    ...
+    </div>
+
+<p style="text-indent: 50px;">
+
+</p>
+=================================================================================================================================-->
+
+    <br><br><br><h3 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Javascript/javascript.png') }}">
+    Welcome to the Javascript Arithmetic Homepage, <b>{{un}}</b>!</h3>
+
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+    <p class="intro">
+        <center><b>
+            Javascript | A typical thing to do with numbers
+        </b></center>
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Arithmetic</h3>
+
+    <p>
+
+        Javascript has built in arithmetic operators that will perform arithmetic on numbers; literals or variables. A
+        normal arithmetic operation operates on two numbers. The two numbers can be literals or variables, I might add.
+
+        <br>
+
+        <ul>
+            <li>
+                <b>
+                    +
+                </b>
+                Addition
+            </li>
+            <li>
+                <b>
+                    -
+                </b>
+                Subtraction
+            </li>
+            <li>
+                <b>
+                    *
+                </b>
+                Multiplication
+            </li>
+            <li>
+                <b>
+                    /
+                </b>
+                Division
+            </li>
+            <li>
+                <b>
+                    %
+                </b>
+                Modulus
+            </li>
+            <li>
+                <b>
+                    ++
+                </b>
+                Increment
+            </li>
+            <li>
+                <b>
+                    --
+                </b>
+                Decrement
+            </li>
+        </ul>
+
+        <br>
+
+        <div>
+
+            var x = 10 + 5; <br>
+            Here we are declaring a variable, x, and performing addition on two numbers<br>
+            <br>
+            var a = 10;<br>
+            var b = 5; <br>
+            <br>
+            var c = a + b;<br>
+            Here we are declaring three variables, two have set numbers, and one is performing arithmetic on two variables<br>
+
+        </div>
+
+    </p>
+
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Operators and Operands</h3>
+
+    <p>
+
+        The numbers in an arithmetic formulation are called opperands. The operation is defined by an operator. So,
+
+        <br><br>
+
+        <b>[Operand]</b> 15  <b>[Operator]</b> + <b>[Operand]</b> 5 <br>
+
+    </p>
+
+    <br>
+
+    <ul>
+        <li>
+            <b>
+                +
+            </b>
+            The addition operator will add two numbers together
+        </li>
+        <li>
+            <b>
+                -
+            </b>
+            The subtraction operator will subtract two numbers
+        </li>
+        <li>
+            <b>
+                *
+            </b>
+            The multiplication operator will multiply two numbers together
+        </li>
+        <li>
+            <b>
+                /
+            </b>
+            The division operator will divide two numbers together
+        </li>
+        <li>
+            <b>
+                %
+            </b>
+            The modulus operator will the remainder of the division
+        </li>
+        <li>
+            <b>
+                ++
+            </b>
+            This will increment the number by one
+        </li>
+        <li>
+            <b>
+                --
+            </b>
+            This will decrement the number by one
+        </li>
+    </ul>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Operator Procedence</h3>
+
+    <p>
+
+        Javascript has a built in operator precendence; the precendence describes the order in which operators will be performed
+        in an arithmetic expression. The precedence is just the way a computer will read the arithmetic statement. <b>x = 5 + 2 * 4;</b>
+        is a totally different statement than <b>x = 5 + (2 * 4)</b>. The first expression will yield 28, while the second expression
+        will yield 13. Precedence is very similar to what it was in school. Multiplication and division have higher priority than
+        addition and subtraction, while anything in parentheses will be computed first. Anything with the same precedence will be
+        executed from left to right.
+
+    </p>
+
+    <br>
+
+    <div>
+
+        <table class="w3-table-all" style="height: 1117px; width: 512px;">
+        <tbody>
+        <tr style="height: 21px;">
+        <th style="width: 138.283px; height: 21px;">Operator</th>
+        <th style="width: 185.717px; height: 21px;">Description</th>
+        <th style="width: 174px; height: 21px;">Example</th>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">( )</td>
+        <td style="width: 185.717px; height: 21px;">Expression grouping</td>
+        <td style="width: 174px; height: 21px;">(3 + 4)</td>
+        </tr>
+        <tr style="height: 21.1px;">
+        <td style="width: 138.283px; height: 21.1px;">&nbsp;</td>
+        <td style="width: 185.717px; height: 21.1px;">&nbsp;</td>
+        <td style="width: 174px; height: 21.1px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">.</td>
+        <td style="width: 185.717px; height: 21px;">Member</td>
+        <td style="width: 174px; height: 21px;">person.name</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">[]</td>
+        <td style="width: 185.717px; height: 21px;">Member</td>
+        <td style="width: 174px; height: 21px;">person["name"]</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">&nbsp;</td>
+        <td style="width: 185.717px; height: 21px;">&nbsp;</td>
+        <td style="width: 174px; height: 21px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">()</td>
+        <td style="width: 185.717px; height: 21px;">Function call</td>
+        <td style="width: 174px; height: 21px;">myFunction()</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">new</td>
+        <td style="width: 185.717px; height: 21px;">Create</td>
+        <td style="width: 174px; height: 21px;">new Date()</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">&nbsp;</td>
+        <td style="width: 185.717px; height: 21px;">&nbsp;</td>
+        <td style="width: 174px; height: 21px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">++</td>
+        <td style="width: 185.717px; height: 21px;">Postfix Increment</td>
+        <td style="width: 174px; height: 21px;">i++</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">--</td>
+        <td style="width: 185.717px; height: 21px;">Postfix Decrement</td>
+        <td style="width: 174px; height: 21px;">i--</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">&nbsp;</td>
+        <td style="width: 185.717px; height: 21px;">&nbsp;</td>
+        <td style="width: 174px; height: 21px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">++</td>
+        <td style="width: 185.717px; height: 21px;">Prefix Increment</td>
+        <td style="width: 174px; height: 21px;">++i</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">--</td>
+        <td style="width: 185.717px; height: 21px;">Prefix Decrement</td>
+        <td style="width: 174px; height: 21px;">--i</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">!</td>
+        <td style="width: 185.717px; height: 21px;">Logical not</td>
+        <td style="width: 174px; height: 21px;">!(x==y)</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">typeof</td>
+        <td style="width: 185.717px; height: 21px;">Type</td>
+        <td style="width: 174px; height: 21px;">typeof x</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">&nbsp;</td>
+        <td style="width: 185.717px; height: 21px;">&nbsp;</td>
+        <td style="width: 174px; height: 21px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">*</td>
+        <td style="width: 185.717px; height: 21px;">Multiplication</td>
+        <td style="width: 174px; height: 21px;">10 * 5</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">/</td>
+        <td style="width: 185.717px; height: 21px;">Division</td>
+        <td style="width: 174px; height: 21px;">10 / 5</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">%</td>
+        <td style="width: 185.717px; height: 21px;">Modulo division</td>
+        <td style="width: 174px; height: 21px;">10 % 5</td>
+        </tr>
+        <tr class="w3-pale-red" style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">**</td>
+        <td style="width: 185.717px; height: 21px;">Exponentiation</td>
+        <td style="width: 174px; height: 21px;">10 ** 2</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">&nbsp;</td>
+        <td style="width: 185.717px; height: 21px;">&nbsp;</td>
+        <td style="width: 174px; height: 21px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">+</td>
+        <td style="width: 185.717px; height: 21px;">Addition</td>
+        <td style="width: 174px; height: 21px;">10 + 5</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">-</td>
+        <td style="width: 185.717px; height: 21px;">Subtraction</td>
+        <td style="width: 174px; height: 21px;">10 - 5</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">&nbsp;</td>
+        <td style="width: 185.717px; height: 21px;">&nbsp;</td>
+        <td style="width: 174px; height: 21px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">&lt;&lt;</td>
+        <td style="width: 185.717px; height: 21px;">Shift left</td>
+        <td style="width: 174px; height: 21px;">x &lt;&lt; 2</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">&gt;&gt;</td>
+        <td style="width: 185.717px; height: 21px;">Shift right</td>
+        <td style="width: 174px; height: 21px;">x &gt;&gt; 2</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">&gt;&gt;&gt;</td>
+        <td style="width: 185.717px; height: 21px;">Shift right (unsigned)</td>
+        <td style="width: 174px; height: 21px;">x &gt;&gt;&gt; 2</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">&nbsp;</td>
+        <td style="width: 185.717px; height: 21px;">&nbsp;</td>
+        <td style="width: 174px; height: 21px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">&lt;</td>
+        <td style="width: 185.717px; height: 21px;">Less than</td>
+        <td style="width: 174px; height: 21px;">x &lt; y&nbsp;</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">&lt;=</td>
+        <td style="width: 185.717px; height: 21px;">Less than or equal</td>
+        <td style="width: 174px; height: 21px;">x &lt;= y</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">&gt;</td>
+        <td style="width: 185.717px; height: 21px;">Greater than</td>
+        <td style="width: 174px; height: 21px;">x &gt; y</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">&gt;=</td>
+        <td style="width: 185.717px; height: 21px;">Greater than or equal</td>
+        <td style="width: 174px; height: 21px;">x &gt;= y</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">&nbsp;</td>
+        <td style="width: 185.717px; height: 21px;">&nbsp;</td>
+        <td style="width: 174px; height: 21px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">==</td>
+        <td style="width: 185.717px; height: 21px;">Equal</td>
+        <td style="width: 174px; height: 21px;">x == y</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">===</td>
+        <td style="width: 185.717px; height: 21px;">Strict equal</td>
+        <td style="width: 174px; height: 21px;">x === y</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">!=</td>
+        <td style="width: 185.717px; height: 21px;">Unequal</td>
+        <td style="width: 174px; height: 21px;">x != y</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">!==</td>
+        <td style="width: 185.717px; height: 21px;">Strict unequal</td>
+        <td style="width: 174px; height: 21px;">x !== y</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">&nbsp;</td>
+        <td style="width: 185.717px; height: 21px;">&nbsp;</td>
+        <td style="width: 174px; height: 21px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">&amp;&amp;</td>
+        <td style="width: 185.717px; height: 21px;">Logical and</td>
+        <td style="width: 174px; height: 21px;">x &amp;&amp; y</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">||</td>
+        <td style="width: 185.717px; height: 21px;">Logical or</td>
+        <td style="width: 174px; height: 21px;">x || y</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">&nbsp;</td>
+        <td style="width: 185.717px; height: 21px;">&nbsp;</td>
+        <td style="width: 174px; height: 21px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">=</td>
+        <td style="width: 185.717px; height: 21px;">Assignment</td>
+        <td style="width: 174px; height: 21px;">x = y</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">+=</td>
+        <td style="width: 185.717px; height: 21px;">Assignment</td>
+        <td style="width: 174px; height: 21px;">x += y</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">-=</td>
+        <td style="width: 185.717px; height: 21px;">Assignment</td>
+        <td style="width: 174px; height: 21px;">x -= y</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">*=</td>
+        <td style="width: 185.717px; height: 21px;">Assignment</td>
+        <td style="width: 174px; height: 21px;">x *= y</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">%=</td>
+        <td style="width: 185.717px; height: 21px;">Assignment</td>
+        <td style="width: 174px; height: 21px;">x %= y</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">&lt;&lt;=</td>
+        <td style="width: 185.717px; height: 21px;">Assignment</td>
+        <td style="width: 174px; height: 21px;">x &lt;&lt;= y</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">&gt;&gt;=</td>
+        <td style="width: 185.717px; height: 21px;">Assignment</td>
+        <td style="width: 174px; height: 21px;">x &gt;&gt;= y</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">&gt;&gt;&gt;=</td>
+        <td style="width: 185.717px; height: 21px;">Assignment</td>
+        <td style="width: 174px; height: 21px;">x &gt;&gt;&gt;= y</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">&amp;=</td>
+        <td style="width: 185.717px; height: 21px;">Assignment</td>
+        <td style="width: 174px; height: 21px;">x &amp;= y</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">^=</td>
+        <td style="width: 185.717px; height: 21px;">Assignment</td>
+        <td style="width: 174px; height: 21px;">x ^= y</td>
+        </tr>
+        <tr style="height: 21px;">
+        <td style="width: 138.283px; height: 21px;">|=</td>
+        <td style="width: 185.717px; height: 21px;">Assignment</td>
+        <td style="width: 174px; height: 21px;">x |= y</td>
+        </tr>
+        </tbody>
+        </table>
+        <p><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #0000ff;">&nbsp;</span></span></span></span></span></span></p>
+
+    </div>
+
+<!--========================================================================================================================-->
+    <br>
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+    <br>
+<!--========================================================================================================================-->
+
+        <h3 style="text-align: center;">Next, we will take a look at Assignments within Javascript.</h3>
+
+        <p style="text-align: center;">Just follow the buttons to continue the tutorial, {{un}}</p>
+
+
+        <br>
+
+        <a href="/Javascript/operators"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Javascript - Operators
+        </button></a>
+
+        <a href="/Javascript/assignment"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        Javascript - Assignments <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        </button></a>
+
+{% endblock %}

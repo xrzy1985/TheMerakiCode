@@ -1,0 +1,136 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+
+    <div style="color: black;">
+
+<!------ Nav Tabs -------------------------------------------------------------------------------------------------------------------------->
+      <ul class="nav nav-pills" role="tablist">
+        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+        <li role="presentation"><a href="#comments" aria-controls="comments" role="tab" data-toggle="tab">Comments</a></li>
+      </ul>
+
+<!------ Tab panes Home -------------------------------------------------------------------------------------------------------------------------->
+        <div class="tab-content">
+
+            {% if session.logged_in %}
+
+		        <div style="color: black;" role="tabpanel" class="tab-pane fade in active" id="home">
+
+		            <br><hr class="ones"><br>
+
+                    <h1 align="center">Hello <b>{{un}}</b>, We hope you're having a great day.</h1>
+                    <br>
+                    <h3 align="center">Click on the Profile tab to view and edit your profile, or </h3>
+                    <br>
+                    <h3 align="center">Click on the Comments tab to leave a comment for everyone to see, Mate!</h3>
+                    <br><hr class="ones"><br>
+
+                </div>
+
+		    {% else %}
+
+		        <div role="tabpanel" class="tab-pane fade in active" id="home">
+
+		            <br><hr class="ones"><br>
+
+                    <h1 align="center">Hello, You beautiful People</h1>
+
+                    <br><hr class="ones"><br>
+                    <h3 align="center">To get started learning more about programming, <a href="/register/"><b>Register</b></a> and become a member!</h3>
+                    <br><hr><br>
+                    <br><hr class="ones"><br>
+                    <h1 align="center"><span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> Meraki (2016)</h1>
+                    <h2 align="center">{{un}}</h2>
+                    <br><hr class="ones"><br>
+                </div>
+
+			{% endif %}
+
+
+
+<!------ Profile -------------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+            <div role="tabpanel" class="tab-pane fade" id="profile">
+                <br>
+
+                <div  class="profile_bg" style="padding-top: 25px;padding-right: 25px;padding-bottom: 25px;padding-left: 25px;">
+
+                        <h1 align="left" style="color: white; margin: 10px 10px 10px 10px;"><span style="color: white; margin-left: 2px;" class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                            {{un}}
+                        </h1>
+
+                        <div class="twos" style="color: white;">
+                            <img style="float: left; margin: 10px 10px 10px 10px; max-width: 250px; max-height: 250px;" src="{{url_for('static', filename='profile/')}}{{u_filename}}" class="img-rounded">
+
+                            <h4><h4 style="color: white;">Unique ID: </h4>{{u_id}}</h4>
+                            <br>
+                            <h4><h4 style="color: white;">First Name: </h4>{{uf_name}}</h4>
+                            <br>
+                            <h4><h4 style="color: white;">Last Name: </h4>{{ul_name}}</h4>
+                            <br>
+                            <h4><h4 style="color: white;">Email: </h4>{{u_email}}</h4>
+
+                        </div>
+                        <p>
+                            <br>
+                            <h4 style="float: left; color: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-picture" aria-hidden="true"></span>&nbsp;&nbsp;<a href="/uploads/" style="color: white;"><b>Edit Profile Photo</b></a></h4>
+                            <h4 style="float: left; color: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>&nbsp;&nbsp;<a href="/edit_information/" style="color: white;"><b>Edit Information</b></a></h4>
+                            <h4 style="float: left; color: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>&nbsp;&nbsp;<a href="/about_me/" style="color: white;"><b>Edit About Me</b></a></h4>
+                            <br>
+                        </p>
+                        <br>
+                        <h3 style="color: white;">About Me:</h3>
+
+                            <br>
+                            <span class="twos" style=" color: white; margin: 10px 10px 10px 10px; max-width: 750px; min-height: 250px;"><h4 style="max-width= 600px;">{{u_about_me}}</h4></span>
+
+                </div>
+
+            </div>
+
+
+
+
+
+<!------ Comments -------------------------------------------------------------------------------------------------------------------------->
+            <div role="tabpanel" class="tab-pane fade" id="comments">
+
+                <br>
+
+                <div  class="ones_twos" style="padding-top: 25px;padding-right: 25px;padding-bottom: 25px;padding-left: 25px;">
+
+
+                    <h1 align="center"></h1>
+
+                    <div class="container" style="background-color: white; width:700px; margin: auto; border: 12px; border-style: inset; border-radius: 20px; padding: 20px;">
+
+                        {% for comment in comments %}
+                            <div class="row">
+                                {{ comment.content }}
+                            </div>
+                        {% endfor %} <br>
+
+                        <div class="row">
+                            <form method="post">
+                                <textarea class="form-control" name="contents" placeholder="Enter a comment">{{un}}: </textarea>
+                                <input type="submit" value="Post comment">
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}

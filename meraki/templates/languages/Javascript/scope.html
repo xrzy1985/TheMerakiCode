@@ -1,0 +1,197 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<!-- The import required for AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<!--=================================================================================================================================
+
+White space         : &nbsp;
+bold tag            : <b></b>
+Indent              : <p style="text-indent: 50px;">    </p>
+Horz Bar with \n    : <br><hr class="ones"><br>
+hyper link          : <a href="/location/">TEXT</a>
+bootstrap glyphs    : <span class="glyph-goes-here" aria-hidden="true"></span>
+image               : <img src="{{url_for('static', filename='photos/cover.jpg') }}">
+DL of static file   : <a href="/static/resume/Resume30August2016.doc">Here</a>
+
+use .container for containing responsive fixed width containers
+unable to be nested
+
+    <div class="container">
+    ...
+    </div>
+
+use .container-fluid for a full width container, which will span across the entire viewport
+
+    <div class="container-fluid">
+    ...
+    </div>
+
+<p style="text-indent: 50px;">
+
+</p>
+
+<ul>
+    <li>
+        <b>
+
+        </b>
+        Text <br>
+    </li>
+</ul>
+
+=================================================================================================================================-->
+
+    <br><br><br><h3 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Javascript/javascript.png') }}">
+    Welcome to the Javascript Scope Homepage, <b>{{un}}</b>!</h3>
+
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+    <p class="intro">
+        <center><b>
+            Javascript | What you can use and where
+        </b></center>
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Scope</h3>
+
+    <p>
+
+        Scope is the very definition of what you can use and where it can be used at. The scope is the set of all variables
+        you currently have access to. Remember, Javascript treats objects and functions as if they are variables. So, Javascript's
+        scope encompasses the set of all variables, objects, and functions you currently have access to. The variables, objects,
+        and functions can be declared locally or globally.
+
+        <br><br>
+
+        <b>Local</b> variable declaration means the declaration will take place within a small block of code, and can only be accessed within the scope of
+        the funtion, method, or loop. The variables declared within a function or method is created when the function or method
+        is called, and deleted once the function has finished executing. This feature allows the programmer to possibly use the
+        same name within a program more than once. I often use i and j for all loops I programm. I tend to write long descriptive
+        names for variables when I program assignments. I want to be able to see the code and say, "Yes, the variable named
+        copyOfNamesInDictionaryByLastNameBlahBlah is what I'm looking for.
+
+        <br><hr><br>
+
+        <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp;&nbsp;&nbsp; &lt;body&gt;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; myFunction();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML =<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "The type of vehicle is " + typeof vehicle;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function myFunction() {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var vehicle = "2008 Honda Shadow";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br />&nbsp;&nbsp;&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        <br><hr><br>
+
+        Output: The type of vehicle is undefined
+
+        <br><hr><br>
+
+        The vehicle will be undefined because the variable declared is within a function, and only accessibly from inside
+        the function. The variable cannot be accessed outside of the localized function it belongs to, and that is the reason
+        for the vehicle being undefined. We had used the typeof built in function to try and identify the variable vehicle, but
+        we had no success. If the variable was a <b>global</b> variable, we would have the access we desire.
+
+        <br><hr><br>
+
+        <b>Global</b> variables are often declared outside of the user created functions. A global variable will possess the global
+        scope ability. Global scope means that all scripts, functions, methods, and web content can access the variable at any
+        time it is necessary.
+
+        <br><hr><br>
+
+            <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp;&nbsp;&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var vehicle = "2008 Honda Shadow";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; myFunction();<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function myFunction() {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML =<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "I ride a " + vehicle;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        <br><hr><br>
+
+        Output: I drive a 2008 Honda Shadow
+
+        <br><hr><br>
+
+        The variable is able to be accessed because it is declared outside a function. The variable can then be used to display the
+        text that is defined. The built in typeof function is great for debugging purposes. It is also great as a learning tool to
+        help you fundamentally see how data types are handled within Javascript.
+
+        <br><hr><br>
+
+        <b>Automatically Global</b> variables come about whenever a programmer does not declare a variable before he/she uses the variable
+        within a Javascript line. The variable will automatically become a <b>global</b> variable within Javascript. The code below
+        illustrates this property. The variable vehicle will be given the value 2008 Honda Shadow, but the variable is not declared
+        inside of the myFunction function. Javascript will automatically take the variable, and cast it as a global variable. The
+        script function is read from top to bottom, and the function call to myFunction is the first line Javascript will interpret.
+        This is why vehicle is able to be used in the first place, if the function call had came after the line to enter text in the
+        tutorial element, the code would have failed horribly. Global variables should only be created when they are intended to be
+        used. In 'Strict Mode' of Javascript, automatic global variables will fail every single time.
+
+        <br><hr><br>
+
+            <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp;&nbsp;&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; myFunction();<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // code here can use carName as a global variable<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML = "I ride a " + vehicle;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function myFunction() {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vehicle = "2008 Honda Shadow";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        <br><hr><br>
+
+        Output: I drive a 2008 Honda Shadow
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Lifetime</h3>
+
+    <p>
+
+        The lifetime of a Javascript variable depends on the location of the variable's declaration. The lifetime of the Javascript
+        variable starts when it is declared. Local variables are declared inside a function, and the variable is deleted once the
+        function is completely executed. Global variables are deleted once the user closes the browser window or tab, but the
+        variable remains available to new pages loaded into the same window.
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Function Arguments</h3>
+
+    <p>
+
+        Function arguments act as local variables inside of functions. The arguments are the parameters being passed to the function.
+
+        <br><br>
+
+        myFunction(x,y,z);<br><br>
+
+        The function above requires three parameters to be passed in order for the function to not fail. The arguments are processed
+        as local variables inside of myFunction.
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3 style="text-align: center;">Next, we will take a look at how Events take place within Javascript.</h3>
+
+    <p style="text-align: center;">Just follow the buttons to continue the tutorial, {{un}}</p>
+
+
+    <br>
+
+    <a href="/Javascript/objects"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Javascript - Objects
+    </button></a>
+
+    <a href="/Javascript/events"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+    Javascript - Events <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+{% endblock %}

@@ -1,0 +1,102 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<style>
+hr {
+    color: blue;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}
+</style>
+
+    <br><br><br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/python.jpg') }}">
+    Welcome to the Python Variables page, <b>{{un}}</b>!</h1>
+
+    <hr>
+
+    <blockquote>
+
+        Variables are locations in memory reserved by Python to store values being assigned. So,
+        when a user creates a variable, x = "james", the user is really reserving space in memory
+        for the string variable named x. Python will determine the best possible data type suited
+        for the user once a variable is created. A variable can be a string, int, float, decimal,
+        and many more data types. Python does not explicitly declare a data type when reserving
+        memory for a variable, the declaration will occur after the first values are entered into
+        the variable.
+
+        <br>
+
+        <ul>
+            <li><b>name_of_variable_int = 100</b></li>
+            <li><b>name_of_variable_float = 100.009</b></li>
+            <li><b>name_of_variable_string = "One Hundred</b></li>
+            <li><b>a = b = 3</b></li>
+            <h6>This is a multi-assigment. This will assign bother a and b to the value 3.</h6>
+            <li>a, b, c = 1, "JP", 31</li>
+            <h6>This how to assign multiple values to multiple variables using the abstraction technique.</h6>
+            <li> x = "This is how to " + str(1) + "add a string casted int into a sentence"</li>
+            <h6>That will return the string typed in, but with the int variable returned as a string</h6>
+        </ul>
+
+    </blockquote>
+
+    <br><hr><br>
+
+    <h3>
+        Variable creation
+    </h3>
+
+    <p>
+        Variables can be created quite easily, and Python takes care of cast typing once the first values are entered.
+        Python will know if you are programming a list, dictionary, tuple, int, or a float variable. A comprehensive list
+        of ways to create variables is located below:
+    </p>
+
+    <br><hr><br>
+
+    <br><p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/variables/variablesEnding.jpg') }}"></p>
+
+    <br><hr><br>
+
+
+<!--
+    <h3>
+
+    </h3>
+
+    <p>
+
+    </p>
+
+    <br><hr><br>
+
+    <p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/folder/file.jpg') }}"></p>
+
+    <br><hr><br>
+-->
+
+    <h3 style="text-align: center;">
+            Operators
+    </h3>
+
+    <p style="text-align: center;">
+        Next, we will look at Operators and understand how they play a vital role in Python programming.
+    </p>
+
+    <a href="/Python/data_types"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Python - Data Types
+    </button></a>
+
+    <a href="/Python/operators"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        Python - Operators   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+{% endblock %}

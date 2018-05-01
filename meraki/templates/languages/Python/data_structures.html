@@ -1,0 +1,1950 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<style>
+hr {
+    color: blue;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}
+</style>
+
+    <br><br><br><h3 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/python.jpg') }}">
+    Welcome to the Python Data Structure Homepage, {{un}}!</h3>
+
+    <hr>
+
+    <blockquote>
+
+        Information on Data Structures
+
+    </blockquote>
+
+    <br><hr><br>
+    <h1>Numbers</h1>
+    <br>
+
+                <p>Number data types store numeric values. They are immutable data types, means that changing the value of a number data type results in a newly allocated object.</p>
+                <p>Number objects are created when you assign a value to them. For example &minus;</p>
+                <pre class="prettyprint notranslate prettyprinted"><span class="pln">var1 </span><span class="pun">=</span> <span class="lit">1</span><span class="pln">
+                var2 </span><span class="pun">=</span> <span class="lit">10</span></pre>
+                <p>You can also delete the reference to a number object by using the <strong>del</strong> statement. The syntax of the del statement is &minus;</p>
+                <pre class="prettyprint notranslate prettyprinted"><span class="kwd">del</span><span class="pln"> var1</span><span class="pun">[,</span><span class="pln">var2</span><span class="pun">[,</span><span class="pln">var3</span><span class="pun">[....,</span><span class="pln">varN</span><span class="pun">]]]]</span></pre>
+                <p>You can delete a single object or multiple objects by using the <strong>del</strong> statement. For example:</p>
+                <pre class="prettyprint notranslate prettyprinted"><span class="kwd">del</span> <span class="kwd">var</span>
+                <span class="kwd">del</span><span class="pln"> var_a</span><span class="pun">,</span><span class="pln"> var_b</span></pre>
+                <p>Python supports different numerical types &minus;</p>
+                <ul class="list">
+                <li>
+                <p><strong>int (signed integers)</strong>: They are often called just integers or ints, are positive or negative whole numbers with no decimal point. Integers in Python 3 are of unlimited size. Python 2 has two integer types - int and long. There is no <strong>'long integer'</strong> in Python 3 any more.</p>
+                </li>
+                <li>
+                <p><strong>float (floating point real values)</strong> : Also called floats, they represent real numbers and are written with a decimal point dividing the integer and fractional parts. Floats may also be in scientific notation, with E or e indicating the power of 10 (2.5e2 = 2.5 x 10<sup>2</sup> = 250).</p>
+                </li>
+                <li>
+                <p><strong>complex (complex numbers)</strong> : are of the form a + bJ, where a and b are floats and J (or j) represents the square root of -1 (which is an imaginary number). The real part of the number is a, and the imaginary part is b. Complex numbers are not used much in Python programming.</p>
+                </li>
+                </ul>
+                <p>It is possible to represent integer in hexa-decimal or octal form</p>
+                <pre class="prettyprint notranslate tryit prettyprinted"><span class="pun">&gt;&gt;&gt;</span><span class="pln"> number </span><span class="pun">=</span> <span class="lit">0xA0F</span> <span class="com">#Hexa-decimal</span>
+                <span class="pun">&gt;&gt;&gt;</span><span class="pln"> number
+                </span><span class="lit">2575</span>
+
+                <span class="pun">&gt;&gt;&gt;</span><span class="pln"> number</span><span class="pun">=</span><span class="lit">0o37</span> <span class="com">#Octal</span>
+                <span class="pun">&gt;&gt;&gt;</span><span class="pln"> number
+                </span><span class="lit">31</span></pre>
+                <h3>Examples</h3>
+                <p>Here are some examples of numbers</p>
+                <table class="table table-bordered">
+                <tbody>
+                <tr>
+                <th>int</th>
+                <th>float</th>
+                <th>complex</th>
+                </tr>
+                <tr>
+                <td>10</td>
+                <td>0.0</td>
+                <td>3.14j</td>
+                </tr>
+                <tr>
+                <td>100</td>
+                <td>15.20</td>
+                <td>45.j</td>
+                </tr>
+                <tr>
+                <td>-786</td>
+                <td>-21.9</td>
+                <td>9.322e-36j</td>
+                </tr>
+                <tr>
+                <td>080</td>
+                <td>32.3+e18</td>
+                <td>.876j</td>
+                </tr>
+                <tr>
+                <td>-0490</td>
+                <td>-90.</td>
+                <td>-.6545+0J</td>
+                </tr>
+                <tr>
+                <td>-0x260</td>
+                <td>-32.54e100</td>
+                <td>3e+26J</td>
+                </tr>
+                <tr>
+                <td>0x69</td>
+                <td>70.2-E12</td>
+                <td>4.53e-7j</td>
+                </tr>
+                </tbody>
+                </table>
+                <ul class="list">
+                <li>
+                <p>A complex number consists of an ordered pair of real floating point numbers denoted by a + bj, where a is the real part and b is the imaginary part of the complex number.</p>
+                </li>
+                </ul>
+                <h2>Number Type Conversion</h2>
+                <p>Python converts numbers internally in an expression containing mixed types to a common type for evaluation. But sometimes, you need to coerce a number explicitly from one type to another to satisfy the requirements of an operator or function parameter.</p>
+                <ul class="list">
+                <li>
+                <p>Type <strong>int(x)</strong> to convert x to a plain integer.</p>
+                </li>
+                <li>
+                <p>Type <strong>long(x)</strong> to convert x to a long integer.</p>
+                </li>
+                <li>
+                <p>Type <strong>float(x)</strong> to convert x to a floating-point number.</p>
+                </li>
+                <li>
+                <p>Type <strong>complex(x)</strong> to convert x to a complex number with real part x and imaginary part zero.</p>
+                </li>
+                <li>
+                <p>Type <strong>complex(x, y)</strong> to convert x and y to a complex number with real part x and imaginary part y. x and y are numeric expressions</p>
+                </li>
+                </ul>
+                <h2>Mathematical Functions</h2>
+                <p>Python includes following functions that perform mathematical calculations.</p>
+                <table class="table table-bordered">
+                <tbody>
+                <tr>
+                <th style="width: 25%;">Function</th>
+                <th>Returns ( description )</th>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_abs.htm">abs(x)</a></p>
+                </td>
+                <td>The absolute value of x: the (positive) distance between x and zero.</td>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_ceil.htm">ceil(x) </a></p>
+                </td>
+                <td>The ceiling of x: the smallest integer not less than x</td>
+                </tr>
+                <tr>
+                <td>
+                <p>cmp(x, y)</p>
+                </td>
+                <td>-1 if x &lt; y, 0 if x == y, or 1 if x &gt; y . <strong>Deprecated</strong> in Python 3. Use<strong> return (x&gt;y)-(x&lt;y)</strong> instead</td>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_exp.htm">exp(x) </a></p>
+                </td>
+                <td>The exponential of x: e<sup>x</sup></td>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_fabs.htm">fabs(x)</a></p>
+                </td>
+                <td>The absolute value of x.</td>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_floor.htm">floor(x) </a></p>
+                </td>
+                <td>The floor of x: the largest integer not greater than x</td>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_log.htm">log(x) </a></p>
+                </td>
+                <td>The natural logarithm of x, for x&gt; 0</td>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_log10.htm">log10(x) </a></p>
+                </td>
+                <td>The base-10 logarithm of x for x&gt; 0 .</td>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_max.htm">max(x1, x2,...) </a></p>
+                </td>
+                <td>The largest of its arguments: the value closest to positive infinity</td>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_min.htm">min(x1, x2,...) </a></p>
+                </td>
+                <td>The smallest of its arguments: the value closest to negative infinity</td>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_modf.htm">modf(x) </a></p>
+                </td>
+                <td>The fractional and integer parts of x in a two-item tuple. Both parts have the same sign as x. The integer part is returned as a float.</td>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_pow.htm">pow(x, y)</a></p>
+                </td>
+                <td>The value of x**y.</td>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_round.htm">round(x [,n])</a></p>
+                </td>
+                <td><strong>x</strong> rounded to n digits from the decimal point. Python rounds away from zero as a tie-breaker: round(0.5) is 1.0 and round(-0.5) is -1.0.</td>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_sqrt.htm">sqrt(x) </a></p>
+                </td>
+                <td>The square root of x for x &gt; 0</td>
+                </tr>
+                </tbody>
+                </table>
+                <h2>Random Number Functions</h2>
+                <p>Random numbers are used for games, simulations, testing, security, and privacy applications. Python includes following functions that are commonly used.</p>
+                <table class="table table-bordered">
+                <tbody>
+                <tr>
+                <th style="width: 25%;">Function</th>
+                <th>Description</th>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_choice.htm">choice(seq)</a></p>
+                </td>
+                <td>A random item from a list, tuple, or string.</td>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_randrange.htm">randrange ([start,] stop [,step]) </a></p>
+                </td>
+                <td>A randomly selected element from range(start, stop, step)</td>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_random.htm">random() </a></p>
+                </td>
+                <td>A random float r, such that 0 is less than or equal to r and r is less than 1</td>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_seed.htm">seed([x]) </a></p>
+                </td>
+                <td>Sets the integer starting value used in generating random numbers. Call this function before calling any other random module function. Returns None.</td>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_shuffle.htm">shuffle(lst) </a></p>
+                </td>
+                <td>Randomizes the items of a list in place. Returns None.</td>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_uniform.htm">uniform(x, y)</a></p>
+                </td>
+                <td>A random float r, such that x is less than or equal to r and r is less than y</td>
+                </tr>
+                </tbody>
+                </table>
+                <h2>Trigonometric Functions</h2>
+                <p>Python includes following functions that perform trigonometric calculations.</p>
+                <table class="table table-bordered">
+                <tbody>
+                <tr>
+                <th style="width: 25%;">Function</th>
+                <th>Description</th>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_acos.htm">acos(x)</a></p>
+                </td>
+                <td>Return the arc cosine of x, in radians.</td>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_asin.htm">asin(x)</a></p>
+                </td>
+                <td>Return the arc sine of x, in radians.</td>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_atan.htm">atan(x)</a></p>
+                </td>
+                <td>Return the arc tangent of x, in radians.</td>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_atan2.htm">atan2(y, x)</a></p>
+                </td>
+                <td>Return atan(y / x), in radians.</td>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_cos.htm">cos(x)</a></p>
+                </td>
+                <td>Return the cosine of x radians.</td>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_hypot.htm">hypot(x, y)</a></p>
+                </td>
+                <td>Return the Euclidean norm, sqrt(x*x + y*y).</td>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_sin.htm">sin(x)</a></p>
+                </td>
+                <td>Return the sine of x radians.</td>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_tan.htm">tan(x)</a></p>
+                </td>
+                <td>Return the tangent of x radians.</td>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_degrees.htm">degrees(x)</a></p>
+                </td>
+                <td>Converts angle x from radians to degrees.</td>
+                </tr>
+                <tr>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/number_radians.htm">radians(x)</a></p>
+                </td>
+                <td>Converts angle x from degrees to radians.</td>
+                </tr>
+                </tbody>
+                </table>
+                <h2>Mathematical Constants</h2>
+                <p>The module also defines two mathematical constants &minus;</p>
+                <table class="table table-bordered">
+                <tbody>
+                <tr>
+                <th style="width: 25%;">Constants</th>
+                <th>Description</th>
+                </tr>
+                <tr>
+                <td>pi</td>
+                <td>The mathematical constant pi.</td>
+                </tr>
+                <tr>
+                <td>e</td>
+                <td>The mathematical constant e.</td>
+                </tr>
+                </tbody>
+                </table>
+                <p>&nbsp;</p>
+
+    <br><hr><br>
+    <h1>Strings</h1>
+    <br>
+
+                <p>Strings are amongst the most popular types in Python. We can create them simply by enclosing characters in quotes. Python treats single quotes the same as double quotes. Creating strings is as simple as assigning a value to a variable. For example &minus;</p>
+                <pre class="prettyprint notranslate prettyprinted"><span class="pln">var1 </span><span class="pun">=</span> <span class="str">'Hello World!'</span><span class="pln">
+                var2 </span><span class="pun">=</span> <span class="str">"Python Programming"</span></pre>
+                <h2>Accessing Values in Strings</h2>
+                <p>Python does not support a character type; these are treated as strings of length one, thus also considered a substring.</p>
+                <p>To access substrings, use the square brackets for slicing along with the index or indices to obtain your substring. For example &minus;</p>
+                <pre class="prettyprint notranslate tryit prettyprinted" style="cursor: default;"><span class="com"># Code in any IDE, mate!</span><span class="pln">
+
+                var1 </span><span class="pun">=</span> <span class="str">'Hello World!'</span><span class="pln">
+                var2 </span><span class="pun">=</span> <span class="str">"Python Programming"</span>
+
+                <span class="kwd">print</span> <span class="pun">(</span><span class="str">"var1[0]: "</span><span class="pun">,</span><span class="pln"> var1</span><span class="pun">[</span><span class="lit">0</span><span class="pun">])</span>
+                <span class="kwd">print</span> <span class="pun">(</span><span class="str">"var2[1:5]: "</span><span class="pun">,</span><span class="pln"> var2</span><span class="pun">[</span><span class="lit">1</span><span class="pun">:</span><span class="lit">5</span><span class="pun">])</span></pre>
+                <p>When the above code is executed, it produces the following result &minus;</p>
+                <pre class="result notranslate">var1[0]:  H
+                var2[1:5]:  ytho
+                </pre>
+                <h2>Updating Strings</h2>
+                <p>You can "update" an existing string by (re)assigning a variable to another string. The new value can be related to its previous value or to a completely different string altogether. For example &minus;</p>
+                <pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Code in any IDE, mate!</span><span class="pln">
+
+                var1 </span><span class="pun">=</span> <span class="str">'Hello World!'</span>
+
+                <span class="kwd">print</span> <span class="pun">(</span><span class="str">"Updated String :- "</span><span class="pun">,</span><span class="pln"> var1</span><span class="pun">[:</span><span class="lit">6</span><span class="pun">]</span> <span class="pun">+</span> <span class="str">'Python'</span><span class="pun">)</span></pre>
+                <p>When the above code is executed, it produces the following result &minus;</p>
+                <pre class="result notranslate">Updated String :-  Hello Python
+                </pre>
+                <h2>Escape Characters</h2>
+                <p>Following table is a list of escape or non-printable characters that can be represented with backslash notation.</p>
+                <p>An escape character gets interpreted; in a single quoted as well as double quoted strings.</p>
+                <table class="table table-bordered">
+                <tbody>
+                <tr>
+                <th style="width: 25%;">Backslash<br />notation</th>
+                <th>Hexadecimal<br />character</th>
+                <th>Description</th>
+                </tr>
+                <tr>
+                <td>\a</td>
+                <td>0x07</td>
+                <td>Bell or alert</td>
+                </tr>
+                <tr>
+                <td>\b</td>
+                <td>0x08</td>
+                <td>Backspace</td>
+                </tr>
+                <tr>
+                <td>\cx</td>
+                <td>&nbsp;</td>
+                <td>Control-x</td>
+                </tr>
+                <tr>
+                <td>\C-x</td>
+                <td>&nbsp;</td>
+                <td>Control-x</td>
+                </tr>
+                <tr>
+                <td>\e</td>
+                <td>0x1b</td>
+                <td>Escape</td>
+                </tr>
+                <tr>
+                <td>\f</td>
+                <td>0x0c</td>
+                <td>Formfeed</td>
+                </tr>
+                <tr>
+                <td>\M-\C-x</td>
+                <td>&nbsp;</td>
+                <td>Meta-Control-x</td>
+                </tr>
+                <tr>
+                <td>\n</td>
+                <td>0x0a</td>
+                <td>Newline</td>
+                </tr>
+                <tr>
+                <td>\nnn</td>
+                <td>&nbsp;</td>
+                <td>Octal notation, where n is in the range 0.7</td>
+                </tr>
+                <tr>
+                <td>\r</td>
+                <td>0x0d</td>
+                <td>Carriage return</td>
+                </tr>
+                <tr>
+                <td>\s</td>
+                <td>0x20</td>
+                <td>Space</td>
+                </tr>
+                <tr>
+                <td>\t</td>
+                <td>0x09</td>
+                <td>Tab</td>
+                </tr>
+                <tr>
+                <td>\v</td>
+                <td>0x0b</td>
+                <td>Vertical tab</td>
+                </tr>
+                <tr>
+                <td>\x</td>
+                <td>&nbsp;</td>
+                <td>Character x</td>
+                </tr>
+                <tr>
+                <td>\xnn</td>
+                <td>&nbsp;</td>
+                <td>Hexadecimal notation, where n is in the range 0.9, a.f, or A.F</td>
+                </tr>
+                </tbody>
+                </table>
+                <h2>String Special Operators</h2>
+                <p>Assume string variable <strong>a</strong> holds 'Hello' and variable <strong>b</strong> holds 'Python', then &minus;</p>
+                <table class="table table-bordered">
+                <tbody>
+                <tr>
+                <th style="width: 10%;">Operator</th>
+                <th style="width: 45%;">Description</th>
+                <th>Example</th>
+                </tr>
+                <tr>
+                <td>+</td>
+                <td>Concatenation - Adds values on either side of the operator</td>
+                <td>a + b will give HelloPython</td>
+                </tr>
+                <tr>
+                <td>*</td>
+                <td>Repetition - Creates new strings, concatenating multiple copies of the same string</td>
+                <td>a*2 will give -HelloHello</td>
+                </tr>
+                <tr>
+                <td>[]</td>
+                <td>Slice - Gives the character from the given index</td>
+                <td>a[1] will give e</td>
+                </tr>
+                <tr>
+                <td>[ : ]</td>
+                <td>Range Slice - Gives the characters from the given range</td>
+                <td>a[1:4] will give ell</td>
+                </tr>
+                <tr>
+                <td>in</td>
+                <td>Membership - Returns true if a character exists in the given string</td>
+                <td>H in a will give 1</td>
+                </tr>
+                <tr>
+                <td>not in</td>
+                <td>Membership - Returns true if a character does not exist in the given string</td>
+                <td>M not in a will give 1</td>
+                </tr>
+                <tr>
+                <td>r/R</td>
+                <td>Raw String - Suppresses actual meaning of Escape characters. The syntax for raw strings is exactly the same as for normal strings with the exception of the raw string operator, the letter "r," which precedes the quotation marks. The "r" can be lowercase (r) or uppercase (R) and must be placed immediately preceding the first quote mark.</td>
+                <td>print r'\n' prints \n and print R'\n'prints \n</td>
+                </tr>
+                <tr>
+                <td>%</td>
+                <td>Format - Performs String formatting</td>
+                <td>See at next section</td>
+                </tr>
+                </tbody>
+                </table>
+                <h2>String Formatting Operator</h2>
+                <p>One of Python's coolest features is the string format operator %. This operator is unique to strings and makes up for the pack of having functions from C's printf() family. Following is a simple example &minus;</p>
+                <pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Code in any IDE, mate!</span>
+
+                <span class="kwd">print</span> <span class="pun">(</span><span class="str">"My name is %s and weight is %d kg!"</span> <span class="pun">%</span> <span class="pun">(</span><span class="str">'Zara'</span><span class="pun">,</span> <span class="lit">21</span><span class="pun">))</span>
+                </pre>
+                <p>When the above code is executed, it produces the following result &minus;</p>
+                <pre class="result notranslate">My name is Zara and weight is 21 kg!
+                </pre>
+                <p>Here is the list of complete set of symbols which can be used along with % &minus;</p>
+                <table class="table table-bordered">
+                <tbody>
+                <tr>
+                <th style="width: 30%;">Format Symbol</th>
+                <th>Conversion</th>
+                </tr>
+                <tr>
+                <td>%c</td>
+                <td>character</td>
+                </tr>
+                <tr>
+                <td>%s</td>
+                <td>string conversion via str() prior to formatting</td>
+                </tr>
+                <tr>
+                <td>%i</td>
+                <td>signed decimal integer</td>
+                </tr>
+                <tr>
+                <td>%d</td>
+                <td>signed decimal integer</td>
+                </tr>
+                <tr>
+                <td>%u</td>
+                <td>unsigned decimal integer</td>
+                </tr>
+                <tr>
+                <td>%o</td>
+                <td>octal integer</td>
+                </tr>
+                <tr>
+                <td>%x</td>
+                <td>hexadecimal integer (lowercase letters)</td>
+                </tr>
+                <tr>
+                <td>%X</td>
+                <td>hexadecimal integer (UPPERcase letters)</td>
+                </tr>
+                <tr>
+                <td>%e</td>
+                <td>exponential notation (with lowercase 'e')</td>
+                </tr>
+                <tr>
+                <td>%E</td>
+                <td>exponential notation (with UPPERcase 'E')</td>
+                </tr>
+                <tr>
+                <td>%f</td>
+                <td>floating point real number</td>
+                </tr>
+                <tr>
+                <td>%g</td>
+                <td>the shorter of %f and %e</td>
+                </tr>
+                <tr>
+                <td>%G</td>
+                <td>the shorter of %f and %E</td>
+                </tr>
+                </tbody>
+                </table>
+                <p>Other supported symbols and functionality are listed in the following table &minus;</p>
+                <table class="table table-bordered">
+                <tbody>
+                <tr>
+                <th style="width: 30%;">Symbol</th>
+                <th>Functionality</th>
+                </tr>
+                <tr>
+                <td>*</td>
+                <td>argument specifies width or precision</td>
+                </tr>
+                <tr>
+                <td>-</td>
+                <td>left justification</td>
+                </tr>
+                <tr>
+                <td>+</td>
+                <td>display the sign</td>
+                </tr>
+                <tr>
+                <td>&lt;sp&gt;</td>
+                <td>leave a blank space before a positive number</td>
+                </tr>
+                <tr>
+                <td>#</td>
+                <td>add the octal leading zero ( '0' ) or hexadecimal leading '0x' or '0X', depending on whether 'x' or 'X' were used.</td>
+                </tr>
+                <tr>
+                <td>0</td>
+                <td>pad from left with zeros (instead of spaces)</td>
+                </tr>
+                <tr>
+                <td>%</td>
+                <td>'%%' leaves you with a single literal '%'</td>
+                </tr>
+                <tr>
+                <td>(var)</td>
+                <td>mapping variable (dictionary arguments)</td>
+                </tr>
+                <tr>
+                <td>m.n.</td>
+                <td>m is the minimum total width and n is the number of digits to display after the decimal point (if appl.)</td>
+                </tr>
+                </tbody>
+                </table>
+                <h2>Triple Quotes</h2>
+                <p>Python's triple quotes comes to the rescue by allowing strings to span multiple lines, including verbatim NEWLINEs, TABs, and any other special characters.</p>
+                <p>The syntax for triple quotes consists of three consecutive <strong>single or double</strong> quotes.</p>
+                <pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Code in any IDE, mate!</span><span class="pln">
+
+                para_str </span><span class="pun">=</span> <span class="str">"""this is a long string that is made up of
+                several lines and non-printable characters such as
+                TAB ( \t ) and they will show up that way when displayed.
+                NEWLINEs within the string, whether explicitly given like
+                this within the brackets [ \n ], or just a NEWLINE within
+                the variable assignment will also show up.
+                """</span>
+                <span class="kwd">print</span> <span class="pun">(</span><span class="pln">para_str</span><span class="pun">)</span></pre>
+                <p>When the above code is executed, it produces the following result. Note how every single special character has been converted to its printed form, right down to the last NEWLINE at the end of the string between the "up." and closing triple quotes. Also note that NEWLINEs occur either with an explicit carriage return at the end of a line or its escape code (\n) &minus;</p>
+                <pre class="prettyprint notranslate prettyprinted"><span class="kwd">this</span> <span class="kwd">is</span><span class="pln"> a </span><span class="kwd">long</span> <span class="kwd">string</span><span class="pln"> that </span><span class="kwd">is</span><span class="pln"> made up of
+                several lines </span><span class="kwd">and</span><span class="pln"> non</span><span class="pun">-</span><span class="pln">printable characters such </span><span class="kwd">as</span><span class="pln">
+                TAB </span><span class="pun">(</span>    <span class="pun">)</span> <span class="kwd">and</span><span class="pln"> they will show up that way </span><span class="kwd">when</span><span class="pln"> displayed</span><span class="pun">.</span>
+                <span class="typ">NEWLINEs</span><span class="pln"> within the </span><span class="kwd">string</span><span class="pun">,</span><span class="pln"> whether explicitly given like
+                </span><span class="kwd">this</span><span class="pln"> within the brackets </span><span class="pun">[</span>
+                <span class="pun">],</span> <span class="kwd">or</span><span class="pln"> just a NEWLINE within
+                the variable assignment will also show up</span><span class="pun">.</span></pre>
+                <p>Raw strings do not treat the backslash as a special character at all. Every character you put into a raw string stays the way you wrote it &minus;</p>
+                <pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Code in any IDE, mate!</span>
+                <span class="pun">(</span>
+                <span class="kwd">print</span> <span class="pun">(</span><span class="str">'C:\\nowhere'</span><span class="pun">)</span></pre>
+                <p>When the above code is executed, it produces the following result &minus;</p>
+                <pre class="prettyprint notranslate prettyprinted"><span class="pln">C</span><span class="pun">:</span><span class="pln">\nowhere</span></pre>
+                <p>Now let's make use of raw string. We would put expression in <strong>r'expression'</strong> as follows &minus;</p>
+                <pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Code in any IDE, mate!</span>
+
+                <span class="kwd">print</span> <span class="pun">(</span><span class="pln">r</span><span class="str">'C:\\nowhere'</span><span class="pun">)</span></pre>
+                <p>When the above code is executed, it produces the following result &minus;</p>
+                <pre class="prettyprint notranslate prettyprinted"><span class="pln">C</span><span class="pun">:</span><span class="pln">\\nowhere</span></pre>
+                <h2>Unicode String</h2>
+                <p>In Python 3, all strings are represented in Unicode.In Python 2 are stored internally as 8-bit ASCII, hence it is required to attach 'u' to make it Unicode. It is no longer necessary now.</p>
+                <h2>Built-in String Methods</h2>
+                <p>Python includes the following built-in methods to manipulate strings &minus;</p>
+                <table class="table table-bordered">
+                <tbody>
+                <tr>
+                <th style="width: 5%;">SN</th>
+                <th>Methods with Description</th>
+                </tr>
+                <tr>
+                <td>1</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_capitalize.htm">capitalize()</a><br />Capitalizes first letter of string</p>
+                </td>
+                </tr>
+                <tr>
+                <td>2</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_center.htm">center(width, fillchar)</a></p>
+                <br />Returns a string padded with <em>fillchar</em> with the original string centered to a total of <em>width</em> columns.</td>
+                </tr>
+                <tr>
+                <td>3</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_count.htm">count(str, beg= 0,end=len(string))</a></p>
+                <br />Counts how many times str occurs in string or in a substring of string if starting index beg and ending index end are given.</td>
+                </tr>
+                <tr>
+                <td>4</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_decode.htm">decode(encoding='UTF-8',errors='strict')</a></p>
+                <br />Decodes the string using the codec registered for encoding. encoding defaults to the default string encoding.</td>
+                </tr>
+                <tr>
+                <td>5</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_encode.htm">encode(encoding='UTF-8',errors='strict')</a></p>
+                <br />Returns encoded string version of string; on error, default is to raise a ValueError unless errors is given with 'ignore' or 'replace'.</td>
+                </tr>
+                <tr>
+                <td>6</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_endswith.htm">endswith(suffix, beg=0, end=len(string))</a><br />Determines if string or a substring of string (if starting index beg and ending index end are given) ends with suffix; returns true if so and false otherwise.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>7</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_expandtabs.htm">expandtabs(tabsize=8)</a></p>
+                <br />Expands tabs in string to multiple spaces; defaults to 8 spaces per tab if tabsize not provided.</td>
+                </tr>
+                <tr>
+                <td>8</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_find.htm">find(str, beg=0 end=len(string))</a></p>
+                <br />Determine if str occurs in string or in a substring of string if starting index beg and ending index end are given returns index if found and -1 otherwise.</td>
+                </tr>
+                <tr>
+                <td>9</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_index.htm">index(str, beg=0, end=len(string))</a></p>
+                <br />Same as find(), but raises an exception if str not found.</td>
+                </tr>
+                <tr>
+                <td>10</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_isalnum.htm">isalnum()</a></p>
+                <br />Returns true if string has at least 1 character and all characters are alphanumeric and false otherwise.</td>
+                </tr>
+                <tr>
+                <td>11</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_isalpha.htm">isalpha()</a></p>
+                <br />Returns true if string has at least 1 character and all characters are alphabetic and false otherwise.</td>
+                </tr>
+                <tr>
+                <td>12</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_isdigit.htm">isdigit()</a></p>
+                <br />Returns true if string contains only digits and false otherwise.</td>
+                </tr>
+                <tr>
+                <td>13</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_islower.htm">islower()</a></p>
+                <br />Returns true if string has at least 1 cased character and all cased characters are in lowercase and false otherwise.</td>
+                </tr>
+                <tr>
+                <td>14</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_isnumeric.htm">isnumeric()</a></p>
+                <br />Returns true if a unicode string contains only numeric characters and false otherwise.</td>
+                </tr>
+                <tr>
+                <td>15</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_isspace.htm">isspace()</a></p>
+                <br />Returns true if string contains only whitespace characters and false otherwise.</td>
+                </tr>
+                <tr>
+                <td>16</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_istitle.htm">istitle()</a></p>
+                <br />Returns true if string is properly "titlecased" and false otherwise.</td>
+                </tr>
+                <tr>
+                <td>17</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_isupper.htm">isupper()</a></p>
+                <br />Returns true if string has at least one cased character and all cased characters are in uppercase and false otherwise.</td>
+                </tr>
+                <tr>
+                <td>18</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_join.htm">join(seq)</a></p>
+                <br />Merges (concatenates) the string representations of elements in sequence seq into a string, with separator string.</td>
+                </tr>
+                <tr>
+                <td>19</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_len.htm">len(string)</a></p>
+                <br />Returns the length of the string</td>
+                </tr>
+                <tr>
+                <td>20</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_ljust.htm">ljust(width[, fillchar])</a></p>
+                <br />Returns a space-padded string with the original string left-justified to a total of width columns.</td>
+                </tr>
+                <tr>
+                <td>21</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_lower.htm">lower()</a></p>
+                <br />Converts all uppercase letters in string to lowercase.</td>
+                </tr>
+                <tr>
+                <td>22</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_lstrip.htm">lstrip()</a></p>
+                <br />Removes all leading whitespace in string.</td>
+                </tr>
+                <tr>
+                <td>23</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_maketrans.htm">maketrans()</a></p>
+                <br />Returns a translation table to be used in translate function.</td>
+                </tr>
+                <tr>
+                <td>24</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_max.htm">max(str)</a></p>
+                <br />Returns the max alphabetical character from the string str.</td>
+                </tr>
+                <tr>
+                <td>25</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_min.htm">min(str)</a></p>
+                <br />Returns the min alphabetical character from the string str.</td>
+                </tr>
+                <tr>
+                <td>26</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_replace.htm">replace(old, new [, max])</a></p>
+                <br />Replaces all occurrences of old in string with new or at most max occurrences if max given.</td>
+                </tr>
+                <tr>
+                <td>27</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_rfind.htm">rfind(str, beg=0,end=len(string))</a></p>
+                <br />Same as find(), but search backwards in string.</td>
+                </tr>
+                <tr>
+                <td>28</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_rindex.htm">rindex( str, beg=0, end=len(string))</a></p>
+                <br />Same as index(), but search backwards in string.</td>
+                </tr>
+                <tr>
+                <td>29</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_rjust.htm">rjust(width,[, fillchar])</a></p>
+                <br />Returns a space-padded string with the original string right-justified to a total of width columns.</td>
+                </tr>
+                <tr>
+                <td>30</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_rstrip.htm">rstrip()</a></p>
+                <br />Removes all trailing whitespace of string.</td>
+                </tr>
+                <tr>
+                <td>31</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_split.htm">split(str="", num=string.count(str))</a></p>
+                <br />Splits string according to delimiter str (space if not provided) and returns list of substrings; split into at most num substrings if given.</td>
+                </tr>
+                <tr>
+                <td>32</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_splitlines.htm">splitlines( num=string.count('\n'))</a></p>
+                <br />Splits string at all (or num) NEWLINEs and returns a list of each line with NEWLINEs removed.</td>
+                </tr>
+                <tr>
+                <td>33</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_startswith.htm">startswith(str, beg=0,end=len(string))</a></p>
+                <br />Determines if string or a substring of string (if starting index beg and ending index end are given) starts with substring str; returns true if so and false otherwise.</td>
+                </tr>
+                <tr>
+                <td>34</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_strip.htm">strip([chars])</a></p>
+                <br />Performs both lstrip() and rstrip() on string</td>
+                </tr>
+                <tr>
+                <td>35</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_swapcase.htm">swapcase()</a></p>
+                <br />Inverts case for all letters in string.</td>
+                </tr>
+                <tr>
+                <td>36</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_title.htm">title()</a></p>
+                <br />Returns "titlecased" version of string, that is, all words begin with uppercase and the rest are lowercase.</td>
+                </tr>
+                <tr>
+                <td>37</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_translate.htm">translate(table, deletechars="")</a></p>
+                <br />Translates string according to translation table str(256 chars), removing those in the del string.</td>
+                </tr>
+                <tr>
+                <td>38</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_upper.htm">upper()</a></p>
+                <br />Converts lowercase letters in string to uppercase.</td>
+                </tr>
+                <tr>
+                <td>39</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_zfill.htm">zfill (width)</a></p>
+                <br />Returns original string leftpadded with zeros to a total of width characters; intended for numbers, zfill() retains any sign given (less one zero).</td>
+                </tr>
+                <tr>
+                <td>40</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/string_isdecimal.htm">isdecimal()</a></p>
+                <br />Returns true if a unicode string contains only decimal characters and false otherwise.</td>
+                </tr>
+                </tbody>
+                </table>
+                <p>&nbsp;</p>
+
+    <br><hr><br>
+    <h1>Lists</h1>
+    <br>
+
+                <p>The most basic data structure in Python is the <strong>sequence</strong>. Each element of a sequence is assigned a number - its position or index. The first index is zero, the second index is one, and so forth.</p>
+                <p>Python has six built-in types of sequences, but the most common ones are lists and tuples, which we would see in this tutorial.</p>
+                <p>There are certain things you can do with all sequence types. These operations include indexing, slicing, adding, multiplying, and checking for membership. In addition, Python has built-in functions for finding the length of a sequence and for finding its largest and smallest elements.</p>
+                <h2>Python Lists</h2>
+                <p>The list is a most versatile datatype available in Python which can be written as a list of comma-separated values (items) between square brackets. Important thing about a list is that items in a list need not be of the same type.</p>
+                <p>Creating a list is as simple as putting different comma-separated values between square brackets. For example &minus;</p>
+                <pre class="prettyprint notranslate prettyprinted"><span class="pln">list1 </span><span class="pun">=</span> <span class="pun">[</span><span class="str">'physics'</span><span class="pun">,</span> <span class="str">'chemistry'</span><span class="pun">,</span> <span class="lit">1997</span><span class="pun">,</span> <span class="lit">2000</span><span class="pun">];</span><span class="pln">
+                list2 </span><span class="pun">=</span> <span class="pun">[</span><span class="lit">1</span><span class="pun">,</span> <span class="lit">2</span><span class="pun">,</span> <span class="lit">3</span><span class="pun">,</span> <span class="lit">4</span><span class="pun">,</span> <span class="lit">5</span> <span class="pun">];</span><span class="pln">
+                list3 </span><span class="pun">=</span> <span class="pun">[</span><span class="str">"a"</span><span class="pun">,</span> <span class="str">"b"</span><span class="pun">,</span> <span class="str">"c"</span><span class="pun">,</span> <span class="str">"d"</span><span class="pun">];</span></pre>
+                <p>Similar to string indices, list indices start at 0, and lists can be sliced, concatenated and so on.</p>
+                <h2>Accessing Values in Lists</h2>
+                <p>To access values in lists, use the square brackets for slicing along with the index or indices to obtain value available at that index. For example &minus;</p>
+                <pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Code with any IDE, mate!/usr/bin/python3</span><span class="pln">
+
+                list1 </span><span class="pun">=</span> <span class="pun">[</span><span class="str">'physics'</span><span class="pun">,</span> <span class="str">'chemistry'</span><span class="pun">,</span> <span class="lit">1997</span><span class="pun">,</span> <span class="lit">2000</span><span class="pun">]</span><span class="pln">
+                list2 </span><span class="pun">=</span> <span class="pun">[</span><span class="lit">1</span><span class="pun">,</span> <span class="lit">2</span><span class="pun">,</span> <span class="lit">3</span><span class="pun">,</span> <span class="lit">4</span><span class="pun">,</span> <span class="lit">5</span><span class="pun">,</span> <span class="lit">6</span><span class="pun">,</span> <span class="lit">7</span> <span class="pun">]</span>
+
+                <span class="kwd">print</span> <span class="pun">(</span><span class="str">"list1[0]: "</span><span class="pun">,</span><span class="pln"> list1</span><span class="pun">[</span><span class="lit">0</span><span class="pun">])</span>
+                <span class="kwd">print</span> <span class="pun">(</span><span class="str">"list2[1:5]: "</span><span class="pun">,</span><span class="pln"> list2</span><span class="pun">[</span><span class="lit">1</span><span class="pun">:</span><span class="lit">5</span><span class="pun">])</span></pre>
+                <p>When the above code is executed, it produces the following result &minus;</p>
+                <pre class="result notranslate">list1[0]:  physics
+                list2[1:5]:  [2, 3, 4, 5]
+                </pre>
+                <h2>Updating Lists</h2>
+                <p>You can update single or multiple elements of lists by giving the slice on the left-hand side of the assignment operator, and you can add to elements in a list with the append() method. For example &minus;</p>
+                <pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Code with any IDE, mate!/usr/bin/python3</span><span class="pln">
+
+                list </span><span class="pun">=</span> <span class="pun">[</span><span class="str">'physics'</span><span class="pun">,</span> <span class="str">'chemistry'</span><span class="pun">,</span> <span class="lit">1997</span><span class="pun">,</span> <span class="lit">2000</span><span class="pun">]</span>
+
+                <span class="kwd">print</span> <span class="pun">(</span><span class="str">"Value available at index 2 : "</span><span class="pun">,</span><span class="pln"> list</span><span class="pun">[</span><span class="lit">2</span><span class="pun">])</span><span class="pln">
+                list</span><span class="pun">[</span><span class="lit">2</span><span class="pun">]</span> <span class="pun">=</span> <span class="lit">2001</span>
+                <span class="kwd">print</span> <span class="pun">(</span><span class="str">"New value available at index 2 : "</span><span class="pun">,</span><span class="pln"> list</span><span class="pun">[</span><span class="lit">2</span><span class="pun">])</span>
+                </pre>
+                <p><strong>Note:</strong> append() method is discussed in subsequent section.</p>
+                <p>&nbsp;</p>
+                <p>When the above code is executed, it produces the following result &minus;</p>
+                <pre class="result notranslate">Value available at index 2 :
+                1997
+                New value available at index 2 :
+                2001
+                </pre>
+                <h2>Delete List Elements</h2>
+                <p>To remove a list element, you can use either the del statement if you know exactly which element(s) you are deleting or the remove() method if you do not know. For example &minus;</p>
+                <pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Code with any IDE, mate!/usr/bin/python3</span><span class="pln">
+                list </span><span class="pun">=</span> <span class="pun">[</span><span class="str">'physics'</span><span class="pun">,</span> <span class="str">'chemistry'</span><span class="pun">,</span> <span class="lit">1997</span><span class="pun">,</span> <span class="lit">2000</span><span class="pun">]</span>
+
+                <span class="kwd">print</span> <span class="pun">(</span><span class="pln">list</span><span class="pun">)</span>
+                <span class="kwd">del</span><span class="pln"> list</span><span class="pun">[</span><span class="lit">2</span><span class="pun">]</span>
+                <span class="kwd">print</span> <span class="pun">(</span><span class="str">"After deleting value at index 2 : "</span><span class="pun">,</span><span class="pln"> list</span><span class="pun">)</span>
+                </pre>
+                <p>When the above code is executed, it produces following result &minus;</p>
+                <pre class="result notranslate">['physics', 'chemistry', 1997, 2000]
+                After deleting value at index 2 :  ['physics', 'chemistry', 2000]
+                </pre>
+                <p><strong>Note:</strong> remove() method is discussed in subsequent section.</p>
+                <h2>Basic List Operations</h2>
+                <p>Lists respond to the + and * operators much like strings; they mean concatenation and repetition here too, except that the result is a new list, not a string.</p>
+                <p>In fact, lists respond to all of the general sequence operations we used on strings in the prior chapter.</p>
+                <table class="table table-bordered">
+                <tbody>
+                <tr>
+                <th style="width: 33%;">Python Expression</th>
+                <th style="width: 33%;">Results</th>
+                <th style="width: 33%;">Description</th>
+                </tr>
+                <tr>
+                <td>len([1, 2, 3])</td>
+                <td>3</td>
+                <td>Length</td>
+                </tr>
+                <tr>
+                <td>[1, 2, 3] + [4, 5, 6]</td>
+                <td>[1, 2, 3, 4, 5, 6]</td>
+                <td>Concatenation</td>
+                </tr>
+                <tr>
+                <td>['Hi!'] * 4</td>
+                <td>['Hi!', 'Hi!', 'Hi!', 'Hi!']</td>
+                <td>Repetition</td>
+                </tr>
+                <tr>
+                <td>3 in [1, 2, 3]</td>
+                <td>True</td>
+                <td>Membership</td>
+                </tr>
+                <tr>
+                <td>for x in [1,2,3] : print (x,end=' ')</td>
+                <td>1 2 3</td>
+                <td>Iteration</td>
+                </tr>
+                </tbody>
+                </table>
+                <h2>Indexing, Slicing, and Matrixes</h2>
+                <p>Because lists are sequences, indexing and slicing work the same way for lists as they do for strings.</p>
+                <p>Assuming following input &minus;</p>
+                <pre class="prettyprint notranslate prettyprinted"><span class="pln">L</span><span class="pun">=[</span><span class="str">'C++'', '</span><span class="typ">Java</span><span class="str">', '</span><span class="typ">Python</span><span class="str">']</span></pre>
+                <p>&nbsp;</p>
+                <table class="table table-bordered">
+                <tbody>
+                <tr>
+                <th style="width: 33%;">Python Expression</th>
+                <th style="width: 33%;">Results</th>
+                <th style="width: 33%;">Description</th>
+                </tr>
+                <tr>
+                <td>L[2]</td>
+                <td>'Python'</td>
+                <td>Offsets start at zero</td>
+                </tr>
+                <tr>
+                <td>L[-2]</td>
+                <td>'Java'</td>
+                <td>Negative: count from the right</td>
+                </tr>
+                <tr>
+                <td>L[1:]</td>
+                <td>['Java', 'Python']</td>
+                <td>Slicing fetches sections</td>
+                </tr>
+                </tbody>
+                </table>
+                <h2>Built-in List Functions &amp; Methods:</h2>
+                <p>Python includes the following list functions &minus;</p>
+                <table class="table table-bordered">
+                <tbody>
+                <tr>
+                <th style="width: 5%;">SN</th>
+                <th style="width: 95%;">Function with Description</th>
+                </tr>
+                <tr>
+                <td>1</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/list_cmp.htm">cmp(list1, list2)</a></p>
+                <br />Compares elements of both lists.</td>
+                </tr>
+                <tr>
+                <td>2</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/list_len.htm">len(list)</a></p>
+                <br />Gives the total length of the list.</td>
+                </tr>
+                <tr>
+                <td>3</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/list_max.htm">max(list)</a></p>
+                <br />Returns item from the list with max value.</td>
+                </tr>
+                <tr>
+                <td>4</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/list_min.htm">min(list)</a></p>
+                <br />Returns item from the list with min value.</td>
+                </tr>
+                <tr>
+                <td>5</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/list_list.htm">list(seq)</a></p>
+                <br />Converts a tuple into list.</td>
+                </tr>
+                </tbody>
+                </table>
+                <p>Python includes following list methods</p>
+                <table class="table table-bordered">
+                <tbody>
+                <tr>
+                <th style="width: 5%;">SN</th>
+                <th style="width: 95%;">Methods with Description</th>
+                </tr>
+                <tr>
+                <td>1</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/list_append.htm">list.append(obj)</a></p>
+                <br />Appends object obj to list</td>
+                </tr>
+                <tr>
+                <td>2</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/list_count.htm">list.count(obj)</a></p>
+                <br />Returns count of how many times obj occurs in list</td>
+                </tr>
+                <tr>
+                <td>3</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/list_extend.htm">list.extend(seq)</a></p>
+                <br />Appends the contents of seq to list</td>
+                </tr>
+                <tr>
+                <td>4</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/list_index.htm">list.index(obj)</a></p>
+                <br />Returns the lowest index in list that obj appears</td>
+                </tr>
+                <tr>
+                <td>5</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/list_insert.htm">list.insert(index, obj)</a></p>
+                <br />Inserts object obj into list at offset index</td>
+                </tr>
+                <tr>
+                <td>6</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/list_pop.htm">list.pop(obj=list[-1])</a></p>
+                <br />Removes and returns last object or obj from list</td>
+                </tr>
+                <tr>
+                <td>7</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/list_remove.htm">list.remove(obj)</a></p>
+                <br />Removes object obj from list</td>
+                </tr>
+                <tr>
+                <td>8</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/list_reverse.htm">list.reverse()</a></p>
+                <br />Reverses objects of list in place</td>
+                </tr>
+                <tr>
+                <td>9</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/list_sort.htm">list.sort([func])</a></p>
+                <br />Sorts objects of list, use compare func if given</td>
+                </tr>
+                </tbody>
+                </table>
+                <p>&nbsp;</p>
+
+    <br><hr><br>
+    <h1>Tuples</h1>
+    <br>
+
+                <p>A tuple is a sequence of immutable Python objects. Tuples are sequences, just like lists. The differences between tuples and lists are, the tuples cannot be changed unlike lists and tuples use parentheses, whereas lists use square brackets.</p>
+                <p>Creating a tuple is as simple as putting different comma-separated values. Optionally you can put these comma-separated values between parentheses also. For example &minus;</p>
+                <pre class="prettyprint notranslate prettyprinted"><span class="pln">tup1 </span><span class="pun">=</span> <span class="pun">(</span><span class="str">'physics'</span><span class="pun">,</span> <span class="str">'chemistry'</span><span class="pun">,</span> <span class="lit">1997</span><span class="pun">,</span> <span class="lit">2000</span><span class="pun">)</span><span class="pln">
+                tup2 </span><span class="pun">=</span> <span class="pun">(</span><span class="lit">1</span><span class="pun">,</span> <span class="lit">2</span><span class="pun">,</span> <span class="lit">3</span><span class="pun">,</span> <span class="lit">4</span><span class="pun">,</span> <span class="lit">5</span> <span class="pun">)</span><span class="pln">
+                tup3 </span><span class="pun">=</span> <span class="str">"a"</span><span class="pun">,</span> <span class="str">"b"</span><span class="pun">,</span> <span class="str">"c"</span><span class="pun">,</span> <span class="str">"d"</span></pre>
+                <p>The empty tuple is written as two parentheses containing nothing &minus;</p>
+                <pre class="prettyprint notranslate prettyprinted"><span class="pln">tup1 </span><span class="pun">=</span> <span class="pun">();</span></pre>
+                <p>To write a tuple containing a single value you have to include a comma, even though there is only one value &minus;</p>
+                <pre class="prettyprint notranslate prettyprinted"><span class="pln">tup1 </span><span class="pun">=</span> <span class="pun">(</span><span class="lit">50</span><span class="pun">,)</span></pre>
+                <p>Like string indices, tuple indices start at 0, and they can be sliced, concatenated, and so on.</p>
+                <h2>Accessing Values in Tuples:</h2>
+                <p>To access values in tuple, use the square brackets for slicing along with the index or indices to obtain value available at that index. For example &minus;</p>
+                <pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Code with any IDE, mate!</span><span class="pln">
+
+                tup1 </span><span class="pun">=</span> <span class="pun">(</span><span class="str">'physics'</span><span class="pun">,</span> <span class="str">'chemistry'</span><span class="pun">,</span> <span class="lit">1997</span><span class="pun">,</span> <span class="lit">2000</span><span class="pun">)</span><span class="pln">
+                tup2 </span><span class="pun">=</span> <span class="pun">(</span><span class="lit">1</span><span class="pun">,</span> <span class="lit">2</span><span class="pun">,</span> <span class="lit">3</span><span class="pun">,</span> <span class="lit">4</span><span class="pun">,</span> <span class="lit">5</span><span class="pun">,</span> <span class="lit">6</span><span class="pun">,</span> <span class="lit">7</span> <span class="pun">)</span>
+
+                <span class="kwd">print</span> <span class="pun">(</span><span class="str">"tup1[0]: "</span><span class="pun">,</span><span class="pln"> tup1</span><span class="pun">[</span><span class="lit">0</span><span class="pun">])</span>
+                <span class="kwd">print</span> <span class="pun">(</span><span class="str">"tup2[1:5]: "</span><span class="pun">,</span><span class="pln"> tup2</span><span class="pun">[</span><span class="lit">1</span><span class="pun">:</span><span class="lit">5</span><span class="pun">])</span></pre>
+                <p>When the above code is executed, it produces the following result &minus;</p>
+                <pre class="result notranslate">tup1[0]:  physics
+                tup2[1:5]:  [2, 3, 4, 5]
+                </pre>
+                <h2>Updating Tuples</h2>
+                <p>Tuples are immutable which means you cannot update or change the values of tuple elements. You are able to take portions of existing tuples to create new tuples as the following example demonstrates &minus;</p>
+                <pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Code with any IDE, mate!</span><span class="pln">
+
+                tup1 </span><span class="pun">=</span> <span class="pun">(</span><span class="lit">12</span><span class="pun">,</span> <span class="lit">34.56</span><span class="pun">)</span><span class="pln">
+                tup2 </span><span class="pun">=</span> <span class="pun">(</span><span class="str">'abc'</span><span class="pun">,</span> <span class="str">'xyz'</span><span class="pun">)</span>
+
+                <span class="com"># Following action is not valid for tuples</span>
+                <span class="com"># tup1[0] = 100;</span>
+
+                <span class="com"># So let's create a new tuple as follows</span><span class="pln">
+                tup3 </span><span class="pun">=</span><span class="pln"> tup1 </span><span class="pun">+</span><span class="pln"> tup2
+                </span><span class="kwd">print</span> <span class="pun">(</span><span class="pln">tup3</span><span class="pun">)</span></pre>
+                <p>When the above code is executed, it produces the following result &minus;</p>
+                <pre class="result notranslate">(12, 34.56, 'abc', 'xyz')
+                </pre>
+                <h2>Delete Tuple Elements</h2>
+                <p>Removing individual tuple elements is not possible. There is, of course, nothing wrong with putting together another tuple with the undesired elements discarded.</p>
+                <p>To explicitly remove an entire tuple, just use the <strong>del</strong> statement. For example:</p>
+                <pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Code with any IDE, mate!</span><span class="pln">
+
+                tup </span><span class="pun">=</span> <span class="pun">(</span><span class="str">'physics'</span><span class="pun">,</span> <span class="str">'chemistry'</span><span class="pun">,</span> <span class="lit">1997</span><span class="pun">,</span> <span class="lit">2000</span><span class="pun">);</span>
+
+                <span class="kwd">print</span> <span class="pun">(</span><span class="pln">tup</span><span class="pun">)</span>
+                <span class="kwd">del</span><span class="pln"> tup</span><span class="pun">;</span>
+                <span class="kwd">print</span> <span class="str">"After deleting tup : "</span>
+                <span class="kwd">print</span><span class="pln"> tup</span></pre>
+                <p>This produces the following result. Note an exception raised, this is because after <strong>del tup</strong> tuple does not exist any more &minus;</p>
+                <pre class="result notranslate">('physics', 'chemistry', 1997, 2000)
+                After deleting tup :
+                Traceback (most recent call last):
+                File "test.py", line 9, in &lt;module&gt;
+                print tup;
+                NameError: name 'tup' is not defined
+                </pre>
+                <h2>Basic Tuples Operations</h2>
+                <p>Tuples respond to the + and * operators much like strings; they mean concatenation and repetition here too, except that the result is a new tuple, not a string.</p>
+                <p>In fact, tuples respond to all of the general sequence operations we used on strings in the prior chapter &minus;</p>
+                <table class="table table-bordered">
+                <tbody>
+                <tr>
+                <th style="width: 33%;">Python Expression</th>
+                <th style="width: 33%;">Results</th>
+                <th style="width: 33%;">Description</th>
+                </tr>
+                <tr>
+                <td>len((1, 2, 3))</td>
+                <td>3</td>
+                <td>Length</td>
+                </tr>
+                <tr>
+                <td>(1, 2, 3) + (4, 5, 6)</td>
+                <td>(1, 2, 3, 4, 5, 6)</td>
+                <td>Concatenation</td>
+                </tr>
+                <tr>
+                <td>('Hi!',) * 4</td>
+                <td>('Hi!', 'Hi!', 'Hi!', 'Hi!')</td>
+                <td>Repetition</td>
+                </tr>
+                <tr>
+                <td>3 in (1, 2, 3)</td>
+                <td>True</td>
+                <td>Membership</td>
+                </tr>
+                <tr>
+                <td>for x in (1,2,3) : print (x, end=' ')</td>
+                <td>1 2 3</td>
+                <td>Iteration</td>
+                </tr>
+                </tbody>
+                </table>
+                <h2>Indexing, Slicing, and Matrixes</h2>
+                <p>Because tuples are sequences, indexing and slicing work the same way for tuples as they do for strings. Assuming following input &minus;</p>
+                <pre class="prettyprint notranslate prettyprinted"><span class="pln">T</span><span class="pun">=(</span><span class="str">'C++'</span><span class="pun">,</span> <span class="str">'Java'</span><span class="pun">,</span> <span class="str">'Python'</span><span class="pun">)</span></pre>
+                <p>&nbsp;</p>
+                <table class="table table-bordered">
+                <tbody>
+                <tr>
+                <th style="width: 33%;">Python Expression</th>
+                <th style="width: 33%;">Results</th>
+                <th style="width: 33%;">Description</th>
+                </tr>
+                <tr>
+                <td>T[2]</td>
+                <td>'Python'</td>
+                <td>Offsets start at zero</td>
+                </tr>
+                <tr>
+                <td>T[-2]</td>
+                <td>'Java'</td>
+                <td>Negative: count from the right</td>
+                </tr>
+                <tr>
+                <td>T[1:]</td>
+                <td>('Java', 'Python')</td>
+                <td>Slicing fetches sections</td>
+                </tr>
+                </tbody>
+                </table>
+                <h2>No Enclosing Delimiters</h2>
+                <p>Any set of multiple objects, comma-separated, written without identifying symbols, i.e., brackets for lists, parentheses for tuples, etc., default to tuples, as indicated in these short examples &minus;</p>
+                <h2>Built-in Tuple Functions</h2>
+                <p>Python includes the following tuple functions &minus;</p>
+                <table class="table table-bordered">
+                <tbody>
+                <tr>
+                <th style="width: 5%;">SN</th>
+                <th style="width: 95%;">Function with Description</th>
+                </tr>
+                <tr>
+                <td>1</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/tuple_cmp.htm">cmp(tuple1, tuple2)</a></p>
+                <br />Compares elements of both tuples.</td>
+                </tr>
+                <tr>
+                <td>2</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/tuple_len.htm">len(tuple)</a></p>
+                <br />Gives the total length of the tuple.</td>
+                </tr>
+                <tr>
+                <td>3</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/tuple_max.htm">max(tuple)</a></p>
+                <br />Returns item from the tuple with max value.</td>
+                </tr>
+                <tr>
+                <td>4</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/tuple_min.htm">min(tuple)</a></p>
+                <br />Returns item from the tuple with min value.</td>
+                </tr>
+                <tr>
+                <td>5</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/tuple_tuple.htm">tuple(seq)</a></p>
+                <br />Converts a list into tuple.</td>
+                </tr>
+                </tbody>
+                </table>
+                <p>&nbsp;</p>
+
+    <br><hr><br>
+    <h1>Dictionaries</h1>
+    <br>
+
+                <p>Each key is separated from its value by a colon (:), the items are separated by commas, and the whole thing is enclosed in curly braces. An empty dictionary without any items is written with just two curly braces, like this: {}.</p>
+                <p>Keys are unique within a dictionary while values may not be. The values of a dictionary can be of any type, but the keys must be of an immutable data type such as strings, numbers, or tuples.</p>
+                <h2>Accessing Values in Dictionary:</h2>
+                <p>To access dictionary elements, you can use the familiar square brackets along with the key to obtain its value. Following is a simple example &minus;</p>
+                <pre class="prettyprint notranslate tryit prettyprinted" style="cursor: default;"><span class="com"># Does anyone read these?</span><span class="pln">
+
+                dict </span><span class="pun">=</span> <span class="pun">{</span><span class="str">'Name'</span><span class="pun">:</span> <span class="str">'Zara'</span><span class="pun">,</span> <span class="str">'Age'</span><span class="pun">:</span> <span class="lit">7</span><span class="pun">,</span> <span class="str">'Class'</span><span class="pun">:</span> <span class="str">'First'</span><span class="pun">}</span>
+
+                <span class="kwd">print</span> <span class="pun">(</span><span class="str">"dict['Name']: "</span><span class="pun">,</span><span class="pln"> dict</span><span class="pun">[</span><span class="str">'Name'</span><span class="pun">])</span>
+                <span class="kwd">print</span> <span class="pun">(</span><span class="str">"dict['Age']: "</span><span class="pun">,</span><span class="pln"> dict</span><span class="pun">[</span><span class="str">'Age'</span><span class="pun">])</span></pre>
+                <p>When the above code is executed, it produces the following result &minus;</p>
+                <pre class="result notranslate">dict['Name']:  Zara
+                dict['Age']:  7
+                </pre>
+                <p>If we attempt to access a data item with a key, which is not part of the dictionary, we get an error as follows &minus;</p>
+                <pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Does anyone read these?</span><span class="pln">
+
+                dict </span><span class="pun">=</span> <span class="pun">{</span><span class="str">'Name'</span><span class="pun">:</span> <span class="str">'Zara'</span><span class="pun">,</span> <span class="str">'Age'</span><span class="pun">:</span> <span class="lit">7</span><span class="pun">,</span> <span class="str">'Class'</span><span class="pun">:</span> <span class="str">'First'</span><span class="pun">};</span>
+
+                <span class="kwd">print</span> <span class="str">"dict['Alice']: "</span><span class="pun">,</span><span class="pln"> dict</span><span class="pun">[</span><span class="str">'Alice'</span><span class="pun">]</span></pre>
+                <p>When the above code is executed, it produces the following result &minus;</p>
+                <pre class="result notranslate">dict['Zara']:
+                Traceback (most recent call last):
+                File "test.py", line 4, in &lt;module&gt;
+                print "dict['Alice']: ", dict['Alice'];
+                KeyError: 'Alice'
+                </pre>
+                <h2>Updating Dictionary</h2>
+                <p>You can update a dictionary by adding a new entry or a key-value pair, modifying an existing entry, or deleting an existing entry as shown below in the simple example &minus;</p>
+                <pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Does anyone read these?</span><span class="pln">
+
+                dict </span><span class="pun">=</span> <span class="pun">{</span><span class="str">'Name'</span><span class="pun">:</span> <span class="str">'Zara'</span><span class="pun">,</span> <span class="str">'Age'</span><span class="pun">:</span> <span class="lit">7</span><span class="pun">,</span> <span class="str">'Class'</span><span class="pun">:</span> <span class="str">'First'</span><span class="pun">}</span><span class="pln">
+
+                dict</span><span class="pun">[</span><span class="str">'Age'</span><span class="pun">]</span> <span class="pun">=</span> <span class="lit">8</span><span class="pun">;</span> <span class="com"># update existing entry</span><span class="pln">
+                dict</span><span class="pun">[</span><span class="str">'School'</span><span class="pun">]</span> <span class="pun">=</span> <span class="str">"DPS School"</span> <span class="com"># Add new entry</span>
+
+
+                <span class="kwd">print</span> <span class="pun">(</span><span class="str">"dict['Age']: "</span><span class="pun">,</span><span class="pln"> dict</span><span class="pun">[</span><span class="str">'Age'</span><span class="pun">])</span>
+                <span class="kwd">print</span> <span class="pun">(</span><span class="str">"dict['School']: "</span><span class="pun">,</span><span class="pln"> dict</span><span class="pun">[</span><span class="str">'School'</span><span class="pun">])</span></pre>
+                <p>When the above code is executed, it produces the following result &minus;</p>
+                <pre class="result notranslate">dict['Age']:  8
+                dict['School']:  DPS School
+                </pre>
+                <h2>Delete Dictionary Elements</h2>
+                <p>You can either remove individual dictionary elements or clear the entire contents of a dictionary. You can also delete entire dictionary in a single operation.</p>
+                <p>To explicitly remove an entire dictionary, just use the <strong>del</strong> statement. Following is a simple example &minus;</p>
+                <pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Does anyone read these?</span><span class="pln">
+
+                dict </span><span class="pun">=</span> <span class="pun">{</span><span class="str">'Name'</span><span class="pun">:</span> <span class="str">'Zara'</span><span class="pun">,</span> <span class="str">'Age'</span><span class="pun">:</span> <span class="lit">7</span><span class="pun">,</span> <span class="str">'Class'</span><span class="pun">:</span> <span class="str">'First'</span><span class="pun">}</span>
+
+                <span class="kwd">del</span><span class="pln"> dict</span><span class="pun">[</span><span class="str">'Name'</span><span class="pun">]</span> <span class="com"># remove entry with key 'Name'</span><span class="pln">
+                dict</span><span class="pun">.</span><span class="pln">clear</span><span class="pun">()</span>     <span class="com"># remove all entries in dict</span>
+                <span class="kwd">del</span><span class="pln"> dict         </span><span class="com"># delete entire dictionary</span>
+
+                <span class="kwd">print</span> <span class="pun">(</span><span class="str">"dict['Age']: "</span><span class="pun">,</span><span class="pln"> dict</span><span class="pun">[</span><span class="str">'Age'</span><span class="pun">])</span>
+                <span class="kwd">print</span> <span class="pun">(</span><span class="str">"dict['School']: "</span><span class="pun">,</span><span class="pln"> dict</span><span class="pun">[</span><span class="str">'School'</span><span class="pun">])</span></pre>
+                <p>This produces the following result. Note that an exception is raised because after <strong>del dict</strong> dictionary does not exist any more &minus;</p>
+                <pre class="result notranslate">dict['Age']:
+                Traceback (most recent call last):
+                File "test.py", line 8, in &lt;module&gt;
+                print "dict['Age']: ", dict['Age'];
+                TypeError: 'type' object is unsubscriptable
+                </pre>
+                <p><strong>Note:</strong> del() method is discussed in subsequent section.</p>
+                <h2>Properties of Dictionary Keys</h2>
+                <p>Dictionary values have no restrictions. They can be any arbitrary Python object, either standard objects or user-defined objects. However, same is not true for the keys.</p>
+                <p>There are two important points to remember about dictionary keys &minus;</p>
+                <p><strong>(a)</strong> More than one entry per key not allowed. Which means no duplicate key is allowed. When duplicate keys encountered during assignment, the last assignment wins. For example &minus;</p>
+                <pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Does anyone read these?</span><span class="pln">
+
+                dict </span><span class="pun">=</span> <span class="pun">{</span><span class="str">'Name'</span><span class="pun">:</span> <span class="str">'Zara'</span><span class="pun">,</span> <span class="str">'Age'</span><span class="pun">:</span> <span class="lit">7</span><span class="pun">,</span> <span class="str">'Name'</span><span class="pun">:</span> <span class="str">'Manni'</span><span class="pun">}</span>
+
+                <span class="kwd">print</span> <span class="pun">(</span><span class="str">"dict['Name']: "</span><span class="pun">,</span><span class="pln"> dict</span><span class="pun">[</span><span class="str">'Name'</span><span class="pun">])</span></pre>
+                <p>When the above code is executed, it produces the following result &minus;</p>
+                <pre class="result notranslate">dict['Name']:  Manni
+                </pre>
+                <p><strong>(b)</strong> Keys must be immutable. Which means you can use strings, numbers or tuples as dictionary keys but something like ['key'] is not allowed. Following is a simple example:</p>
+                <pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Does anyone read these?</span><span class="pln">
+
+                dict </span><span class="pun">=</span> <span class="pun">{[</span><span class="str">'Name'</span><span class="pun">]:</span> <span class="str">'Zara'</span><span class="pun">,</span> <span class="str">'Age'</span><span class="pun">:</span> <span class="lit">7</span><span class="pun">}</span>
+
+                <span class="kwd">print</span> <span class="pun">(</span><span class="str">"dict['Name']: "</span><span class="pun">,</span><span class="pln"> dict</span><span class="pun">[</span><span class="str">'Name'</span><span class="pun">])</span></pre>
+                <p>When the above code is executed, it produces the following result &minus;</p>
+                <pre class="result notranslate">Traceback (most recent call last):
+                File "test.py", line 3, in &lt;module&gt;
+                dict = {['Name']: 'Zara', 'Age': 7}
+                TypeError: list objects are unhashable
+                </pre>
+                <h2>Built-in Dictionary Functions &amp; Methods &minus;</h2>
+                <p>Python includes the following dictionary functions &minus;</p>
+                <table class="table table-bordered">
+                <tbody>
+                <tr>
+                <th style="width: 5%;">SN</th>
+                <th style="width: 95%;">Function with Description</th>
+                </tr>
+                <tr>
+                <td>1</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/dictionary_cmp.htm">cmp(dict1, dict2)</a></p>
+                <p>Compares elements of both dict.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>2</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/dictionary_len.htm">len(dict)</a></p>
+                <p>Gives the total length of the dictionary. This would be equal to the number of items in the dictionary.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>3</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/dictionary_str.htm">str(dict)</a></p>
+                <p>Produces a printable string representation of a dictionary</p>
+                </td>
+                </tr>
+                <tr>
+                <td>4</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/dictionary_type.htm">type(variable)</a></p>
+                <p>Returns the type of the passed variable. If passed variable is dictionary, then it would return a dictionary type.</p>
+                </td>
+                </tr>
+                </tbody>
+                </table>
+                <p>Python includes following dictionary methods &minus;</p>
+                <table class="table table-bordered">
+                <tbody>
+                <tr>
+                <th style="width: 5%;">SN</th>
+                <th style="width: 95%;">Methods with Description</th>
+                </tr>
+                <tr>
+                <td>1</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/dictionary_clear.htm">dict.clear()</a></p>
+                <p>Removes all elements of dictionary <em>dict</em></p>
+                </td>
+                </tr>
+                <tr>
+                <td>2</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/dictionary_copy.htm">dict.copy()</a></p>
+                <p>Returns a shallow copy of dictionary <em>dict</em></p>
+                </td>
+                </tr>
+                <tr>
+                <td>3</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/dictionary_fromkeys.htm">dict.fromkeys()</a></p>
+                <p>Create a new dictionary with keys from seq and values <em>set</em> to <em>value</em>.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>4</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/dictionary_get.htm">dict.get(key, default=None)</a></p>
+                <p>For <em>key</em> key, returns value or default if key not in dictionary</p>
+                </td>
+                </tr>
+                <tr>
+                <td>5</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/dictionary_has_key.htm">dict.has_key(key)</a></p>
+                <p>Returns <em>true</em> if key in dictionary <em>dict</em>, <em>false</em> otherwise</p>
+                </td>
+                </tr>
+                <tr>
+                <td>6</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/dictionary_items.htm">dict.items()</a></p>
+                <p>Returns a list of <em>dict</em>'s (key, value) tuple pairs</p>
+                </td>
+                </tr>
+                <tr>
+                <td>7</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/dictionary_keys.htm">dict.keys()</a></p>
+                <p>Returns list of dictionary dict's keys</p>
+                </td>
+                </tr>
+                <tr>
+                <td>8</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/dictionary_setdefault.htm">dict.setdefault(key, default=None)</a></p>
+                <p>Similar to get(), but will set dict[key]=default if <em>key</em> is not already in dict</p>
+                </td>
+                </tr>
+                <tr>
+                <td>9</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/dictionary_update.htm">dict.update(dict2)</a></p>
+                <p>Adds dictionary <em>dict2</em>'s key-values pairs to <em>dict</em></p>
+                </td>
+                </tr>
+                <tr>
+                <td>10</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/dictionary_values.htm">dict.values()</a></p>
+                <p>Returns list of dictionary <em>dict</em>'s values</p>
+                </td>
+                </tr>
+                </tbody>
+                </table>
+                <p>&nbsp;</p>
+
+    <br><hr><br>
+    <h1>Date and Time</h1>
+
+                <p>A Python program can handle date and time in several ways. Converting between date formats is a common chore for computers. Python's time and calendar modules help track dates and times.</p>
+                <h2>What is Tick?</h2>
+                <p>Time intervals are floating-point numbers in units of seconds. Particular instants in time are expressed in seconds since 12:00am, January 1, 1970(epoch).</p>
+                <p>There is a popular <strong>time</strong> module available in Python which provides functions for working with times, and for converting between representations. The function <em>time.time()</em> returns the current system time in ticks since 12:00am, January 1, 1970(epoch).</p>
+                <h2>Example</h2>
+                <pre class="prettyprint notranslate tryit prettyprinted" style="cursor: default;"><span class="com"># Tennessee Vols are the best!</span>
+                <span class="kwd">import</span><span class="pln"> time</span><span class="pun">;</span>  <span class="com"># This is required to include time module.</span><span class="pln">
+
+                ticks </span><span class="pun">=</span><span class="pln"> time</span><span class="pun">.</span><span class="pln">time</span><span class="pun">()</span>
+                <span class="kwd">print</span> <span class="pun">(</span><span class="str">"Number of ticks since 12:00am, January 1, 1970:"</span><span class="pun">,</span><span class="pln"> ticks</span><span class="pun">)</span></pre>
+                <p>This would produce a result something as follows &minus;</p>
+                <pre class="result notranslate">Number of ticks since 12:00am, January 1, 1970: 1455508609.34375
+                </pre>
+                <p>Date arithmetic is easy to do with ticks. However, dates before the epoch cannot be represented in this form. Dates in the far future also cannot be represented this way - the cutoff point is sometime in 2038 for UNIX and Windows.</p>
+                <h2>What is TimeTuple?</h2>
+                <p>Many of Python's time functions handle time as a tuple of 9 numbers, as shown below &minus;</p>
+                <table class="table table-bordered">
+                <tbody>
+                <tr>
+                <th style="width: 10%;">Index</th>
+                <th style="width: 40%;">Field</th>
+                <th>Values</th>
+                </tr>
+                <tr>
+                <td>0</td>
+                <td>4-digit year</td>
+                <td>2016</td>
+                </tr>
+                <tr>
+                <td>1</td>
+                <td>Month</td>
+                <td>1 to 12</td>
+                </tr>
+                <tr>
+                <td>2</td>
+                <td>Day</td>
+                <td>1 to 31</td>
+                </tr>
+                <tr>
+                <td>3</td>
+                <td>Hour</td>
+                <td>0 to 23</td>
+                </tr>
+                <tr>
+                <td>4</td>
+                <td>Minute</td>
+                <td>0 to 59</td>
+                </tr>
+                <tr>
+                <td>5</td>
+                <td>Second</td>
+                <td>0 to 61 (60 or 61 are leap-seconds)</td>
+                </tr>
+                <tr>
+                <td>6</td>
+                <td>Day of Week</td>
+                <td>0 to 6 (0 is Monday)</td>
+                </tr>
+                <tr>
+                <td>7</td>
+                <td>Day of year</td>
+                <td>1 to 366 (Julian day)</td>
+                </tr>
+                <tr>
+                <td>8</td>
+                <td>Daylight savings</td>
+                <td>-1, 0, 1, -1 means library determines DST</td>
+                </tr>
+                </tbody>
+                </table>
+                <p>for example</p>
+                <pre class="prettyprint notranslate tryit prettyprinted"><span class="pun">&gt;&gt;&gt;</span> <span class="kwd">print</span> <span class="pun">(</span><span class="pln">time</span><span class="pun">.</span><span class="pln">localtime</span><span class="pun">())</span></pre>
+                <p>This would produce a result something as follows &minus;</p>
+                <pre class="result notranslate">time.struct_time(tm_year=2016, tm_mon=2, tm_mday=15, tm_hour=9, tm_min=29, tm_sec=2, tm_wday=0, tm_yday=46, tm_isdst=0)
+                </pre>
+                <p>The above tuple is equivalent to <strong>struct_time</strong> structure. This structure has following attributes &minus;</p>
+                <table class="table table-bordered">
+                <tbody>
+                <tr>
+                <th style="width: 10%;">Index</th>
+                <th style="width: 40%;">Attributes</th>
+                <th>Values</th>
+                </tr>
+                <tr>
+                <td>0</td>
+                <td>tm_year</td>
+                <td>2016</td>
+                </tr>
+                <tr>
+                <td>1</td>
+                <td>tm_mon</td>
+                <td>1 to 12</td>
+                </tr>
+                <tr>
+                <td>2</td>
+                <td>tm_mday</td>
+                <td>1 to 31</td>
+                </tr>
+                <tr>
+                <td>3</td>
+                <td>tm_hour</td>
+                <td>0 to 23</td>
+                </tr>
+                <tr>
+                <td>4</td>
+                <td>tm_min</td>
+                <td>0 to 59</td>
+                </tr>
+                <tr>
+                <td>5</td>
+                <td>tm_sec</td>
+                <td>0 to 61 (60 or 61 are leap-seconds)</td>
+                </tr>
+                <tr>
+                <td>6</td>
+                <td>tm_wday</td>
+                <td>0 to 6 (0 is Monday)</td>
+                </tr>
+                <tr>
+                <td>7</td>
+                <td>tm_yday</td>
+                <td>1 to 366 (Julian day)</td>
+                </tr>
+                <tr>
+                <td>8</td>
+                <td>tm_isdst</td>
+                <td>-1, 0, 1, -1 means library determines DST</td>
+                </tr>
+                </tbody>
+                </table>
+                <h2>Getting current time</h2>
+                <p>To translate a time instant from a <em>seconds since the epoch</em> floating-point value into a time-tuple, pass the floating-point value to a function (e.g., localtime) that returns a time-tuple with all nine items valid.</p>
+                <pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Alabama Sucks</span>
+                <span class="kwd">import</span><span class="pln"> time
+
+                localtime </span><span class="pun">=</span><span class="pln"> time</span><span class="pun">.</span><span class="pln">localtime</span><span class="pun">(</span><span class="pln">time</span><span class="pun">.</span><span class="pln">time</span><span class="pun">())</span>
+                <span class="kwd">print</span> <span class="pun">(</span><span class="str">"Local current time :"</span><span class="pun">,</span><span class="pln"> localtime</span><span class="pun">)</span></pre>
+                <p>This would produce the following result, which could be formatted in any other presentable form &minus;</p>
+                <pre class="result notranslate">Local current time : time.struct_time(tm_year=2016, tm_mon=2, tm_mday=15, tm_hour=9, tm_min=29, tm_sec=2, tm_wday=0, tm_yday=46, tm_isdst=0)
+                </pre>
+                <h2>Getting formatted time</h2>
+                <p>You can format any time as per your requirement, but simple method to get time in readable format is asctime() &minus;</p>
+                <pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># I wonder, if a man is alone in the woods, is he still wrong when he speaks?</span>
+                <span class="kwd">import</span><span class="pln"> time
+
+                localtime </span><span class="pun">=</span><span class="pln"> time</span><span class="pun">.</span><span class="pln">asctime</span><span class="pun">(</span><span class="pln"> time</span><span class="pun">.</span><span class="pln">localtime</span><span class="pun">(</span><span class="pln">time</span><span class="pun">.</span><span class="pln">time</span><span class="pun">())</span> <span class="pun">)</span>
+                <span class="kwd">print</span> <span class="pun">(</span><span class="str">"Local current time :"</span><span class="pun">,</span><span class="pln"> localtime</span><span class="pun">)</span></pre>
+                <p>This would produce the following result &minus;</p>
+                <pre class="prettyprint notranslate prettyprinted"><span class="typ">Local</span><span class="pln"> current time </span><span class="pun">:</span> <span class="typ">Mon</span> <span class="typ">Feb</span> <span class="lit">15</span> <span class="lit">09</span><span class="pun">:</span><span class="lit">34</span><span class="pun">:</span><span class="lit">03</span> <span class="lit">2016</span></pre>
+                <h2>Getting calendar for a month</h2>
+                <p>The calendar module gives a wide range of methods to play with yearly and monthly calendars. Here, we print a calendar for a given month ( Jan 2008 ) &minus;</p>
+                <pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># knock knock</span>
+                <span class="kwd">import</span><span class="pln"> calendar
+
+                cal </span><span class="pun">=</span><span class="pln"> calendar</span><span class="pun">.</span><span class="pln">month</span><span class="pun">(</span><span class="lit">2016</span><span class="pun">,</span> <span class="lit">2</span><span class="pun">)</span>
+                <span class="kwd">print</span> <span class="pun">(</span><span class="str">"Here is the calendar:"</span><span class="pun">)</span>
+                <span class="kwd">print</span> <span class="pun">(</span><span class="pln">cal</span><span class="pun">)</span></pre>
+                <p>This would produce the following result &minus;</p>
+                <pre class="result notranslate">Here is the calendar:
+                   February 2016
+                Mo Tu We Th Fr Sa Su
+                 1  2  3  4  5  6  7
+                 8  9 10 11 12 13 14
+                15 16 17 18 19 20 21
+                22 23 24 25 26 27 28
+                29
+                </pre>
+                <h2>The <em>time</em> Module</h2>
+                <p>There is a popular <strong>time</strong> module available in Python which provides functions for working with times and for converting between representations. Here is the list of all available methods &minus;</p>
+                <table class="table table-bordered">
+                <tbody>
+                <tr>
+                <th style="width: 5%;">SN</th>
+                <th style="width: 95%;">Function with Description</th>
+                </tr>
+                <tr>
+                <td>1</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/time_altzone.htm">time.altzone</a></p>
+                <p>The offset of the local DST timezone, in seconds west of UTC, if one is defined. This is negative if the local DST timezone is east of UTC (as in Western Europe, including the UK). Only use this if daylight is nonzero.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>2</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/time_asctime.htm">time.asctime([tupletime])</a></p>
+                <p>Accepts a time-tuple and returns a readable 24-character string such as 'Tue Dec 11 18:07:14 2008'.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>3</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/time_clock.htm">time.clock( )</a></p>
+                <p>Returns the current CPU time as a floating-point number of seconds. To measure computational costs of different approaches, the value of time.clock is more useful than that of time.time().</p>
+                </td>
+                </tr>
+                <tr>
+                <td>4</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/time_ctime.htm">time.ctime([secs])</a></p>
+                <p>Like asctime(localtime(secs)) and without arguments is like asctime( )</p>
+                </td>
+                </tr>
+                <tr>
+                <td>5</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/time_gmtime.htm">time.gmtime([secs])</a></p>
+                <p>Accepts an instant expressed in seconds since the epoch and returns a time-tuple t with the UTC time. Note : t.tm_isdst is always 0</p>
+                </td>
+                </tr>
+                <tr>
+                <td>6</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/time_localtime.htm">time.localtime([secs])</a></p>
+                <p>Accepts an instant expressed in seconds since the epoch and returns a time-tuple t with the local time (t.tm_isdst is 0 or 1, depending on whether DST applies to instant secs by local rules).</p>
+                </td>
+                </tr>
+                <tr>
+                <td>7</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/time_mktime.htm">time.mktime(tupletime)</a></p>
+                <p>Accepts an instant expressed as a time-tuple in local time and returns a floating-point value with the instant expressed in seconds since the epoch.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>8</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/time_sleep.htm">time.sleep(secs)</a></p>
+                <p>Suspends the calling thread for secs seconds.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>9</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/time_strftime.htm">time.strftime(fmt[,tupletime])</a></p>
+                <p>Accepts an instant expressed as a time-tuple in local time and returns a string representing the instant as specified by string fmt.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>10</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/time_strptime.htm">time.strptime(str,fmt='%a %b %d %H:%M:%S %Y')</a></p>
+                <p>Parses str according to format string fmt and returns the instant in time-tuple format.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>11</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/time_time.htm">time.time( )</a></p>
+                <p>Returns the current time instant, a floating-point number of seconds since the epoch.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>12</td>
+                <td>
+                <p><a href="https://www.tutorialspoint.com/python3/time_tzset.htm">time.tzset()</a></p>
+                <p>Resets the time conversion rules used by the library routines. The environment variable TZ specifies how this is done.</p>
+                </td>
+                </tr>
+                </tbody>
+                </table>
+                <p>Let us go through the functions briefly &minus;</p>
+                <p>There are following two important attributes available with time module:</p>
+                <table class="table table-bordered">
+                <tbody>
+                <tr>
+                <th style="width: 5%;">SN</th>
+                <th style="width: 95%;">Attribute with Description</th>
+                </tr>
+                <tr>
+                <td>1</td>
+                <td><strong>time.timezone</strong>
+                <p>Attribute time.timezone is the offset in seconds of the local time zone (without DST) from UTC (&gt;0 in the Americas; &lt;=0 in most of Europe, Asia, Africa).</p>
+                </td>
+                </tr>
+                <tr>
+                <td>2</td>
+                <td><strong>time.tzname</strong>
+                <p>Attribute time.tzname is a pair of locale-dependent strings, which are the names of the local time zone without and with DST, respectively.</p>
+                </td>
+                </tr>
+                </tbody>
+                </table>
+                <h2>The <em>calendar</em> Module</h2>
+                <p>The calendar module supplies calendar-related functions, including functions to print a text calendar for a given month or year.</p>
+                <p>By default, calendar takes Monday as the first day of the week and Sunday as the last one. To change this, call calendar.setfirstweekday() function.</p>
+                <p>Here is a list of functions available with the <em>calendar</em> module:</p>
+                <table class="table table-bordered">
+                <tbody>
+                <tr>
+                <th style="width: 5%;">SN</th>
+                <th style="width: 95%;">Function with Description</th>
+                </tr>
+                <tr>
+                <td>1</td>
+                <td><strong>calendar.calendar(year,w=2,l=1,c=6)</strong>
+                <p>Returns a multiline string with a calendar for year year formatted into three columns separated by c spaces. w is the width in characters of each date; each line has length 21*w+18+2*c. l is the number of lines for each week.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>2</td>
+                <td><strong>calendar.firstweekday( )</strong>
+                <p>Returns the current setting for the weekday that starts each week. By default, when calendar is first imported, this is 0, meaning Monday.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>3</td>
+                <td><strong>calendar.isleap(year)</strong>
+                <p>Returns True if year is a leap year; otherwise, False.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>4</td>
+                <td><strong>calendar.leapdays(y1,y2)</strong>
+                <p>Returns the total number of leap days in the years within range(y1,y2).</p>
+                </td>
+                </tr>
+                <tr>
+                <td>5</td>
+                <td><strong>calendar.month(year,month,w=2,l=1)</strong>
+                <p>Returns a multiline string with a calendar for month month of year year, one line per week plus two header lines. w is the width in characters of each date; each line has length 7*w+6. l is the number of lines for each week.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>6</td>
+                <td><strong>calendar.monthcalendar(year,month)</strong>
+                <p>Returns a list of lists of ints. Each sublist denotes a week. Days outside month month of year year are set to 0; days within the month are set to their day-of-month, 1 and up.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>7</td>
+                <td><strong>calendar.monthrange(year,month)</strong>
+                <p>Returns two integers. The first one is the code of the weekday for the first day of the month month in year year; the second one is the number of days in the month. Weekday codes are 0 (Monday) to 6 (Sunday); month numbers are 1 to 12.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>8</td>
+                <td><strong>calendar.prcal(year,w=2,l=1,c=6)</strong>
+                <p>Like print calendar.calendar(year,w,l,c).</p>
+                </td>
+                </tr>
+                <tr>
+                <td>9</td>
+                <td><strong>calendar.prmonth(year,month,w=2,l=1)</strong>
+                <p>Like print calendar.month(year,month,w,l).</p>
+                </td>
+                </tr>
+                <tr>
+                <td>10</td>
+                <td><strong>calendar.setfirstweekday(weekday)</strong>
+                <p>Sets the first day of each week to weekday code weekday. Weekday codes are 0 (Monday) to 6 (Sunday).</p>
+                </td>
+                </tr>
+                <tr>
+                <td>11</td>
+                <td><strong>calendar.timegm(tupletime)</strong>
+                <p>The inverse of time.gmtime: accepts a time instant in time-tuple form and returns the same instant as a floating-point number of seconds since the epoch.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>12</td>
+                <td><strong>calendar.weekday(year,month,day)</strong>
+                <p>Returns the weekday code for the given date. Weekday codes are 0 (Monday) to 6 (Sunday); month numbers are 1 (January) to 12 (December).</p>
+                </td>
+                </tr>
+                </tbody>
+                </table>
+                <h2>Other Modules &amp; Functions:</h2>
+                <p>If you are interested, then here you would find a list of other important modules and functions to play with date &amp; time in Python:</p>
+                <ul class="list">
+                <li>
+                <p><a href="http://docs.python.org/library/datetime.html#module-datetime" target="_blank" rel="nofollow">The <em>datetime</em> Module</a></p>
+                </li>
+                <li>
+                <p><a href="http://www.twinsun.com/tz/tz-link.htm" target="_blank" rel="nofollow">The <em>pytz </em>Module</a></p>
+                </li>
+                <li>
+                <p><a href="http://labix.org/python-dateutil" target="_blank" rel="nofollow">The <em>dateutil</em> Module</a></p>
+                </li>
+                </ul>
+
+
+    <br><hr><br>
+
+    <h3 style="text-align: center;">
+            Imports
+    </h3>
+
+    <p style="text-align: center;">
+        Next, we will discuss importing modules to use inside our Python files
+    </p>
+
+    <a href="/Python/objects_classes"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Python - Objects & Classes
+    </button></a>
+
+    <a href="/Python/imports"><button type="button" class="btn btn-primary btn-lg" style="float:right;">
+        Python - Imports   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+{% endblock %}

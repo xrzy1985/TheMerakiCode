@@ -1,0 +1,230 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<style>
+hr {
+    color: blue;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}
+</style>
+
+    <br><br><br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/c_plusplus.png') }}">
+    Welcome to the C++ Exceptions Homepage, mate!</h1>
+
+    <hr>
+
+    <blockquote>
+
+        C++ Exceptions Information
+
+    </blockquote>
+
+    <br><hr><br>
+
+
+
+                <p>An exception is a problem that arises during the execution of a program. A C++ exception is a response to an exceptional circumstance that arises while a program is running, such as an attempt to divide by zero.</p>
+                <p>Exceptions provide a way to transfer control from one part of a program to another. C++ exception handling is built upon three keywords: <strong>try, catch,</strong> and <strong>throw</strong>.</p>
+                <ul class="list">
+                <li>
+                <p><strong>throw:</strong> A program throws an exception when a problem shows up. This is done using a <strong>throw</strong> keyword.</p>
+                </li>
+                <li>
+                <p><strong>catch:</strong> A program catches an exception with an exception handler at the place in a program where you want to handle the problem. The <strong>catch</strong> keyword indicates the catching of an exception.</p>
+                </li>
+                <li>
+                <p><strong>try:</strong> A <strong>try</strong> block identifies a block of code for which particular exceptions will be activated. It's followed by one or more catch blocks.</p>
+                </li>
+                </ul>
+                <p>Assuming a block will raise an exception, a method catches an exception using a combination of the <strong>try</strong> and <strong>catch</strong> keywords. A try/catch block is placed around the code that might generate an exception. Code within a try/catch block is referred to as protected code, and the syntax for using try/catch looks like the following:</p>
+                <pre class="result notranslate">try
+                {
+                   // protected code
+                }catch( ExceptionName e1 )
+                {
+                   // catch block
+                }catch( ExceptionName e2 )
+                {
+                   // catch block
+                }catch( ExceptionName eN )
+                {
+                   // catch block
+                }
+                </pre>
+                <p>You can list down multiple <strong>catch</strong> statements to catch different type of exceptions in case your <strong>try</strong> block raises more than one exception in different situations.</p>
+                <h2>Throwing Exceptions</h2>
+                <p>Exceptions can be thrown anywhere within a code block using <strong>throw</strong> statements. The operand of the throw statements determines a type for the exception and can be any expression and the type of the result of the expression determines the type of exception thrown.</p>
+                <p>Following is an example of throwing an exception when dividing by zero condition occurs:</p>
+                <pre class="prettyprint notranslate prettyprinted"><span class="kwd">double</span><span class="pln"> division</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> a</span><span class="pun">,</span> <span class="kwd">int</span><span class="pln"> b</span><span class="pun">)</span> <span class="pun">{</span>
+                   <span class="kwd">if</span><span class="pun">(</span><span class="pln"> b </span><span class="pun">==</span> <span class="lit">0</span> <span class="pun">)</span> <span class="pun">{</span>
+                      <span class="kwd">throw</span> <span class="str">"Division by zero condition!"</span><span class="pun">;</span>
+                   <span class="pun">}</span>
+                   <span class="kwd">return</span> <span class="pun">(</span><span class="pln">a</span><span class="pun">/</span><span class="pln">b</span><span class="pun">);</span>
+                <span class="pun">}</span></pre>
+                <h2>Catching Exceptions</h2>
+                <p>The <strong>catch</strong> block following the <strong>try</strong> block catches any exception. You can specify what type of exception you want to catch and this is determined by the exception declaration that appears in parentheses following the keyword catch.</p>
+                <pre class="prettyprint notranslate prettyprinted"><span class="kwd">try</span> <span class="pun">{</span>
+                   <span class="com">// protected code</span>
+                <span class="pun">}</span><span class="kwd">catch</span><span class="pun">(</span> <span class="typ">ExceptionName</span><span class="pln"> e </span><span class="pun">)</span> <span class="pun">{</span>
+                   <span class="com">// code to handle ExceptionName exception</span>
+                <span class="pun">}</span></pre>
+                <p>Above code will catch an exception of <strong>ExceptionName</strong> type. If you want to specify that a catch block should handle any type of exception that is thrown in a try block, you must put an ellipsis, ..., between the parentheses enclosing the exception declaration as follows:</p>
+                <pre class="prettyprint notranslate prettyprinted"><span class="kwd">try</span> <span class="pun">{</span>
+                   <span class="com">// protected code</span>
+                <span class="pun">}</span><span class="kwd">catch</span><span class="pun">(...)</span> <span class="pun">{</span>
+                   <span class="com">// code to handle any exception</span>
+                <span class="pun">}</span></pre>
+                <p>The following is an example, which throws a division by zero exception and we catch it in catch block.</p>
+                <pre class="prettyprint notranslate tryit prettyprinted"><span class="com">#include</span> <span class="str">&lt;iostream&gt;</span>
+                <span class="kwd">using</span> <span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span>
+
+                <span class="kwd">double</span><span class="pln"> division</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> a</span><span class="pun">,</span> <span class="kwd">int</span><span class="pln"> b</span><span class="pun">)</span> <span class="pun">{</span>
+                   <span class="kwd">if</span><span class="pun">(</span><span class="pln"> b </span><span class="pun">==</span> <span class="lit">0</span> <span class="pun">)</span> <span class="pun">{</span>
+                      <span class="kwd">throw</span> <span class="str">"Division by zero condition!"</span><span class="pun">;</span>
+                   <span class="pun">}</span>
+                   <span class="kwd">return</span> <span class="pun">(</span><span class="pln">a</span><span class="pun">/</span><span class="pln">b</span><span class="pun">);</span>
+                <span class="pun">}</span>
+
+                <span class="kwd">int</span><span class="pln"> main </span><span class="pun">()</span> <span class="pun">{</span>
+                   <span class="kwd">int</span><span class="pln"> x </span><span class="pun">=</span> <span class="lit">50</span><span class="pun">;</span>
+                   <span class="kwd">int</span><span class="pln"> y </span><span class="pun">=</span> <span class="lit">0</span><span class="pun">;</span>
+                   <span class="kwd">double</span><span class="pln"> z </span><span class="pun">=</span> <span class="lit">0</span><span class="pun">;</span>
+
+                   <span class="kwd">try</span> <span class="pun">{</span><span class="pln">
+                      z </span><span class="pun">=</span><span class="pln"> division</span><span class="pun">(</span><span class="pln">x</span><span class="pun">,</span><span class="pln"> y</span><span class="pun">);</span><span class="pln">
+                      cout </span><span class="pun">&lt;&lt;</span><span class="pln"> z </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span>
+                   <span class="pun">}</span><span class="kwd">catch</span> <span class="pun">(</span><span class="kwd">const</span> <span class="kwd">char</span><span class="pun">*</span><span class="pln"> msg</span><span class="pun">)</span> <span class="pun">{</span><span class="pln">
+                      cerr </span><span class="pun">&lt;&lt;</span><span class="pln"> msg </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span>
+                   <span class="pun">}</span>
+
+                   <span class="kwd">return</span> <span class="lit">0</span><span class="pun">;</span>
+                <span class="pun">}</span></pre>
+                <p>Because we are raising an exception of type <strong>const char*</strong>, so while catching this exception, we have to use const char* in catch block. If we compile and run above code, this would produce the following result:</p>
+                <pre class="result notranslate">Division by zero condition!
+                </pre>
+                <h2>C++ Standard Exceptions</h2>
+                <p>C++ provides a list of standard exceptions defined in <strong>&lt;exception&gt;</strong> which we can use in our programs. These are arranged in a parent-child class hierarchy shown below:</p>
+                <p><img src="https://www.tutorialspoint.com/cplusplus/images/cpp_exceptions.jpg" alt="C++ Exceptions Hierarchy" /></p>
+                <p>Here is the small description of each exception mentioned in the above hierarchy:</p>
+                <table class="table table-bordered">
+                <tbody>
+                <tr>
+                <th width="24%">Exception</th>
+                <th>Description</th>
+                </tr>
+                <tr>
+                <td><strong>std::exception</strong></td>
+                <td>An exception and parent class of all the standard C++ exceptions.</td>
+                </tr>
+                <tr>
+                <td>std::bad_alloc</td>
+                <td>This can be thrown by <strong>new</strong>.</td>
+                </tr>
+                <tr>
+                <td>std::bad_cast</td>
+                <td>This can be thrown by <strong>dynamic_cast</strong>.</td>
+                </tr>
+                <tr>
+                <td>std::bad_exception</td>
+                <td>This is useful device to handle unexpected exceptions in a C++ program</td>
+                </tr>
+                <tr>
+                <td>std::bad_typeid</td>
+                <td>This can be thrown by <strong>typeid</strong>.</td>
+                </tr>
+                <tr>
+                <td><strong>std::logic_error</strong></td>
+                <td>An exception that theoretically can be detected by reading the code.</td>
+                </tr>
+                <tr>
+                <td>std::domain_error</td>
+                <td>This is an exception thrown when a mathematically invalid domain is used</td>
+                </tr>
+                <tr>
+                <td>std::invalid_argument</td>
+                <td>This is thrown due to invalid arguments.</td>
+                </tr>
+                <tr>
+                <td>std::length_error</td>
+                <td>This is thrown when a too big std::string is created</td>
+                </tr>
+                <tr>
+                <td>std::out_of_range</td>
+                <td>This can be thrown by the at method from for example a std::vector and std::bitset&lt;&gt;::operator[]().</td>
+                </tr>
+                <tr>
+                <td><strong>std::runtime_error</strong></td>
+                <td>An exception that theoretically can not be detected by reading the code.</td>
+                </tr>
+                <tr>
+                <td>std::overflow_error</td>
+                <td>This is thrown if a mathematical overflow occurs.</td>
+                </tr>
+                <tr>
+                <td>std::range_error</td>
+                <td>This is occured when you try to store a value which is out of range.</td>
+                </tr>
+                <tr>
+                <td>std::underflow_error</td>
+                <td>This is thrown if a mathematical underflow occurs.</td>
+                </tr>
+                </tbody>
+                </table>
+                <h2>Define New Exceptions</h2>
+                <p>You can define your own exceptions by inheriting and overriding <strong>exception</strong> class functionality. Following is the example, which shows how you can use std::exception class to implement your own exception in standard way:</p>
+                <pre class="prettyprint notranslate tryit prettyprinted"><span class="com">#include</span> <span class="str">&lt;iostream&gt;</span>
+                <span class="com">#include</span> <span class="str">&lt;exception&gt;</span>
+                <span class="kwd">using</span> <span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span>
+
+                <span class="kwd">struct</span> <span class="typ">MyException</span> <span class="pun">:</span> <span class="kwd">public</span><span class="pln"> exception </span><span class="pun">{</span>
+                   <span class="kwd">const</span> <span class="kwd">char</span> <span class="pun">*</span><span class="pln"> what </span><span class="pun">()</span> <span class="kwd">const</span> <span class="kwd">throw</span> <span class="pun">()</span> <span class="pun">{</span>
+                      <span class="kwd">return</span> <span class="str">"C++ Exception"</span><span class="pun">;</span>
+                   <span class="pun">}</span>
+                <span class="pun">};</span>
+
+                <span class="kwd">int</span><span class="pln"> main</span><span class="pun">()</span> <span class="pun">{</span>
+                   <span class="kwd">try</span> <span class="pun">{</span>
+                      <span class="kwd">throw</span> <span class="typ">MyException</span><span class="pun">();</span>
+                   <span class="pun">}</span><span class="kwd">catch</span><span class="pun">(</span><span class="typ">MyException</span><span class="pun">&amp;</span><span class="pln"> e</span><span class="pun">)</span> <span class="pun">{</span><span class="pln">
+                      std</span><span class="pun">::</span><span class="pln">cout </span><span class="pun">&lt;&lt;</span> <span class="str">"MyException caught"</span> <span class="pun">&lt;&lt;</span><span class="pln"> std</span><span class="pun">::</span><span class="pln">endl</span><span class="pun">;</span><span class="pln">
+                      std</span><span class="pun">::</span><span class="pln">cout </span><span class="pun">&lt;&lt;</span><span class="pln"> e</span><span class="pun">.</span><span class="pln">what</span><span class="pun">()</span> <span class="pun">&lt;&lt;</span><span class="pln"> std</span><span class="pun">::</span><span class="pln">endl</span><span class="pun">;</span>
+                   <span class="pun">}</span> <span class="kwd">catch</span><span class="pun">(</span><span class="pln">std</span><span class="pun">::</span><span class="pln">exception</span><span class="pun">&amp;</span><span class="pln"> e</span><span class="pun">)</span> <span class="pun">{</span>
+                      <span class="com">//Other errors</span>
+                   <span class="pun">}</span>
+                <span class="pun">}</span></pre>
+                <p>This would produce the following result:</p>
+                <pre class="result notranslate">MyException caught
+                C++ Exception
+                </pre>
+                <p>Here, <strong>what()</strong> is a public method provided by exception class and it has been overridden by all the child exception classes. This returns the cause of an exception.</p>
+
+
+
+    <br><hr><br>
+
+    <h3 style="text-align: center;">
+            Final Thoughts
+    </h3>
+
+    <p style="text-align: center;">
+        Next, we will discuss our final thoughts on the language of C++, mate!
+    </p>
+
+    <a href="/C_plusplus/files_io"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> C++ - Files & IO
+    </button></a>
+
+    <a href="/C_plusplus/final_thoughts"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        C++ - Final Thoughts   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+{% endblock %}

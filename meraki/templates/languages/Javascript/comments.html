@@ -1,0 +1,183 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<!-- The import required for AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+
+
+<!--=================================================================================================================================
+
+White space         : &nbsp;
+bold tag            : <b></b>
+Indent              : <p style="text-indent: 50px;">    </p>
+Horz Bar with \n    : <br><hr class="ones"><br>
+hyper link          : <a href="/location/">TEXT</a>
+bootstrap glyphs    : <span class="glyph-goes-here" aria-hidden="true"></span>
+image               : <img src="{{url_for('static', filename='photos/cover.jpg') }}">
+DL of static file   : <a href="/static/resume/Resume30August2016.doc">Here</a>
+
+use .container for containing responsive fixed width containers
+unable to be nested
+
+    <div class="container">
+    ...
+    </div>
+
+use .container-fluid for a full width container, which will span across the entire viewport
+
+    <div class="container-fluid">
+    ...
+    </div>
+
+<p style="text-indent: 50px;">
+
+</p>
+=================================================================================================================================-->
+
+    <br><br><br><h3 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Javascript/javascript.png') }}">
+    Welcome to the Javascript Comments Homepage, <b>{{un}}</b>!</h3>
+
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+    <p class="intro">
+        <center><b>
+            Javascript | Comments
+        </b></center>
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Comments</h3>
+
+    <p>
+        Javascript comments can be used to explain the javascript code you're writing to yourself or others. The comments help
+        make the code more readable. Comments can always be used to prevent execution, while testing alternative code.
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h4>Single Line Comments</h4>
+
+    <p>
+        A single line comment can be represented by two slashes, and to the end of the line will not be executed.
+    </p>
+
+    <div style='margin-left: 100px;'>
+        // this is a comment <br>
+        blah(blah) = blah; <br>
+
+        // this is the second comment <br>
+        blah2(blah2) = blah2; <br>
+    </div>
+
+    <br>
+
+    <p>
+        You could use a comment following a line of code to explain the line instead of placing the comments on top of the line of code
+    </p>
+
+    <div style='margin-left: 100px;'>
+        blah(blah) = blah; // this is a comment <br>
+        <br>
+        blah2(blah2) = blah2; // this is the second comment <br>
+        <br>
+    </div>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h4>Multiple Line Comments</h4>
+
+    <p>
+        Multi-line comments will start with a /* and end with a */. All of the text between the
+        two tags will be ignored by Javascript. Multi-line comments are often used for documentation
+        within the HTML document. I use multi-line comments to store useful elements I use
+        in my everyday programming of HTML. The example below shows how to use multi-line comments
+        correctly:
+    </p>
+
+    <div style='margin-left: 100px;'>
+        /*<br>
+        the comments placed here will be ignored <br>
+        the heading with id = myID <br>
+        will change once the site is accessed.<br>
+        */<br>
+        document.getElementById("myId").innerHTML = "text to replace";<br>
+    </div>
+
+<!--========================================================================================================================-->
+    <br>
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+    <br>
+<!--========================================================================================================================-->
+
+    <h3>
+        Prevention
+    </h3>
+
+    <p>
+        Comments can be used to prevent execution of code. For instance, you're working on a function, but have another idea of how
+        to achieve the goal. Comment out one of the functions while you test the other one. The old one might have a great part or two,
+        and the new one might have excellent other parts, and together they might create a much better function. The code below comments
+        out the call to myId element to change the text.
+    </p>
+
+    <div style='margin-left: 100px;'>
+        blah(blah) = blah; // this is a comment <br>
+        <br>
+        // document.getElementById("myId").innerHTML = "text to replace";<br>
+        <br>
+        blah2(blah2) = blah2; // this is the second comment <br>
+        <br>
+    </div>
+
+    <p>
+        You could comment a whole block of code out quickly using block comments:
+    </p>
+
+    <div style='margin-left: 100px;'>
+        /*<br>
+        blah(blah) = blah; <br>
+        <br>
+        document.getElementById("myId").innerHTML = "text to replace";<br>
+        <br>
+        blah2(blah2) = blah2;<br>
+        */<br>
+        <br>
+    </div>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+        <h3 style="text-align: center;">Next, we will take a look at variables in Javascript more closely; literals and variables.</h3>
+
+        <p style="text-align: center;">Just follow the buttons to continue the tutorial, {{un}}</p>
+
+
+        <br>
+
+        <a href="/Javascript/statements"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Javascript - Statements
+        </button></a>
+
+        <a href="/Javascript/variables"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        Javascript - Variables <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        </button></a>
+
+{% endblock %}

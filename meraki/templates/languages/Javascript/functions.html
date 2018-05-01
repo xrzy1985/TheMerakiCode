@@ -1,0 +1,245 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<!-- The import required for AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<!--=================================================================================================================================
+
+White space         : &nbsp;
+bold tag            : <b></b>
+Indent              : <p style="text-indent: 50px;">    </p>
+Horz Bar with \n    : <br><hr class="ones"><br>
+hyper link          : <a href="/location/">TEXT</a>
+bootstrap glyphs    : <span class="glyph-goes-here" aria-hidden="true"></span>
+image               : <img src="{{url_for('static', filename='photos/cover.jpg') }}">
+DL of static file   : <a href="/static/resume/Resume30August2016.doc">Here</a>
+
+use .container for containing responsive fixed width containers
+unable to be nested
+
+    <div class="container">
+    ...
+    </div>
+
+use .container-fluid for a full width container, which will span across the entire viewport
+
+    <div class="container-fluid">
+    ...
+    </div>
+
+<p style="text-indent: 50px;">
+
+</p>
+
+<ul>
+    <li>
+        <b>
+
+        </b>
+        Text <br>
+    </li>
+</ul>
+
+=================================================================================================================================-->
+
+    <br><br><br><h3 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Javascript/javascript.png') }}">
+    Welcome to the Javascript Functions Homepage, <b>{{un}}</b>!</h3>
+
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+    <p class="intro">
+        <center><b>
+            Javascript | Blocks of code to perform specific tasks
+        </b></center>
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Functions</h3>
+
+    <p>
+
+        It will be hard to generalize functions into one small tutorial, but we will try to gather as much information on
+        Javascript functions as possible. A Javascript function is a group of text or block of code that is written and designed
+        to perform a particular task or operation. A Javascript function is executed whenever something has invoked the function,
+        or it is referred to as calling the function.
+
+        <br><br>
+
+        function myFunction(x, y, z){ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;return x + y * z;<br>
+        }<br>
+        <br>
+
+        The function above will return the addition of x and y multiplied by z.
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Function Syntax</h3>
+
+    <p>
+
+        The syntax for defining a function within Javascript is <b>function</b> keyword, then <b>nameOfFunction</b>, and
+        followed by a set of parenthese: (). Function names can only contain letters, digits, underscores, and dollar signs.
+        The same rules apply to variable names. The parentheses will hold the parameters for the function. The function can
+        hold no parameters to as many as needed: <b>(parameter0, parameter1, ...)</b>. The function parameters are the names
+        listed inside of the function parentheses. Function arguments are the real values received byt he function when
+        it is invoked or called. A function is similar to procedures or subroutines that are associated with other programming
+        languages. Inside the Javascript function, the arguments (the parameters) behave as local variables.
+
+        <br><br>
+
+        <p>
+            function functionName(parameter0, parameter1, parameter2){</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp; code that will be read and executed;</p>
+            <p>}
+        </p>
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Invocation</h3>
+
+    <p>
+
+        The code that is within your function will execute when something calls the function,
+        or commonly known as invokes the function. Invocation can occur when a user clicks a button
+        creating an event, when the function is called (invoked) within Javascript code, or the function
+        call could be automatically set up to self invoke.
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Return Statements</h3>
+
+    <p>
+
+        Within the function there will be execution code, and possibly a return statement if needed. Javascript will read the code
+        within the function until it reaches a return statement. Once the return statement has been reached, Javascript will return
+        the information to the main running program. Functions often compute return values; the return value will be returned back
+        to the caller.
+
+        <br><br>
+
+        <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp;&nbsp;&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;h2&gt;JavaScript Functions&lt;/h2<br /><br />&nbsp;&nbsp;&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function myFunction(a, b) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return a + b;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;document.getElementById("tutorial").innerHTML = myFunction(4, 3);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        <br><br>
+
+        <b>Why use Functions?</b> We use functions mainly to reuse code as many times as possible; work smart not hard. A function
+        can be used many different times with many different arguments, to yield many different results.
+
+        <br><br>
+
+        <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp; &lt;body&gt;<br /><br />&nbsp; &lt;h2&gt;JavaScript Functions&lt;/h2&gt;<br /><br />&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp; &lt;script&gt;<br />&nbsp; function myFunction(a, b) {<br />&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; var x = a + b;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return x/2;<br />&nbsp; }<br />&nbsp; document.getElementById("tutorial").innerHTML = myFunction(1, 1);<br />&nbsp; &lt;/script&gt;<br /><br />&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Function Definition</h3>
+
+    <p>
+
+        For some reason, you might want to return the function definition of a function. Accessing a function without using
+        the () will result in the definition being returned instead of the function's results.
+
+        <br><br>
+
+        <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp; &lt;body&gt;<br /><br />&nbsp; &lt;h2&gt;JavaScript Functions&lt;/h2&gt;<br /><br />&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp; &lt;script&gt;<br />&nbsp; function myFunction(a, b) {<br />&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; var x = a + b;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return x/2;<br />&nbsp; }<br />&nbsp; document.getElementById("tutorial").innerHTML = myFunction;<br />&nbsp; &lt;/script&gt;<br /><br />&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        <br><br>
+
+        The above document will return : function myFunction(a, b) { var x = a + b; return x/2; }
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Functions as Variables</h3>
+
+    <p>
+
+        Instead of just using a function to return a value, use a function as a variable. Variables can be used in formulas, assignments,
+        and many different calculations.
+
+        <br><br>
+
+        The code below has four functions within the javascript tags. Two functions just return a string value or C or F. One function
+        takes a F degree temperature, and converts the number into a Celsius degree temperature. The last function takes the value from
+        the C degree temperature function and applies that number into reversing the value back into a F degree value. The C value is displayed
+        first in the tutorial p element, and the F degree value is located below inside of the tutorial1 p element.
+
+        <br><br>
+
+        <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp; &lt;body&gt;<br /><br />&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br />&nbsp; <br />&nbsp; &lt;br&gt;<br />&nbsp; <br />&nbsp; &lt;p id="tutorial1"&gt;&lt;/p&gt;<br />&nbsp; <br />&nbsp; &lt;script&gt;<br />&nbsp; <br />&nbsp; document.getElementById("tutorial").innerHTML =<br />&nbsp; "The temperature is " + toC(77) + stringToReturnC();<br />&nbsp; <br />&nbsp; document.getElementById("tutorial1").innerHTML =<br />&nbsp; "The temperature is " + toF(toC(77)) + stringToReturnF();<br /><br /><br />&nbsp; function toC(f) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var c = (5/9) * (f - 32);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return c;<br />&nbsp; }<br /><br />&nbsp; function stringToReturnC(){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var abrv = " C";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return abrv;<br />&nbsp; }<br />&nbsp; <br />&nbsp; function toF(funcToObtainC) {<br />&nbsp; &nbsp;&nbsp; &nbsp;var f = funcToObtainC * (9/5) + 32;<br />&nbsp;&nbsp;&nbsp; return f;<br />&nbsp; }<br />&nbsp; <br />&nbsp; function stringToReturnF(){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var abrv = " F";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return abrv;<br />&nbsp; }<br />&nbsp; <br />&nbsp; &lt;/script&gt;<br /><br />&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        <br><br>
+
+        Output: <br><br>
+
+        The temperature is 25 C <br><br>
+
+        The temperature is 77 F <br><br>
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3 style="text-align: center;">Next, we will take a look at how Objects mimic real life people, places, and things.</h3>
+
+    <p style="text-align: center;">Just follow the buttons to continue the tutorial, {{un}}</p>
+
+
+    <br>
+
+    <a href="/Javascript/data_types"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Javascript - Data Types
+    </button></a>
+
+    <a href="/Javascript/objects"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+    Javascript - Objects <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+{% endblock %}

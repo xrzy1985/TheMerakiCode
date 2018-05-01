@@ -1,0 +1,94 @@
+{% extends "header.html" %}
+    {% block body %}
+
+    <title>Meraki : Java : Introduction</title>
+
+    <style>
+    hr {
+        color: blue;
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: 10px;
+    }
+    </style>
+
+        <br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Java.png') }}">
+        Welcome to the Java Introduction, mate!</h1>
+
+        <hr>
+
+        <blockquote>
+
+            <h2>What is Java?</h2>
+<ul>
+<li>Java is an "OOPL" (object-oriented programming language) released by Sun Microsystems in 1995.</li>
+<li>Java was originally developed by <strong>James Gosling</strong> at <strong>Sun Microsystems</strong> (which has since merge into Oracle Corporation).</li>
+<li>Java programs are platform independent, which means they can run on any system that supports the java interpreter and has the hardware (like a display or input devices) necessary for the program being run.</li>
+<li>Some Java code can be called &#8220;write once, run anywhere&#8221;, meaning it can be run on many types of hardware without being reconfigured or recompiled..</li>
+<li>Java code is executed by the Java Virtual Machine on the host/client machine.</li>
+</ul>
+
+        </blockquote>
+
+        <hr>
+
+        <h2>Types of Java Applications</h2>
+<ol>
+<li><strong>Web Application</strong> Java is commonly used to create server-side web applications using the many technologies it supports, like: servlet, jsp, struts, jsf etc.</li>
+<li><strong>Standalone Application</strong> Java is also commonly used for desktop or clientside applications. AWT and Swing are used to implement graphical user interfaces in Java.</li>
+<li><strong>Enterprise Application</strong>Java is also used to create some large, distributed systems used by banks and other large enterprises.</li>
+<li><strong>Mobile Application</strong> Java is frequently used for mobile applications. Java provides the basis for the popular Android operating system.</li>
+</ol>
+
+    <blockquote>
+
+        <h2>Popular Java Editors</h2>
+<p>To write your java programs you will need a text editor. There are even more sophisticated IDE available in the market. But for now, you can consider one of the following:
+<ul>
+<li><strong>Eclipse &#8211; </strong>, which we personally recommend, is a java IDE developed by the eclipse open source community and can be downloaded from <a href="http://www.eclipse.org/" target="_blank" rel="nofollow">http://www.eclipse.org/</a></li>
+<li><strong>Notepad &#8211; </strong>On Windows machine you can use any simple text editor like Notepad or TextPad.</li>
+<li><strong>Netbeans</strong> &#8211; is another Java IDE that is open source and free which can be downloaded from <a href="http://www.netbeans.org/index.html" target="_blank" rel="nofollow">http://www.netbeans.org/index.html</a></li>
+</ul>
+<hr>
+
+    </blockquote>
+    <blockquote>
+    <h2>Example of a basic Java program</h2>
+    <div class ="code">
+<br/>        public class Hello
+<br/>{
+<br/>    public static void main(String[] args)
+<br/>    {
+<br/>        System.out.println("Hello Java");
+<br/>    }
+<br/>}
+</div>
+</blockquote>
+
+
+
+    <br><hr><br>
+
+    <h3 style="text-align: center;">
+            Syntax
+    </h3>
+
+    <p style="text-align: center;">
+        Next, we will look at Syntax, and how it is required for functioning programs.
+    </p>
+
+    <a href="/"><button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Home Page
+    </button></a>
+
+    <a href="/Java/syntax/"><button type="button" class="btn btn-default btn-lg" style="float: right;">
+        Java - Syntax   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+    {% endblock %}

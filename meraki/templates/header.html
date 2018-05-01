@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- ============================= Head: meta, link, title, css, js, etc =========================================================================== -->
+	<head>
+	    <meta charse="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="user-scalable = yes">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='newStyle.css') }}">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<title>Meraki</title>
+	</head>
+
+<!-- ============================= Head: meta, link, title, css, js, etc =========================================================================== -->
+	<body>
+
+		<header id="header">
+			<div class="innertube">
+			    <div class="navbar-header">
+                    <a class="navbar-brand" href="/">
+                    <img style="max-width: 175px; max-height: 45px; margin-top: -10px; " src="{{url_for('static', filename='webpages/header/meraki.jpg') }}">
+                    </a>
+                </div>
+
+<!-- ============================= Buttons beside Meraki image =========================================================================== -->
+<!-- ============================= IF LOGGED IN =========================================================================== -->
+                <div class="container-fluid">
+                    {% if session.logged_in %}
+
+                        <a href="/group_information/"><button type="button" class="btn btn-primary" aria-label="Left Align"
+                                                        style="margin-top: 5px;
+                                                        margin-bottom: 5px;
+                                                        height: 44px;
+                                                        margin-right: 15px;">
+                            <span class="glyphicon glyphicon-king" aria-hidden="true"></span> &nbsp;&nbsp;Meraki's Group Information</button></a>
+
+                        <a href="/dashboard/"><button type="button" class="btn btn-primary" aria-label="Left Align"
+                                                        style="margin-top: 5px;
+                                                        margin-bottom: 5px;
+                                                        height: 44px;
+                                                        margin-right: 15px;">
+                            <span class="glyphicon glyphicon-fire" aria-hidden="true"></span> &nbsp;&nbsp;Dashboard</button></a>
+
+                        <a href="/send_to/"><button type="button" class="btn btn-primary" aria-label="Left Align"
+                                                        style="margin-top: 5px;
+                                                        margin-bottom: 5px;
+                                                        height: 44px;
+                                                        margin-right: 15px;">
+                            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> &nbsp;&nbsp;Messages ( {{number_of_messages}} )</button></a>
+
+                        <a href="/uploads/"><button type="button" class="btn btn-primary" aria-label="Left Align"
+                                                        style="margin-top: 5px;
+                                                        margin-bottom: 5px;
+                                                        height: 44px;
+                                                        margin-right: 15px;">
+                            <span class="glyphicon glyphicon-upload" aria-hidden="true"></span> &nbsp;&nbsp;Uploads (  )</button></a>
+
+                        <a href="/downloads/"><button type="button" class="btn btn-primary" aria-label="Left Align"
+                                                        style="margin-top: 5px;
+                                                        margin-bottom: 5px;
+                                                        height: 44px;
+                                                        margin-right: 15px;">
+                            <span class="glyphicon glyphicon-download" aria-hidden="true"></span> &nbsp;&nbsp;Downloads ( {{number_of_downloads}} )</button></a>
+
+<!-- ============================= If Not logged in =========================================================================== -->
+                    {% else %}
+
+                        <a href="/group_information/"><button type="button" class="btn btn-primary" aria-label="Left Align"
+                                                        style="margin-top: 5px;
+                                                        margin-bottom: 5px;
+                                                        height: 44px;
+                                                        margin-right: 15px;">
+                            <span class="glyphicon glyphicon-king" aria-hidden="true"></span> &nbsp;&nbsp;Meraki's Group Information</button></a>
+
+                    {% endif %}
+
+
+
+<!-- ============================= Links to the Top Right ============================================================================ -->
+
+                    <ul class="nav navbar-nav navbar-right" style="color:white;">
+						<div style="color:white; margin-right: 10px; margin-left: 15px;"  class="container-fluid">
+							<h5>
+
+<!-- ============================= If Logged in ======================================================================================= -->
+							    {% if session.logged_in %}
+
+							        <p><span style="color: #1fff00; margin-left: 2px;" class="glyphicon glyphicon-user" aria-hidden="true"></span> Hello, {{ un }}</p>
+							        <a href="/support-donate/" style="color:white;" ><span style="color:  #ff0000;" class="glyphicon glyphicon-heart"></span> Support &nbsp;&nbsp;&nbsp;</a>
+    								<a href="/logout/" style="color:white;"><span style="color:  #bef1ff;" class="glyphicon glyphicon-log-in"></span> Logout &nbsp;&nbsp;&nbsp;</a>
+
+<!-- ============================= If Logged out ======================================================================================= -->
+							    {% else %}
+
+							        <p><span style="color: red; margin-left: 2px;"  class="glyphicon glyphicon-user" aria-hidden="true"></span> Hello, Guest</p>
+    								<a href="/support-donate/" style="color:white;"> <span style="color:  #ff0000;" class="glyphicon glyphicon-heart"></span> Support &nbsp;&nbsp;&nbsp;</a>
+    								<a href="/login/" style="color:white;"><span  style="color:  #bef1ff;" class="glyphicon glyphicon-log-in"></span> Login &nbsp;&nbsp;&nbsp;</a>
+    								<a href="/register/" style="color:white;"><span  style="color:  #bef1ff;" class="glyphicon glyphicon-pencil"></span> Register</a>
+
+    							{% endif %}
+							</h5>
+						</div>
+        			</ul>
+        		</div>
+			</div>
+		</header>
+
+
+
+
+<!-- ============================= Begining of the MAIN ======================================================================================= -->
+		<main>
+			<div class="innertube">
+				<div class="container-fluid">
+
+<!-- ============================= Flash Messages Area ======================================================================================= -->
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert alert-info alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span bottom-margin="15px" aria-hidden="true">X</span></button>
+
+                                    {{message}}
+
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+
+
+
+
+<!-- ============================= Extended Area ======================================================================================= -->
+                    <div id="james" style="background-color: white; margin: auto;">
+
+                        {% block body %}
+
+                            <!--    This is where your code will go    -->
+                            <!--    The code that will extend this file    -->
+
+                        {% endblock %}
+
+                    </div>
+                </div>
+			</div>
+		</main>
+
+
+
+
+<!-- ============================= Left Column : Navigation bar  ======================================================================================= -->
+		<nav id="left" class="bg-primary">
+			<div class="innertube">
+
+				<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+                <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+                <script type="text/javascript" src="{{ url_for('static', filename='js/style.js') }}"></script>
+
+				<div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <br><br>
+                <a class="navbar-brand" href="/">
+                    <img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='webpages/header/meraki.jpg') }}">
+                </a>
+                <br><br><br>
+                <a href="/login/"><small>Login</small></a>
+                <a href="/register/"><small>Register</small></a>
+                <hr>
+                	<h1 style="color: white;">&nbsp;AngularJS</h1>
+                        {% for ang in page_dict["AngularJS"] %}
+
+                		        <a href="{{ang[1]}}">{{ang[0]}}</a>
+
+                		{% endfor %}
+                <hr>
+                	<h1 style="color: white;">&nbsp;C&#43;&#43;</h1>
+                        {% for c in page_dict["C_PlusPlus"] %}
+
+                		        <a href="{{c[1]}}">{{c[0]}}</a>
+
+                		{% endfor %}
+                <hr>
+                    <h1 style="color: white;">&nbsp;C&#35;</h1>
+                        {% for d in page_dict["C_Sharp"] %}
+
+                		        <a href="{{d[1]}}">{{d[0]}}</a>
+
+                		{% endfor %}
+
+                <hr>
+
+                    <h1 style="color: white;">&nbsp;HTML</h1>
+                        {% for h in page_dict["HTML"] %}
+
+                		        <a href="{{h[1]}}">{{h[0]}}</a>
+
+                		{% endfor %}
+
+                <hr>
+
+                    <h1 style="color: white;">&nbsp;Java</h1>
+                        {% for j in page_dict["Java"] %}
+
+                		        <a href="{{j[1]}}">{{j[0]}}</a>
+
+                		{% endfor %}
+
+                <hr>
+
+                    <h1 style="color: white;">&nbsp;Javascipt</h1>
+                        {% for js in page_dict["Javascript"] %}
+
+                		        <a href="{{js[1]}}">{{js[0]}}</a>
+
+                		{% endfor %}
+
+                <hr>
+                	<h1 style="color: white;">&nbsp;Python</h1>
+                        {% for p in page_dict["Python"] %}
+
+                		        <a href="{{p[1]}}">{{p[0]}}</a>
+
+                		{% endfor %}
+
+                <hr>
+
+                    <h1 style="color: white;">&nbsp;SQL</h1>
+                        {% for s in page_dict["SQL"] %}
+
+                		        <a href="{{s[1]}}">{{s[0]}}</a>
+
+                		{% endfor %}
+
+                <hr>
+
+                    <br><br><br>
+                    <a href="/tos/"><h6 style="color: white;">&nbsp;&nbsp;&nbsp;&nbsp;Terms Of Service</h6></a>
+                	<br><br><br>
+                </div>
+
+                <div id="nav" style="float: left;">
+                    <span style="font-size:20px;cursor:pointer" onclick="openNav()">&nbsp;&nbsp;&nbsp;&nbsp;&#9776; Navigation&nbsp;&nbsp;</span>
+                </div>
+
+			</div>
+		</nav>
+
+
+
+
+<!-- ============================= Right Side  ======================================================================================= -->
+		<div id="right" class="bg-primary">
+			<div class="innertube">
+
+                <a href="https://www.compilejava.net/" target="_blank" data-toggle="tooltip" data-placement="left" title="Don't forget to copy the code you need to run"><h4 style="color: white;">Java Compiler</h4></a>
+
+                <a href="https://www.python.org/shell/" data-toggle="tooltip" target="_blank" data-placement="left" title="Don't forget to copy the code you need to run"><h4 style="color: white;">Python Interpreter</h4></a>
+
+                <a href="http://webcompiler.cloudapp.net/" data-toggle="tooltip" target="_blank" data-placement="left" title="Don't forget to copy the code you need to run"><h4 style="color: white;">C++ Shell</h4></a>
+
+                <a href="http://rextester.com/" data-toggle="tooltip" target="_blank" data-placement="left" title="Don't forget to copy the code you need to run"><h4 style="color: white;">C# Shell</h4></a>
+
+                <br><hr><br>
+
+
+                {% if session.logged_in %}
+
+                    <h3 align="center"> Whose Online </h3>
+
+                    {% for users in online_users %}
+
+                        <h3 align="center"> {{users[1]}}</h3>
+
+                    {% endfor %}
+
+			    {% else %}
+
+
+
+				{% endif %}
+
+
+			</div>
+		</div>
+
+
+
+
+<!-- ============================= Footer  ======================================================================================= -->
+		<footer id="footer">
+            <div class="innertube">
+				<small><h6 align="center"><span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> Meraki 2017</h6></small>
+				<small><p align="center"><a href="/tos/"><h6 align="center" style="color: white;">Terms Of Service</h6></a></p></small>
+			</div>
+
+		</footer>
+
+
+
+
+<!-- ============================= CLOSE body and html tags  ======================================================================================= -->
+	</body>
+</html>

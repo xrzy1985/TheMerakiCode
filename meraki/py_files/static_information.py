@@ -1,0 +1,1 @@
+s = "mysql+mysqlconnector://{username}:{password}@{hostname}/{databasename}"

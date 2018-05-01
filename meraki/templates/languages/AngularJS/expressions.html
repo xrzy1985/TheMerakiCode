@@ -1,0 +1,125 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<!-- The import required for AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<!--=================================================================================================================================
+
+White space         : &nbsp;
+bold tag            : <b></b>
+Indent              : <p style="text-indent: 50px;">    </p>
+Horz Bar with \n    : <br><hr class="ones"><br>
+hyper link          : <a href="/location/">TEXT</a>
+bootstrap glyphs    : <span class="glyph-goes-here" aria-hidden="true"></span>
+image               : <img src="{{url_for('static', filename='photos/cover.jpg') }}">
+DL of static file   : <a href="/static/resume/Resume30August2016.doc">Here</a>
+
+use .container for containing responsive fixed width containers
+unable to be nested
+
+    <div class="container">
+    ...
+    </div>
+
+use .container-fluid for a full width container, which will span across the entire viewport
+
+    <div class="container-fluid">
+    ...
+    </div>
+
+<p style="text-indent: 50px;">
+
+</p>
+
+
+
+=================================================================================================================================-->
+
+    <br><br><br><h3 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/angularjs.png') }}">
+    Welcome to the AngularJS Expressions Homepage, <b>{{un}}</b>!</h3>
+
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+    <p class="intro">
+        <center><b>
+            AngularJS | Expressions
+        </b></center>
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <p>
+        <b>AngularJS</b> expressions can be written inside of double braces &#123;&#123;&#125;&#125;. The expression
+        can be written inside of a directive; ng-bind = 'expression'. The expression will be dealt with by AngularJS, and
+        then the result will be returned properly as written. AngularJS expressions are very similar to Javascript expressions.
+        AngularJS expressions can contain literals, operators, and variables.
+    </p>
+
+    <div style="margin-left: 100px;">
+        &#123;&#123;5 + 5 &#125;&#125; <br>
+        or <br>
+        &#123;&#123; firstName + " " + lastName &#125;&#125; <br>
+        or <br>
+        &#123;&#123; variable &#125;&#125;<br>
+    </div>
+
+    <br>
+
+    <p>
+        <b>Warning</b> if you are using Flask, Django, or any other language with Jinja 2 built in, you should be wary of using
+        the microframeworks with AngularJS. Since AngularJS and Jinja use the same notation. You can change the notation for Jinja
+        or AngularJS using some script code, or you could pip install flask-triangle. It doesn't work the best, but it is a working
+        solution. This will allow you to use the double curly brackets with a variable name | angular inside of them. The angular is
+        to define that an angular variable is being used and not a jinja variable.
+    </p>
+
+<!--========================================================================================================================-->
+    <br>
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+    <br>
+<!--========================================================================================================================-->
+
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+
+        <h3 style="text-align: center;">Next, we will take a look at the MVC Architecture of AngularJS</h3>
+
+        <p style="text-align: center;">Just follow the buttons to continue the tutorial, {{un}}</p>
+
+
+        <br>
+
+        <a href="/AngularJS/environment"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> AngularJS - Environment
+        </button></a>
+
+        <a href="/AngularJS/expressions"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        AngularJS - Expressions <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        </button></a>
+
+{% endblock %}

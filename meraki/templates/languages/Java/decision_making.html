@@ -1,0 +1,95 @@
+{% extends "header.html" %}
+    {% block body %}
+
+    <title>Meraki : Java : Decision Making</title>
+
+    <style>
+    hr {
+        color: blue;
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: 10px;
+    }
+    </style>
+
+        <br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Java.png') }}">
+        Welcome to the Java Decision Making page, mate!</h1>
+
+        <hr>
+
+        <blockquote>
+
+            Java's Decision Making information:</br>
+            <p>Decision making structures evaluate (or "test") one or more conditions or variables. Depending on the outcome of the evaluations,
+            certain lines or blocks of code are or are not executed.</p>
+
+        </blockquote>
+
+<p>Java supports the following statements to handle decision making:</p>
+<table class="table table-bordered">
+<tr>
+<th>Sr.No.</th>
+<th style="text-align:center;">Statement &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">1</td>
+<td>if statement
+<p>An <b>if statement</b> consists of a boolean expression followed by one or more statements.</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">2</td>
+<td>if...else statement
+<p>An <b>if statement</b> can be followed by an optional <b>else statement</b>, which executes when the boolean expression is false.</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">3</td>
+<td>nested if statement
+<p>You can use one <b>if</b> or <b>else if</b> statement inside another <b>if</b> or <b>else if</b> statement(s).</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">4</td>
+<td>switch statement
+<p>A <b>switch</b> statement allows a variable to be tested for equality against a list of values.</p></td>
+</tr>
+</table>
+<h2>The ? : Operator</h2>
+<p>The <b>conditional operator ? :</b> was discussed in the previous chapter. It can be used to replace if statements for short code snippets.</p>
+<pre class="result notranslate">
+Exp1 ? Exp2 : Exp3;
+</pre>
+<p>Where Exp1, Exp2, and Exp3 are expressions. Notice the use and placement of the colon.</p>
+<p>To determine the value of the whole expression, initially exp1 is evaluated.</p>
+<ul class="list">
+<li><p>If the value of exp1 is true, then the value of Exp2 will be the value of the whole expression.</p></li>
+<li><p>If the value of exp1 is false, then Exp3 is evaluated and its value becomes the value of the entire expression.</p></li>
+</ul>
+
+
+
+
+    <br><hr><br>
+
+    <h3 style="text-align: center;">
+            Imports
+    </h3>
+
+    <p style="text-align: center;">
+        Next, we will look at Imports, and how Java handles the inclusion of packages.
+    </p>
+
+    <a href="/Java/loop_control/"><button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Java - Loop Control
+    </button></a>
+
+    <a href="/Java/imports/"><button type="button" class="btn btn-default btn-lg" style="float: right;">
+        Java - Imports   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+
+    {% endblock %}

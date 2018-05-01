@@ -1,0 +1,318 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<!-- The import required for AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+
+
+<!--
+
+=================================================================================================================================
+White space         : &nbsp;
+bold tag            : <b></b>
+Indent              : <p style="text-indent: 50px;">    </p>
+Horz Bar with \n    : <br><hr class="ones"><br>
+hyper link          : <a href="/location/">TEXT</a>
+bootstrap glyphs    : <span class="glyph-goes-here" aria-hidden="true"></span>
+image               : <img src="{{url_for('static', filename='photos/cover.jpg') }}">
+DL of static file   : <a href="/static/resume/Resume30August2016.doc">Here</a>
+
+use .container for containing responsive fixed width containers
+unable to be nested
+
+    <div class="container">
+    ...
+    </div>
+
+use .container-fluid for a full width container, which will span across the entire viewport
+
+    <div class="container-fluid">
+    ...
+    </div>
+
+=================================================================================================================================
+-->
+
+        <br><br><br><h3 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/angularjs.png') }}">
+        Welcome to the AngularJS Environment Homepage, <b>{{un}}</b>!</h3>
+
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+        <p class="intro">
+            <center><b>
+                AngularJS | Environment
+            </b></center>
+        </p>
+
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+        <p style="text-indent: 50px;">
+
+           <b>AngularJS</b> can be found <a ref="https://angularjs.org/">here</a>. You will need the latest version, and specific minified, uncompressed,
+           or zip options. If you are planning on serving the files from a static location via your systems, then uncompressed or zip is for you. If you
+           just plan on utilizing a few features of AngularJS on a website you designed, minified is your option. Minified allows you to copy the
+           CDN and reference the files within the html document. Create a script element with the src being the address for the CDN, and you are
+           ready to utilize AngularJS functionality.
+
+           <br>
+
+           <b>Warning</b>. Before we move any further, your server side security needs to be in proper working order. AngularJS is built upon
+           Javascript, and with that being said, Javascript is a not so secure language.
+
+        </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+        <p style="text-indent: 50px;">
+
+            <b>AngularJS</b> can be set up in many different ways. I would recommend downloading the folder located right <a href="/static/AngularJS/AngularJS.rar">Here</a>.
+            The folder contains a angularjs.min.js file, two angularjs html documents, and a script.js file which are everything
+            you need to get caught up to speed. The folder can be placed on your desktop or wherever you wish. You will need a text
+            editor to edit the js and html files. If you open the html files by double clicking on them, your web browser will open
+            the files. Be sure to know how to open a file for viewing, and opening a file for editing. I suggest using <a href="https://notepad-plus-plus.org/">Notepad++.</a>
+            Notepad++ allows you to easily have all of your files open for editing, while saving all necessary files, and is great
+            for any developer who doesn't want to use any IDE platforms. The code below is the same code inside the folder; angularjs2.html
+            and script.js.
+
+        </p>
+
+<!--========================================================================================================================-->
+    <br>
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+    <br>
+<!--========================================================================================================================-->
+
+        <h3 style="margin-left: 100px;"><b>angularjs.html</b></h3>
+
+        <br>
+
+        <div style="margin-left: 100px;">
+
+            <p>
+                &lt;!DOCTYPE html&gt;
+            </p>
+            <br/>
+            <p>
+                &lt;!-- We declare our ng-app on the html element
+            </p>
+            <br/>
+            <p>
+                This will tell the html document what part
+            </p>
+            <br/>
+            <p>
+                or element contains the AngularJS app data--&gt;
+            </p>
+            <br/>
+            <p>
+                &lt;html ng-app="appname"&gt;
+            </p>
+            <br/>
+            <p>
+                &lt;!-- --&gt;
+            </p>
+            <br/>
+            <p>
+                &lt;!-- This is where you link to AngularJS
+            </p>
+            <br/>
+            <p>
+                link to a stylesheet
+            </p>
+            <br/>
+            <p>
+                and to our script file; script.js --&gt;
+            </p>
+            <br/>
+            <p>
+                &lt;head&gt;
+            </p>
+            <br/>
+            <p>
+                &lt;script
+                src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"&gt;&lt;/script&gt;
+            </p>
+            <br/>
+            <p>
+                &lt;link href="style.css" rel="stylesheet"/&gt;
+            </p>
+            <br/>
+            <p>
+                &lt;script src="script.js"&gt;&lt;/script&gt;
+            </p>
+            <br/>
+            <p>
+                &lt;/head&gt;
+            </p>
+            <br/>
+            <br/>
+            <p>
+                &lt;body&gt;
+            </p>
+            <br/>
+            <p>
+                &lt;!-- This is the view part
+            </p>
+            <br/>
+            <p>
+                ng-controller tells AngularJS what controller to usemap
+            </p>
+            <br/>
+            <p>
+                This will render the greeting and additionalGreeting
+            </p>
+            <br/>
+            <p>
+                that was hard coded in the script.js file
+            </p>
+            <br/>
+            <p>
+                --&gt;
+            </p>
+            <br/>
+            <p>
+                &lt;div ng-controller="appCtrl"&gt;
+            </p>
+            <br/>
+            <p>
+                &lt;p&gt;{{greeting.text}} world, {{additionalGreeting.text}}&lt;/p&gt;
+            </p>
+            <br/>
+            <p>
+                &lt;/div&gt;
+            </p>
+            <br/>
+            <p>
+                &lt;/body&gt;
+            </p>
+            <br/>
+            <p>
+                &lt;/html&gt;
+            </p>
+
+
+        </div>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+        <h3 style="margin-left: 100px;"><b>script.js</b></h3>
+
+        <br>
+
+        <div style="margin-left: 100px;">
+
+            <p>
+                // This is for tutorial purposes only
+            </p>
+            <br/>
+            <p>
+                // This is the controller aspect of AngularJS
+            </p>
+            <br/>
+            <p>
+                // A variable is created that is set to a angular.module
+            </p>
+            <br/>
+            <p>
+                // with the appname and an empty array as parameters
+            </p>
+            <br/>
+            <p>
+                var appname = angular.module('appname', []);
+            </p>
+            <br/>
+            <p>
+                // This code registers a controller function named appCtrl in the Angular
+                module
+            </p>
+            <br/>
+            <p>
+                // named appname.
+            </p>
+            <br/>
+            <p>
+                appname.controller('appCtrl', ['$scope',
+            </p>
+            <br/>
+            <p>
+                function($scope) {
+            </p>
+            <br/>
+            <p>
+                $scope.greeting = { text: 'Hello' };
+            </p>
+            <br/>
+            <p>
+                $scope.additionalGreeting = {text: 'my name is James Patterson.'};
+            </p>
+            <br/>
+            <p>
+                }]);
+            </p>
+
+
+        </div>
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <p>
+
+        When the page is loaded by a web browser, the following things happen in order.
+
+        <ul>
+            <li>
+                HTML documents are loaded, evaluated, AngularJS loads the js file, amd tje angular global object is created.
+            </li>
+            <li>
+                Next, JS registers the controller functions and executes them.
+            </li>
+            <li>
+                Next, AngularJS scans the HTML document looking for Angular apps and views.
+            </li>
+            <li>
+                Once a view is found, the view is connected to the controller function associated with it.
+            </li>
+            <li>
+                AngularJS then executes the controller functions, renders the view with the information from
+                the model received from the controller, and the page is then ready to be viewed by the user.
+            </li>
+        </ul>
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+
+        <h3 style="text-align: center;">Next, we will take a look at the MVC Architecture of AngularJS</h3>
+
+        <p style="text-align: center;">Just follow the buttons to continue the tutorial, {{un}}</p>
+
+
+        <br>
+
+        <a href="/AngularJS/introduction"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> AngularJS - Introduction
+        </button></a>
+
+        <a href="/AngularJS/architecture"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        AngularJS - MVC Architecture <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        </button></a>
+
+{% endblock %}

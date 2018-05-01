@@ -1,0 +1,378 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<style>
+hr {
+    color: blue;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}
+</style>
+
+    <br><br><br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/c_sharp.png') }}">
+    Welcome to the C# Variables Homepage, mate!</h1>
+
+    <hr>
+
+    <blockquote>
+
+        C# Variables Information
+
+    </blockquote>
+<style>
+.code
+{
+	background-color: #E0FFFF;
+}
+.output
+{
+	background-color: #000000;
+	color: #ffffff;
+}
+h1
+{
+	text-align: center;
+	text-decoration: underline;
+}
+h2
+{
+	text-decoration: underline;
+}
+.content
+{
+	text-align: center;
+}
+table
+{
+background-color: #6495ed;
+color: #ffffff;
+border: solid 2px black;
+}
+</style>
+<p>Value type variables can be assigned a value directly. They are derived from the class <strong>System.ValueType</strong>.</p>
+<p>The value types directly contain data. Some examples are <strong>int, char, and float</strong>, which stores numbers, alphabets, and floating point numbers, respectively. When you declare an <strong>int</strong> type, the system allocates memory to store the value.</p>
+<p>The following table lists the available value types in C#</p>
+<table class="table table-bordered">
+<tbody>
+<tr>
+<th>Type</th>
+<th>Represents</th>
+<th>Range</th>
+<th>Default Value</th>
+</tr>
+<tr>
+<td>bool</td>
+<td>Boolean value</td>
+<td>True or False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>8-bit unsigned integer</td>
+<td>0 to 255</td>
+<td>0</td>
+</tr>
+<tr>
+<td>char</td>
+<td>16-bit Unicode character</td>
+<td>U +0000 to U +ffff</td>
+<td>'\0'</td>
+</tr>
+<tr>
+<td>decimal</td>
+<td>128-bit precise decimal values with 28-29 significant digits</td>
+<td>(-7.9 x 10<sup>28</sup> to 7.9 x 10<sup>28</sup>) / 10<sup>0 to 28</sup></td>
+<td>0.0M</td>
+</tr>
+<tr>
+<td>double</td>
+<td>64-bit double-precision floating point type</td>
+<td>(+/-)5.0 x 10<sup>-324</sup> to (+/-)1.7 x 10<sup>308</sup></td>
+<td>0.0D</td>
+</tr>
+<tr>
+<td>float</td>
+<td>32-bit single-precision floating point type</td>
+<td>-3.4 x 10<sup>38</sup> to + 3.4 x 10<sup>38</sup></td>
+<td>0.0F</td>
+</tr>
+<tr>
+<td>int</td>
+<td>32-bit signed integer type</td>
+<td>-2,147,483,648 to 2,147,483,647</td>
+<td>0</td>
+</tr>
+<tr>
+<td>long</td>
+<td>64-bit signed integer type</td>
+<td>-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</td>
+<td>0L</td>
+</tr>
+<tr>
+<td>sbyte</td>
+<td>8-bit signed integer type</td>
+<td>-128 to 127</td>
+<td>0</td>
+</tr>
+<tr>
+<td>short</td>
+<td>16-bit signed integer type</td>
+<td>-32,768 to 32,767</td>
+<td>0</td>
+</tr>
+<tr>
+<td>uint</td>
+<td>32-bit unsigned integer type</td>
+<td>0 to 4,294,967,295</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ulong</td>
+<td>64-bit unsigned integer type</td>
+<td>0 to 18,446,744,073,709,551,615</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ushort</td>
+<td>16-bit unsigned integer type</td>
+<td>0 to 65,535</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>To get the exact size of a type or a variable on a particular platform, you can use the <strong>sizeof</strong> method. The expression <em>sizeof(type)</em> yields the storage size of the object or type in bytes. Following is an example to get the size of <em>int</em> type on any machine:</p>
+<div class="code">
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="kwd">using</span> <span class="typ">System</span><span class="pun">;</span>
+<span class="kwd">namespace</span> <span class="typ">DataTypeApplication</span>
+<span class="pun">{</span>
+   <span class="kwd">class</span> <span class="typ">Program</span>
+   <span class="pun">{</span>
+      <span class="kwd">static</span> <span class="kwd">void</span> <span class="typ">Main</span><span class="pun">(</span><span class="kwd">string</span><span class="pun">[]</span><span class="pln"> args</span><span class="pun">)</span>
+      <span class="pun">{</span>
+         <span class="typ">Console</span><span class="pun">.</span><span class="typ">WriteLine</span><span class="pun">(</span><span class="str">"Size of int: {0}"</span><span class="pun">,</span> <span class="kwd">sizeof</span><span class="pun">(</span><span class="kwd">int</span><span class="pun">));</span>
+         <span class="typ">Console</span><span class="pun">.</span><span class="typ">ReadLine</span><span class="pun">();</span>
+      <span class="pun">}</span>
+   <span class="pun">}</span>
+<span class="pun">}</span></pre>
+</div>
+<p>When the above code is compiled and executed, it produces the following result:</p>
+<div class="output">
+<pre class="result notranslate">Size of int: 4
+</div>
+</pre>
+<h2>Reference Type</h2>
+<p>The reference types do not contain the actual data stored in a variable, but they contain a reference to the variables.</p>
+<p>In other words, they refer to a memory location. Using multiple variables, the reference types can refer to a memory location. If the data in the memory location is changed by one of the variables, the other variable automatically reflects this change in value. Example of <strong>built-in</strong> reference types are: <strong>object</strong>, <strong>dynamic,</strong> and <strong>string</strong>.</p>
+<h3>Object Type</h3>
+<p>The <strong>Object Type</strong> is the ultimate base class for all data types in C# Common Type System (CTS). Object is an alias for System.Object class. The object types can be assigned values of any other types, value types, reference types, predefined or user-defined types. However, before assigning values, it needs type conversion.</p>
+<p>When a value type is converted to object type, it is called <strong>boxing</strong> and on the other hand, when an object type is converted to a value type, it is called <strong>unboxing</strong>.</p>
+<div class="code">
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">object</span><span class="pln"> obj</span><span class="pun">;</span><span class="pln">
+obj </span><span class="pun">=</span> <span class="lit">100</span><span class="pun">;</span> <span class="com">// this is boxing</span></pre>
+</div>
+<h3>Dynamic Type</h3>
+<p>You can store any type of value in the dynamic data type variable. Type checking for these types of variables takes place at run-time.</p>
+<p>Syntax for declaring a dynamic type is:</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">dynamic</span> <span class="str">&lt;variable_name&gt;</span> <span class="pun">=</span><span class="pln"> value</span><span class="pun">;</span></pre>
+<p>For example,</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">dynamic</span><span class="pln"> d </span><span class="pun">=</span> <span class="lit">20</span><span class="pun">;</span></pre>
+<p>Dynamic types are similar to object types except that type checking for object type variables takes place at compile time, whereas that for the dynamic type variables takes place at run time.</p>
+<h3>String Type</h3>
+<p>The <strong>String Type</strong> allows you to assign any string values to a variable. The string type is an alias for the System.String class. It is derived from object type. The value for a string type can be assigned using string literals in two forms: quoted and @quoted.</p>
+<p>For example,</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="typ">String</span><span class="pln"> str </span><span class="pun">=</span> <span class="str">"Meraki Tutorials"</span><span class="pun">;</span></pre>
+<p>A @quoted string literal looks as follows:</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="pun">@</span><span class="str">"Meraki Tutorials"</span><span class="pun">;</span></pre>
+<p>The user-defined reference types are: class, interface, or delegate. We will discuss these types in later chapter.</p>
+<p>A variable is simply a name given to a storage area that our programs can manipulate. Each variable in C# has a specific type, which determines the size and layout of the variable's memory the range of values that can be stored within that memory and the set of operations that can be applied to the variable.</p>
+<p>The basic value types provided in C# can be categorized as:</p>
+<table width="604">
+<tbody>
+<tr>
+<td width="150">
+<p><strong>Type</strong></p>
+</td>
+<td>
+<p><strong>Example</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Integral types</p>
+</td>
+<td>
+<p>sbyte, byte, short, ushort, int, uint, long, ulong, and char</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Floating point types</p>
+</td>
+<td>
+<p>float and double</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Decimal types</p>
+</td>
+<td>
+<p>decimal</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Boolean types</p>
+</td>
+<td>
+<p>true or false values, as assigned</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Nullable types</p>
+</td>
+<td>
+<p>Nullable data types</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>C# also allows defining other value types of variable such as&nbsp;<strong>enum</strong>&nbsp;and reference types of variables such as&nbsp;<strong>class</strong>, which we will cover in subsequent chapters.</p>
+<p>Defining Variables</p>
+<p>Syntax for variable definition in C# is:</p>
+<p>&lt;data_type&gt; &lt;variable_list&gt;;</p>
+<p>Here, data_type must be a valid C# data type including char, int, float, double, or any user-defined data type, and variable_list may consist of one or more identifier names separated by commas.</p>
+<p>Here are some valid variable definitions:</p>
+<div class="code">
+<p>int a, b, d;</p>
+<p>char c, ch;</p>
+<p>string s;</p>
+<p>float f, paycheck;</p>
+<p>double d;</p>
+</div>
+<p>You can initialize a variable at the time of definition as:</p>
+<div class="code">
+<p>int i = 100;</p>
+<p>string s = &ldquo;Alan Turing&rdquo;;</p>
+<p>double d = 10.0;</p>
+</div>
+<h2>Initializing Variables</h2>
+<p>Variables are initialized (assigned a value) with an equal sign followed by a constant expression. The general form of initialization is:</p>
+<p>variable_name = value;</p>
+<p>Variables can be initialized in their declaration. The initializer consists of an equal sign followed by a constant expression as:</p>
+<p>&lt;data_type&gt; &lt;variable_name&gt; = value;</p>
+<p>Some examples are:</p>
+<div class="code">
+<p>int d = 3, f = 5;&nbsp;&nbsp;&nbsp; /* initializing d and f. */</p>
+<p>byte z = 22;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* initializes z. */</p>
+<p>double pi = 3.14159; /* declares an approximation of pi. */</p>
+<p>char x = 'x';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* the variable x has the value 'x'. */</p>
+</div>
+<p>It is a good programming practice to initialize variables properly, otherwise sometimes program may produce unexpected result. This is also why it is important that you choose your data types wisely, some data types may perform better than others for certain problems.</p>
+<p>&nbsp;</p>
+<p>The following example uses various types of variables:</p>
+<div class="code">
+<p>using System;</p>
+<p>namespace Variable</p>
+<p>{</p>
+<p>&nbsp;&nbsp; class Program</p>
+<p>&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; static void Main(string[] args)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; short a;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int b ;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double c;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* actual initialization */</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a = 10;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b = 20;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c = a + b;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine("a = {0}, b = {1}, c = {2}", a, b, c);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.ReadLine();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;&nbsp; }</p>
+<p>}</p>
+</div>
+<h2>Output</h2>
+<div class="output">
+<p>a = 10, b = 20, c = 30</p>
+</div>
+<h2>Accepting Values from User</h2>
+<p>The&nbsp;<strong>Console</strong>&nbsp;class in the&nbsp;<strong>System</strong>&nbsp;namespace provides a function&nbsp;<strong>ReadLine()</strong>for accepting input from the user and store it into a variable.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>For example,</p>
+<p>int number;</p>
+<p>number = Convert.ToInt32(Console.ReadLine());</p>
+<p>The function&nbsp;<strong>Convert.ToInt32()</strong>&nbsp;converts the data entered by the user to int data type, because&nbsp;<strong>Console.ReadLine()</strong>&nbsp;accepts the data in string format.</p>
+<p>Here&rsquo;s a full program reviewing everything we&rsquo;ve learned:</p>
+<div class="code">
+<p>using System;</p>
+<p>using System.Collections.Generic;</p>
+<p>using System.Linq;</p>
+<p>using System.Text;</p>
+<p>using System.Threading.Tasks;</p>
+<p>&nbsp;</p>
+<p>namespace ConsoleApplication1</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp; class Program</p>
+<p>&nbsp;&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; static void Main(string[] args)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine("Please enter in a number");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int a = Convert.ToInt32(Console.ReadLine());</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine("Please enter in a second number");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int b = Convert.ToInt32(Console.ReadLine());</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int product = a * b;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine("The product of these two numbers is {0}" , product);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine("Please enter your name");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string name = Console.ReadLine();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine("Hello there {0}", name);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine("Press enter to close...");</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.ReadLine();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;&nbsp;&nbsp; }</p>
+<p>}</p>
+<p>//End Program</p>
+</div>
+<h2>Output</h2>
+<div class="output">
+<p>Please enter in a number</p>
+<p>4</p>
+<p>Please enter in a second number</p>
+<p>2</p>
+<p>The product of these two numbers is 8</p>
+<p>Please enter your name</p>
+<p>Clay</p>
+<p>Hello there Clay</p>
+<p>Press enter to close&hellip;</p>
+</div>
+<h2>Lvalue and Rvalue Expressions in C#:</h2>
+<p>There are two kinds of expressions in C#:</p>
+<ul>
+<li><strong>lvalue:</strong> An expression that is an lvalue may appear as either the left-hand or right-hand side of an assignment.</li>
+<li><strong>rvalue:</strong> An expression that is an rvalue may appear on the right- but not left-hand side of an assignment.</li>
+</ul>
+<p>Variables are lvalues and hence they may appear on the left-hand side of an assignment. Numeric literals are rvalues and hence they may not be assigned and can not appear on the left-hand side. Following is a valid C# statement:</p>
+<p>int g = 20;</p>
+<p>But following is not a valid statement and would generate compile-time error:</p>
+<p>10 = 20;</p>
+<p><strong><u>&nbsp;</u></strong></p>
+<p>&nbsp;</p>
+</br>
+</br>
+<a href="/C_sharp/objects_classes"><button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> C# - Objects and Classes
+    </button></a>
+
+    <a href="/C_sharp/data_structures"><button type="button" class="btn btn-default btn-lg" style="float: right;">
+        C# - Data Structures <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+{% endblock %}

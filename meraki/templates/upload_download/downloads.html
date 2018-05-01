@@ -1,0 +1,26 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+    <br><br>
+    <div class="download" style="padding-top: 25px;padding-right: 25px;padding-bottom: 25px;padding-left: 25px;">
+
+        <h3><p>List of files you have access to, {{un}}.</p></h3>
+
+        <br>
+
+        <h3>Remember, you must know the passphrase for the files.</h3><br>
+
+            {% for row in file_query %}
+                <tr>
+                    {% for val in row %}
+
+                        <li style="color: black;"><h4><a href="/key/{{ val }}">{{ val }}</a><a href="remove_downloads/{{ val }}">&nbsp;&nbsp;<span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></h4></li>
+
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+    </div>
+    <br><br>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<style>
+hr {
+    color: blue;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}
+</style>
+
+    <br><br><br><h3 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/python.jpg') }}">
+    Welcome to the Python Personal Thoughts page, {{un}}!</h3>
+
+    <hr>
+
+    <blockquote>
+
+        Good evening, {{un}}, my name is James Patterson. At the time of writing this, I'm a student that is about to graduate. I wrote this website
+        to help people. I hated going to different websites just to learn something about this or that, look something up for python, and look something
+        else up for c# later. It was all a major hassle. This website will solve that problem for me. When the semester is over, and my partners are
+        no longer going to be updating this site. I will maintain the site, and keep the information coming. I plan on extending the library of languages,
+        extending on every single language, SQL, PL-SQL, big data, machine-learning, and many more. I would really like to get into AI programming to
+        implement machine learning on the site somehow. Those are all things to come, hopefully!
+
+    </blockquote>
+
+    <br><hr><br>
+
+    <h3 style="text-align: center;">
+            C++ Introduction
+    </h3>
+
+    <p style="text-align: center;">
+        Next, Is the C++ Introduction Page, mate! Good On Ya!
+    </p>
+
+    <a href="/Python/exceptions"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Python - Exceptions
+    </button></a>
+
+    <a href="/C_plusplus/introduction"><button type="button" class="btn btn-primary btn-lg" style="float:right;">
+        Next Lesson : C++ Introduction   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+{% endblock %}

@@ -1,0 +1,440 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<style>
+hr {
+    color: blue;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}
+</style>
+
+    <br><br><br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/c_plusplus.png') }}">
+    Welcome to the C++ Decision Making Homepage, mate!</h1>
+
+    <hr>
+
+    <blockquote>
+
+        C++ Decision Making Information
+
+    </blockquote>
+
+    <br><hr><br>
+<style>
+.code
+{
+	background-color: #E0FFFF;
+}
+.output
+{
+	background-color: #000000;
+	color: #ffffff;
+}
+h1
+{
+	text-align: center;
+	text-decoration: underline;
+}
+h2
+{
+	text-decoration: underline;
+}
+.content
+{
+	text-align: center;
+}
+table
+{
+background-color: #6495ed;
+color: #ffffff;
+border: solid 2px black;
+}
+</style>
+<p>
+Decision making structures requires the programmer to stipulate one or more conditions to be evaluated or tested by the program,
+</br>along with a statement or statements to be executed if the condition is determined to be true,
+and
+</br>optionally, other statements to be executed if the condition is determined to be false.
+</p>
+</br>
+<h2>If Statement</h2>
+<p>An <b>if</b> statement consists of a boolean expression followed by one or more statements.
+</br></br>
+</p>
+<h2>If Statement Syntax</h2>
+<div class ="code">
+<p>
+</br>if(boolean_expression)
+</br>{
+  </br> /* statement(s) will execute if the boolean expression is true */
+</br>}
+
+</div>
+<p>If the boolean expression evaluates to <em>true</em>, then the block of code inside the if statement is executed.
+</br></br>If it's <em>false</em>, then the first set of code after
+the end of the if statement(after the closing curly brace) is executed.:
+</p>
+<h2>If Statement Example </h2>
+<div class="code">
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com">#include</span> <span class="str">&lt;iostream&gt;</span>
+<span class="kwd">using</span> <span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span>
+
+<span class="kwd">int</span><span class="pln"> main </span><span class="pun">()</span> <span class="pun">{</span>
+   <span class="com">// local variable declaration:</span>
+   <span class="kwd">int</span><span class="pln"> a </span><span class="pun">=</span> <span class="lit">10</span><span class="pun">;</span>
+
+   <span class="com">// check the boolean condition</span>
+   <span class="kwd">if</span><span class="pun">(</span><span class="pln"> a </span><span class="pun">&lt;</span> <span class="lit">20</span> <span class="pun">)</span> <span class="pun">{</span>
+      <span class="com">// if condition is true then print the following</span><span class="pln">
+      cout </span><span class="pun">&lt;&lt;</span> <span class="str">"a is less than 20;"</span> <span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span>
+   <span class="pun">}</span><span class="pln">
+
+   cout </span><span class="pun">&lt;&lt;</span> <span class="str">"value of a is : "</span> <span class="pun">&lt;&lt;</span><span class="pln"> a </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span>
+
+   <span class="kwd">return</span> <span class="lit">0</span><span class="pun">;</span>
+<span class="pun">}</span></pre>
+</div>
+<h2>Output</h2>
+<div class="output">
+<p>a is less than 20
+</br>value of a is : 10
+
+</div>
+<h2>If Else Statement</h2>
+<p>
+An <b>if</b> statement can be followed by an optional <b>else</b> statement,
+which executes when the boolean expression is false.
+
+</p>
+<h2>If Else Syntax</h2>
+<div class="code">
+<p>
+</br>if(boolean_expression)
+</br>{
+ </br>  /* statement(s) will execute if the boolean expression is true */
+</br>}
+</br>else
+</br>{
+ </br>  /* statement(s) will execute if the boolean expression is false */
+</br>}
+
+</div>
+</p>
+<p>If the boolean expression evaluates to <em>true</em>, then the <em>if block</em> of code is executed,
+otherwise the <em>else block</em> of code is executed.
+</p>
+<h2>If Else Example</h2>
+<div class="code">
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com">#include</span> <span class="str">&lt;iostream&gt;</span>
+<span class="kwd">using</span> <span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span>
+
+<span class="kwd">int</span><span class="pln"> main </span><span class="pun">()</span> <span class="pun">{</span>
+   <span class="com">// local variable declaration:</span>
+   <span class="kwd">int</span><span class="pln"> a </span><span class="pun">=</span> <span class="lit">100</span><span class="pun">;</span>
+
+   <span class="com">// check the boolean condition</span>
+   <span class="kwd">if</span><span class="pun">(</span><span class="pln"> a </span><span class="pun">&lt;</span> <span class="lit">20</span> <span class="pun">)</span> <span class="pun">{</span>
+      <span class="com">// if condition is true then print the following</span><span class="pln">
+      cout </span><span class="pun">&lt;&lt;</span> <span class="str">"a is less than 20;"</span> <span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span>
+   <span class="pun">}</span><span class="kwd">else</span> <span class="pun">{</span>
+      <span class="com">// if condition is false then print the following</span><span class="pln">
+      cout </span><span class="pun">&lt;&lt;</span> <span class="str">"a is not less than 20;"</span> <span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span>
+   <span class="pun">}</span><span class="pln">
+
+   cout </span><span class="pun">&lt;&lt;</span> <span class="str">"value of a is : "</span> <span class="pun">&lt;&lt;</span><span class="pln"> a </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span>
+
+   <span class="kwd">return</span> <span class="lit">0</span><span class="pun">;</span>
+<span class="pun">}</span></pre>
+</div>
+<h2>Output</h2>
+<div class="output">
+<p>
+a is not less than 20;
+</br>value of a is : 100
+
+</p>
+</div>
+<h2>If Else if Statements</h2>
+<p>
+An <em>if</em> statement can be followed by an optional <em>else if...else</em> statement,
+</br>which is very useful to test various conditions using single if...else if statement.
+
+</p>
+<h2>If Else if Syntax</h2>
+<div class="code">
+<p>
+</br>if(boolean_expression 1)
+</br>{
+ </br>  /* Executes when the boolean expression 1 is true */
+</br>}
+</br>else if( boolean_expression 2)
+</br>{
+ </br>  /* Executes when the boolean expression 2 is true */
+</br>}
+</br>else if( boolean_expression 3)
+</br>{
+ </br>  /* Executes when the boolean expression 3 is true */
+</br>}
+</br>else
+</br>{
+</br>   /* executes when the none of the above condition is true */
+</br>}
+
+</div>
+</p>
+<h2>If Else if Example</h2>
+<div class="code">
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com">#include</span> <span class="str">&lt;iostream&gt;</span>
+<span class="kwd">using</span> <span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span>
+
+<span class="kwd">int</span><span class="pln"> main </span><span class="pun">()</span> <span class="pun">{</span>
+   <span class="com">// local variable declaration:</span>
+   <span class="kwd">int</span><span class="pln"> a </span><span class="pun">=</span> <span class="lit">100</span><span class="pun">;</span>
+
+   <span class="com">// check the boolean condition</span>
+   <span class="kwd">if</span><span class="pun">(</span><span class="pln"> a </span><span class="pun">==</span> <span class="lit">10</span> <span class="pun">)</span> <span class="pun">{</span>
+      <span class="com">// if condition is true then print the following</span><span class="pln">
+      cout </span><span class="pun">&lt;&lt;</span> <span class="str">"Value of a is 10"</span> <span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span>
+   <span class="pun">}</span> <span class="kwd">else</span> <span class="kwd">if</span><span class="pun">(</span><span class="pln"> a </span><span class="pun">==</span> <span class="lit">20</span> <span class="pun">)</span> <span class="pun">{</span>
+      <span class="com">// if else if condition is true</span><span class="pln">
+      cout </span><span class="pun">&lt;&lt;</span> <span class="str">"Value of a is 20"</span> <span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span>
+   <span class="pun">}</span> <span class="kwd">else</span> <span class="kwd">if</span><span class="pun">(</span><span class="pln"> a </span><span class="pun">==</span> <span class="lit">30</span> <span class="pun">)</span> <span class="pun">{</span>
+      <span class="com">// if else if condition is true </span><span class="pln">
+      cout </span><span class="pun">&lt;&lt;</span> <span class="str">"Value of a is 30"</span> <span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span>
+   <span class="pun">}</span><span class="kwd">else</span> <span class="pun">{</span>
+      <span class="com">// if none of the conditions is true</span><span class="pln">
+      cout </span><span class="pun">&lt;&lt;</span> <span class="str">"Value of a is not matching"</span> <span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span>
+   <span class="pun">}</span><span class="pln">
+
+   cout </span><span class="pun">&lt;&lt;</span> <span class="str">"Exact value of a is : "</span> <span class="pun">&lt;&lt;</span><span class="pln"> a </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span>
+
+   <span class="kwd">return</span> <span class="lit">0</span><span class="pun">;</span>
+<span class="pun">}</span></pre>
+</div>
+<h2>Output</h2>
+<div class="output">
+<p>
+None of the values is matching
+</br>Exact value of a is: 100
+
+</p>
+</div>
+<h2>Nested if Statements</h2>
+<p>
+It is always legal in C++ to <em>nest</em> if-else statements,
+</br>which means you can use one if or else if statement inside another if or else if statement(s).
+</p>
+<h2>Nested if Syntax</h2>
+<div class="code">
+<p>
+</br>if( boolean_expression 1)
+</br>{
+  </br> /* Executes when the boolean expression 1 is true */
+  </br> if(boolean_expression 2)
+  </br> {
+    </br>  /* Executes when the boolean expression 2 is true */
+   </br>}
+</br>}
+
+</p>
+</div>
+<p>You can nest else if...else in the similar way as you have nested if statement.</p>
+<h2>Nested if Example</h2>
+<div class="code">
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com">#include</span> <span class="str">&lt;iostream&gt;</span>
+<span class="kwd">using</span> <span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span>
+
+<span class="kwd">int</span><span class="pln"> main </span><span class="pun">()</span> <span class="pun">{</span>
+   <span class="com">// local variable declaration:</span>
+   <span class="kwd">int</span><span class="pln"> a </span><span class="pun">=</span> <span class="lit">100</span><span class="pun">;</span>
+   <span class="kwd">int</span><span class="pln"> b </span><span class="pun">=</span> <span class="lit">200</span><span class="pun">;</span>
+
+   <span class="com">// check the boolean condition</span>
+   <span class="kwd">if</span><span class="pun">(</span><span class="pln"> a </span><span class="pun">==</span> <span class="lit">100</span> <span class="pun">)</span> <span class="pun">{</span>
+      <span class="com">// if condition is true then check the following</span>
+      <span class="kwd">if</span><span class="pun">(</span><span class="pln"> b </span><span class="pun">==</span> <span class="lit">200</span> <span class="pun">)</span> <span class="pun">{</span>
+         <span class="com">// if condition is true then print the following</span><span class="pln">
+         cout </span><span class="pun">&lt;&lt;</span> <span class="str">"Value of a is 100 and b is 200"</span> <span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span>
+      <span class="pun">}</span>
+   <span class="pun">}</span><span class="pln">
+
+   cout </span><span class="pun">&lt;&lt;</span> <span class="str">"Exact value of a is : "</span> <span class="pun">&lt;&lt;</span><span class="pln"> a </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span><span class="pln">
+   cout </span><span class="pun">&lt;&lt;</span> <span class="str">"Exact value of b is : "</span> <span class="pun">&lt;&lt;</span><span class="pln"> b </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span>
+
+   <span class="kwd">return</span> <span class="lit">0</span><span class="pun">;</span>
+<span class="pun">}</span></pre>
+</div>
+<h2>Output</h2>
+<div class="output">
+<p>
+Value of a is 100 and b is 200
+</br>Exact value of a is : 100
+</br>Exact value of b is : 200
+</p>
+</div>
+<h2>Switch Statements</h2>
+<p>
+A <em>switch</em> statement allows a variable to be tested for equality against a list of values.
+Each value is called a case, and the variable being switched on is checked for each <em>switch case</em>.
+</p>
+<h2>Switch Statement Syntax</h2>
+<div class="code">
+<p>
+</br>switch(expression) {
+  </br> case constant-expression  :
+  </br>    statement(s);
+  </br>    break; /* optional */
+  </br> case constant-expression  :
+ </br>     statement(s);
+  </br>    break; /* optional */
+
+ </br>  /* you can have any number of case statements */
+ </br>  default : /* Optional */
+  </br> statement(s);
+</br>}
+</div>
+</p>
+<p>Switch Statements have a set of guidelines you must follow:</p>
+<ul>
+<li>The <b> expression</b> used in a<b> switch</b> statement must have an integral or enumerated type, or be of a class type in which the class has a single conversion function to an integral or enumerated type.</li>
+</br>
+<li>You can have any number of case statements within a switch. Each case is followed by the value to be compared to and a colon.</li>
+</br>
+<li>The <b> constant-expression</b>for a case must be the same data type as the variable in the switch, and it must be a constant or a literal.</li>
+</br>
+<li>When the variable being switched on is equal to a case, the statements following that case will execute until a <b> break</b> statement is reached.</li>
+</br>
+<li>When a <b> break</b> statement is reached, the switch terminates, and the flow of control jumps to the next line following the switch statement.</li>
+</br>
+<li>Not every case needs to contain a <b> break</b>. If no <b> break</b>appears, the flow of control will <em> fall through</em> to subsequent cases until a break is reached.</li>
+</br>
+<li>A <b> switch</b>statement can have an optional <b> default</b> case, which must appear at the end of the switch. The default case can be used for performing a task when none of the cases is true. No&nbsp;<strong>break</strong>&nbsp;is needed in the default case.</li>
+</ul>
+
+<h2>Switch Statement Example</h2>
+<div class="code">
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com">#include</span> <span class="str">&lt;iostream&gt;</span>
+<span class="kwd">using</span> <span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span>
+
+<span class="kwd">int</span><span class="pln"> main </span><span class="pun">()</span> <span class="pun">{</span>
+   <span class="com">// local variable declaration:</span>
+   <span class="kwd">char</span><span class="pln"> grade </span><span class="pun">=</span> <span class="str">'B'</span><span class="pun">;</span>
+
+   <span class="kwd">switch</span><span class="pun">(</span><span class="pln">grade</span><span class="pun">)</span> <span class="pun">{</span>
+      <span class="kwd">case</span> <span class="str">'A'</span> <span class="pun">:</span><span class="pln">
+         cout </span><span class="pun">&lt;&lt;</span> <span class="str">"Excellent!"</span> <span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span>
+         <span class="kwd">break</span><span class="pun">;</span>
+      <span class="kwd">case</span> <span class="str">'B'</span> <span class="pun">:</span>
+      <span class="kwd">case</span> <span class="str">'C'</span> <span class="pun">:</span><span class="pln">
+         cout </span><span class="pun">&lt;&lt;</span> <span class="str">"Well done"</span> <span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span>
+         <span class="kwd">break</span><span class="pun">;</span>
+      <span class="kwd">case</span> <span class="str">'D'</span> <span class="pun">:</span><span class="pln">
+         cout </span><span class="pun">&lt;&lt;</span> <span class="str">"You passed"</span> <span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span>
+         <span class="kwd">break</span><span class="pun">;</span>
+      <span class="kwd">case</span> <span class="str">'F'</span> <span class="pun">:</span><span class="pln">
+         cout </span><span class="pun">&lt;&lt;</span> <span class="str">"Better try again"</span> <span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span>
+         <span class="kwd">break</span><span class="pun">;</span>
+      <span class="kwd">default</span> <span class="pun">:</span><span class="pln">
+        cout </span><span class="pun">&lt;&lt;</span> <span class="str">"Invalid grade"</span> <span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span>
+   <span class="pun">}</span><span class="pln">
+
+   cout </span><span class="pun">&lt;&lt;</span> <span class="str">"Your grade is "</span> <span class="pun">&lt;&lt;</span><span class="pln"> grade </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span>
+
+   <span class="kwd">return</span> <span class="lit">0</span><span class="pun">;</span>
+<span class="pun">}</span></pre>
+</div>
+<h2>Output</h2>
+<div class="output">
+<p>
+Well done
+</br>Your grade is B
+
+</p>
+</div>
+<h2>Nested Switch Statements</h2>
+<p>It is possible to have a switch as part of the statement sequence of an outer switch.
+</br>Even if the case constants of the inner and outer switch contain common values, no conflicts will arise.
+<h2>Nested Switch Syntax</h2>
+<div class="code">
+<p>
+</br>switch(ch1)
+</br>{
+ </br>  case 'A':
+ </br>  cout << "This A is part of outer switch" ;
+ </br>  switch(ch2)
+ </br>  {
+  </br>    case 'A':
+  </br>       cout << "This A is part of inner switch";
+  </br>       break;
+  </br>    case 'B': /* inner B case code */
+  </br> }
+ </br>  break;
+ </br>  case 'B': /* outer B case code */
+</br>}
+
+</p>
+</div>
+<h2>Nested Switch Example</h2>
+<div class="code">
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com">#include</span> <span class="str">&lt;iostream&gt;</span>
+<span class="kwd">using</span> <span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span>
+
+<span class="kwd">int</span><span class="pln"> main </span><span class="pun">()</span> <span class="pun">{</span>
+   <span class="com">// local variable declaration:</span>
+   <span class="kwd">int</span><span class="pln"> a </span><span class="pun">=</span> <span class="lit">100</span><span class="pun">;</span>
+   <span class="kwd">int</span><span class="pln"> b </span><span class="pun">=</span> <span class="lit">200</span><span class="pun">;</span>
+
+   <span class="kwd">switch</span><span class="pun">(</span><span class="pln">a</span><span class="pun">)</span> <span class="pun">{</span>
+      <span class="kwd">case</span> <span class="lit">100</span><span class="pun">:</span><span class="pln">
+         cout </span><span class="pun">&lt;&lt;</span> <span class="str">"This is part of outer switch"</span> <span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span>
+         <span class="kwd">switch</span><span class="pun">(</span><span class="pln">b</span><span class="pun">)</span> <span class="pun">{</span>
+            <span class="kwd">case</span> <span class="lit">200</span><span class="pun">:</span><span class="pln">
+               cout </span><span class="pun">&lt;&lt;</span> <span class="str">"This is part of inner switch"</span> <span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span>
+         <span class="pun">}</span>
+   <span class="pun">}</span><span class="pln">
+
+   cout </span><span class="pun">&lt;&lt;</span> <span class="str">"Exact value of a is : "</span> <span class="pun">&lt;&lt;</span><span class="pln"> a </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span><span class="pln">
+   cout </span><span class="pun">&lt;&lt;</span> <span class="str">"Exact value of b is : "</span> <span class="pun">&lt;&lt;</span><span class="pln"> b </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span>
+
+   <span class="kwd">return</span> <span class="lit">0</span><span class="pun">;</span>
+<span class="pun">}</span></pre>
+</div>
+<div class="output">
+<p>
+This is part of outer switch
+</br>This is part of inner switch
+</br>Exact value of a is : 100
+</br>Exact value of b is : 200
+
+</p>
+</div>
+
+
+<br><hr><br>
+
+    <h3 style="text-align: center;">
+            Imports
+    </h3>
+
+    <p style="text-align: center;">
+        Next, we will discuss Importing modules and inheritance within the language of C++, mate!
+    </p>
+
+    <a href="/C_plusplus/loop_control"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> C++ - Loop Control
+    </button></a>
+
+    <a href="/C_plusplus/imports"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        C++ - Imports   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+{% endblock %}

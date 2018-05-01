@@ -1,0 +1,108 @@
+{% extends "header.html" %}
+    {% block body %}
+
+    <title>Meraki : Python : Comments</title>
+
+    <style>
+    hr {
+        color: blue;
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: 10px;
+    }
+    </style>
+
+        <br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/python.jpg') }}">
+        Welcome to the Python Comments page, <b>{{un}}</b>!</h1>
+
+        <hr>
+
+        <blockquote>
+
+            Comments play a huge role in any programmers life. Comments can make or break a good team of programmers or just one.
+            Comments allow the programmer to go back and review what has been coded, without needing to figure out exactly what
+            the code does once again. A well placed comment can help other programmers figure out what you were doing and your
+            specific thought process. Python has a variety of different comments we will discuss here.
+
+        </blockquote>
+
+        <br>
+
+        <h3>
+            Comments in Python
+        </h3>
+
+        <p>
+            A comment can be made in three different ways in Python. The easiest comment to use and understand
+            is the hash sign, #. From the # to the end of the line will be denoted as a comment, and Python will
+            ignore the line during interpretation.
+        </p>
+
+        <br><br><p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/comments/comments.jpg') }}"></p>
+
+            <br>
+
+            <hr>
+
+            <br>
+
+        <h3>
+            Comments cont...
+        </h3>
+
+        <p>
+            A comment can be made using '''  , but you must remember to close off the comments using another '''  at the end.
+            These types of comments are reserved for long comments, and they are particularly useful when needing to comment out an entire
+            block or blocks of code quickly and easily.
+        </p>
+
+        <br><br><p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/comments/blockcomment.jpg') }}"></p>
+
+            <br>
+
+            <hr>
+
+            <br>
+
+        <h3>
+            Comments cont 2...
+        </h3>
+
+        <p>
+            In conclusion, a comment can be created using a hash sign for single line comments, or use ''' to create a block comment. You must remember
+            to close off the block comment or the entire py file will be commented out.
+        </p>
+
+            <br>
+
+            <hr>
+
+            <br>
+
+        <h3 style="text-align: center;">
+            Data Types
+        </h3>
+
+        <p style="text-align: center;">
+            Next, we will look at the different types of data types available to be used in Python 3.5.
+        </p>
+
+        <a href="/Python/syntax"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+            <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Python - Syntax
+        </button></a>
+
+        <a href="/Python/data_types"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+            Python - Data Types  <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        </button></a>
+
+        <br>
+
+            <hr>
+
+            <br><br>
+
+    {% endblock %}

@@ -1,0 +1,154 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<style>
+hr {
+    color: blue;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}
+</style>
+
+    <br><br><br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/c_plusplus.png') }}">
+    Welcome to the C++ Imports Homepage, mate!</h1>
+
+    <hr>
+
+    <blockquote>
+
+        C++ Imports Information
+
+    </blockquote>
+
+    <br><hr><br>
+
+<style>
+.code
+{
+	background-color: #E0FFFF;
+}
+.output
+{
+	background-color: #000000;
+	color: #ffffff;
+}
+h1
+{
+	text-align: center;
+	text-decoration: underline;
+}
+h2
+{
+	text-decoration: underline;
+}
+.content
+{
+	text-align: center;
+}
+table
+{
+background-color: #6495ed;
+color: #ffffff;
+border: solid 2px black;
+}
+</style>
+<p>The include directive enables you to import the necessary files and tools you are trying to use. This could include any other files you need to run in tandem with your main file such as a header file.</p>
+<p>Specifically, it tells the preprocessor to treat the contents of a specified file as if they appear in the source program at the point where the directive appears. I&rsquo;m sure by now you&rsquo;ve noticed the #include &lt;iosteam&gt; in the previous examples. This enabled me to use console output with cout and console input with cin.</p>
+<p>But to refresh, let&rsquo;s look at the syntax.</p>
+<h2>Syntax</h2>
+<p>&nbsp;</p>
+<div class="code">
+<p>#include&nbsp; "path-spec"&nbsp;</p>
+<p>#include&nbsp; &lt;path-spec&gt;&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+<p>If you&rsquo;ll noticed, there are two different syntaxes for the include directive, one with quotation marks, and the other with the angle brackets (&lt;&gt;).</p>
+<p>The table below specifies the differences between these two.</p>
+<table>
+<thead>
+<tr>
+<td>
+<p><strong>Syntax Form</strong></p>
+</td>
+<td>
+<p><strong>Action</strong></p>
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>Quoted form</p>
+</td>
+<td>
+<p>The preprocessor searches for include files in this order:<br /> <br /> 1) In the same directory as the file that contains the&nbsp;#include&nbsp;statement.<br /> <br /> 2) In the directories of the currently opened include files, in the reverse order in which they were opened. The search begins in the directory of the parent include file and continues upward through the directories of any grandparent include files.<br /> <br /> 3) Along the path that's specified by each /I compiler option.<br /> <br /> 4) Along the paths that are specified by the INCLUDE environment variable.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Angle-bracket form</p>
+</td>
+<td>
+<p>The preprocessor searches for include files in this order:<br /> <br /> 1) Along the path that's specified by each /I compiler option.<br /> <br /> 2) When compiling occurs on the command line, along the paths that are specified by the INCLUDE environment variable.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>The preprocessor stops searching as soon as it finds a file that has the given name. If you enclose a complete, unambiguous path specification for the include file between double quotation marks (" "), the preprocessor searches only that path specification and ignores the standard directories.</p>
+<p>There&rsquo;s an incredible amount of C++ Standard Library Header files, so instead of me typing them all out,</p>
+<p>check out this great link that lists and explains them!</p>
+<p><a href="http://en.cppreference.com/w/cpp/header">http://en.cppreference.com/w/cpp/header</a></p>
+<p>But to reemphasize everything I&rsquo;ve said on this page, I&rsquo;ve included an example below using one of the more frequently used libraries &lt;math.h&gt;</p>
+<h2>&lt;math.h&gt; Example</h2>
+<div class="code">
+<p>#include &lt;stdio.h&gt; //standard buffered input/output</p>
+<p>#include &lt;iostream&gt; //gives me cout and cin</p>
+<p>#include &lt;math.h&gt; // gives me pow</p>
+<p>using namespace std;</p>
+<p>int main(int argc, char **argv)</p>
+<p>{</p>
+<p>&nbsp;int a = 2;</p>
+<p>&nbsp;int b = 3;</p>
+<p>&nbsp;int c = pow(a,b);</p>
+<p>&nbsp;cout &lt;&lt; c &lt;&lt; endl;</p>
+<p>}</p>
+</div>
+<h2>Output</h2>
+<div class="output">
+<p>8</p>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+<br><hr><br>
+
+    <h3 style="text-align: center;">
+            Files & IO
+    </h3>
+
+    <p style="text-align: center;">
+        Next, we will discuss Files & IO within the language of C++, mate!
+    </p>
+
+    <a href="/C_plusplus/decision_making"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> C++ - Decision Making
+    </button></a>
+
+    <a href="/C_plusplus/files_io"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        C++ - Files & IO   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+
+{% endblock %}

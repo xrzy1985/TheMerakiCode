@@ -1,0 +1,140 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<style>
+hr {
+    color: blue;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}
+</style>
+
+    <br><br><br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/c_sharp.png') }}">
+    Welcome to the C# Modifiers Homepage, mate!</h1>
+
+    <hr>
+
+    <blockquote>
+
+        C# Modifiers Information
+
+    </blockquote>
+<style>
+.code
+{
+	background-color: #E0FFFF;
+}
+.output
+{
+	background-color: #000000;
+	color: #ffffff;
+}
+h1
+{
+	text-align: center;
+	text-decoration: underline;
+}
+h2
+{
+	text-decoration: underline;
+}
+.content
+{
+	text-align: center;
+}
+table
+{
+background-color: #6495ed;
+color: #ffffff;
+border: solid 2px black;
+}
+</style>
+<p> <b>Modifiers</b> are used to modify declarations of types and type members. </p>
+<p>I have briefly described some of these modifiers in the Objects and Classes section</p>
+<table summary="table">
+<thead>
+<tr>
+<th scope="col">Modifier</th>
+<th scope="col">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-th="Modifier"><a href="https://msdn.microsoft.com/en-us/library/wxh6fsc7.aspx">Access Modifiers</a><br /><br />- <a href="https://msdn.microsoft.com/en-us/library/yzh058ae.aspx">public</a><br />- <a href="https://msdn.microsoft.com/en-us/library/st6sy9xe.aspx">private</a><br />- <a href="https://msdn.microsoft.com/en-us/library/7c5ka91b.aspx">internal</a><br />- <a href="https://msdn.microsoft.com/en-us/library/bcd5672a.aspx">protected</a></td>
+<td data-th="Purpose">Specifies the declared accessibility of types and type members.</td>
+</tr>
+<tr>
+<td data-th="Modifier"><a href="https://msdn.microsoft.com/en-us/library/sf985hc5.aspx">abstract</a></td>
+<td data-th="Purpose">Indicates that a class is intended only to be a base class of other classes.</td>
+</tr>
+<tr>
+<td data-th="Modifier"><a href="https://msdn.microsoft.com/en-us/library/hh156513.aspx">async</a></td>
+<td data-th="Purpose">Indicates that the modified method, lambda expression, or anonymous method is asynchronous.</td>
+</tr>
+<tr>
+<td data-th="Modifier"><a href="https://msdn.microsoft.com/en-us/library/e6w8fe1b.aspx">const</a></td>
+<td data-th="Purpose">Specifies that the value of the field or the local variable cannot be modified.</td>
+</tr>
+<tr>
+<td data-th="Modifier"><a href="https://msdn.microsoft.com/en-us/library/8627sbea.aspx">event</a></td>
+<td data-th="Purpose">Declares an event.</td>
+</tr>
+<tr>
+<td data-th="Modifier"><a href="https://msdn.microsoft.com/en-us/library/e59b22c5.aspx">extern</a></td>
+<td data-th="Purpose">Indicates that the method is implemented externally.</td>
+</tr>
+<tr>
+<td data-th="Modifier"><a href="https://msdn.microsoft.com/en-us/library/51y09td4.aspx">new</a></td>
+<td data-th="Purpose">Explicitly hides a member inherited from a base class.</td>
+</tr>
+<tr>
+<td data-th="Modifier"><a href="https://msdn.microsoft.com/en-us/library/ebca9ah3.aspx">override</a></td>
+<td data-th="Purpose">Provides a new implementation of a virtual member inherited from a base class.</td>
+</tr>
+<tr>
+<td data-th="Modifier"><a href="https://msdn.microsoft.com/en-us/library/wbx7zzdd.aspx">partial</a></td>
+<td data-th="Purpose">Defines partial classes, structs and methods throughout the same assembly.</td>
+</tr>
+<tr>
+<td data-th="Modifier"><a href="https://msdn.microsoft.com/en-us/library/acdd6hb7.aspx">readonly</a></td>
+<td data-th="Purpose">Declares a field that can only be assigned values as part of the declaration or in a constructor in the same class.</td>
+</tr>
+<tr>
+<td data-th="Modifier"><a href="https://msdn.microsoft.com/en-us/library/88c54tsw.aspx">sealed</a></td>
+<td data-th="Purpose">Specifies that a class cannot be inherited.</td>
+</tr>
+<tr>
+<td data-th="Modifier"><a href="https://msdn.microsoft.com/en-us/library/98f28cdx.aspx">static</a></td>
+<td data-th="Purpose">Declares a member that belongs to the type itself instead of to a specific object.</td>
+</tr>
+<tr>
+<td data-th="Modifier"><a href="https://msdn.microsoft.com/en-us/library/chfa2zb8.aspx">unsafe</a></td>
+<td data-th="Purpose">Declares an unsafe context.</td>
+</tr>
+<tr>
+<td data-th="Modifier"><a href="https://msdn.microsoft.com/en-us/library/9fkccyh4.aspx">virtual</a></td>
+<td data-th="Purpose">Declares a method or an accessor whose implementation can be changed by an overriding member in a derived class.</td>
+</tr>
+<tr>
+<td data-th="Modifier"><a href="https://msdn.microsoft.com/en-us/library/x13ttww7.aspx">volatile</a></td>
+<td data-th="Purpose">Indicates that a field can be modified in the program by something such as the operating system, the hardware, or a concurrently executing thread.</td>
+</tr>
+</tbody>
+</table>
+</br>
+</br>
+<a href="/C_sharp/data_structures"><button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> C# - Data Structures
+    </button></a>
+
+    <a href="/C_sharp/operators"><button type="button" class="btn btn-default btn-lg" style="float: right;">
+        C# - Operators <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+{% endblock %}

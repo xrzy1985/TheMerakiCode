@@ -1,0 +1,26 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+        <div style="max-width: 800px;" class="container" align="center">
+
+            <br><h3><b>S</b>ecure <b>L</b>ogin</h3><br>
+
+            <form method="post">
+                <div style="max-width: 500px;" class="form-group">
+                    <h3 style="text-align: left;">Username</h3>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Username" name="username" value="{{request.form.username}}">
+                    </div>
+                    <div style="max-width: 500px;" class="form-group">
+                    <h3 style="text-align: left;">Password</h3>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" value="{{request.form.password}}">
+                    <br>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                </div>
+            </form>
+
+            <p>{{error}}</p>
+
+        </div>
+
+{% endblock %}

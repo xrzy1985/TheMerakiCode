@@ -1,0 +1,93 @@
+{% extends "header.html" %}
+    {% block body %}
+
+    <title>Meraki : Java : Modifiers</title>
+
+    <style>
+    hr {
+        color: blue;
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: 10px;
+    }
+    </style>
+
+        <br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Java.png') }}">
+        Welcome to the Java Modifiers page, mate!</h1>
+
+        <hr>
+
+        <blockquote>
+
+            Java's Modifiers information:</br>
+            <p>Modifiers are keywords, added to declarations, to change properties of a method or variable.
+            The Java language supports the following modifiers, in addition to others not expounded here: </p>
+<ul class="list">
+<li><p><a href="/java/java_access_modifiers.htm">"Access" Modifiers</a></p></li>
+<li><p><a href="/java/java_nonaccess_modifiers.htm">"Non-Access" Modifiers</a></p></li>
+</ul>
+
+        </blockquote>
+
+<p>To use a modifier, simply add the keyword for it to the definition of a class, method, or variable.
+The modifier should be the first part of the statement, as shown below:</p>
+<h3>Example</h3>
+<pre class="prettyprint notranslate">
+<i>public</i> class className {
+   // ...
+}
+
+<i>private</i> boolean myFlag;
+<i>static final</i> double weeks = 9.5;
+<i>protected static final</i> int BOXWIDTH = 42;
+
+<i>public static</i> void main(String[] arguments) {
+   // body of method
+}
+</pre>
+<h2>Access Control Modifiers</h2>
+<p>Java has several access modifiers available. They set access allowance for classes, variables, and methods. The four access levels are:</p>
+<ul class="list">
+<li>Only visible to the package (Default accessibility. No modifiers are needed.)</li>
+<li>Only visible to the class (private keyword used).</li>
+<li>Publicly visible to all other packages, classes, and methods (public keyword used).</li>
+<li>Only visible within the package and subclasses of the class (protected keyword used).</li>
+</ul>
+<h2>Non-Access Modifiers</h2>
+<p>Java also provides non-access modifiers, which allow other functionality.</p>
+<ul class="list">
+<li><p>The modifier <i>static</i> allows us to create class methods and variables.</p></li>
+<li><p>The modifier <i>final</i> allows us to finalize the implementations of classes, methods, and variables.</p></li>
+<li><p>The modifier <i>abstract</i> allows the creation of abstract classes and methods.</p></li>
+<li><p>The modifiers<i>synchronized</i> and <i>volatile</i> are used in threaded processes.</p></li>
+</ul>
+
+
+
+
+
+    <br><hr><br>
+
+    <h3 style="text-align: center;">
+            Operators
+    </h3>
+
+    <p style="text-align: center;">
+        Next, we will look at Operators.
+    </p>
+
+    <a href="/Java/data_structures/"><button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Java - Data Structures
+    </button></a>
+
+    <a href="/Java/operators/"><button type="button" class="btn btn-default btn-lg" style="float: right;">
+        Java - Operators   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+    {% endblock %}

@@ -1,0 +1,246 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<!-- The import required for AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+
+
+<!--
+
+=================================================================================================================================
+White space         : &nbsp;
+bold tag            : <b></b>
+Indent              : <p style="text-indent: 50px;">    </p>
+Horz Bar with \n    : <br><hr class="ones"><br>
+hyper link          : <p><a href="/location/">TEXT</a></p>
+bootstrap glyphs    : <span class="glyph-goes-here" aria-hidden="true"></span>
+img                 : <img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/image.jpg') }}">
+
+use .container for containing responsive fixed width containers
+unable to be nested
+
+    <div class="container">
+    ...
+    </div>
+
+use .container-fluid for a full width container, which will span across the entire viewport
+
+    <div class="container-fluid">
+    ...
+    </div>
+
+=================================================================================================================================
+-->
+
+        <br><br><br><h3 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/angularjs.png') }}">
+        Welcome to the AngularJS Introduction Homepage, <b>{{un}}</b>!</h3>
+
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+        <p class="intro">
+            <center><b>
+                AngularJS | Framework, Library, and extension of HTML
+            </b></center>
+        </p>
+
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+        <p style="text-indent: 50px;">
+
+           <b>AngularJS</b> is a web framework that is open source, developed by Misko Hevery and Adam Abrons in 2009. Google
+           now maintains the everyday update and upkeep for AngularJS. The purpose of AngularJS is to create rich internet
+           applications using the javascript based framework. Angular offers the option to write code in a convenient model view
+           controller fashion.
+
+        </p>
+
+        <p style="text-indent: 50px;">
+            AngularJS is written in the javascript language, and it can be used by importing the required information
+            using a script tag. AngularJS will extend the functionality of HTML with directives. The directives are
+            assigned to tags in order to indicate that an AngularJS application will be applied to this area of the
+            HTML. The <b>ng-app</b> will be placed inside of a tag, such as div, to define an AngularJS application.
+            The ng-app directive will indicate to AngularJS that specific element is the holder of an AngularJS application.
+            The <b>ng-model</b> is to be placed inside an input, select, textarea tag to bind the application data to
+            the AngularJS application. The ng-model binds the application data to the variable name supplied inside the
+            tag. The <b>ng-bind</b> will take the application data and dynamically display the data inside the HTML tag
+            associated with the ng-bind attribute.
+
+        </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <div ng-app="">
+        <h4>Enter your Name: <input type="text" ng-model="name"></h4>
+        <h4>Enter your Age: <input type="text" ng-model="age"></h4>
+        <h4>Enter your Birthday: <input type="text" ng-model="birthday"></h4>
+
+        <br>
+
+        <p><p ng-bind="name"></p> <p ng-bind="age"></p> <p ng-bind="birthday"></p></p>
+
+    </div>
+
+    <p style="text-indent: 50px;">
+
+        The example above is a simple use of AngularJS. The code below is from the example
+        above. You can see how each element is defined with the ng-app, ng-model, and ng-bind
+        attributes. All of the ng-bind elemenets must be within the ng-app element in order
+        to be used within scope. If I had placed the p element with the ng-bind data outside
+        of the ng-app div element, the HTML would not render the information dynamically, and
+        the information would be lost and unreachable. The ng-bind elements must be within
+        the scope of the ng-app element in order for the dynamic results to be displayed. There
+        could be a way around this, but I am writing this introduction and tutorial for
+        AngularJS as I am learning how to use the framework/library. If the information is wrong,
+        I will correct it as I learn the right information. The code below is how you can
+        replicate the Name, Age, and Birthday section with dynamic results. The next section is
+        the code written for the small AngularJS ng-app element above. The div element is defined
+        using the ng-app paramenter, while the name, age, and birthday are input variables being
+        assigned and displayed dynamically as they are being entered. The dynamic behavior
+        will only work within the div with the ng-app parameter, and anything outside the
+        div will result in being out of scope.
+
+    </p>
+
+
+
+<!--========================================================================================================================-->
+    <br>
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+    <br>
+<!--========================================================================================================================-->
+<div style="margin-left: 50px;">
+    <p>
+        &lt;div ng-app=""&gt;
+    </p>
+
+    <br/>
+
+    <p>
+        &lt;h4&gt;Enter your Name: &lt;input type="text"
+        ng-model="name"&gt;&lt;/h4&gt;
+    </p>
+
+    <br/>
+
+    <p>
+        &lt;h4&gt;Enter your Age: &lt;input type="text"
+        ng-model="age"&gt;&lt;/h4&gt;
+    </p>
+
+    <br/>
+
+    <p>
+        &lt;h4&gt;Enter your Birthday: &lt;input type="text"
+        ng-model="birthday"&gt;&lt;/h4&gt;
+    </p>
+
+    <br/>
+
+    <p>
+        &lt;br&gt;
+    </p>
+
+    <br/>
+
+    <p>
+        &lt;p&gt;&lt;p ng-bind="name"&gt;&lt;/p&gt; &lt;p
+        ng-bind="age"&gt;&lt;/p&gt; &lt;p
+        ng-bind="birthday"&gt;&lt;/p&gt;&lt;/p&gt;
+    </p>
+
+    <br/>
+
+    <p>
+        &lt;/div&gt;
+    </p>
+</div>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <ul>
+        <li><b>Data-binding</b>
+            <p>This is the syncing of the data with the model/view elements.</p>
+        </li>
+
+        <li><b>Scope</b>
+            <p>These are objects that are linked to the model, the link between controller and view.</p>
+        </li>
+
+        <li><b>Controller</b>
+            <p>The actual Javascript functions that are linked to a specific scope.</p>
+        </li>
+
+        <li><b>Services</b>
+            <p>Built in services provided by AngularJS, for example: the ability to make XMLHttpRequests.</p>
+        </li>
+
+        <li><b>Filters</b>
+            <p>Will select a certain set of items from an array, and return the subset of items as a new array.</p>
+        </li>
+
+        <li><b>Directives</b>
+            <p>A way to mark DOM elements; ng-app, ng-bind, ng-model.</p>
+        </li>
+
+        <li><b>Templates</b>
+            <p>The actual view that is rendered from the information gathered from the controller and model.
+            This can be one file, index.html, or multiple views using partials.</p>
+        </li>
+
+        <li><b>Routing</b>
+            <p>The ability to switch between the different views(templates).</p>
+        </li>
+
+        <li><b>Model View Controller</b>
+            <p>A design pattern for a web application; Model, View, and Controller.
+                Angular adheres to a Model-View-ViewModel method, calling it the
+                Model View Whatever method.
+
+            </p>
+        </li>
+
+        <li><b>Deep Linking</b>
+            <p>Will allow a programmer to code the exact state of the application in the URL. This will give the user
+            the ability to restore the URL to the same state.</p>
+        </li>
+
+        <li><b>Dependency Injection</b>
+            <p>This is suppose to help the developer to develop, understand, and test easier. </p>
+        </li>
+
+    </ul>
+
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+
+        <h3 style="text-align: center;">Next, we will take a look at the environments of AngularJS</h3>
+
+        <p style="text-align: center;">Just follow the buttons to continue the tutorial, {{un}}</p>
+
+
+        <br>
+
+        <a href="/#/#"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> ???
+        </button></a>
+
+        <a href="/AngularJS/environment"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        AngularJS - Environment Setup <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        </button></a>
+
+{% endblock %}

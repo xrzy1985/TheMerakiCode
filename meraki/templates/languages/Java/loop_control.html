@@ -1,0 +1,141 @@
+{% extends "header.html" %}
+    {% block body %}
+
+    <title>Meraki : Java : Loop Control</title>
+
+    <style>
+    hr {
+        color: blue;
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: 10px;
+    }
+    </style>
+
+        <br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Java.png') }}">
+        Welcome to the Java Loop Control page, mate!</h1>
+
+        <hr>
+
+        <blockquote>
+
+            Java's Loop Control information:
+            </br>
+            <p>In programming, there are frequently times when you need to run the same lines of code multiple times.</p>
+<p>This repetition can be the same actions on different objects in a data stucture, continually listening for and processing incoming network packets/streams,
+periodically calling other methods to perform functions, or any number of possibilities. You could also need to execute or skip sections of code based on the state of an object or variable.</p>
+<p>Java provides ways of handling all of these situations and more.</p>
+        </blockquote>
+
+
+<p>The Java language provides built in support for the following kinds of loops.</p>
+<table class="table table-bordered">
+<tr>
+<th>No.</th>
+<th style="text-align:center;">Loop &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">1</td>
+<td>while loop
+<p>Repeats a line of code or block of code while the condition in the while's parentheses are true. It tests to see if it's true and then executes the code it contains.</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">2</td>
+<td>for loop
+<p>Repeats a line of code or block of code while the condition in its parameters is true. The For loop's parentheses contain the variable checked, the value it is compared against to
+determine if the loop should continue, as well as code to increment the variable controlling the loop.</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">3</td>
+<td>do while loop
+<p>Works similarly to a while loop, but it executes and then checks the condition, so it does the action until the condition is no longer true, instead of while it is no
+long true.</p></td>
+</tr>
+</table>
+<h2>Loop Control Statements</h2>
+<p>Loop control statements change execution from its normal sequence. When execution leaves a scope, all automatic objects that were created in that scope are destroyed.</p>
+<p>Java supports the following control statements.</p>
+<table class="table table-bordered">
+<tr>
+<th>No.</th>
+<th style="text-align:center;">Control Statement &amp; Description</th>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">1</td>
+<td>break statement
+<p>Terminates the <b>loop</b> or <b>switch</b> statement and transfers execution to the statement immediately following the loop or switch.</p></td>
+</tr>
+<tr>
+<td style="text-align:center; vertical-align:middle;">2</td>
+<td>continue statement
+<p>Causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating.</p></td>
+</tr>
+</table>
+<h2>Enhanced for loop in Java</h2>
+<p>As of Java 5, the enhanced for loop was introduced. This is mainly used to traverse collection of elements including arrays.</p>
+<h3>Syntax</h3>
+<p>Following is the syntax of enhanced for loop &minus;</p>
+<pre class="result notranslate">
+for(declaration : expression) {
+   // Statements
+}
+</pre>
+<ul class="list">
+<li><p><b>Declaration</b> &minus; The newly declared block variable, is of a type compatible with the elements of the array you are accessing. The variable will be available within the for block and its value would be the same as the current array element.</p></li>
+<li><p><b>Expression</b> &minus; This evaluates to the array you need to loop through. The expression can be an array variable or method call that returns an array.</p></li>
+</ul>
+<h3>Example</h3>
+<pre class="prettyprint notranslate tryit">
+public class Test {
+
+   public static void main(String args[]) {
+      int [] numbers = {10, 20, 30, 40, 50};
+
+      for(int x : numbers ) {
+         System.out.print( x );
+         System.out.print(",");
+      }
+      System.out.print("\n");
+      String [] names = {"James", "Clay", "Paul"};
+
+      for( String name : names ) {
+         System.out.print( name );
+         System.out.print(",");
+      }
+   }
+}
+</pre>
+<p>This will produce the following result &minus;</p>
+<h3>Output</h3>
+<pre class="result notranslate">
+10, 20, 30, 40, 50
+James, Clay, Paul
+</pre>
+
+
+
+    <br><hr><br>
+
+    <h3 style="text-align: center;">
+            Decision Making
+    </h3>
+
+    <p style="text-align: center;">
+        Next, we will look at Decision Making, logical functions/statements like if/then and while statements
+    </p>
+
+    <a href="/Java/operators/"><button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Java - Operators
+    </button></a>
+
+    <a href="/Java/decision_making/"><button type="button" class="btn btn-default btn-lg" style="float: right;">
+        Java - Decision Making   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+    {% endblock %}

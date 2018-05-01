@@ -1,0 +1,432 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<style>
+hr {
+    color: blue;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}
+</style>
+
+    <br><br><br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/c_plusplus.png') }}">
+    Welcome to the C++ Loop Control Homepage, mate!</h1>
+
+    <hr>
+
+    <blockquote>
+
+        C++ Loop Control Information
+
+    </blockquote>
+
+    <br>
+<style>
+.code
+{
+	background-color: #E0FFFF;
+}
+.output
+{
+	background-color: #000000;
+	color: #ffffff;
+}
+h1
+{
+	text-align: center;
+	text-decoration: underline;
+}
+h2
+{
+	text-decoration: underline;
+}
+.content
+{
+	text-align: center;
+}
+table
+{
+background-color: #6495ed;
+color: #ffffff;
+border: solid 2px black;
+}
+</style>
+<p>Often time in programming there are occasions, when you need to execute a block of code several number of times. In general, the statements are executed sequentially: The first statement in a function is executed first, followed by the second, and so on.</p>
+<p>Programming languages provide various control structures that allow for more complicated execution paths.</p>
+<p>A loop statement allows us to execute a statement numerous times which can obtain results through repetition.</p>
+<p>&nbsp;</p>
+<h2>While Loop</h2>
+<p>A&nbsp;<strong>while</strong>&nbsp;loop statement in C++ repeatedly executes a target statement as long as a given condition is true.</p>
+<h2>While Syntax</h2>
+<div class="code">
+<p>while(condition)</p>
+<p>{</p>
+<p>&nbsp;&nbsp; statement(s);</p>
+<p>}</p>
+</div>
+<p>Here,&nbsp;<strong>statement(s)</strong>&nbsp;may be a single statement or a block of statements. The&nbsp;<strong>condition</strong>&nbsp;may be any expression, and true is any non-zero value. The loop iterates while the condition is true.</p>
+<p>When the condition becomes false, program control passes to the line immediately following the loop.</p>
+<p>The key point of the&nbsp;<em>while</em>&nbsp;loop is that the loop might not ever run. When the condition is tested and the result is false, the loop body is skipped and the first statement after the while loop is executed.</p>
+<h2>While Example</h2>
+<div class="code">
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com">#include</span> <span class="str">&lt;iostream&gt;</span>
+<span class="kwd">using</span> <span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span>
+
+<span class="kwd">int</span><span class="pln"> main </span><span class="pun">()</span> <span class="pun">{</span>
+   <span class="com">// Local variable declaration:</span>
+   <span class="kwd">int</span><span class="pln"> a </span><span class="pun">=</span> <span class="lit">10</span><span class="pun">;</span>
+
+   <span class="com">// while loop execution</span>
+   <span class="kwd">while</span><span class="pun">(</span><span class="pln"> a </span><span class="pun">&lt;</span> <span class="lit">20</span> <span class="pun">)</span> <span class="pun">{</span><span class="pln">
+      cout </span><span class="pun">&lt;&lt;</span> <span class="str">"value of a: "</span> <span class="pun">&lt;&lt;</span><span class="pln"> a </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span><span class="pln">
+      a</span><span class="pun">++;</span>
+   <span class="pun">}</span>
+
+   <span class="kwd">return</span> <span class="lit">0</span><span class="pun">;</span>
+<span class="pun">}</span></pre>
+</div>
+<h2>Output</h2>
+<div class="output">
+<p>value of a: 10</p>
+<p>value of a: 11</p>
+<p>value of a: 12</p>
+<p>value of a: 13</p>
+<p>value of a: 14</p>
+<p>value of a: 15</p>
+<p>value of a: 16</p>
+<p>value of a: 17</p>
+<p>value of a: 18</p>
+<p>value of a: 19</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<h2>For Loop</h2>
+<p>A&nbsp;<strong>for</strong>&nbsp;loop is a repetition control structure that allows you to efficiently write a loop that needs to execute a specific number of times.</p>
+</br>
+<h2>For Loop Syntax</h2>
+<div class="code">
+<p>
+</br>for (starting_point; condition; increment )
+</br>{
+</br>   statement(s);
+</br>}
+<p>
+</div>
+<ul>
+<li>The&nbsp;<strong>starting_point</strong>step is executed first, and only once. This step allows you to declare and initialize any loop control variables. You are not required to put a statement here, as long as a semicolon appears.</li>
+<li>Next, the&nbsp;<strong>condition</strong>is evaluated. If it is true, the body of the loop is executed. If it is false, the body of the loop does not execute and flow of control jumps to the next statement just after the for loop.</li>
+<li>After the body of the for loop executes, the flow of control jumps back up to the&nbsp;<strong>increment</strong> This statement allows you to update any loop control variables. This statement can be left blank, as long as a semicolon appears after the condition.</li>
+<li>The condition is now evaluated again. If it is true, the loop executes and the process repeats itself (body of loop, then increment step, and then again testing for a condition). After the condition becomes false, the for loop terminates.</li>
+</ul>
+<h2>For Loop Example</h2>
+<div class="code">
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com">#include</span> <span class="str">&lt;iostream&gt;</span>
+<span class="kwd">using</span> <span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span>
+
+<span class="kwd">int</span><span class="pln"> main </span><span class="pun">()</span> <span class="pun">{</span>
+   <span class="com">// for loop execution</span>
+   <span class="kwd">for</span><span class="pun">(</span> <span class="kwd">int</span><span class="pln"> i </span><span class="pun">=</span> <span class="lit">10</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span> <span class="lit">20</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> i </span><span class="pun">+</span> 2 <span class="pun">)</span> <span class="pun">{</span><span class="pln">
+      cout </span><span class="pun">&lt;&lt;</span> <span class="str">"value of i: "</span> <span class="pun">&lt;&lt;</span><span class="pln"> i </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span>
+   <span class="pun">}</span>
+
+   <span class="kwd">return</span> <span class="lit">0</span><span class="pun">;</span>
+<span class="pun">}</span></pre>
+</div>
+<h2>Output</h2>
+<div class="output">
+<p>i&rsquo;s current value is: 10i&lsquo;s current value is: 12i&lsquo;s current value is: 14i&lsquo;s current value is: 16i&lsquo;s current value is: 18&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<h2>Do While Loop</h2>
+<p>Unlike&nbsp;<strong>for</strong>&nbsp;and&nbsp;<strong>while</strong>&nbsp;loops, which test the loop condition at the start of the loop, the&nbsp;<strong>do...while</strong>&nbsp;loop checks its condition at the end of the loop. There are considered <strong>post-test </strong>loops.</p>
+<p>A&nbsp;<strong>do...while</strong>&nbsp;loop is similar to a while loop, except that a do...while loop is guaranteed to execute at least one time.</p>
+<p>Syntax</p>
+<p>The syntax of a&nbsp;<strong>do...while</strong>&nbsp;loop in C++ is:</p>
+<div class="code">
+<p>do</p>
+<p>{</p>
+<p>&nbsp;&nbsp; statement(s);</p>
+<p>&nbsp;</p>
+<p>}while( condition );</p>
+</div>
+<p>Notice that the conditional expression appears at the end of the loop, so the statement(s) in the loop execute once before the condition is tested. So it always DO the first sequence of commands and if the condition is still true the flow control jumps back up to carry out the sequence of statements again. This process continues until the condition becomes false.</p>
+<h2>Do While Example</h2>
+<div class="code">
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com">#include</span> <span class="str">&lt;iostream&gt;</span>
+<span class="kwd">using</span> <span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span>
+
+<span class="kwd">int</span><span class="pln"> main </span><span class="pun">()</span> <span class="pun">{</span>
+   <span class="com">// Local variable declaration:</span>
+   <span class="kwd">int</span><span class="pln"> a </span><span class="pun">=</span> <span class="lit">10</span><span class="pun">;</span>
+
+   <span class="com">// do loop execution</span>
+   <span class="kwd">do</span> <span class="pun">{</span><span class="pln">
+      cout </span><span class="pun">&lt;&lt;</span> <span class="str">"value of a: "</span> <span class="pun">&lt;&lt;</span><span class="pln"> a </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span><span class="pln">
+      a </span><span class="pun">=</span><span class="pln"> a </span><span class="pun">+</span> <span class="lit">1</span><span class="pun">;</span>
+   <span class="pun">}</span><span class="kwd">while</span><span class="pun">(</span><span class="pln"> a </span><span class="pun">&lt;</span> <span class="lit">20</span> <span class="pun">);</span>
+
+   <span class="kwd">return</span> <span class="lit">0</span><span class="pun">;</span>
+<span class="pun">}</span></pre>
+</div>
+<h2>Output</h2>
+<div class="output">
+<p>value of a: 10</p>
+<p>value of a: 11</p>
+<p>value of a: 12</p>
+<p>value of a: 13</p>
+<p>value of a: 14</p>
+<p>value of a: 15</p>
+<p>value of a: 16</p>
+<p>value of a: 17</p>
+<p>value of a: 18</p>
+<p>value of a: 19</p>
+<p>&nbsp;</p>
+</div>
+<h2>Nested Loops</h2>
+<p>C++ allows to use one loop inside another loop. This includes while, for and do while loops. The following section shows few examples to illustrate the concept.</p>
+<h2>Nested Loop Syntax</h2>
+<p>The syntax for a&nbsp;<strong>nested for loop</strong>&nbsp;statement in C++ is as follows:</p>
+<div class="code">
+<p>
+</br>for ( starting_point; condition; increment )
+</br>{
+</br>   for ( starting_point; condition; increment )
+</br>   {
+</br>      statement(s);
+</br>   }
+ </br>  statement(s);
+</br>}
+</div>
+<p>The syntax for a&nbsp;<strong>nested while loop</strong>&nbsp;statement in C++ is as follows:</p>
+<div class="code">
+<p>
+</br>while(condition)
+</br>{
+</br>   while(condition)
+ </br>  {
+</br>      statement(s);
+</br>   }
+</br>   statement(s);
+</br>}
+</div>
+<p>The syntax for a&nbsp;<strong>nested do...while loop</strong>&nbsp;statement in C++ is as follows:</p>
+<div class="code">
+<p>
+</br>do
+</br>{
+ </br>  statement(s);
+  </br> do
+ </br>  {
+ </br>     statement(s);
+ </br>  }
+</br>   while( condition );
+
+</br>}
+</br>while( condition );
+</div>
+</p>
+<p>You can also put a for loop within a while loop and vice versa. For nesting loops they don&rsquo;t have to necessarily be the same time of loop.</p>
+<h2>Nested Loop Example</h2>
+<div class="code">
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com">#include</span> <span class="str">&lt;iostream&gt;</span>
+<span class="kwd">using</span> <span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span>
+
+<span class="kwd">int</span><span class="pln"> main </span><span class="pun">()</span> <span class="pun">{</span>
+   <span class="kwd">int</span><span class="pln"> i</span><span class="pun">,</span><span class="pln"> j</span><span class="pun">;</span>
+
+   <span class="kwd">for</span><span class="pun">(</span><span class="pln">i </span><span class="pun">=</span> <span class="lit">2</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">&lt;</span><span class="lit">100</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span> <span class="pun">{</span>
+      <span class="kwd">for</span><span class="pun">(</span><span class="pln">j </span><span class="pun">=</span> <span class="lit">2</span><span class="pun">;</span><span class="pln"> j </span><span class="pun">&lt;=</span> <span class="pun">(</span><span class="pln">i</span><span class="pun">/</span><span class="pln">j</span><span class="pun">);</span><span class="pln"> j</span><span class="pun">++)</span>
+         <span class="kwd">if</span><span class="pun">(!(</span><span class="pln">i</span><span class="pun">%</span><span class="pln">j</span><span class="pun">))</span> <span class="kwd">break</span><span class="pun">;</span> <span class="com">// if factor found, not prime</span>
+         <span class="kwd">if</span><span class="pun">(</span><span class="pln">j </span><span class="pun">&gt;</span> <span class="pun">(</span><span class="pln">i</span><span class="pun">/</span><span class="pln">j</span><span class="pun">))</span><span class="pln"> cout </span><span class="pun">&lt;&lt;</span><span class="pln"> i </span><span class="pun">&lt;&lt;</span> <span class="str">" is prime\n"</span><span class="pun">;</span>
+   <span class="pun">}</span>
+
+   <span class="kwd">return</span> <span class="lit">0</span><span class="pun">;</span>
+<span class="pun">}</span></pre>
+</div>
+</p>
+<h2>Output</h2>
+<p>
+<div class="output">
+</br>2 is prime
+</br>3 is prime
+</br>5 is prime
+</br>7 is prime
+</br>11 is prime
+</br>13 is prime
+</br>17 is prime
+</br>19 is prime
+</br>23 is prime
+</br>29 is prime
+</br>31 is prime
+</br>37 is prime
+</br>41 is prime
+</br>43 is prime
+</br>47 is prime
+</br>53 is prime
+</br>59 is prime
+</br>61 is prime
+</br>67 is prime
+</br>71 is prime
+</br>73 is prime
+</br>79 is prime
+</br>83 is prime
+</br>89 is prime
+</div>
+</p>
+<h2>Loop Control Statements</h2>
+<p>Loop control statements change execution from its normal sequence. When execution leaves a scope, all automatic objects that were created in that scope are destroyed.</p>
+<h2>Break Statements</h2>
+<p>&nbsp;</p>
+<p>The&nbsp;<strong> break</strong>&nbsp;statement in C++ has following two usage:</p>
+<ul>
+<li>When the<strong>break</strong>&nbsp;statement is encountered inside a loop, the loop is immediately terminated and program control resumes at the next statement following the loop.</li>
+<li>It can be used to terminate a case in the<strong> switch</strong>&nbsp;</li>
+</ul>
+<p>If you are using nested loops (i.e., one loop inside another loop), the break statement will stop the execution of the innermost loop and start executing the next line of code after the block.</p>
+<h2>Break Statement Syntax</h2>
+<div class="code">
+<p>break;</p>
+</div>
+<h2>Break Statement Example</h2>
+<div class="code">
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com">#include</span> <span class="str">&lt;iostream&gt;</span>
+<span class="kwd">using</span> <span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span>
+
+<span class="kwd">int</span><span class="pln"> main </span><span class="pun">()</span> <span class="pun">{</span>
+   <span class="com">// Local variable declaration:</span>
+   <span class="kwd">int</span><span class="pln"> a </span><span class="pun">=</span> <span class="lit">10</span><span class="pun">;</span>
+
+   <span class="com">// do loop execution</span>
+   <span class="kwd">do</span> <span class="pun">{</span><span class="pln">
+      cout </span><span class="pun">&lt;&lt;</span> <span class="str">"value of a: "</span> <span class="pun">&lt;&lt;</span><span class="pln"> a </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span><span class="pln">
+      a </span><span class="pun">=</span><span class="pln"> a </span><span class="pun">+</span> <span class="lit">1</span><span class="pun">;</span>
+
+      <span class="kwd">if</span><span class="pun">(</span><span class="pln"> a </span><span class="pun">&gt;</span> <span class="lit">15</span><span class="pun">)</span> <span class="pun">{</span>
+         <span class="com">// terminate the loop</span>
+         <span class="kwd">break</span><span class="pun">;</span>
+      <span class="pun">}</span>
+   <span class="pun">}</span><span class="kwd">while</span><span class="pun">(</span><span class="pln"> a </span><span class="pun">&lt;</span> <span class="lit">20</span> <span class="pun">);</span>
+
+   <span class="kwd">return</span> <span class="lit">0</span><span class="pun">;</span>
+<span class="pun">}</span></pre>
+</div>
+<h2>Output</h2>
+<div class="output">
+<p>
+</br>value of a: 10
+</br>value of a: 11
+</br>value of a: 12
+</br>value of a: 13
+</br>value of a: 14
+</br>value of a: 15
+</p>
+</div>
+<h2>Continue</h2>
+</br>
+<p>The&nbsp;<strong>continue</strong>&nbsp;statement in C++ works somewhat like the&nbsp;<strong>break</strong>&nbsp;statement. Instead of forcing termination, however, continue forces the next iteration of the loop to take place, skipping any code in between.</p>
+<p>For the&nbsp;<strong>for</strong>&nbsp;loop,&nbsp;<strong>continue</strong>&nbsp;statement causes the conditional test and increment portions of the loop to execute. For the&nbsp;<strong>while</strong>&nbsp;and&nbsp;<strong>do...while</strong> loops,&nbsp;<strong>continue</strong>&nbsp;statement causes the program control passes to the conditional tests.</p>
+<h2>Continue Syntax</h2>
+<div class="code">
+<p>continue;</p>
+</div>
+
+<h2>Continue Example</h2>
+<div class="code">
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com">#include</span> <span class="str">&lt;iostream&gt;</span>
+<span class="kwd">using</span> <span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span>
+
+<span class="kwd">int</span><span class="pln"> main </span><span class="pun">()</span> <span class="pun">{</span>
+   <span class="com">// Local variable declaration:</span>
+   <span class="kwd">int</span><span class="pln"> a </span><span class="pun">=</span> <span class="lit">10</span><span class="pun">;</span>
+
+   <span class="com">// do loop execution</span>
+   <span class="kwd">do</span> <span class="pun">{</span>
+      <span class="kwd">if</span><span class="pun">(</span><span class="pln"> a </span><span class="pun">==</span> <span class="lit">15</span><span class="pun">)</span> <span class="pun">{</span>
+         <span class="com">// skip the iteration.</span><span class="pln">
+         a </span><span class="pun">=</span><span class="pln"> a </span><span class="pun">+</span> <span class="lit">1</span><span class="pun">;</span>
+         <span class="kwd">continue</span><span class="pun">;</span>
+      <span class="pun">}</span><span class="pln">
+
+      cout </span><span class="pun">&lt;&lt;</span> <span class="str">"value of a: "</span> <span class="pun">&lt;&lt;</span><span class="pln"> a </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span><span class="pln">
+      a </span><span class="pun">=</span><span class="pln"> a </span><span class="pun">+</span> <span class="lit">1</span><span class="pun">;</span>
+   <span class="pun">}</span><span class="kwd">while</span><span class="pun">(</span><span class="pln"> a </span><span class="pun">&lt;</span> <span class="lit">20</span> <span class="pun">);</span>
+
+   <span class="kwd">return</span> <span class="lit">0</span><span class="pun">;</span>
+<span class="pun">}</span></pre>
+</div>
+<h2>Output</h2>
+<div class="output">
+<p>value of a: 10</p>
+<p>value of a: 11</p>
+<p>value of a: 12</p>
+<p>value of a: 13</p>
+<p>value of a: 14</p>
+<p>value of a: 16</p>
+<p>value of a: 17</p>
+<p>value of a: 18</p>
+<p>value of a: 19</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<h2>Infinite Loop</h2>
+<p>A loop becomes infinite loop if a condition never becomes false. The&nbsp;<strong>for</strong>&nbsp;loop is traditionally used for this purpose. Since none of the three expressions that form the for loop are required, you can make an endless loop by leaving the conditional expression empty.</p>
+<h2>Infinite Loop Example</h2>
+<div class="code">
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com">#include</span> <span class="str">&lt;iostream&gt;</span>
+<span class="kwd">using</span> <span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span>
+
+<span class="kwd">int</span><span class="pln"> main </span><span class="pun">()</span> <span class="pun">{</span>
+
+   <span class="kwd">for</span><span class="pun">(</span> <span class="pun">;</span> <span class="pun">;</span> <span class="pun">)</span> <span class="pun">{</span><span class="pln">
+      cout &lt;&lt; </span><span class="str">"This loop will run forever.\n"</span><span class="pun">;</span>
+   <span class="pun">}</span>
+
+   <span class="kwd">return</span> <span class="lit">0</span><span class="pun">;</span>
+<span class="pun">}</span></pre>
+</div>
+<p>When the conditional expression is absent, it is assumed to be true. You may have an initialization and increment expression, but programmers more commonly use the for(;;) construct to signify an infinite loop.</p>
+<p>Generally, when creating a program an infinite loop is something that&rsquo;s created on accident. However, in some circumstances infinite loops are necessary. For instance, operating systems utilize infinite loops. In most application you wouldn&rsquo;t want an operating system to just run for a small amount of time and stop.</p>
+<h2>Infinite While Loop</h2>
+<div class="code">
+<p>#include <iostream>
+</br>using namespace std;
+</br>int main() {
+</br>int stuck = 0;
+</br>while(stuck !=0)
+</br>{
+</br>cout << "I'm also an infinite loop!" << endl;
+</br>}
+</br>}
+</div>
+
+
+    <br><hr><br>
+
+    <h3 style="text-align: center;">
+            Decision Making
+    </h3>
+
+    <p style="text-align: center;">
+        Next, we will discuss Decision Making within the language of C++, mate!
+    </p>
+
+    <a href="/C_plusplus/operators"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> C++ - Operators
+    </button></a>
+
+    <a href="/C_plusplus/decision_making"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        C++ - Decision Making   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+
+
+
+{% endblock %}

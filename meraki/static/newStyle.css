@@ -1,0 +1,287 @@
+body {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			height: 100%;
+			max-height: 100%;
+			font-family:Sans-serif;
+			line-height: 1.5em;
+			transition: background-color .5s;
+		}
+
+		main {
+			position: fixed;
+			top: 87px; /* Set this to the height of the header */
+			bottom: 70px; /* Set this to the height of the footer */
+			left: 200px;
+			right: 200px;
+			overflow: auto;
+			background: #fff;
+		}
+
+		hr {
+            color: black;
+            display: block;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: inset;
+            border-width: 10px;
+        }
+
+        hr.ones {
+                color: black;
+                display: block;
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
+                margin-left: auto;
+                margin-right: auto;
+                border-style: inset;
+                border-width: 10px;
+        }
+
+        div.twos {
+            	max-width: 750px;
+            	min-height: 325px;
+                border: 5px solid  white;
+                padding-top: 20px;
+                padding-right: 20px;
+                padding-bottom: 20px;
+                padding-left: 20px;
+            }
+
+        span.twos {
+        padding: 20px;
+        border: 5px solid  white;
+        display: inline-block;
+        }
+
+        div.ones{
+        background-color: #8392f6;
+        min-height: 800px;
+        border-width:5px;
+        border-style:groove;
+        }
+
+        div.profile_bg{
+        background-color: black;
+        background-image: url("profile/backgrounds/profile_bg.jpg");
+        min-height: 800px;
+        border-width:5px;
+        border-style:groove;
+        }
+
+        div.send_msg{
+        background-color: #8392f6;
+        min-height: 500px;
+        border-width:5px;
+        border-style:groove;
+        }
+
+        div.uploads_photo{
+        background-color: #8392f6;
+        background-image: url("profile/backgrounds/upload_profile_bg.jpg");
+        min-height: 370px;
+        border-width:5px;
+        border-style:groove;
+        }
+
+        div.uploads_file{
+        background-color: #8392f6;
+        background-image: url("profile/backgrounds/upload_file_bg.jpg");
+        min-height: 370px;
+        border-width:5px;
+        border-style:groove;
+        }
+
+        div.download{
+        background-color: #8392f6;
+        background-image: url("profile/backgrounds/dwn.jpg");
+        overflow-x: hidden;
+        min-height: 370px;
+        border-width:5px;
+        border-style:groove;
+        }
+
+        div.index{
+        background-color: #8392f6;
+        background-image: url("index_bg.jpg");
+        overflow-x: hidden;
+        min-height: 370px;
+        border-width:5px;
+        border-style:groove;
+        }
+
+        div.download_key{
+        background-color: #8392f6;
+        background-image: url("profile/backgrounds/download_key.jpg");
+        padding: 20px;
+        overflow-x: hidden;
+        min-height: 370px;
+        border-width:5px;
+        border-style:groove;
+        }
+
+        div.send_msg_bg{
+        background-color: #8392f6;
+        background-image: url("profile/backgrounds/mess.jpg");
+        min-height: 500px;
+        border-width:5px;
+        border-style:groove;
+        }
+
+        div.send_msg_bg2{
+        background-color: #8392f6;
+        background-image: url("profile/backgrounds/received.jpg");
+        min-height: 500px;
+        border-width:5px;
+        border-style:groove;
+        }
+
+        div.group_information{
+        background-color: white;
+        /*background-image: url("profile/backgrounds/group_information_bg.jpg");*/
+        min-height: 500px;
+        border-width:5px;
+        border-style:groove;
+        }
+
+        div.ones_twos{
+        background-color: white;
+        min-height: 300px;
+        }
+
+        div.grp_photo{
+            min-height: 300px;
+            max-width: 300px;
+        }
+        div.grp_text{
+            min-height: 300px;
+            max-width: 300px;
+        }
+
+        div.grp{
+            border-width: 25px;
+        }
+
+		#header {
+		    color: white;
+		/*    height: 100px;    */
+            background-image: url("webpages/header/headerr.jpg");
+            position: absolute;
+            top: 0;
+			left: 0;
+			width: 100%;
+			overflow: hidden;
+
+		}
+
+		#footer {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 70px;
+			overflow: hidden; /* Disables scrollbars on the footer frame. To enable scrollbars, change "hidden" to "scroll" */
+
+		}
+
+		#left {
+			position: absolute;
+			top: 87px; /* Set this to the height of the header */
+			bottom: 0px; /* Set this to the height of the footer */
+			left: 0;
+			width: 200px;
+			overflow: auto; /* Scrollbars will appear on this frame only when there's enough content to require scrolling. To disable scrollbars, change to "hidden", or use "scroll" to enable permanent scrollbars */
+
+		}
+
+		#right {
+			position: absolute;
+			top: 87px; /* Set this to the height of the header */
+			bottom: 0px; /* Set this to the height of the footer */
+			right: 0;
+			width: 200px;
+			overflow: auto; /* Scrollbars will appear on this frame only when there's enough content to require scrolling. To disable scrollbars, change to "hidden", or use "scroll" to enable permanent scrollbars */
+
+		}
+
+		.innertube {
+			margin: 15px; /* Provides padding for the content */
+		}
+
+
+
+		nav ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		nav ul a {
+			color: gray;
+			text-decoration: none;
+		}
+
+		/*IE6 fix*/
+		* html body{
+			padding: 87px 200px 70px 200px;
+			/* 1 height of the header
+			   2 width of the right column
+			   3 height of the footer
+			   4 width of the left column */
+		}
+
+		* html main{
+			height: 100%;
+			width: 100%;
+		}
+
+
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Black*/
+    background-image: url("profile/backgrounds/sidebar.jpg");
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}

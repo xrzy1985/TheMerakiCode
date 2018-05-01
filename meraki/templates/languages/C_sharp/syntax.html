@@ -1,0 +1,538 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<style>
+hr {
+    color: blue;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}
+</style>
+
+    <br><br><br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/c_sharp.png') }}">
+    Welcome to the C# Syntax Homepage, mate!</h1>
+
+    <hr>
+
+    <blockquote>
+
+        C# Syntax Information
+
+    </blockquote>
+<style>
+.code
+{
+	background-color: #E0FFFF;
+}
+.output
+{
+	background-color: #000000;
+	color: #ffffff;
+}
+h1
+{
+	text-align: center;
+	text-decoration: underline;
+}
+h2
+{
+	text-decoration: underline;
+}
+.content
+{
+	text-align: center;
+}
+table
+{
+background-color: #6495ed;
+color: #ffffff;
+border: solid 2px black;
+}
+</style>
+<p>
+C#'s syntax is quite similar to both C++ and Java.
+If you've had any previous experience with either C++ or Java
+you shouldn't have too much difficulty learning C#'s syntax.
+</br>But the main point to remember is that In Object-Oriented Programming methodology,
+a program consists of various objects that interact with each other by means of actions.
+</br>The actions that an object may take are called methods.
+Objects of the same kind are said to have the same type or, are said to be in the same class.
+</br>
+</br>For example, let us consider a Rectangle object. It has attributes such as length and width.
+</br>Depending upon the design, it may need ways for accepting the values of these attributes,
+calculating the area, and displaying details.
+</p>
+
+</br>
+<h2>Rectangle Program</h2>
+<div class ="code">
+<p>
+</br>using System;
+</br>namespace RectangleApplication
+</br>{
+   </br>class Rectangle
+  </br> {
+    </br>  // member variables
+    </br>  double length;
+    </br>  double width;
+    </br>  public void Acceptdetails()
+    </br>  {
+     </br>    length = 4.5;
+     </br>    width = 3.5;
+    </br>  }
+     </br>
+   </br>   public double GetArea()
+   </br>   {
+   </br>      return length * width;
+   </br>   }
+
+   </br>   public void Display()
+      </br>{
+      </br>   Console.WriteLine("Length: {0}", length);
+      </br>   Console.WriteLine("Width: {0}", width);
+     </br>    Console.WriteLine("Area: {0}", GetArea());
+     </br> }
+   </br>}
+   </br>
+  </br> class ExecuteRectangle
+  </br> {
+  </br>    static void Main(string[] args)
+    </br>  {
+    </br>     Rectangle r = new Rectangle();
+    </br>     r.Acceptdetails();
+    </br>     r.Display();
+    </br>     Console.ReadLine();
+    </br>  }
+  </br> }
+</br>}
+
+</p>
+</div>
+<h2>Output</h2>
+<div class="output">
+<p>Length: 4.5
+</br>Width: 3.5
+</br>Area: 15.75
+</p>
+</div>
+<p>I will now begin explaining some definitions and what some of these lines of code mean</p>
+<h2>Using Keyword</h2>
+<p>The first statement in a C# program is usually..<p>
+<div class="code">
+<p>using System;</p>
+</div>
+<p>The <b>using</b> keyword is used for including the namespaces in the program.
+A program can include multiple using statements.
+</p>
+<h2>Semicolons</h2>
+<p>Semicolons are used to terminate statements, for instance this signifies the end of this expression.<p>
+<div class="code">
+<p>length = 4.5;</p>
+</div>
+<p>This simply assigns the value 4.5 to the variable <em>length</em></p>
+<h2>The Class Keyword</h2>
+<p>The <b> class </b> keyword is used for declaring a class </p>
+<h2>Identifiers</h2>
+<p>An identifier is a name used to identify a class, variable, function, or any other user-defined item.
+The basic rules for naming classes in C# are as follows:</p>
+<ul>
+<li>It should not be a C# keyword.</li>
+<li>A name must begin with a letter that could be followed by a sequence of letters, digits (0 - 9) or underscore.
+The first character in an identifier cannot be a digit</li>
+<li>It cannot contain any embedded space or symbol such as ? - + ! @ # % ^ & * ( ) [ ] { }
+. ; : " ' / and \. However, an underscore ( _ ) can be used.</li>
+</ul>
+<h2>Member Variables</h2>
+<p>Variables are attributes or data members of a class, used for storing data.
+In the rectangle program, the <em>Rectangle</em> class has two member variables named <em>length</em< and <em>width</em> .</p>
+<h2>Member Functions</h2>
+<p>Functions are set of statements that perform a specific task.
+The member functions of a class are declared within the class.
+</br>Our sample class Rectangle contains three member functions: <em>AcceptDetails, GetArea and Display </em>.
+</p>
+<h2>Instantiating a Class</h2>
+<p>In the rectangle program, the class <em>ExecuteRectangle</em> contains the <em>Main()</em>method and instantiates the <em>Rectangle</em> class.
+</p>
+<h2>C# Keywords</h2>
+<p>Keywords are reserved words predefined to the C# compiler. These keywords cannot be used as identifiers.</br>
+However, if you want to use these keywords as identifiers, you may prefix the keyword with the @ character.
+</br>In C#, some identifiers have special meaning in context of code, such as get and set are called contextual keywords.
+</br></br>
+The following table lists the reserved keywords and contextual keywords in C#:
+</p>
+<!--Reserved Keyword Table-->
+<table width="609"border="1">
+<tbody>
+<tr>
+<td colspan="7">
+<h2 style="text-align:center">Reserved Keywords</h2>
+</td>
+</tr>
+<tr>
+<td>
+<p>abstract</p>
+</td>
+<td>
+<p>as</p>
+</td>
+<td>
+<p>base</p>
+</td>
+<td>
+<p>bool</p>
+</td>
+<td>
+<p>break</p>
+</td>
+<td>
+<p>byte</p>
+</td>
+<td>
+<p>case</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>catch</p>
+</td>
+<td>
+<p>char</p>
+</td>
+<td>
+<p>checked</p>
+</td>
+<td>
+<p>class</p>
+</td>
+<td>
+<p>const</p>
+</td>
+<td>
+<p>continue</p>
+</td>
+<td>
+<p>decimal</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>default</p>
+</td>
+<td>
+<p>delegate</p>
+</td>
+<td>
+<p>do</p>
+</td>
+<td>
+<p>double</p>
+</td>
+<td>
+<p>else</p>
+</td>
+<td>
+<p>enum</p>
+</td>
+<td>
+<p>event</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>explicit</p>
+</td>
+<td>
+<p>extern</p>
+</td>
+<td>
+<p>false</p>
+</td>
+<td>
+<p>finally</p>
+</td>
+<td>
+<p>fixed</p>
+</td>
+<td>
+<p>float</p>
+</td>
+<td>
+<p>for</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>foreach</p>
+</td>
+<td>
+<p>goto</p>
+</td>
+<td>
+<p>if</p>
+</td>
+<td>
+<p>implicit</p>
+</td>
+<td>
+<p>in</p>
+</td>
+<td>
+<p>in (generic modifier)</p>
+</td>
+<td>
+<p>int</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>interface</p>
+</td>
+<td>
+<p>internal</p>
+</td>
+<td>
+<p>is</p>
+</td>
+<td>
+<p>lock</p>
+</td>
+<td>
+<p>long</p>
+</td>
+<td>
+<p>namespace</p>
+</td>
+<td>
+<p>new</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>null</p>
+</td>
+<td>
+<p>object</p>
+</td>
+<td>
+<p>operator</p>
+</td>
+<td>
+<p>out</p>
+</td>
+<td>
+<p>out (generic modifier)</p>
+</td>
+<td>
+<p>override</p>
+</td>
+<td>
+<p>params</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>private</p>
+</td>
+<td>
+<p>protected</p>
+</td>
+<td>
+<p>public</p>
+</td>
+<td>
+<p>readonly</p>
+</td>
+<td>
+<p>ref</p>
+</td>
+<td>
+<p>return</p>
+</td>
+<td>
+<p>sbyte</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>sealed</p>
+</td>
+<td>
+<p>short</p>
+</td>
+<td>
+<p>sizeof</p>
+</td>
+<td>
+<p>stackalloc</p>
+</td>
+<td>
+<p>static</p>
+</td>
+<td>
+<p>string</p>
+</td>
+<td>
+<p>struct</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>switch</p>
+</td>
+<td>
+<p>this</p>
+</td>
+<td>
+<p>throw</p>
+</td>
+<td>
+<p>true</p>
+</td>
+<td>
+<p>try</p>
+</td>
+<td>
+<p>typeof</p>
+</td>
+<td>
+<p>uint</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>ulong</p>
+</td>
+<td>
+<p>unchecked</p>
+</td>
+<td>
+<p>unsafe</p>
+</td>
+<td>
+<p>ushort</p>
+</td>
+<td>
+<p>using</p>
+</td>
+<td>
+<p>virtual</p>
+</td>
+<td>
+<p>void</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>volatile</p>
+</td>
+<td>
+<p>while</p>
+</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<!--End Reserved Keyword Table-->
+<h2>Contextual Keywords</h2>
+<p>A <b>contextual keyword</b> is used to provide a specific meaning in the code, but it is not a reserved word in C#.
+</br>Some <b>contextual keywords</b>, such as partial and where, have special meanings in two or more contexts.
+</p>
+<!--Contextual Keyword Table-->
+<table width="609"border="1">
+<tbody>
+<tr>
+<td colspan="7">
+<h2 style="text-align:center">Contextual Keywords</h2>
+</td>
+</tr>
+<tr>
+<td>
+<p>add</p>
+</td>
+<td>
+<p>alias</p>
+</td>
+<td>
+<p>ascending</p>
+</td>
+<td>
+<p>descending</p>
+</td>
+<td>
+<p>dynamic</p>
+</td>
+<td>
+<p>from</p>
+</td>
+<td>
+<p>get</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>global</p>
+</td>
+<td>
+<p>group</p>
+</td>
+<td>
+<p>into</p>
+</td>
+<td>
+<p>join</p>
+</td>
+<td>
+<p>let</p>
+</td>
+<td>
+<p>orderby</p>
+</td>
+<td>
+<p>partial (type)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>partial<br /> (method)</p>
+</td>
+<td>
+<p>remove</p>
+</td>
+<td>
+<p>select</p>
+</td>
+<td>
+<p>set</p>
+</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>
+<p><br /> </p>
+</td>
+</tr>
+</tbody>
+</table>
+<!--End Contextual Keyword Table-->
+</br>
+</br>
+<br/>
+<br/>
+ <a href="/C_sharp/introduction"><button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> C# - Introduction
+    </button></a>
+
+    <a href="/C_sharp/comments"><button type="button" class="btn btn-default btn-lg" style="float: right;">
+        C# - Comments <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+{% endblock %}

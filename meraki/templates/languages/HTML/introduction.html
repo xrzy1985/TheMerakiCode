@@ -1,0 +1,146 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<!--
+
+=================================================================================================================================
+White space         : &nbsp;
+bold tag            : <b></b>
+Indent              : <p style="text-indent: 50px;">    </p>
+Horz Bar with \n    : <br><hr class="ones"><br>
+hyper link          : <p><a href="/location/">TEXT</a></p>
+bootstrap glyphs    : <span class="glyph-goes-here" aria-hidden="true"></span>
+img                 : <img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/image.jpg') }}">
+
+use .container for containing responsive fixed width containers
+unable to be nested
+
+    <div class="container">
+    ...
+    </div>
+
+use .container-fluid for a full width container, which will span across the entire viewport
+
+    <div class="container-fluid">
+    ...
+    </div>
+=================================================================================================================================
+-->
+
+        <br><br><br><h3 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/HTML5_logo_and_wordmark.svg.png') }}">
+        Welcome to the HTML Introduction Homepage, <b>{{un}}</b>!</h3>
+
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+        <p class="intro">
+            <center><b>
+                HTML | Hyper Text Markup Language
+            </b></center>
+        </p>
+
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+        <p style="text-indent: 50px;">
+            HTML documents are designed and built using elements. Elements are represented by tags on the HTML document. Some of the most common
+            tags are heading, body, paragraph, table, and more. The HTML tags are used by browsers to render the content to the user of the browser.
+
+        </p>
+
+        <br>
+
+         <ul>
+            <li><b>&lt;!DOCTYPE html&gt;</b></li>
+
+                <p>
+                    The doctype element is the way to let the browser know the document is HTML5
+                </p>
+
+            <li><b>&lt;html&gt;</b></li>
+
+                <p>
+                    The html element is the back bone element of the HTML page being designed
+                </p>
+
+            <li><b>&lt;head&gt;</b></li>
+
+                <p>
+                    The head element contains the meta data the document requires
+                </p>
+
+            <li><b>&lt;title&gt;</b></li>
+
+                <p>
+                    The title element will allow the programmer to set the title of the page
+                </p>
+
+            <li><b>&lt;body&gt;</b></li>
+
+                <p>
+                    The body element holds the page content that will be rendered by a browser
+                </p>
+
+            <li><b>&lt;h1-h6&gt;</b></li>
+
+                <p>
+                    The h1 element is the largest text heading, and h6 would represent the smallest text heading.
+                </p>
+
+            <li><b>&lt;p&gt;</b></li>
+
+                <p>
+                    The p element represents the paragraph, and the paragraph is a great way to display text.
+                </p>
+
+
+        </ul>
+
+        <br>
+
+        HTML elements are represented using tags, and the tags are surrounded by angle brackets; &lt;&gt; and &lt;/&gt;.
+        &lt;tagname&gt;the content you wish to display...&lt;/tagname&gt;. Tagname are notoriously seen in pairs; one to open the tag
+        and one to close the tag. The first tag is known as the start tag, and the closing tag is known as the end tag. The end tag is
+        designated by a forward slash inserted before the tag name.
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+        <p><center><b>Web Browsers</b></center></p>
+
+        <p style="text-indent: 50px;">
+
+            A web browser is a way to render the elements written on an HTML document. The web browser does not specifically display
+            HTML tags, but the browser does use them to render the display for the HTML document. The following image is a visualization of
+            how HTML documents could be designed. The only content that will be displayed will be within the body tags.
+
+        </p>
+
+        <br>
+
+        <center><img src="{{url_for('static', filename='photos/html_structure.jpg') }}"></center>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+        <h3 style="text-align: center;">Next, we will look at the way syntax works within html deeper</h3>
+
+        <p style="text-align: center;">Just follow the buttons to continue the tutorial, {{un}}</p>
+
+
+        <br>
+
+        <a href="/#/#"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> #
+        </button></a>
+
+        <a href="/HTML/syntax"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        SQL - Syntax <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        </button></a>
+
+{% endblock %}

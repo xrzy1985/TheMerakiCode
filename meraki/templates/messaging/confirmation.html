@@ -1,0 +1,40 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+    <br><br><br><h1 style="text-align: center;">Please, confirm your choice, Mate: Reply, Save, or Delete.</h1><br>
+<p>
+    <FORM METHOD="POST" ACTION="/delete_message/reply_{{_id}}" style="text-align: center;">
+        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+        <input class="form-control" type="hidden" name="_id" value="{{_id}}">
+        <input class="form-control" type="hidden" name="_username_from" value="{{_username_from}}">
+        <input class="form-control" type="hidden" name="_subject" value="{{_subject}}">
+        <input class="form-control" type="hidden" name="_message" value="{{_message}}">
+        <input class="form-control" type="hidden" name="_username_to" value="{{_username_to}}">
+        <input type="submit" value="Reply to Message" class="btn btn-info btn-lg" style="width: 500px;">
+    </FORM>
+    <br>
+    <br>
+    <FORM METHOD="POST" ACTION="/delete_message/yes_{{_id}}" style="text-align: center;">
+        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+        <input class="form-control" type="hidden" name="_id" value="{{_id}}">
+        <input class="form-control" type="hidden" name="_username_from" value="{{_username_from}}">
+        <input class="form-control" type="hidden" name="_subject" value="{{_subject}}">
+        <input class="form-control" type="hidden" name="_message" value="{{_message}}">
+        <input class="form-control" type="hidden" name="_username_to" value="{{_username_to}}">
+        <input type="submit" value="Delete the Message" class="btn btn-danger btn-lg" style="width: 500px;">
+    </FORM>
+    <br>
+    <br>
+    <FORM METHOD="POST" ACTION="/delete_message/no_{{_id}}" style="text-align: center;">
+        <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+        <input class="form-control" type="hidden" name="_id" value="{{_id}}">
+        <input class="form-control" type="hidden" name="_username_from" value="{{_username_from}}">
+        <input class="form-control" type="hidden" name="_subject" value="{{_subject}}">
+        <input class="form-control" type="hidden" name="_message" value="{{_message}}">
+        <input class="form-control" type="hidden" name="_username_to" value="{{_username_to}}">
+        <input type="submit" value="Save the Message" class="btn btn-primary btn-lg" style="width: 500px;">
+    </FORM>
+
+</p>
+{% endblock %}

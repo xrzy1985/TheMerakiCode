@@ -1,0 +1,1330 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<!-- The import required for AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<!--=================================================================================================================================
+
+White space         : &nbsp;
+tab                 : &nbsp;&nbsp;&nbsp;&nbsp;
+bold tag            : <b></b>
+Indent              : <p style="text-indent: 50px;">    </p>
+Horz Bar with \n    : <br><hr class="ones"><br>
+hyper link          : <a href="/location/">TEXT</a>
+bootstrap glyphs    : <span class="glyph-goes-here" aria-hidden="true"></span>
+image               : <img src="{{url_for('static', filename='photos/cover.jpg') }}">
+DL of static file   : <a href="/static/resume/Resume30August2016.doc">Here</a>
+
+use .container for containing responsive fixed width containers
+unable to be nested
+
+    <div class="container">
+    ...
+    </div>
+
+use .container-fluid for a full width container, which will span across the entire viewport
+
+    <div class="container-fluid">
+    ...
+    </div>
+
+<p style="text-indent: 50px;">
+
+</p>
+
+<ul>
+    <li>
+        <b>
+
+        </b>
+        Text <br>
+    </li>
+</ul>
+
+=================================================================================================================================-->
+
+    <br><br><br><h3 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Javascript/javascript.png') }}">
+    Welcome to the Javascript Objects Homepage, <b>{{un}}</b>!</h3>
+
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+    <p class="intro">
+        <center><b>
+            Javascript | The attribute mapping of real life
+        </b></center>
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Objects</h3>
+
+    <p>
+
+        A person, place, or a thing can all be objects. In rea life, I am an object. I possess the attributes of a first name,
+        last name, age, degree, and many more attributes. Additional objects could be a motorcycle, a car, or Donald Trump. A
+        motorcycle has properties or attributes like weight, color, and gear ratio, but contains many methods associated with
+        the objects like start, stop, or honk the horn. Dates, Maths, Regex, Arrays, Functions, and Objects are always defined as
+        objects within Javascript. Booleans, Numbers, and Strings can be objects if defined using the <b>new</b> keyword. Javascript
+        has 5 different data types that are considered <b>primitive data types.</b> Primitive data types are assigned primitive values.
+        A primitive value is a value that has no property or methods; <b>string, number, boolean, null, and undefined.</b> Primitives
+        are immutable, meaning they are usually hard coded by a programmer and cannot be changed unless programmatically.
+
+        <br><br>
+
+        <center><img src="{{url_for('static', filename='webpages/Javascript/Objects/ObjectsIMG.jpg') }}"></center>
+
+        <br><br>
+
+        All motorcycles will have the same properties, but the property values differ from motorcycle to motorcycle. All motorcycles
+        have the same methods associated with them, but the methods will be performed or executed at different times or intervals.
+        Remember, Javascript variables are containers for data types associated with Javascript.
+
+        <br><br>
+
+        <b>var motorcycle = "Honda Shadow";</b>
+
+        <br><br>
+
+        The code above declares a variable named motorcycle with a simple string value assigned; Honda Shadow.
+
+        <br><br>
+
+        Objects are treated as variables too, but objects can and will contain much more descriptive information related to the object
+        that is being created.
+
+        <br><br>
+
+        <b>var motorcycle = { type:"Honda", model:"Shadow", color:"Candy Apple Red", motorSize: 750};</b>
+
+        <br><br>
+
+        The code above declares a motorcycle object and assigns values for type, model, color, and motorSize. The values are
+        written as name value pairs; <b>name:value</b>. The name and value are separated by a colon between the two. Javascript
+        objects can be seen as containers for named values. The name value pairs are considered to be <b>properties</b> of the
+        object. Objects written as a name value pair are similar to hash maps in Java, hash tables in C, Dictionaries in Python,
+        Associative arrays in PHP, or hashes in Ruby or Perl. The similarities are with the way you code the objects, and not in
+        the way the language uses the data. A dictionary in Python might access, delete, modify, or copy quicker than a hash in Ruby,
+        but a has in Ruby might be faster at backing up the information than a diction in Python. Perhaps, your company wants to ensure
+        their data is backed up every night within a short window, and Ruby seems to meet your qualifications. Then, you become an
+        expert on Ruby overnight. You can definitely define and create your own objects within Javascript using a object literal, the
+        keyword new, or define an object constructor to construct objects dynamically for you. The newest update to Javascipt allows
+        the programmer to create objects using the syntax: Object.create();. The code below shows how to create an object using an object
+        literal.
+
+        <br><br>
+
+        <b>
+            var person = {firstName:"James", lastName:"Patterson", age:30, hairColor:"Brown", sex:"Male", race:"Native American"};
+        </b>
+
+        <br><br>
+
+        Property:<b>Property Value</b>
+        <br>
+        firstName:<b>James</b>
+        <br>
+        lastName:<b>Patterson</b>
+        <br>
+        age:<b>30</b>
+        <br>
+        hairColor:<b>Brown</b>
+        <br>
+        sex:<b>Male</b>
+        <br>
+        race:<b>Native American</b>
+
+        <br><br>
+
+        <b>Property Attributes</b>
+
+        <br><br>
+
+        All properties have a name and a value associated with the name. The value is considered one of the
+        property's attributes. Additional attributes include enumerable, configurable, and writable. Those
+        attributes define just how the property can be accessed; readable, writable, etc. Javascript allows
+        all attributes to be read, but only the value attribute can be changed if the property is writable. The
+        newest version of Javascript has methods for getting and setting any property attribute.
+
+        <br><br>
+
+        You can use the Javascript keyword new to create an object:
+
+        <br><br>
+
+        <div>
+
+            var person = new Object();<br>
+            person.firstName = "James";<br>
+            person.lastName = "Patterson";<br>
+            person.age = 30;<br>
+            person.hairColor = "Brown";
+            person.sex = "Male";
+            person.race = "Native American";<br>
+
+        </div>
+
+        <br><br>
+
+        The object literal method would be the preferred method of choice by most programmers. Due to the environment that
+        Javascript will probably be running in, you will want Javascript to run as fast as possible without slowing down
+        the browser or web application in any way.
+
+        <br><br>
+
+        If you find yourself needing to create a lot of objects within an application, but do not have the time to hard code each
+        individual object yourself. You need to start using an <b>object constructor</b>. The examples above only create one single
+        object, but you sometimes need an object type that can be used to create many different objects. <b>Object Constructors</b>
+        formally create your objects for you while requiring you to hard code the required information for the object.
+
+        <br><br>
+
+        function personHired(first, last, age, degree){<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;this.firstName = first;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;this.lastName = last;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;this.age = age;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;this.degree = collegeDegree;<br>
+        }
+
+        <br><br>
+
+        The way you would use the <b>obect constructor:</b> var mySelf = new personHired("James", "Patterson", 30, "B.S. Computer Science");
+
+        <br><br>
+
+        The above constructor requires four different parameters to work properly; first, last, age, and degree. Once you code the constructor,
+        you can then continue to create new objects of the same type; person, car, motorcycle, and more.
+
+        <br><br>
+
+        Do not let the <b>this</b> keyword scare you away or confuse you in any way. The <b>this</b> keyword is used within the
+        constructor to refer to the object currently being created. So, as you pass the parameters into the constructor, the
+        constructor will then create a new object based on the properties you've supplied to it using the parameters. This just
+        attaches the values to the properties of the current object being created by the constructor.
+
+        <br><br>
+
+        Javascript does have built-in constructors available to use at will:
+
+        <br><br>
+
+        <b>Object object</b><br>
+        var a = new Object();<br><br>
+
+        <b>String object</b><br>
+        var b = new String();<br><br>
+
+        <b>Number object</b><br>
+        var c = new Number();<br><br>
+
+        <b>Boolean object</b><br>
+        var d = new Boolean();<br><br>
+
+        <b>Array object</b><br>
+        var e = new Array();<br><br>
+
+        <b>Regular Expression object</b><br>
+        var f = new RegExp();<br><br>
+
+        <b>Function object</b><br>
+        var g = new Function();<br><br>
+
+        <b>Date object</b><br>
+        var h = new Date();<br><br>
+
+        <br><br>
+
+        The Math() object is not apart of this list due to Math being a global object. The new keyword cannot be used with global objects.
+        Honestly, there is no reason to code any of these data types with the new keyword, and using the new keyword will slow your application
+        down due to increased execution time. Below is the way you should define each type of data type:
+
+        <br><br>
+
+        <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var obj = {};<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var str = "";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var num = 5;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var bool = true;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var array = [];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var regex = /()/;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var func = function(){};<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML =<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "obj: " + typeof obj + "&lt;br&gt;" +<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "str: " + typeof str + "&lt;br&gt;" +<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "num: " + typeof num + "&lt;br&gt;" +<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "bool: " + typeof bool + "&lt;br&gt;" +<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "array: " + typeof array + "&lt;br&gt;" +<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "regex: " + typeof regex + "&lt;br&gt;" +<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "func: " + typeof func + "&lt;br&gt;";<br />&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        <br><br>
+
+        String, Number, and Boolean objects should be created as primitives, and not declared as objects. Primitives could yield unexpected results
+        while creating via Object creation.
+
+        <br><br>
+
+        Objects are quite mutable within Javascript. They are addressed by reference, and not by value. If we use the person object from above, and
+        write <b>var x = person;</b>. The object x is not a copy of person, but the object x will be person. After the assignment, x and person will
+        become the same object, and any change to x will change person and vice versa.
+
+        <br><br>
+
+            <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var person = {firstName:"James", lastName:"Patterson", age:50}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var temp = person;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; temp.age = 30;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML =<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; person.firstName + " is " + person.age + " years old.";<br />&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        <br><br>
+
+        Output: James is 30 years old.
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Methods</h3>
+
+    <p>
+
+        The actions that are or can be performed on objects are known as methods inside Javascript. Methods are stored in the
+        properties as a <b>function definition</b>. Object properties can be primitive values, other objects, and functions. An
+        object method is an object property containing a function definition. Let us build on the example from above:
+
+        <br><br>
+
+        <b>
+            var person = {firstName:"James", lastName:"Patterson", age:30, hairColor:"Brown", sex:"Male", race:"Native American", myFunc(){return this.firstName + " " + this.lastName;};
+        </b>
+
+        <br><br>
+
+        Property:<b>Property Value</b>
+        <br>
+        firstName:<b>James</b>
+        <br>
+        lastName:<b>Patterson</b>
+        <br>
+        age:<b>30</b>
+        <br>
+        hairColor:<b>Brown</b>
+        <br>
+        sex:<b>Male</b>
+        <br>
+        race:<b>Native American</b>
+        <br>
+        fullName:<b>myFunc(){return this.firstName + " " + this.lastName;}</b>
+
+        <br><br>
+
+        Javascript objects are just containers for named values called properties or methods. The object definition is a
+        variable declaration of sorts. <b>var person = {firstName:"James", lastName:"Patterson"};</b> is an object declaration
+        with two properties; firstName and lastName. Spaces and line breaks are irrelevant when it comes to object definition,
+        and the definition can span multiple lines.
+
+        <br><br>
+
+        var person = {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;firstName: "James",<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;lastName: "Patterson<br>
+        };<br>
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Accessing Object Methods</h3>
+
+    <p>
+
+        To access an objects method, you can use this syntax: <b>nameOfObject.nameOfMethod()</b>. Let us use the same example as the
+        code from before. We will create another property named fullName, but make this property a function to perform concatenation
+        on our first and last names.
+
+        <br><br>
+
+        <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp; var person = {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; firstName: "James",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lastName : "Patterson",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; 30,<br />&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;fullName : function() {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return this.firstName + " " + this.lastName;<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; };<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp; var a = person.age;<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML =<br />&nbsp;&nbsp;&nbsp; person.fullName() + " is " + a + " years old.";<br />&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        <br><br>
+
+        <b>Remember:</b> if you call the fullName method without the use of the two (), the function definition will be returned
+        instead of the string values you wish to receive. A method is a function definition stored as a property value. Avoid declaring
+        a object as type String, Number, or Boolean unless you fully understand what you are doing. The declaration can complicate code,
+        and slow down the execution speed within the browser. The idea behind Javascript was to bring OOP principles into the realm of
+        web development and design in order to offer more readibly available dynamic results. If your web site takes longer than a few seconds
+        to load, the user might become skeptical, and wish to return to a previous site to continue searching for their query information.
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Adding New Methods</h3>
+
+    <p>
+
+        Adding additional methods to an object is accomplished within the constructor function:
+
+        <br><br>
+
+        <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br />&nbsp;&nbsp;&nbsp; &lt;p id="tutorial2"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function person(firstName,lastName,age) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.firstName = firstName;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.lastName = lastName;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.age = age;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.changeAge = function (a) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.age = a;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var myMother = new person("Jill","Hardin", 48);<br />&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML =<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "My mother's name is " + myMother.firstName + " " + myMother.lastName + ".";<br />&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; myMother.changeAge(52);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial2").innerHTML =<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "She is&nbsp; " + myMother.age + " years old.";<br />&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br />&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        <br><br>
+
+        Using myMother.changeAge is effectively replacing the keyword this in the code above, and Javascript knows which person
+        you are referring to.
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Built-In Functions</h3>
+
+    <p>
+
+        Built-In Javascript methods are great, because a lot of simple tasks you might end up needing to use
+        will be solved easily using a Javascript built-in method. The reason the built-in methods become built-in
+        is because they have shown to increase productivity one way or another. The example below is a short and simple
+        way of using one of the built-in Javascript methods available:
+
+        <br><br>
+
+        var helloWorld = "Hello World!";<br>
+        <br>
+        var newHelloWorld = hellowWorld.toUpperCase();<br>
+        <br>
+        Output: HELLO WORLD!
+
+    </p>
+
+    <p>
+
+        <br><hr><br>
+
+        <h1>Number Methods</h1>
+        <p>The Number object contains only the default methods that are part of every object's definition.</p>
+        <table class="table table-bordered">
+        <tbody>
+        <tr>
+        <th width="20%">Method</th>
+        <th width="80%">Description</th>
+        </tr>
+        <tr>
+        <td>constructor()</td>
+        <td>Returns the function that created this object's instance. By default this is the Number object.</td>
+        </tr>
+        <tr>
+        <td>toExponential()</td>
+        <td>Forces a number to display in exponential notation, even if the number is in the range in which JavaScript normally uses standard notation.</td>
+        </tr>
+        <tr>
+        <td>toFixed()</td>
+        <td>Formats a number with a specific number of digits to the right of the decimal.</td>
+        </tr>
+        <tr>
+        <td>toLocaleString()</td>
+        <td>Returns a string value version of the current number in a format that may vary according to a browser's locale settings.</td>
+        </tr>
+        <tr>
+        <td>toPrecision()</td>
+        <td>Defines how many total digits (including digits to the left and right of the decimal) to display of a number.</td>
+        </tr>
+        <tr>
+        <td>toString()</td>
+        <td>Returns the string representation of the number's value.</td>
+        </tr>
+        <tr>
+        <td>valueOf()</td>
+        <td>Returns the number's value.</td>
+        </tr>
+        </tbody>
+        </table>
+        <h1>Boolean Methods</h1>
+        <table class="table table-bordered">
+        <tbody>
+        <tr>
+        <th width="20%">Method</th>
+        <th width="80%">Description</th>
+        </tr>
+        <tr>
+        <td>toSource()</td>
+        <td>Returns a string containing the source of the Boolean object; you can use this string to create an equivalent object.</td>
+        </tr>
+        <tr>
+        <td>toString()</td>
+        <td>Returns a string of either "true" or "false" depending upon the value of the object.</td>
+        </tr>
+        <tr>
+        <td>valueOf()</td>
+        <td>Returns the primitive value of the Boolean object.</td>
+        </tr>
+        </tbody>
+        </table>
+        <h2>String Methods</h2>
+        <table class="table table-bordered">
+        <tbody>
+        <tr>
+        <th width="20%">Method</th>
+        <th width="80%">Description</th>
+        </tr>
+        <tr>
+        <td>charAt()</td>
+        <td>Returns the character at the specified index.</td>
+        </tr>
+        <tr>
+        <td>charCodeAt()</td>
+        <td>Returns a number indicating the Unicode value of the character at the given index.</td>
+        </tr>
+        <tr>
+        <td>concat()</td>
+        <td>Combines the text of two strings and returns a new string.</td>
+        </tr>
+        <tr>
+        <td>indexOf()</td>
+        <td>Returns the index within the calling String object of the first occurrence of the specified value, or -1 if not found.</td>
+        </tr>
+        <tr>
+        <td>lastIndexOf()</td>
+        <td>Returns the index within the calling String object of the last occurrence of the specified value, or -1 if not found.</td>
+        </tr>
+        <tr>
+        <td>localeCompare()</td>
+        <td>Returns a number indicating whether a reference string comes before or after or is the same as the given string in sort order.</td>
+        </tr>
+        <tr>
+        <td>length()</td>
+        <td>Returns the length of the string.</td>
+        </tr>
+        <tr>
+        <td>match()</td>
+        <td>Used to match a regular expression against a string.</td>
+        </tr>
+        <tr>
+        <td>replace()</td>
+        <td>Used to find a match between a regular expression and a string, and to replace the matched substring with a new substring.</td>
+        </tr>
+        <tr>
+        <td>search()</td>
+        <td>Executes the search for a match between a regular expression and a specified string.</td>
+        </tr>
+        <tr>
+        <td>slice()</td>
+        <td>Extracts a section of a string and returns a new string.</td>
+        </tr>
+        <tr>
+        <td>split()</td>
+        <td>Splits a String object into an array of strings by separating the string into substrings.</td>
+        </tr>
+        <tr>
+        <td>substr()</td>
+        <td>Returns the characters in a string beginning at the specified location through the specified number of characters.</td>
+        </tr>
+        <tr>
+        <td>substring()</td>
+        <td>Returns the characters in a string between two indexes into the string.</td>
+        </tr>
+        <tr>
+        <td>toLocaleLowerCase()</td>
+        <td>The characters within a string are converted to lower case while respecting the current locale.</td>
+        </tr>
+        <tr>
+        <td>toLocaleUpperCase()</td>
+        <td>The characters within a string are converted to upper case while respecting the current locale.</td>
+        </tr>
+        <tr>
+        <td>toLowerCase()</td>
+        <td>Returns the calling string value converted to lower case.</td>
+        </tr>
+        <tr>
+        <td>toString()</td>
+        <td>Returns a string representing the specified object.</td>
+        </tr>
+        <tr>
+        <td>toUpperCase()</td>
+        <td>Returns the calling string value converted to uppercase.</td>
+        </tr>
+        <tr>
+        <td>valueOf()</td>
+        <td>Returns the primitive value of the specified object.</td>
+        </tr>
+        </tbody>
+        </table>
+        <h1>String HTML wrappers</h1>
+        <p>Here is a list of each method which returns a copy of the string wrapped inside the appropriate HTML tag.</p>
+        <table class="table table-bordered">
+        <tbody>
+        <tr>
+        <th width="20%">Method</th>
+        <th width="80%">Description</th>
+        </tr>
+        <tr>
+        <td>anchor()</td>
+        <td>Creates an HTML anchor that is used as a hypertext target.</td>
+        </tr>
+        <tr>
+        <td>big()</td>
+        <td>Creates a string to be displayed in a big font as if it were in a &lt;big&gt; tag.</td>
+        </tr>
+        <tr>
+        <td>blink()</td>
+        <td>Creates a string to blink as if it were in a &lt;blink&gt; tag.</td>
+        </tr>
+        <tr>
+        <td>bold()</td>
+        <td>Creates a string to be displayed as bold as if it were in a &lt;b&gt; tag.</td>
+        </tr>
+        <tr>
+        <td>fixed()</td>
+        <td>Causes a string to be displayed in fixed-pitch font as if it were in a &lt;tt&gt; tag</td>
+        </tr>
+        <tr>
+        <td>fontcolor()</td>
+        <td>Causes a string to be displayed in the specified color as if it were in a &lt;font color="color"&gt; tag.</td>
+        </tr>
+        <tr>
+        <td>fontsize()</td>
+        <td>Causes a string to be displayed in the specified font size as if it were in a &lt;font size="size"&gt; tag.</td>
+        </tr>
+        <tr>
+        <td>italics()</td>
+        <td>Causes a string to be italic, as if it were in an &lt;i&gt; tag.</td>
+        </tr>
+        <tr>
+        <td>link()</td>
+        <td>Creates an HTML hypertext link that requests another URL.</td>
+        </tr>
+        <tr>
+        <td>small()</td>
+        <td>Causes a string to be displayed in a small font, as if it were in a &lt;small&gt; tag.</td>
+        </tr>
+        <tr>
+        <td>strike()</td>
+        <td>Causes a string to be displayed as struck-out text, as if it were in a &lt;strike&gt; tag.</td>
+        </tr>
+        <tr>
+        <td>sub()</td>
+        <td>Causes a string to be displayed as a subscript, as if it were in a &lt;sub&gt; tag</td>
+        </tr>
+        <tr>
+        <td>sup()</td>
+        <td>Causes a string to be displayed as a superscript, as if it were in a &lt;sup&gt; tag</td>
+        </tr>
+        </tbody>
+        </table>
+        <h2>Array Methods</h2>
+        <table class="table table-bordered">
+        <tbody>
+        <tr>
+        <th width="20%">Method</th>
+        <th width="80%">Description</th>
+        </tr>
+        <tr>
+        <td>concat()</td>
+        <td>Returns a new array comprised of this array joined with other array(s) and/or value(s).</td>
+        </tr>
+        <tr>
+        <td>every()</td>
+        <td>Returns true if every element in this array satisfies the provided testing function.</td>
+        </tr>
+        <tr>
+        <td>filter()</td>
+        <td>Creates a new array with all of the elements of this array for which the provided filtering function returns true.</td>
+        </tr>
+        <tr>
+        <td>forEach()</td>
+        <td>Calls a function for each element in the array.</td>
+        </tr>
+        <tr>
+        <td>indexOf()</td>
+        <td>Returns the first (least) index of an element within the array equal to the specified value, or -1 if none is found.</td>
+        </tr>
+        <tr>
+        <td>join()</td>
+        <td>Joins all elements of an array into a string.</td>
+        </tr>
+        <tr>
+        <td>lastIndexOf()</td>
+        <td>Returns the last (greatest) index of an element within the array equal to the specified value, or -1 if none is found.</td>
+        </tr>
+        <tr>
+        <td>map()</td>
+        <td>Creates a new array with the results of calling a provided function on every element in this array.</td>
+        </tr>
+        <tr>
+        <td>pop()</td>
+        <td>Removes the last element from an array and returns that element.</td>
+        </tr>
+        <tr>
+        <td>push()</td>
+        <td>Adds one or more elements to the end of an array and returns the new length of the array.</td>
+        </tr>
+        <tr>
+        <td>reduce()</td>
+        <td>Apply a function simultaneously against two values of the array (from left-to-right) as to reduce it to a single value.</td>
+        </tr>
+        <tr>
+        <td>reduceRight()</td>
+        <td>Apply a function simultaneously against two values of the array (from right-to-left) as to reduce it to a single value.</td>
+        </tr>
+        <tr>
+        <td>reverse()</td>
+        <td>Reverses the order of the elements of an array -- the first becomes the last, and the last becomes the first.</td>
+        </tr>
+        <tr>
+        <td>shift()</td>
+        <td>Removes the first element from an array and returns that element.</td>
+        </tr>
+        <tr>
+        <td>slice()</td>
+        <td>Extracts a section of an array and returns a new array.</td>
+        </tr>
+        <tr>
+        <td>some()</td>
+        <td>Returns true if at least one element in this array satisfies the provided testing function.</td>
+        </tr>
+        <tr>
+        <td>toSource()</td>
+        <td>Represents the source code of an object</td>
+        </tr>
+        <tr>
+        <td>sort()</td>
+        <td>Sorts the elements of an array.</td>
+        </tr>
+        <tr>
+        <td>splice()</td>
+        <td>Adds and/or removes elements from an array.</td>
+        </tr>
+        <tr>
+        <td>toString()</td>
+        <td>Returns a string representing the array and its elements.</td>
+        </tr>
+        <tr>
+        <td>unshift()</td>
+        <td>Adds one or more elements to the front of an array and returns the new length of the array.</td>
+        </tr>
+        </tbody>
+        </table>
+        <h2>Date Methods:</h2>
+        <table class="table table-bordered">
+        <tbody>
+        <tr>
+        <th width="30%">Method</th>
+        <th width="70%">Description</th>
+        </tr>
+        <tr>
+        <td>Date()</td>
+        <td>Returns today's date and time</td>
+        </tr>
+        <tr>
+        <td>getDate()</td>
+        <td>Returns the day of the month for the specified date according to local time.</td>
+        </tr>
+        <tr>
+        <td>getDay()</td>
+        <td>Returns the day of the week for the specified date according to local time.</td>
+        </tr>
+        <tr>
+        <td>getFullYear()</td>
+        <td>Returns the year of the specified date according to local time.</td>
+        </tr>
+        <tr>
+        <td>getHours()</td>
+        <td>Returns the hour in the specified date according to local time.</td>
+        </tr>
+        <tr>
+        <td>getMilliseconds()</td>
+        <td>Returns the milliseconds in the specified date according to local time.</td>
+        </tr>
+        <tr>
+        <td>getMinutes()</td>
+        <td>Returns the minutes in the specified date according to local time.</td>
+        </tr>
+        <tr>
+        <td>getMonth()</td>
+        <td>Returns the month in the specified date according to local time.</td>
+        </tr>
+        <tr>
+        <td>getSeconds()</td>
+        <td>Returns the seconds in the specified date according to local time.</td>
+        </tr>
+        <tr>
+        <td>getTime()</td>
+        <td>Returns the numeric value of the specified date as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</td>
+        </tr>
+        <tr>
+        <td>getTimezoneOffset()</td>
+        <td>Returns the time-zone offset in minutes for the current locale.</td>
+        </tr>
+        <tr>
+        <td>getUTCDate()</td>
+        <td>Returns the day (date) of the month in the specified date according to universal time.</td>
+        </tr>
+        <tr>
+        <td>getUTCDay()</td>
+        <td>Returns the day of the week in the specified date according to universal time.</td>
+        </tr>
+        <tr>
+        <td>getUTCFullYear()</td>
+        <td>Returns the year in the specified date according to universal time.</td>
+        </tr>
+        <tr>
+        <td>getUTCHours()</td>
+        <td>Returns the hours in the specified date according to universal time.</td>
+        </tr>
+        <tr>
+        <td>getUTCMilliseconds()</td>
+        <td>Returns the milliseconds in the specified date according to universal time.</td>
+        </tr>
+        <tr>
+        <td>getUTCMinutes()</td>
+        <td>Returns the minutes in the specified date according to universal time.</td>
+        </tr>
+        <tr>
+        <td>getUTCMonth()</td>
+        <td>Returns the month in the specified date according to universal time.</td>
+        </tr>
+        <tr>
+        <td>getUTCSeconds()</td>
+        <td>Returns the seconds in the specified date according to universal time.</td>
+        </tr>
+        <tr>
+        <td>getYear()</td>
+        <td><strong>Deprecated</strong> - Returns the year in the specified date according to local time. Use getFullYear instead.</td>
+        </tr>
+        <tr>
+        <td>setDate()</td>
+        <td>Sets the day of the month for a specified date according to local time.</td>
+        </tr>
+        <tr>
+        <td>setFullYear()</td>
+        <td>Sets the full year for a specified date according to local time.</td>
+        </tr>
+        <tr>
+        <td>setHours()</td>
+        <td>Sets the hours for a specified date according to local time.</td>
+        </tr>
+        <tr>
+        <td>setMilliseconds()</td>
+        <td>Sets the milliseconds for a specified date according to local time.</td>
+        </tr>
+        <tr>
+        <td>setMinutes()</td>
+        <td>Sets the minutes for a specified date according to local time.</td>
+        </tr>
+        <tr>
+        <td>setMonth()</td>
+        <td>Sets the month for a specified date according to local time.</td>
+        </tr>
+        <tr>
+        <td>setSeconds()</td>
+        <td>Sets the seconds for a specified date according to local time.</td>
+        </tr>
+        <tr>
+        <td>setTime()</td>
+        <td>Sets the Date object to the time represented by a number of milliseconds since January 1, 1970, 00:00:00 UTC.</td>
+        </tr>
+        <tr>
+        <td>setUTCDate()</td>
+        <td>Sets the day of the month for a specified date according to universal time.</td>
+        </tr>
+        <tr>
+        <td>setUTCFullYear()</td>
+        <td>Sets the full year for a specified date according to universal time.</td>
+        </tr>
+        <tr>
+        <td>setUTCHours()</td>
+        <td>Sets the hour for a specified date according to universal time.</td>
+        </tr>
+        <tr>
+        <td>setUTCMilliseconds()</td>
+        <td>Sets the milliseconds for a specified date according to universal time.</td>
+        </tr>
+        <tr>
+        <td>setUTCMinutes()</td>
+        <td>Sets the minutes for a specified date according to universal time.</td>
+        </tr>
+        <tr>
+        <td>setUTCMonth()</td>
+        <td>Sets the month for a specified date according to universal time.</td>
+        </tr>
+        <tr>
+        <td>setUTCSeconds()</td>
+        <td>Sets the seconds for a specified date according to universal time.</td>
+        </tr>
+        <tr>
+        <td>setYear()</td>
+        <td><strong>Deprecated - </strong> Sets the year for a specified date according to local time. Use setFullYear instead.</td>
+        </tr>
+        <tr>
+        <td>toDateString()</td>
+        <td>Returns the "date" portion of the Date as a human-readable string.</td>
+        </tr>
+        <tr>
+        <td>toGMTString()</td>
+        <td><strong>Deprecated - </strong> Converts a date to a string, using the Internet GMT conventions. Use toUTCString instead.</td>
+        </tr>
+        <tr>
+        <td>toLocaleDateString()</td>
+        <td>Returns the "date" portion of the Date as a string, using the current locale's conventions.</td>
+        </tr>
+        <tr>
+        <td>toLocaleFormat()</td>
+        <td>Converts a date to a string, using a format string.</td>
+        </tr>
+        <tr>
+        <td>toLocaleString()</td>
+        <td>Converts a date to a string, using the current locale's conventions.</td>
+        </tr>
+        <tr>
+        <td>toLocaleTimeString()</td>
+        <td>Returns the "time" portion of the Date as a string, using the current locale's conventions.</td>
+        </tr>
+        <tr>
+        <td>toSource()</td>
+        <td>Returns a string representing the source for an equivalent Date object; you can use this value to create a new object.</td>
+        </tr>
+        <tr>
+        <td>toString()</td>
+        <td>Returns a string representing the specified Date object.</td>
+        </tr>
+        <tr>
+        <td>toTimeString()</td>
+        <td>Returns the "time" portion of the Date as a human-readable string.</td>
+        </tr>
+        <tr>
+        <td>toUTCString()</td>
+        <td>Converts a date to a string, using the universal time convention.</td>
+        </tr>
+        <tr>
+        <td>valueOf()</td>
+        <td>Returns the primitive value of a Date object.</td>
+        </tr>
+        </tbody>
+        </table>
+        <h2>Date Static Methods:</h2>
+        <p>In addition to the many instance methods listed previously, the Date object also define two static methods. These methods are invoked through the Date( ) constructor.</p>
+        <table class="table table-bordered">
+        <tbody>
+        <tr>
+        <th width="30%">Method</th>
+        <th width="70%">Description</th>
+        </tr>
+        <tr>
+        <td>Date.parse( )</td>
+        <td>Parses a string representation of a date and time and returns the internal millisecond representation of that date.</td>
+        </tr>
+        <tr>
+        <td>Date.UTC( )</td>
+        <td>Returns the millisecond representation of the specified UTC date and time.</td>
+        </tr>
+        </tbody>
+        </table>
+        <h2>Math Methods</h2>
+        <table class="table table-bordered">
+        <tbody>
+        <tr>
+        <th width="20%">Method</th>
+        <th width="80%">Description</th>
+        </tr>
+        <tr>
+        <td>abs()</td>
+        <td>Returns the absolute value of a number.</td>
+        </tr>
+        <tr>
+        <td>acos()</td>
+        <td>Returns the arccosine (in radians) of a number.</td>
+        </tr>
+        <tr>
+        <td>asin()</td>
+        <td>Returns the arcsine (in radians) of a number.</td>
+        </tr>
+        <tr>
+        <td>atan()</td>
+        <td>Returns the arctangent (in radians) of a number.</td>
+        </tr>
+        <tr>
+        <td>atan2()</td>
+        <td>Returns the arctangent of the quotient of its arguments.</td>
+        </tr>
+        <tr>
+        <td>ceil()</td>
+        <td>Returns the smallest integer greater than or equal to a number.</td>
+        </tr>
+        <tr>
+        <td>cos()</td>
+        <td>Returns the cosine of a number.</td>
+        </tr>
+        <tr>
+        <td>exp()</td>
+        <td>Returns E<sup>N</sup>, where N is the argument, and E is Euler's constant, the base of the natural logarithm.</td>
+        </tr>
+        <tr>
+        <td>floor()</td>
+        <td>Returns the largest integer less than or equal to a number.</td>
+        </tr>
+        <tr>
+        <td>log()</td>
+        <td>Returns the natural logarithm (base E) of a number.</td>
+        </tr>
+        <tr>
+        <td>max()</td>
+        <td>Returns the largest of zero or more numbers.</td>
+        </tr>
+        <tr>
+        <td>min()</td>
+        <td>Returns the smallest of zero or more numbers.</td>
+        </tr>
+        <tr>
+        <td>pow()</td>
+        <td>Returns base to the exponent power, that is, base exponent.</td>
+        </tr>
+        <tr>
+        <td>random()</td>
+        <td>Returns a pseudo-random number between 0 and 1.</td>
+        </tr>
+        <tr>
+        <td>round()</td>
+        <td>Returns the value of a number rounded to the nearest integer.</td>
+        </tr>
+        <tr>
+        <td>sin()</td>
+        <td>Returns the sine of a number.</td>
+        </tr>
+        <tr>
+        <td>sqrt()</td>
+        <td>Returns the square root of a number.</td>
+        </tr>
+        <tr>
+        <td>tan()</td>
+        <td>Returns the tangent of a number.</td>
+        </tr>
+        <tr>
+        <td>toSource()</td>
+        <td>Returns the string "Math".</td>
+        </tr>
+        </tbody>
+        </table>
+        <h2>RegExp Methods:</h2>
+        <table class="table table-bordered">
+        <tbody>
+        <tr>
+        <th width="20%">Method</th>
+        <th width="80%">Description</th>
+        </tr>
+        <tr>
+        <td>exec()</td>
+        <td>Executes a search for a match in its string parameter.</td>
+        </tr>
+        <tr>
+        <td>test()</td>
+        <td>Tests for a match in its string parameter.</td>
+        </tr>
+        <tr>
+        <td>toSource()</td>
+        <td>Returns an object literal representing the specified object; you can use this value to create a new object.</td>
+        </tr>
+        <tr>
+        <td>toString()</td>
+        <td>Returns a string representing the specified object.</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>&nbsp;</p>
+
+        <br><hr><br>
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Accessing the Objects Properties</h3>
+
+    <p>
+
+        You can effectively access an object's properties in one of two ways:
+
+        <br><br>
+
+        <b>nameOfObject.nameOfProperty</b>
+
+        <br><br>
+
+        or
+
+        <br><br>
+
+        <b>nameOfObject["nameOfProperty"]</b>
+
+        <br><br>
+
+        var person = {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;firstName: "James",<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;lastName: "Patterson<br>
+        };<br>
+
+        <br><br>
+
+        The way you would access the person's firstName property from the code above would be:
+
+        <br><br>
+
+        <b>person.firstName</b>
+
+        <br><br>
+
+            <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp; var person = {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; firstName: "James",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lastName : "Patterson",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; 30<br />&nbsp;&nbsp;&nbsp; };<br />&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML =<br />&nbsp;&nbsp;&nbsp; person.firstName + " " + person.lastName + " is " + person.age + " years old.";<br />&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        <br><br>
+
+        The code above shows you how to access the firstName, lastName, and age properties using the <b>nameOfObject.nameOfProperty</b> method.
+
+        <br><hr><br>
+
+        <b>person["firstName"];</b>
+
+        <br><br>
+
+            <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp; var person = {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; firstName: "James",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lastName : "Patterson",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; 30<br />&nbsp;&nbsp;&nbsp; };<br />&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML =<br />&nbsp;&nbsp;&nbsp; person["firstName"] + " " + person["lastName"] + " is " + person["age"] + " years old.";<br />&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        <br><br>
+
+        The code above shows you how to access the firstName, lastName, and age properties using the <b>nameOfObject["nameOfProperty"]</b> method.
+
+        <br><hr><br>
+
+        <b>Both Methods</b>
+
+        <br><br>
+
+            <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp; var person = {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; firstName: "James",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lastName : "Patterson",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; 30<br />&nbsp;&nbsp;&nbsp; };<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp; var a = person.age;<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML =<br />&nbsp;&nbsp;&nbsp; person["firstName"] + " " + person.lastName + " is " + a + " years old.";<br />&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        <br><br>
+
+        The code above shows you how to access the firstName, lastName, and age properties using <b>both</b> methods.
+
+        <br><br>
+
+        The output for all three examples: James Patterson is 30 years old.
+
+        <br><br>
+
+        Javascript properties are the most important part of any JS object. The properties are the values associated with the
+        JS object. The values can be name, age, eye color, and really anything that would describe the object in further detail
+        to a computer. The Javascript object is a collection of unordered properties or attributes that can be changed, added, deleted,
+        and sometimes read only.
+
+        <br><br>
+
+        nameOfObject[expression] is another way to access a javascript property. <br><br>
+
+        var x = "age"; <br>
+        person[x] or person.x would be how you access the value using this method.<br>
+
+        <br>
+
+
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Additional Properties to Add/Delete</h3>
+
+    <p>
+
+        You can add additional properties to any of your objects that are already created by giving it a value. The code below will
+        show you how to add more properties to an object with only two fields:
+
+        <br><br>
+
+        var motorcycle = { year:2008, make:"Honda"};
+
+        <br><br>
+
+        To add an additional attribute to the object motorcycle:
+
+        <br><br>
+
+        motorcycle.model = "Shadow";
+
+        <br><br>
+
+        Let us add an additional attribute to the object for giggles
+
+        <br><br>
+
+        motorcycle.engineSize = 750;
+
+        <br><br>
+
+        We can <b>delete</b> a property from the list of attributes available for an object at will. The delete keyword
+        will delete a property from an object's list of attributes.
+
+        <br><br>
+
+        delete motorcycle.engineSize;
+
+        <br><br>
+
+        The code above will delete the last entry we made to our object's attributes. The delete keyword will delete both the value
+        of the property and the property itself. After being deleted, the property cannot be used unless it is added to the attributes
+        list once again. The delete operator is designed specifically to be used on object properties, and yields no negative effects
+        on variables or functions. The delete operator should not be used on predefined JS object properties, and doing so will
+        probably crash your system, browser, or application.
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>For...in Loop</h3>
+
+    <p>
+
+        Javascript has a built in for.. in loop, which will loop through each property of an object one by one
+        until the end of the object properties list. The block of code that lies in the for in loop will be executed
+        once for each property found for the available object. Below is how to loop through the properties of an object:
+
+        <br><br>
+
+        for (variable in object) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Code;<br>
+        }
+
+        <br><hr><br>
+
+        <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var statement = "";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var blank = " ";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var person = {fname:"James", lname:"Patterson", age:30}; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var attr;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (attr in person) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; statement += person[attr] + blank;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML = statement;<br />&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br />&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        <br><br>
+
+        Output: James Patterson 30
+
+        <br><hr><br>
+
+        <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var statement = "";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var blank = " ";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var vehicle= {year:2008, make:"Ford", model:"Mustang"};<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var attr;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (attr in vehicle) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; statement += vehicle[attr] + blank;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML = statement;<br />&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br />&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        <br><br>
+
+        Output: 2008 Ford Mustang
+
+        <br><br>
+
+        Both examples above show how to take an empty element with a specific id name, and add values to them. The values come from a Javascript
+        object's attributes. First, you need to declare an empty string, since you plan on concatenating the information together. Next, you will
+        need to create your object, person or vehicle, and create the object's attributes associated with each. The next declaration is just a place
+        holder for looping through the attributes. The for in loop says that for every attribute in person/vehicle, concatenate the information
+        found with the original empty string, and then force the result to be displayed inside the element with an id that equals tutorial.
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Prototype Properties</h3>
+
+    <p>
+
+        Javascript objects will inherit the properties of their prototype. Every Javascript object has a prototype associated
+        with it. The prototype is also an object. All Javascript objects will inherit the properties and methods from their
+        associated prototype. Objects that are created using an object literal, also with the new Object() technique, will inherit
+        from a prototype called Object.prototype. All objects inherit from the Object.prototype: Date, Array, RegExp, Function, and
+        so on. The traditional way to create an object prototype is to use an object constructor function. The code below will show
+        how to create an object constructor function and use it:
+
+        <br><br>
+
+            <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function Vehicle(yr, mk, md) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.year = yr;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.make = mk;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.model = md;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var myMotorcycle = new Vehicle(2008, "Honda", "Shadow");<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var myCar = new Vehicle(2004, "Ford", "Mustang");<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML =<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "My motorcyle is a " + myMotorcycle.year + " " + <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; myMotorcycle.make + " " + myMotorcycle.model + ". My car is a " + <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; myCar.year + " " + myCar.make + " " + myCar.model + "."; <br />&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        <br><br>
+
+        Output: My motorcyle is a 2008 Honda Shadow. My car is a 2004 Ford Mustang.
+
+        <br><br>
+
+        With the use of a construction function, we are allowed to use the new keyword to create all new objects from the
+        same prototype. The constructor function is the prototype for the vehicle objects. It is considered to be standard
+        practice to name the constructor function with an upper case first letter; Vehicle, Person, Etc. Prototype properties
+        must be hard coded within the javascript code, because the properties cannot be added to outside of the javascript code.
+        The value of myCar.color is "undefined", because you cannot add a new property to a prototype the same way as you can
+        add a new property to an existing object. To add a new property to a prototype, the only way is to add it to the constructor
+        function yourself inside the of Javascript code. You cannot append additional properties dynamically, and then expect
+        a result other than undefined.
+
+        <br><br>
+
+            <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp;&nbsp; &nbsp;&lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="tutorial2"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function Vehicle(yr, mk, md) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.year = yr;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.make = mk;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.model = md;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br /><br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;var myMotorcycle = new Vehicle(2008, "Honda", "Shadow");<br />&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;var myCar = new Vehicle(2004, "Ford", "Mustang");<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; myCar.cylinders = 6;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML =<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "My car's cylinder number: " + myCar.cylinders; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vehicle.color = "Green";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial2").innerHTML =<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;"My car's color: " + myCar.color; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br />&nbsp;&nbsp;&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        <br><br>
+
+        Output: My car's cylinder number: 6
+
+        <br><br>
+
+        <b>&</b>
+
+        <br><br>
+
+        Output: My car's color: undefined.
+
+        <br><br>
+
+        Prototype properties can possess prototype values or default values. A constructor can also define methods within the function. The code
+        below will show how to create a constructor function with a method as one of the properties. The constructor below creates a skeleton
+        for a vehicle object; year, make, and model. The three attributes that all vehicles share. The this keyword is used again here to
+        signal that we are using the currently accessed object. The method we define within the constructor will concatenate the information
+        passed to the constructor via the parameters.
+
+        <br><br>
+
+            <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp;&nbsp;&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function Vehicle(yr, mk, md) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;this.year = yr;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;this.make = mk;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;this.model = md;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.information = function() {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return this.year + " " + this.make + " " + this.model<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var myMotorcycle = new Vehicle(2008, "Honda", "Shadow");<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML =<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "Vehicle: " + myMotorcycle.information(); <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        <br><br>
+
+        I do believe I mentioned you cannot add properties to a constructor after it has been coded, but you ultimately can. Using the
+        prototype property, you can effectively add additional properties to any constructor after completion. The prototype property is also
+        great for adding new methods to an existing prototype constructor. <b>DO NOT</b> modify standard Javascript objects because there
+        could be unexpected results, and remember to only modify your own prototypes.
+
+        <br><br>
+
+            <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp;&nbsp;&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function Vehicle(yr, mk, md) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.year = yr;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.make = mk;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.model = md;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.information = function() {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return this.year + " " + this.make + " " + this.model<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vehicle.prototype.color = "Red";<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var myMotorbike = new Vehicle(2008, "Honda", "Shadow");<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML =<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "Vehicle: " + myMotorbike.information() + " is " + myMotorbike.color; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3 style="text-align: center;">Next, we will take a look at Scope within Javascript</h3>
+
+    <p style="text-align: center;">Just follow the buttons to continue the tutorial, {{un}}</p>
+
+
+    <br>
+
+    <a href="/Javascript/functions"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Javascript - Functions
+    </button></a>
+
+    <a href="/Javascript/scope"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+    Javascript - Scope <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+{% endblock %}

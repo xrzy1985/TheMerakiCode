@@ -1,0 +1,140 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<style>
+hr {
+    color: blue;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}
+</style>
+
+    <br><br><br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/python.jpg') }}">
+    Welcome to the Python Loop control page, <b>{{un}}</b>!</h1>
+
+    <hr>
+
+    <blockquote>
+
+        Controlling a loop is vital to programming especially in Python. Statements are typically read line by line as the interpreter
+        runs through the code, but a loop can ensure your structure is followed properly. That means the first statement is read, the second
+        is read, and so on until the end of the code or an error occurs. There might be a time or two when you need to run a specific
+        block of code more than once, or call a function recursively. Loops allow the programmer the ability to add additional paths to be
+        executed. A loop allows the programmer to access a block of code once, twice, or however many times they wish.
+
+    </blockquote>
+
+    <br><hr><br>
+
+    <p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/loop_control/loop_architecture.jpg') }}"></p>
+
+    <br><hr><br>
+
+    <p>Python provides <b>While, For, and Nested</b> loops for programmers to use</p>
+    <br>
+    <ul>
+        <li><b>While</b></li>
+        <h6>-- the loop will run until the condition returns False, the condition is tested before the loop</h6>
+        <li><b>For</b></li>
+        <h6>-- will execute the loop block a certain number of times, abbreviates the code that handles the loop variable</h6>
+        <li><b>Nested</b></li>
+        <h6>-- you can nest loops within loops; while inside for, for inside for, for inside while, etc</h6>
+    </ul>
+
+    <br>
+
+    <p>
+        The loop control property will change the way the python file is executed or run. The sequence in which the file is
+        read will be altered, slightly. Any variables or data created while inside a loop will be destroy upon exiting the
+        specific block of code. So, if you declare a variable inside a for loop, that variable will be destroyed in memory
+        once the code block has been exited. The programmer has four main options in a loop; allow the loop to run unaltered,
+        break the loop using a control statement, continue, or pass.
+    </p>
+
+    <br><hr><br>
+
+    <h3><b>Break Control Statements</b></h3>
+
+    <p>Terminates the loop statement and transfers execution to the statement immediately following the loop</p>
+    <p>break</p>
+
+    <h3><b>Continue Control Statements</b></h3>
+
+    <p>Causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating.</p>
+    <p>continue</p>
+
+    <h3><b>Pass Control Statements</b></h3>
+
+    <p>The pass statement in Python is used when a statement is required syntactically but you do not want any command or code to execute.</p>
+    <p>pass</p>
+
+    <br>
+
+    <h3>Iterator</h3>
+    <p> -- an object that allows the programmer to loop through the elements of a group of variables, regardless of the implementation</p>
+    <p> -- strings, lists, and tuples are the data types that can use an iterator, and they can use the iter() and next() functions</p>
+
+    <br><hr><br>
+
+    <p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/loop_control/iter.jpg') }}"></p>
+
+    <br><hr><br>
+
+    <p>The following will be two photos of Python code that run through the Fibonacci sequence</p>
+    <p>The first one loops through the sequence up to the 10th element</p>
+    <p>The second will loop through the sequence up to the 100th element, but it will also loop through the element and print the individual numbers</p>
+    <p>Inside the fibonacci function, there is a while loop that returns True until the counter variable is greater than n. We defined n to be 10 and 100</p>
+
+    <br><hr><br>
+
+    <p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/loop_control/forloop.jpg') }}"></p>
+
+    <br><hr><br>
+
+    <p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/loop_control/forloopinsideforloop.jpg') }}"></p>
+
+    <br><hr><br>
+
+    <h3 style="text-align: center;">
+            Functions
+    </h3>
+
+    <p style="text-align: center;">
+        Next, we will discuss functions, and learn how much simpler they make life
+    </p>
+
+<!--
+    <h3>
+
+    </h3>
+
+    <p>
+
+    </p>
+
+    <br><hr><br>
+
+    <p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/folder/file.jpg') }}"></p>
+
+    <br><hr><br>
+-->
+
+    <br><hr><br>
+
+    <a href="/Python/decision_making"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Python - Decision Making
+    </button></a>
+
+    <a href="/Python/functions"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        Python - Functions   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends "header.html" %}
+    {% block body %}
+
+    <title>Meraki : Java : Files & IO</title>
+
+    <style>
+    hr {
+        color: blue;
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: 10px;
+    }
+    </style>
+
+        <br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Java.png') }}">
+        Welcome to the Java Files & I/O page, mate!</h1>
+
+        <hr>
+
+        <blockquote>
+
+            Java's Files & I/O information: </br>
+            <p>The java.io package contains nearly every class you might ever need to perform input and output (I/O) in Java. All these streams represent an input source and an output destination. The stream in the java.io package supports many data such as primitives, object, localized characters, etc.</p>
+
+
+        </blockquote>
+
+<h2>Java I/O (Input and Output)</h2>
+Java supports reading from and writing to a mulitude of locations. Java can send/recieve with the user (through GUI elements or the text based console), with other systems (through network packets or IO streams),
+as well as reading and writing to and from files on the system's file heirarchy. Our tutorial will chiefly deal with console I/O and File based I/O,
+as they are, respectively, the easiest for beginners to work with. Once you feel comfortable with File I/O and basic network operations like sending and receiving packets or TCP streams, I highly recommend
+that you explore network I/O for your programs, through either UDP packets or TCP streams. Liang's Comprehensive Java Introduction (mentioned in the Final Thoughts page of this tutorial) does an excellent job of
+explaining the integration of these systems.
+
+
+<hr>
+<h2>Java Console I/O</h2>
+<p>The simplist I/O to work with in Java is simple text input and output from the user "console". Java supports reading in user input in the form of text from the user
+in various formats like strings, integers, characters, and even structures like arrays, if typed in a proper format and passed to a method that can appropriately interpret them.
+</p>
+<p>Java supports printing text to the console for the user to view, which can be a notification of events happening in the program, a response to a user query/action, amongst virtually
+unlimnited possibilities. This can be easily done with the System.out.println() command, which outputs whatever string value is passed to the function to the command line.</p>
+<p>For example, running:</p>
+<p>
+    System.out.println("This is text.")
+    </p>
+would output "This is text.", without the quotation marks, to the console for the user to view.
+
+<p>It can also be passed things other than a simple String of text. The string it is passed can consist of strings in combination with variables from the program currently running.
+For example, if the program had a variable with named numApples with a variable of 5, the command:</p>
+<p>
+    System.out.println("Johnny has " + numApples + " apples.");
+</p>
+
+would output "Johnny have 5 apples.", without the quotation marks, to the console.
+
+
+<hr>
+<h2>Java File I/O</h2>
+The simplist files to work with in Java for I/O are text files. Java supports a variety of functions with text files.
+<p>Java provides classes/methods for reading from text files line by line, or in chunks of bytes in specified sizes. It also has support for more advanced parsing like breaking up
+a text file into an array of strings or other data, which can be done with classes readily included with the default Java packages, like a StringTokenizer.</p>
+<p>Java can use the FileReader class to read data in from a file and the FileWriter class to write data out to a file.</p>
+
+
+
+
+
+
+    <br><hr><br>
+
+    <h3 style="text-align: center;">
+            Exceptions
+    </h3>
+
+    <p style="text-align: center;">
+        Next, we will look at Exceptions, and how to attempt to handle unexpected or invalid occurences and exceptions.
+    </p>
+
+    <a href="/Java/imports/"><button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Java - Imports
+    </button></a>
+
+    <a href="/Java/exceptions/"><button type="button" class="btn btn-default btn-lg" style="float: right;">
+        Java - Exceptions   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+
+    {% endblock %}

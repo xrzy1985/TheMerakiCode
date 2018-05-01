@@ -1,0 +1,106 @@
+{% extends "header.html" %}
+    {% block body %}
+
+    <title>Meraki : Java : Data Structures</title>
+
+    <style>
+    hr {
+        color: blue;
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: 10px;
+    }
+    </style>
+
+        <br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Java.png') }}">
+        Welcome to the Java Data Structures page, mate!</h1>
+
+        <hr>
+
+        <blockquote>
+
+            Java's Data Structures information: </br>
+            <p>The Java Uitility package includes a host of complex, incredibly useful data structures. Some of the most common are detailed here for this tutorial.</p>
+
+
+        </blockquote>
+
+
+<p>These data structures consist of the following interface and classes &minus;</p>
+<ul class="list">
+<li>Enumeration</li>
+<li>BitSet</li>
+<li>Vector</li>
+<li>Stack</li>
+<li>Dictionary</li>
+<li>Hashtable</li>
+<li>Properties</li>
+</ul>
+
+<h2>The Enumeration</h2>
+<p>The Enumeration interface is not, itself, an instantiatable data structure, but it provides methods that other classes can extend it to utilize,
+allowing them a means to retrieve successive elements from a data structure.</p>
+<p>Enumeration, for example, contains the method nextElement, which is used to get the next element in a data structure.</p>
+
+<h2>The BitSet</h2>
+<p>The BitSet class implements a group of bits (flags) that can be toggled or cleared.</p>
+<p>This class is useful for cases where multiple boolean values are required, as they can easily be set to new values or checked for their current value.</p>
+
+<h2>The Vector</h2>
+<p>The Vector class is similar in function to an Array in Java, though it is not of a fixed length like a Java Array is.</p>
+<p>Vectors, like Arrays, allow elements to be accessed via the element's index.</p>
+<p>Vectors can be easier to work with than Arrays at times, as the size doesn't need to be manually set at creation and it doesn't have a set size to restrict your usage of it.</p>
+
+<h2>The Stack</h2>
+<p>The Stack class implements a "stack" of elements.</p>
+<p>A stack operates literally like a stack of physical objects would. Objects added to the stack are placed "on top", and objects removed are removed "from the top".</p>
+<p>Because of this, the last elements added to a stack are the first to be removed/accessed.</p>
+
+<h2>The Dictionary</h2>
+<p>The Dictionary class is abstract, so other classes extend it to utilize its functions. Its functions allow a class to create a data structure for mapping "keys" to "values".</p>
+<p>This is implemented in the Hashtable class, which uses it.</p>
+
+<h2>The Hashtable</h2>
+<p>The Hashtable class allows you to store data in a key/value structure, as described in the dictionary.</p>
+<p>A hashtable allows many types of data to be the key or value. For example, the key could be a string value and the value could be an integer. In that case,
+the Hashtable would be described with Hashtable&#60;String,int&#62; while creating it, like in this example:</p>
+<p>
+    Hashtable&#60;String,int&#62; myHashtable = new Hashtable&#60;String,int&#62;;
+</p>
+
+<p>
+    That example creates a new hashtable that can accept (via the .put(String,int) command) any String and integer combination,
+    with the String value serving as a key used to reference/check the value of the integer value.
+</p>
+
+<h2>The Properties</h2>
+<p>Properties is a subclass of Hashtable. It is used to maintain lists of values in which the key is a String and the value is also a String.</p>
+<p>The Properties class is utlized by some other Java classes. For example, System.getProperties( ) returns a Properties object.</p>
+
+
+
+    <br><hr><br>
+
+    <h3 style="text-align: center;">
+            Modifiers
+    </h3>
+
+    <p style="text-align: center;">
+        Next, we will look at Modifiers.
+    </p>
+
+    <a href="/Java/variables/"><button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Java - Variables
+    </button></a>
+
+    <a href="/Java/modifiers/"><button type="button" class="btn btn-default btn-lg" style="float: right;">
+        Java - Modifiers   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+    {% endblock %}

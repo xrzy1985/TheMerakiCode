@@ -1,0 +1,351 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<style>
+hr {
+    color: blue;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}
+</style>
+
+    <br><br><br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/python.jpg') }}">
+    Welcome to the Python Files and IO page, <b>{{un}}</b>!</h1>
+
+    <hr>
+
+    <p>This chapter covers all the basic I/O functions available in Python 3. For more functions, please refer to standard Python documentation.</p>
+<h2>Printing to the Screen</h2>
+<p>The simplest way to produce output is using the <em>print</em> statement where you can pass zero or more expressions separated by commas. This function converts the expressions you pass into a string and writes the result to standard output as follows &minus;</p>
+<pre class="prettyprint notranslate tryit prettyprinted" style="cursor: default;"><span class="com"># Program on any IDE, mate!</span>
+
+<span class="kwd">print</span> <span class="pun">(</span><span class="str">"Python is really a great language,"</span><span class="pun">,</span> <span class="str">"isn't it?"</span><span class="pun">)</span></pre>
+<p>This produces the following result on your standard screen &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="typ">Python</span> <span class="kwd">is</span><span class="pln"> really a great language</span><span class="pun">,</span><span class="pln"> isn</span><span class="str">'t it?</span></pre>
+<h2>Reading Keyboard Input</h2>
+<p>Python 2 has two built-in functions to read data from standard input, which by default comes from the keyboard. These functions are <strong>input()</strong> and <strong>raw_input()</strong></p>
+<p>In Python 3, raw_input() function is deprecated. Moreover, input() functions reads data from keyboard as string, irrespective of whether it is enclosed with quotes ('' or "" ) or not.</p>
+<h2>The <em>input</em> Function</h2>
+<p>The <em>input([prompt])</em> function is equivalent to raw_input, except that it assumes the input is a valid Python expression and returns the evaluated result to you.</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="com"># Program on any IDE, mate!</span>
+
+<span class="pun">&gt;&gt;&gt;</span><span class="pln"> x</span><span class="pun">=</span><span class="pln">input</span><span class="pun">(</span><span class="str">"something:"</span><span class="pun">)</span><span class="pln">
+something</span><span class="pun">:</span><span class="lit">10</span>
+<span class="pun">&gt;&gt;&gt;</span><span class="pln"> x
+</span><span class="str">'10'</span>
+<span class="pun">&gt;&gt;&gt;</span><span class="pln"> x</span><span class="pun">=</span><span class="pln">input</span><span class="pun">(</span><span class="str">"something:"</span><span class="pun">)</span><span class="pln">
+something</span><span class="pun">:</span><span class="str">'10'</span> <span class="com">#entered data treated as string with or without ''</span>
+<span class="pun">&gt;&gt;&gt;</span><span class="pln"> x
+</span><span class="str">"'10'"</span></pre>
+<h2>Opening and Closing Files</h2>
+<p>Until now, you have been reading and writing to the standard input and output. Now, we will see how to use actual data files.</p>
+<p>Python provides basic functions and methods necessary to manipulate files by default. You can do most of the file manipulation using a <strong>file</strong> object.</p>
+<h2>The <em>open</em> Function</h2>
+<p>Before you can read or write a file, you have to open it using Python's built-in <em>open()</em> function. This function creates a <strong>file</strong> object, which would be utilized to call other support methods associated with it.</p>
+<h3>Syntax</h3>
+<pre class="prettyprint notranslate prettyprinted"><span class="pln">file </span><span class="kwd">object</span> <span class="pun">=</span><span class="pln"> open</span><span class="pun">(</span><span class="pln">file_name </span><span class="pun">[,</span><span class="pln"> access_mode</span><span class="pun">][,</span><span class="pln"> buffering</span><span class="pun">])</span></pre>
+<p>Here are parameter details:</p>
+<ul class="list">
+<li>
+<p><strong>file_name:</strong> The file_name argument is a string value that contains the name of the file that you want to access.</p>
+</li>
+<li>
+<p><strong>access_mode:</strong> The access_mode determines the mode in which the file has to be opened, i.e., read, write, append, etc. A complete list of possible values is given below in the table. This is optional parameter and the default file access mode is read (r).</p>
+</li>
+<li>
+<p><strong>buffering:</strong> If the buffering value is set to 0, no buffering takes place. If the buffering value is 1, line buffering is performed while accessing a file. If you specify the buffering value as an integer greater than 1, then buffering action is performed with the indicated buffer size. If negative, the buffer size is the system default(default behavior).</p>
+</li>
+</ul>
+<p>Here is a list of the different modes of opening a file &minus;</p>
+<table class="table table-bordered">
+<tbody>
+<tr>
+<th style="width: 10%;">Modes</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>r</td>
+<td>Opens a file for reading only. The file pointer is placed at the beginning of the file. This is the default mode.</td>
+</tr>
+<tr>
+<td>rb</td>
+<td>Opens a file for reading only in binary format. The file pointer is placed at the beginning of the file. This is the default mode.</td>
+</tr>
+<tr>
+<td>r+</td>
+<td>Opens a file for both reading and writing. The file pointer placed at the beginning of the file.</td>
+</tr>
+<tr>
+<td>rb+</td>
+<td>Opens a file for both reading and writing in binary format. The file pointer placed at the beginning of the file.</td>
+</tr>
+<tr>
+<td>w</td>
+<td>Opens a file for writing only. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.</td>
+</tr>
+<tr>
+<td>wb</td>
+<td>Opens a file for writing only in binary format. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.</td>
+</tr>
+<tr>
+<td>w+</td>
+<td>Opens a file for both writing and reading. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.</td>
+</tr>
+<tr>
+<td>wb+</td>
+<td>Opens a file for both writing and reading in binary format. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.</td>
+</tr>
+<tr>
+<td>a</td>
+<td>Opens a file for appending. The file pointer is at the end of the file if the file exists. That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.</td>
+</tr>
+<tr>
+<td>ab</td>
+<td>Opens a file for appending in binary format. The file pointer is at the end of the file if the file exists. That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.</td>
+</tr>
+<tr>
+<td>a+</td>
+<td>Opens a file for both appending and reading. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.</td>
+</tr>
+<tr>
+<td>ab+</td>
+<td>Opens a file for both appending and reading in binary format. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.</td>
+</tr>
+</tbody>
+</table>
+<h2>The <em>file</em> Object Attributes</h2>
+<p>Once a file is opened and you have one <em>file</em> object, you can get various information related to that file.</p>
+<p>Here is a list of all attributes related to file object:</p>
+<table class="table table-bordered">
+<tbody>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>file.closed</td>
+<td>Returns true if file is closed, false otherwise.</td>
+</tr>
+<tr>
+<td>file.mode</td>
+<td>Returns access mode with which file was opened.</td>
+</tr>
+<tr>
+<td>file.name</td>
+<td>Returns name of the file.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note: </strong> softspace attribute is not supported in Python 3.x</p>
+<h3>Example</h3>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Program on any IDE, mate!</span>
+
+<span class="com"># Open a file</span><span class="pln">
+fo </span><span class="pun">=</span><span class="pln"> open</span><span class="pun">(</span><span class="str">"foo.txt"</span><span class="pun">,</span> <span class="str">"wb"</span><span class="pun">)</span>
+<span class="kwd">print</span> <span class="pun">(</span><span class="str">"Name of the file: "</span><span class="pun">,</span><span class="pln"> fo</span><span class="pun">.</span><span class="pln">name</span><span class="pun">)</span>
+<span class="kwd">print</span> <span class="pun">(</span><span class="str">"Closed or not : "</span><span class="pun">,</span><span class="pln"> fo</span><span class="pun">.</span><span class="pln">closed</span><span class="pun">)</span>
+<span class="kwd">print</span> <span class="pun">(</span><span class="str">"Opening mode : "</span><span class="pun">,</span><span class="pln"> fo</span><span class="pun">.</span><span class="pln">mode</span><span class="pun">)</span><span class="pln">
+fo</span><span class="pun">.</span><span class="pln">close</span><span class="pun">()</span></pre>
+<p>This produces the following result &minus;</p>
+<pre class="result notranslate">Name of the file:  foo.txt
+Closed or not :  False
+Opening mode :  wb
+
+</pre>
+<h2>The <em>close()</em> Method</h2>
+<p>The close() method of a <em>file</em> object flushes any unwritten information and closes the file object, after which no more writing can be done.</p>
+<p>Python automatically closes a file when the reference object of a file is reassigned to another file. It is a good practice to use the close() method to close a file.</p>
+<h3>Syntax</h3>
+<pre class="prettyprint notranslate prettyprinted"><span class="pln">fileObject</span><span class="pun">.</span><span class="pln">close</span><span class="pun">();</span></pre>
+<h3>Example</h3>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Program on any IDE, mate!</span>
+
+<span class="com"># Open a file</span><span class="pln">
+fo </span><span class="pun">=</span><span class="pln"> open</span><span class="pun">(</span><span class="str">"foo.txt"</span><span class="pun">,</span> <span class="str">"wb"</span><span class="pun">)</span>
+<span class="kwd">print</span> <span class="pun">(</span><span class="str">"Name of the file: "</span><span class="pun">,</span><span class="pln"> fo</span><span class="pun">.</span><span class="pln">name</span><span class="pun">)</span>
+
+<span class="com"># Close opened file</span><span class="pln">
+fo</span><span class="pun">.</span><span class="pln">close</span><span class="pun">()</span></pre>
+<p>This produces the following result &minus;</p>
+<pre class="result notranslate">Name of the file:  foo.txt
+</pre>
+<h2>Reading and Writing Files</h2>
+<p>The <em>file</em> object provides a set of access methods to make our lives easier. We would see how to use <em>read()</em> and <em>write()</em> methods to read and write files.</p>
+<h2>The <em>write()</em> Method</h2>
+<p>The <em>write()</em> method writes any string to an open file. It is important to note that Python strings can have binary data and not just text.</p>
+<p>The write() method does not add a newline character ('\n') to the end of the string &minus;</p>
+<h3>Syntax</h3>
+<pre class="prettyprint notranslate prettyprinted"><span class="pln">fileObject</span><span class="pun">.</span><span class="pln">write</span><span class="pun">(</span><span class="kwd">string</span><span class="pun">);</span></pre>
+<p>Here, passed parameter is the content to be written into the opened file.</p>
+<h3>Example</h3>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Program on any IDE, mate!</span>
+
+<span class="com"># Open a file</span><span class="pln">
+fo </span><span class="pun">=</span><span class="pln"> open</span><span class="pun">(</span><span class="str">"foo.txt"</span><span class="pun">,</span> <span class="str">"w"</span><span class="pun">)</span><span class="pln">
+fo</span><span class="pun">.</span><span class="pln">write</span><span class="pun">(</span> <span class="str">"Python is a great language.\nYeah its great!!\n"</span><span class="pun">)</span>
+
+<span class="com"># Close opend file</span><span class="pln">
+fo</span><span class="pun">.</span><span class="pln">close</span><span class="pun">()</span></pre>
+<p>The above method would create <em>foo.txt</em> file and would write given content in that file and finally it would close that file. If you would open this file, it would have following content.</p>
+<pre class="result notranslate">Python is a great language.
+Yeah its great!!
+</pre>
+<h2>The <em>read()</em> Method</h2>
+<p>The <em>read()</em> method reads a string from an open file. It is important to note that Python strings can have binary data. apart from text data.</p>
+<h3>Syntax</h3>
+<pre class="prettyprint notranslate prettyprinted"><span class="pln">fileObject</span><span class="pun">.</span><span class="pln">read</span><span class="pun">([</span><span class="pln">count</span><span class="pun">]);</span></pre>
+<p>Here, passed parameter is the number of bytes to be read from the opened file. This method starts reading from the beginning of the file and if <em>count</em> is missing, then it tries to read as much as possible, maybe until the end of file.</p>
+<h3>Example</h3>
+<p>Let's take a file <em>foo.txt</em>, which we created above.</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Program on any IDE, mate!</span>
+
+<span class="com"># Open a file</span><span class="pln">
+fo </span><span class="pun">=</span><span class="pln"> open</span><span class="pun">(</span><span class="str">"foo.txt"</span><span class="pun">,</span> <span class="str">"r+"</span><span class="pun">)</span><span class="pln">
+str </span><span class="pun">=</span><span class="pln"> fo</span><span class="pun">.</span><span class="pln">read</span><span class="pun">(</span><span class="lit">10</span><span class="pun">)</span>
+<span class="kwd">print</span> <span class="pun">(</span><span class="str">"Read String is : "</span><span class="pun">,</span><span class="pln"> str</span><span class="pun">)</span>
+<span class="com"># Close opened file</span><span class="pln">
+fo</span><span class="pun">.</span><span class="pln">close</span><span class="pun">()</span></pre>
+<p>This produces the following result &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="typ">Read</span> <span class="typ">String</span> <span class="kwd">is</span> <span class="pun">:</span>  <span class="typ">Python</span> <span class="kwd">is</span></pre>
+<h2>File Positions</h2>
+<p>The <em>tell()</em> method tells you the current position within the file; in other words, the next read or write will occur at that many bytes from the beginning of the file.</p>
+<p>The <em>seek(offset[, from])</em> method changes the current file position. The <em>offset</em> argument indicates the number of bytes to be moved. The <em>from</em> argument specifies the reference position from where the bytes are to be moved.</p>
+<p>If <em>from</em> is set to 0, it means use the beginning of the file as the reference position and 1 means use the current position as the reference position and if it is set to 2 then the end of the file would be taken as the reference position.</p>
+<h3>Example</h3>
+<p>Let us take a file <em>foo.txt</em>, which we created above.</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Program on any IDE, mate!</span>
+
+<span class="com"># Open a file</span><span class="pln">
+fo </span><span class="pun">=</span><span class="pln"> open</span><span class="pun">(</span><span class="str">"foo.txt"</span><span class="pun">,</span> <span class="str">"r+"</span><span class="pun">)</span><span class="pln">
+str </span><span class="pun">=</span><span class="pln"> fo</span><span class="pun">.</span><span class="pln">read</span><span class="pun">(</span><span class="lit">10</span><span class="pun">)</span>
+<span class="kwd">print</span> <span class="pun">(</span><span class="str">"Read String is : "</span><span class="pun">,</span><span class="pln"> str</span><span class="pun">)</span>
+
+<span class="com"># Check current position</span><span class="pln">
+position </span><span class="pun">=</span><span class="pln"> fo</span><span class="pun">.</span><span class="pln">tell</span><span class="pun">()</span>
+<span class="kwd">print</span> <span class="pun">(</span><span class="str">"Current file position : "</span><span class="pun">,</span><span class="pln"> position</span><span class="pun">)</span>
+
+<span class="com"># Reposition pointer at the beginning once again</span><span class="pln">
+position </span><span class="pun">=</span><span class="pln"> fo</span><span class="pun">.</span><span class="pln">seek</span><span class="pun">(</span><span class="lit">0</span><span class="pun">,</span> <span class="lit">0</span><span class="pun">)</span><span class="pln">
+str </span><span class="pun">=</span><span class="pln"> fo</span><span class="pun">.</span><span class="pln">read</span><span class="pun">(</span><span class="lit">10</span><span class="pun">)</span>
+<span class="kwd">print</span> <span class="pun">(</span><span class="str">"Again read String is : "</span><span class="pun">,</span><span class="pln"> str</span><span class="pun">)</span>
+<span class="com"># Close opened file</span><span class="pln">
+fo</span><span class="pun">.</span><span class="pln">close</span><span class="pun">()</span>
+</pre>
+<p>This produces the following result &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="typ">Read</span> <span class="typ">String</span> <span class="kwd">is</span> <span class="pun">:</span>  <span class="typ">Python</span> <span class="kwd">is</span>
+<span class="typ">Current</span><span class="pln"> file position </span><span class="pun">:</span>  <span class="lit">10</span>
+<span class="typ">Again</span><span class="pln"> read </span><span class="typ">String</span> <span class="kwd">is</span> <span class="pun">:</span>  <span class="typ">Python</span> <span class="kwd">is</span></pre>
+<h2>Renaming and Deleting Files</h2>
+<p>Python <strong>os</strong> module provides methods that help you perform file-processing operations, such as renaming and deleting files.</p>
+<p>To use this module you need to import it first and then you can call any related functions.</p>
+<h2>The rename() Method</h2>
+<p>The <em>rename()</em> method takes two arguments, the current filename and the new filename.</p>
+<h3>Syntax</h3>
+<pre class="prettyprint notranslate prettyprinted"><span class="pln">os</span><span class="pun">.</span><span class="pln">rename</span><span class="pun">(</span><span class="pln">current_file_name</span><span class="pun">,</span><span class="pln"> new_file_name</span><span class="pun">)</span></pre>
+<h3>Example</h3>
+<p>Following is the example to rename an existing file <em>test1.txt</em>:</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="com"># Program on any IDE, mate!</span>
+<span class="kwd">import</span><span class="pln"> os
+
+</span><span class="com"># Rename a file from test1.txt to test2.txt</span><span class="pln">
+os</span><span class="pun">.</span><span class="pln">rename</span><span class="pun">(</span> <span class="str">"test1.txt"</span><span class="pun">,</span> <span class="str">"test2.txt"</span> <span class="pun">)</span>
+</pre>
+<h2>The <em>remove()</em> Method</h2>
+<p>You can use the <em>remove()</em> method to delete files by supplying the name of the file to be deleted as the argument.</p>
+<h3>Syntax</h3>
+<pre class="prettyprint notranslate prettyprinted"><span class="pln">os</span><span class="pun">.</span><span class="pln">remove</span><span class="pun">(</span><span class="pln">file_name</span><span class="pun">)</span></pre>
+<h3>Example</h3>
+<p>Following is the example to delete an existing file <em>test2.txt</em> &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="com"># Program on any IDE, mate!</span>
+<span class="kwd">import</span><span class="pln"> os
+
+</span><span class="com"># Delete file test2.txt</span><span class="pln">
+os</span><span class="pun">.</span><span class="pln">remove</span><span class="pun">(</span><span class="str">"text2.txt"</span><span class="pun">)</span></pre>
+<h2>Directories in Python</h2>
+<p>All files are contained within various directories, and Python has no problem handling these too. The <strong>os</strong> module has several methods that help you create, remove, and change directories.</p>
+<h2>The <em>mkdir()</em> Method</h2>
+<p>You can use the <em>mkdir()</em> method of the <strong>os</strong> module to create directories in the current directory. You need to supply an argument to this method which contains the name of the directory to be created.</p>
+<h3>Syntax</h3>
+<pre class="prettyprint notranslate prettyprinted"><span class="pln">os</span><span class="pun">.</span><span class="pln">mkdir</span><span class="pun">(</span><span class="str">"newdir"</span><span class="pun">)</span></pre>
+<h3>Example</h3>
+<p>Following is the example to create a directory <em>test</em> in the current directory &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="com"># Program on any IDE, mate!</span>
+<span class="kwd">import</span><span class="pln"> os
+
+</span><span class="com"># Create a directory "test"</span><span class="pln">
+os</span><span class="pun">.</span><span class="pln">mkdir</span><span class="pun">(</span><span class="str">"test"</span><span class="pun">)</span></pre>
+<h2>The <em>chdir()</em> Method</h2>
+<p>You can use the <em>chdir()</em> method to change the current directory. The chdir() method takes an argument, which is the name of the directory that you want to make the current directory.</p>
+<h3>Syntax</h3>
+<pre class="prettyprint notranslate prettyprinted"><span class="pln">os</span><span class="pun">.</span><span class="pln">chdir</span><span class="pun">(</span><span class="str">"newdir"</span><span class="pun">)</span></pre>
+<h3>Example</h3>
+<p>Following is the example to go into "/home/newdir" directory &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="com"># Program on any IDE, mate!</span>
+<span class="kwd">import</span><span class="pln"> os
+
+</span><span class="com"># Changing a directory to "/home/newdir"</span><span class="pln">
+os</span><span class="pun">.</span><span class="pln">chdir</span><span class="pun">(</span><span class="str">"/home/newdir"</span><span class="pun">)</span></pre>
+<h2>The <em>getcwd()</em> Method</h2>
+<p>The <em>getcwd()</em> method displays the current working directory.</p>
+<h3>Syntax</h3>
+<pre class="prettyprint notranslate prettyprinted"><span class="pln">os</span><span class="pun">.</span><span class="pln">getcwd</span><span class="pun">()</span></pre>
+<h3>Example</h3>
+<p>Following is the example to give current directory &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="com"># Program on any IDE, mate!</span>
+<span class="kwd">import</span><span class="pln"> os
+
+</span><span class="com"># This would give location of the current directory</span><span class="pln">
+os</span><span class="pun">.</span><span class="pln">getcwd</span><span class="pun">()</span></pre>
+<h2>The <em>rmdir()</em> Method</h2>
+<p>The <em>rmdir()</em> method deletes the directory, which is passed as an argument in the method.</p>
+<p>Before removing a directory, all the contents in it should be removed.</p>
+<h3>Syntax:</h3>
+<pre class="prettyprint notranslate prettyprinted"><span class="pln">os</span><span class="pun">.</span><span class="pln">rmdir</span><span class="pun">(</span><span class="str">'dirname'</span><span class="pun">)</span></pre>
+<h3>Example</h3>
+<p>Following is the example to remove "/tmp/test" directory. It is required to give fully qualified name of the directory, otherwise it would search for that directory in the current directory.</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="com"># Program on any IDE, mate!</span>
+<span class="kwd">import</span><span class="pln"> os
+
+</span><span class="com"># This would  remove "/tmp/test"  directory.</span><span class="pln">
+os</span><span class="pun">.</span><span class="pln">rmdir</span><span class="pun">(</span> <span class="str">"/tmp/test"</span>  <span class="pun">)</span></pre>
+<h2>File &amp; Directory Related Methods</h2>
+<p>There are three important sources, which provide a wide range of utility methods to handle and manipulate files &amp; directories on Windows and Unix operating systems. They are as follows &minus;</p>
+<ul class="list">
+<li>
+<p><a href="https://www.tutorialspoint.com/python3/file_methods.htm">File Object Methods</a>: The <em>file</em> object provides functions to manipulate files.</p>
+</li>
+<li>
+<p><a href="https://www.tutorialspoint.com/python3/os_file_methods.htm">OS Object Methods</a>: This provides methods to process files as well as directories.</p>
+</li>
+</ul>
+
+    <hr><br>
+
+    <h3 style="text-align: center;">
+            Exceptions
+        </h3>
+
+        <p style="text-align: center;">
+            Next, we will look at the different types of exceptions.
+        </p>
+
+    <a href="/Python/imports"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Python - Imports
+    </button></a>
+
+    <a href="/Python/exceptions"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        Python - Exceptions   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+{% endblock %}
+
+
+

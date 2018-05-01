@@ -1,0 +1,305 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<style>
+hr {
+    color: blue;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}
+</style>
+
+    <br><br><br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/python.jpg') }}">
+    Welcome to the Python Syntax Page, <b>{{un}}</b>!</h1>
+
+    <hr>
+
+    <blockquote>
+
+        We will discuss the details of Python's syntax and rules in this section. Python does not have many demands, but it does have a few
+        that cannot be ignored. If you choose to ignore these rules of the syntax, you will experience problems along the way in your development.
+        May it be encapsulation errors, validation errors, or your program completely being interpreted wrong are all valid options if a user
+        chooses to ignore the syntax of Python. Now, lets begin!
+
+    </blockquote>
+
+        <hr>
+
+        <br>
+
+    <h3>
+        Identifiers
+    </h3>
+
+    <p>
+        Python has words that are not to be used as variables, functions, classes, modules,
+        or any kind of object. An acceptable identifier name should start with:
+        <ul>
+            <li><b>_</b></li>
+            <li>&nbsp;&nbsp;indicates the indentifier is private</li>
+            <li><b>__</b></li>
+            <li>&nbsp;&nbsp;indicates the indentifier is strongly private</li>
+            <li>&nbsp;&nbsp;if the identifier ends with a __ it</li>
+            <li>&nbsp;&nbsp;indicates the indentifier is a language defined specially named identifier</li>
+            <li><b>A - Z</b></li>
+            <li>&nbsp;&nbsp;identifiers can start with uppercase letters, but it is frowned upon</li>
+            <li><b>a-z</b></li>
+            <li>&nbsp;&nbsp;the proper identifier convention for anything other than the previous exceptions</li>
+        </ul>
+        followed by 1 or more letters, underscores, or digits between 0 and 9. Python <b>does not</b>
+        allow a user to begin an identifier with <b>@, $, &, %, or any such character</b>. Python is
+        a case sensitive language, meaning <b>The_force</b> and <b>the_force</b> are two completely
+        separate identifiers.
+    </p>
+
+    <p>Class names are the identifiers that start with an uppercase.</p>
+    <br>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For example: <b>class Comment(db.Model):</b></p>
+    <br>
+    <p>The class is lowercase, but the name of the class is uppercase. db.Model is just a parameter. Your parameters could be anything.</p>
+
+        <br>
+
+        <hr>
+
+        <br>
+
+    <h3>
+        Reserved Words in Python
+    </h3>
+
+    <p>
+        Python has a full list of reserved key words, that I will unfortunately have to list out here, but enough about my labors. You <b>cannot use</b>
+        the following words as a constant, variable, or any kind of indentifier name:
+        <ul>
+            <li><b>and</b></li>
+            <li><b>as</b></li>
+            <li><b>assert</b></li>
+            <li><b>break</b></li>
+            <li><b>class</b></li>
+            <li><b>continue</b></li>
+            <li><b>def</b></li>
+            <li><b>del</b></li>
+            <li><b>elif</b></li>
+            <li><b>else</b></li>
+            <li><b>except</b></li>
+            <li><b>exec</b></li>
+            <li><b>finally</b></li>
+            <li><b>for</b></li>
+            <li><b>from</b></li>
+            <li><b>global</b></li>
+            <li><b>if</b></li>
+            <li><b>import</b></li>
+            <li><b>in</b></li>
+            <li><b>is</b></li>
+            <li><b>lambda</b></li>
+            <li><b>not</b></li>
+            <li><b>or</b></li>
+            <li><b>pass</b></li>
+            <li><b>print</b></li>
+            <li><b>raise</b></li>
+            <li><b>return</b></li>
+            <li><b>try</b></li>
+            <li><b>while</b></li>
+            <li><b>with</b></li>
+            <li><b>yield</b></li>
+        </ul>
+    </p>
+
+
+        <br>
+
+        <hr>
+
+        <br>
+
+    <h3>
+        Indentation
+    </h3>
+
+    <p>
+        Python does not use any {} to tell the interpreter or compiler that this is a block of code. Python relies solely on the indentation
+        of the lines of code fed into the editor by the programmer. Indentation is extremely important in Python. You should get use to spacing two
+        completely empty white space lines after the last line of code in every function, module, etc. The program needs to have two blank lines at
+        the very end of the file as well.
+    </p>
+
+    <br><br><p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/syntax/error.jpg') }}"></p>
+
+    <br>
+
+    <p>
+        Inside the my_mood function, I didn't indent the return statement, and that is what is causing the error shown above. Once I indent return
+        mood over to align with mood = input... then the program will be runnable once again. The same kind of problem will occur if you choose to
+        indent the line/statement too far. The code error will tell you that Python expected a statement but got a DEDENT. Get use to writing code and
+        immediately checking your indention. I always write the code, test what I'm writing locally, and then finalize with comments.
+    </p>
+
+    <br><br><p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/syntax/indention.jpg') }}"></p>
+
+    <br>
+
+    <p>I always imagine walking up a mountain. Each indention is another step to the top. In the photo above, the heart of the function is the second if statement
+       The second if statement is the one with the sha_256_crypt.verify() function call. Imagine walking up a mountain, first making a connection, then
+       making sure the request method is post, then querying the data from the database, fetching the data I need specifically, and finally
+       verify the password is correct. If the password is verified, the important stuff can happen, but if not it will kick the user out to the first error,
+       error 1. If the first if statement was to fail it would kick us out to the second error, and so on.
+    </p>
+
+        <br>
+
+        <hr>
+
+        <br>
+
+    <h3>
+        Multi-Line Statements within Python
+    </h3>
+
+    <p>
+        Python allows multiline programming within the python file.
+    </p>
+
+    <p>a = "hello "</p>
+    <p>b = "{{un}} ,"</p>
+    <p>c = "How are you?"</p>
+    <p>var = a + \</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;b + \</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;c</p>
+    <br>
+    <p>The Output to the above code is:</p>
+    <br>
+    <p>>>>hello {{un}} ,How are you?</p>
+    <br>
+    <p>
+        Values inside a list, dictionary, or any kind of data structure within python does not need a \ to continue on.
+    </p>
+    <p>pets = ['Dog',</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;'Cat', 'Snake', 'Husband']</p>
+        <br>
+
+        <hr>
+
+        <br>
+
+    <h3>
+        Quotation within Python
+    </h3>
+
+    <p>
+        Python will accept ", """, ', or ''' quotes to prepare the interpreter for a string literal. The string literal must start and end with the same
+        type of quotation mark it began with. The ' and " are used within python to denote a string literal that is typically one line long. The ''' and
+        """ are used when a string needs to be stretched across multiple lines.
+    </p>
+
+    <br><br><p align="center"><img style="max-width: 1000px; min-height: 200px; margin-top: -10px; " src="{{url_for('static', filename='photos/syntax/quotes.jpg') }}"></p>
+
+        <br>
+
+        <hr>
+
+        <br>
+
+    <h3>
+        Blank Lines
+    </h3>
+
+    <p>
+        Blank lines are just white space among the python code. The blank lines could contain comments, which we will discuss next, but mostly
+        they contain absolutely nothing. Python will completely ignore any white space that is not meant to be there already.
+    </p>
+
+        <br>
+
+        <hr>
+
+        <br>
+
+    <h3>
+        Keeping the Python file running
+    </h3>
+
+    <p>
+        To keep the file running until the user is ready to end the session, the user needs to type this in at the end of his/her code:
+    </p>
+    <p>input("\n\nPlease, enter any key to exit the program")</p>
+    <p>
+        The program will not end until the user presses any key, this is a tricky way to keep the console window running until the user is completely finished.
+    </p>
+
+    <br><br><p align="center"><img style="max-width: 1000px; min-height: 200px; margin-top: -10px; " src="{{url_for('static', filename='photos/syntax/quotesE.png') }}"></p>
+
+        <br>
+
+        <hr>
+
+        <br>
+
+    <h3>
+        Multiple statements on a Single Line
+    </h3>
+
+    <p>
+        Two individual statements can be on one single line within Python.
+    </p>
+    <p>word = "Python"; sentence = 'This is a sentence using ' + word + " to express a string literal with a variable"</p>
+    <p>Will evaluate the same way as we programmed it before, but this is apparently more <b>abstract</b></p>
+
+        <br>
+
+        <hr>
+
+        <br>
+
+    <h3>
+        Groups of statements, suites, within Python
+    </h3>
+
+    <p>
+        Statements, such as if statements, which contain a single block of code are called suites. All statements, for example
+        as if, while, def, or class, require a header line and a suite. Header lines begin with a keyword and terminate once a colon(:)
+        has been reached. The suite is just where your code goes. The code you write in order to achieve the goal at hand.
+    </p>
+    <p>if expression:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;suite</p>
+    <p>elif expression2:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;suite</p>
+    <p>else:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;suite</p>
+
+        <br>
+
+        <hr>
+
+        <br>
+
+
+    <h3 style="text-align: center;">
+        Next, is the comments section for Python.
+    </h3>
+
+    <p style="text-align: center;">
+        We will discuss the different kinds of comments within Python. We will learn how to use them, and we will understand why commenting is important.
+    </p>
+
+    <a href="/Python/introduction"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Python - Introduction
+    </button></a>
+
+    <a href="/Python/comments"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        Python - Comments  <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br>
+
+        <hr>
+
+        <br><br>
+
+{% endblock %}

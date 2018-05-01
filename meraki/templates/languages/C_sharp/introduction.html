@@ -1,0 +1,167 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<!-- The import required for AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<!--=================================================================================================================================
+
+White space         : &nbsp;
+bold tag            : <b></b>
+Indent              : <p style="text-indent: 50px;">    </p>
+Horz Bar with \n    : <br><hr class="ones"><br>
+hyper link          : <a href="/location/">TEXT</a>
+bootstrap glyphs    : <span class="glyph-goes-here" aria-hidden="true"></span>
+image               : <img src="{{url_for('static', filename='photos/cover.jpg') }}">
+DL of static file   : <a href="/static/resume/Resume30August2016.doc">Here</a>
+
+use .container for containing responsive fixed width containers
+unable to be nested
+
+    <div class="container">
+    ...
+    </div>
+
+use .container-fluid for a full width container, which will span across the entire viewport
+
+    <div class="container-fluid">
+    ...
+    </div>
+
+<p style="text-indent: 50px;">
+
+</p>
+
+<ul>
+    <li>
+        <b>
+
+        </b>
+        Text <br>
+    </li>
+</ul>
+
+=================================================================================================================================-->
+
+    <br><br><br><h3 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Javascript/javascript.png') }}">
+    Welcome to the C# Introduction Homepage, <b>{{un}}</b>!</h3>
+
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+    <p class="intro">
+        <center><b>
+            C# | The tip of the Iceburg
+        </b></center>
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Introduction</h3>
+
+    <p>
+
+        Microsoft produced a new object oriented programming language with the introduction of the .NET framework. The newly developed
+        programming language would be known as C#. (pronounced C sharp) C# was written with a few adjectives in mind: simple, new, all
+        purpose, object oriented, and relating to other languages that were popular at the time. C# can be compiled down into machine
+        code, visual studio can achieve this, but C# is always used in combination with the .NET framework. So, any application that
+        is to be written in C# will in return be required to install the .NET framework onto the working computer. C# is referred to as
+        <b>the .NET</b> language, and that is probably because it was created alongside with the .NET framework. You know by now that C#
+        is object oriented, but did you know C# does not allow the use of global variables or functions. In C#, everything is wrapped
+        inside of classes. Simple data types, int or string values, inherit from the System.Object class.
+
+        <br><br>
+
+        For all of the C# tutorials on this site, I will be using <a href="https://www.visualstudio.com/downloads/">Visual Studio 2017 Community Edition</a>.
+        Visual Studio 2017 Community Edition will not initially come with the C# packages installed. You will need to open up Visual
+        Studio 2017 Community Edition, and create a new project. In the left hand side there will be a list of all the installed packages
+        your Visual Studio has installed already. You can choose to install the Visual C# packages during the initial installation, I
+        believe, but I'm not quite sure about that. If you do not have Visual C# installed, click on the button at the bottom of the left
+        hand side column named 'Open Visual Studio Installer'.
+
+    </p>
+
+
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3 style="text-align: center;">-NEXT-</h3>
+
+    <p style="text-align: center;">Just follow the buttons to continue the tutorial, {{un}}</p>
+
+
+    <br>
+
+    <a href="/C_plusplus/final_thoughts"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> C++ - Final Thoughts
+    </button></a>
+
+    <a href="/C_sharp/introduction2"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+    C# - Introduction 2 <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+{% endblock %}

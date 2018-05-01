@@ -1,0 +1,298 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<style>
+hr {
+    color: blue;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}
+</style>
+
+    <br><br><br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/c_sharp.png') }}">
+    Welcome to the C# Imports Homepage, mate!</h1>
+
+    <hr>
+
+    <blockquote>
+
+        C# Imports Information
+
+    </blockquote>
+<style>
+.Code
+{
+	background-color: #E0FFFF;
+}
+.output
+{
+	background-color: #000000;
+	color: #ffffff;
+}
+h1
+{
+	text-align: center;
+	text-decoration: underline;
+}
+h2
+{
+	text-decoration: underline;
+}
+.content
+{
+	text-align: center;
+}
+table
+{
+background-color: #6495ed;
+color: #ffffff;
+border: solid 2px black;
+}
+</style>
+<p>The <em>using</em> directive has three uses:</p>
+<ul>
+<li>
+<p>To allow the use of types in a namespace so that you do not have to qualify the use of a type in that namespace:</p>
+<div id="code-snippet-1" class="codeSnippetContainer">
+<div class="codeSnippetContainerTabs">
+<div class="codeSnippetContainerTabSingle" dir="ltr"><a></a></div>
+</div>
+<div class="codeSnippetContainerCodeContainer">
+<div class="codeSnippetToolBar">&nbsp;</div>
+<div id="CodeSnippetContainerCode_f319efad-ac7b-42fb-9b7d-c4a7d37e7934" class="codeSnippetContainerCode" dir="ltr">
+<div>
+<div class="Code">
+<pre>using System.Text;
+</div>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>To allow you to access static members of a type without having to qualify the access with the type name:</p>
+<div id="code-snippet-2" class="codeSnippetContainer">
+<div class="codeSnippetContainerTabs">
+<div class="codeSnippetContainerTabSingle" dir="ltr"><a></a></div>
+</div>
+<div class="codeSnippetContainerCodeContainer">
+<div class="codeSnippetToolBar">&nbsp;</div>
+<div id="CodeSnippetContainerCode_50cdda2f-37b6-4140-a53d-f1fb6a1fb4be" class="codeSnippetContainerCode" dir="ltr">
+<div>
+<div class="Code">
+<pre>using static System.Math;
+</div>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p><em>Aliasing</em> means a data location in memory can be accessed thorugh different symbolic names in the program </em>
+<p>To create an alias for a namespace or a type. This is called a <em>using alias directive</em>.</p>
+<div id="code-snippet-3" class="codeSnippetContainer">
+<div class="codeSnippetContainerTabs">
+<div class="codeSnippetContainerTabSingle" dir="ltr"><a></a></div>
+</div>
+<div class="codeSnippetContainerCodeContainer">
+<div class="codeSnippetToolBar">&nbsp;</div>
+<div id="CodeSnippetContainerCode_2c93a545-0c0a-44bd-b426-587be92f56ce" class="codeSnippetContainerCode" dir="ltr">
+<div>
+<div class="Code">
+<pre>using Project = PC.MyCompany.Project;
+</div>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+<p>Using statements are necessary so you can utilize the certain functions C# provides.
+</br> For instance IDisposable ensures that object such as files and fonts are handled correctly.</p>
+<div>
+<h2>Using Static Type</h2>
+<div class="sectionblock">&nbsp;</div>
+</div>
+<p>You can access static members of a type without having to qualify the access with the type name:</p>
+<h2>Example</h2>
+<div id="code-snippet-4" class="codeSnippetContainer">
+<div class="codeSnippetContainerTabs">
+<div class="codeSnippetContainerTabSingle" dir="ltr"><a></a></div>
+</div>
+<div class="codeSnippetContainerCodeContainer">
+<div class="codeSnippetToolBar">&nbsp;</div>
+<div id="CodeSnippetContainerCode_248d7cb6-1821-4c74-bf19-dee52d9b98f2" class="codeSnippetContainerCode" dir="ltr">
+<div>
+<div class="Code">
+<pre>using static System.Console;
+using static System.Math;
+class Program
+{
+    static void Main()
+    {
+        WriteLine(Sqrt(3*3 + 4*4));
+    }
+}
+  </div>
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p><em>Using static</em> imports only accessible static members and nested types declared in the specified type. Inherited members are not imported. You can import from any named type with a using static directive, including Visual Basic modules. If an F# top-level functions appear in metadata as static members of a named type whose name is a valid C# identifier, then the F# functions can be imported.</p>
+<p><em>Using static</em> makes extension methods declared in the specified type available for extension method lookup. However, the names of the extension methods are not imported into scope for unqualified reference in code.</p>
+<p>Methods with the same name imported from different types by different using static directives in the same compilation unit or namespace form a method group. Overload resolution within these method groups follows normal C# rules.</p>
+<div>
+<div id="Anchor_1" class="LW_CollapsibleArea_Anchor_Div">&nbsp;</div>
+<div class="LW_CollapsibleArea_HrDiv">&nbsp;</div>
+</div>
+<div class="sectionblock">&nbsp;</div>
+</div>
+<p>The scope of a <em>using</em> directive is limited to the file in which it appears.</p>
+<p>Create a <em>using</em> alias to make it easier to qualify an identifier to a namespace or type. The right side of a using alias directive must always be a fully-qualified type regardless of the using directives that come before it.</p>
+<p>Create a <em>using</em> directive to use the types in a namespace without having to specify the namespace. A <em>using</em> directive does not give you access to any namespaces that are nested in the namespace you specify.</p>
+<p>Namespaces come in two categories: user-defined and system-defined. User-defined namespaces are namespaces defined in your code. For a list of the system-defined namespaces, see <a href="http://go.microsoft.com/fwlink/?LinkID=227195">.NET Framework Class Library</a>.</p>
+<p>For examples on referencing methods in other assemblies, see <a href="https://msdn.microsoft.com/en-us/library/3707x96z.aspx">Creating and Using C# DLLs</a>.</p>
+<div>
+<div id="Anchor_2" class="LW_CollapsibleArea_Anchor_Div">&nbsp;</div>
+<div class="LW_CollapsibleArea_HrDiv">&nbsp;</div>
+</div>
+<div class="sectionblock">&nbsp;</div>
+</div>
+<h2>Defining and using alias for namespace</h2>
+<p>&nbsp;</p>
+<div id="code-snippet-5" class="codeSnippetContainer">
+<div class="codeSnippetContainerTabs">
+<div class="codeSnippetContainerTabSingle" dir="ltr"><a></a></div>
+</div>
+<div class="codeSnippetContainerCodeContainer">
+<div class="codeSnippetToolBar">&nbsp;</div>
+<div id="CodeSnippetContainerCode_16049e52-3ab4-476c-b95c-717faef719d8" class="codeSnippetContainerCode" dir="ltr">
+<div>
+<div class="Code">
+<pre>namespace PC
+{
+    // Define an alias for the nested namespace.
+    using Project = PC.MyCompany.Project;
+    class A
+    {
+        void M()
+        {
+            // Use the alias
+            Project.MyClass mc = new Project.MyClass();
+        }
+    }
+    namespace MyCompany
+    {
+        namespace Project
+        {
+            public class MyClass { }
+        }
+    }
+}
+</div>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<div id="Anchor_3" class="LW_CollapsibleArea_Anchor_Div">&nbsp;</div>
+<div class="LW_CollapsibleArea_HrDiv">&nbsp;</div>
+</div>
+<div class="sectionblock">&nbsp;</div>
+</div>
+<h2>Define using directive and using alias for class</h2>
+<p>&nbsp;</p>
+<div id="code-snippet-6" class="codeSnippetContainer">
+<div class="codeSnippetContainerTabs">
+<div class="codeSnippetContainerTabSingle" dir="ltr"><a></a></div>
+</div>
+<div class="codeSnippetContainerCodeContainer">
+<div class="codeSnippetToolBar">&nbsp;</div>
+<div id="CodeSnippetContainerCode_33a00077-cdfc-40dc-8ca8-f05da7842fd4" class="codeSnippetContainerCode" dir="ltr">
+<div>
+<div class="Code">
+<pre>using System;
+
+// Using alias directive for a class.
+using AliasToMyClass = NameSpace1.MyClass;
+
+// Using alias directive for a generic class.
+using UsingAlias = NameSpace2.MyClass&lt;int&gt;;
+
+namespace NameSpace1
+{
+    public class MyClass
+    {
+        public override string ToString()
+        {
+            return "You are in NameSpace1.MyClass.";
+        }
+    }
+
+}
+
+namespace NameSpace2
+{
+    class MyClass&lt;T&gt;
+    {
+        public override string ToString()
+        {
+            return "You are in NameSpace2.MyClass.";
+        }
+    }
+}
+
+namespace NameSpace3
+{
+    // Using directive:
+    using NameSpace1;
+    // Using directive:
+    using NameSpace2;
+
+    class MainClass
+    {
+        static void Main()
+        {
+            AliasToMyClass instance1 = new AliasToMyClass();
+            Console.WriteLine(instance1);
+
+            UsingAlias instance2 = new UsingAlias();
+            Console.WriteLine(instance2);
+
+        }
+    }
+}
+</div>
+</div>
+</div>
+</div>
+</div>
+<h2>Output</h2>
+<div class="output">
+<p>
+You are in NameSpace1.MyClass.
+</br> You are in NameSpace2.MyClass.
+</p>
+</div>
+</br>
+</br>
+<a href="/C_sharp/decision_making"><button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> C# - Decision Making
+    </button></a>
+
+    <a href="/C_sharp/files_io"><button type="button" class="btn btn-default btn-lg" style="float: right;">
+        C# - Files & I/O <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+{% endblock %}

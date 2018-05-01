@@ -1,0 +1,168 @@
+How to access the website
+
+1. go to pythonanywhere.com
+2. login
+	jpatte95@students.kennesaw.edu
+	admin.1234.admin
+3. Consoles: Shows you what consoles (bash: python, mysql, etc) are running
+
+	We are using 
+		Flask, 
+		Jinja 2, 
+		Python 3.5, 
+		Bootstrap, 
+		and some Javascript
+4. Click on the Web Tab
+
+	This is the server side GUI 
+		You can trace down errors quickly
+		check access
+		etc
+	Every time a python, css, html, etc is modified or created
+		YOU MUST RELOAD THE WEB APP
+		The big green button that says Reload jpatte95.pythonanywhere.com
+		Once that is reloaded, you can safely navigate to the page or
+			see the changes
+
+5. Click on the Files Tab
+
+	- /home/jpatte95 is the root directory for the flask project
+	Click on meraki/ under directories
+		We are now in the Meraki (app) flask app folder
+		on the left: 
+			static
+			templates
+			up
+			
+		are the only three folders we will need to use right now
+
+		static is for static files such as
+			css
+			fonts
+			photos
+		templates are where the html pages are stored
+			Open up header.html
+				Navigate to lines 136-141
+
+			{% block body %}
+
+                            
+				<!--    This is where your code will go    -->
+                            
+				<!--    The code that will extend this file    -->
+
+                        
+			{% endblock %}
+
+			All of the other html files extend header.html
+			header.html is our "main" html file sort of speak
+			
+			Go back to templates
+			
+			Open up 404.html	
+				404 will display when there isn't a page present
+				navigate to 
+				https://jpatte95.pythonanywhere.com/hello/
+
+			Click on the Navigation bar on the top right that says Navigation
+			Notice how some of the page turns gray? The white part is what 
+			is actually being extended and modified dynamically using flask
+
+			up is an uploads folder
+			You can upload a file that is in return encrypted
+			The file can be seen as a download, but only a person
+			with the key can access the file (decrypt)
+			
+			The file is stored on the server as enc_<filename>
+			and returned to the user as dec_<filename>
+			
+6. Navigate to Meraki and click on content_management.py
+
+	This is a dictionary of the information that will be required. This is how the
+	Navigation bar uses the data. So, in order to add or delete, find the key and
+	value, and remove the code. 
+
+	PLEASE, DO NOT DELETE ANY CODE
+	ONLY COMMENT CODE OUT, PLEASE
+
+	Language	Code
+	Python		# comment
+			'''
+			  comment	
+			  comment '''
+	HTML 		<!-- comment -->
+
+7. Navigate to the meraki directory and click on flask_app.py
+	
+	flask_app.py is the "main" file of the flask application
+	
+	Take a look around the file
+	it is a full fledged python file
+	The file runs a specific virtual environment
+	If you are to run a bash at all you must use the command
+		workon fenv
+	That will make sure the bash is using the fenv virtual env
+	quit() to quit the bash console in python
+	
+Navigate to 400 - 440 ish and find 404 Error
+
+	# app.route('/whatever_you_wish/')
+	# will set up for jpatte95.pythonanywhere.com/whatever_you_wish	(with or without the /)
+@app.route('/C++/')
+
+	# function definition, make the name unique so you can access it in html
+	# redirect(url_for( {{ function_name }} ))
+def c_plusplus():
+    
+	try:
+        
+		return render_template("C_plusplus.html", page_dict=page_dict)
+
+    # This just creates the html page at the html file
+	except Exception as e:
+        						  # The page_dict must be passed in everytime for every
+		return(str(e))							  # page, its how you pass variables to html through python
+
+
+	https://www.youtube.com/watch?v=4vvHkziL3oQ
+
+8. Now navigate to the databases tab
+	
+	
+	Start a console on:	jpatte95$meraki
+	
+	Click on jpatte95$meraki
+
+	select * from users;
+
+		Might change to add first name, last name, etc
+
+	select * from uploads;
+
+		Another table created 
+
+	delete from users where username = "admin";
+
+		will delete the user admin form the database
+
+Moving forward
+
+Start collecting your information into html friendly blocks
+
+So, it can be read easily in the extended pages
+
+when you create a html file
+	navigate to meraki/templates
+	on the right side
+		it says enter a new file name in the bar
+		tttestttt.html 
+		will create a html file named tttestttt
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,388 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<!-- The import required for AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<!--=================================================================================================================================
+
+White space         : &nbsp;
+bold tag            : <b></b>
+Indent              : <p style="text-indent: 50px;">    </p>
+Horz Bar with \n    : <br><hr class="ones"><br>
+hyper link          : <a href="/location/">TEXT</a>
+bootstrap glyphs    : <span class="glyph-goes-here" aria-hidden="true"></span>
+image               : <img src="{{url_for('static', filename='photos/cover.jpg') }}">
+DL of static file   : <a href="/static/resume/Resume30August2016.doc">Here</a>
+
+use .container for containing responsive fixed width containers
+unable to be nested
+
+    <div class="container">
+    ...
+    </div>
+
+use .container-fluid for a full width container, which will span across the entire viewport
+
+    <div class="container-fluid">
+    ...
+    </div>
+
+<p style="text-indent: 50px;">
+
+</p>
+
+<ul>
+    <li>
+        <b>
+
+        </b>
+        Text <br>
+    </li>
+</ul>
+
+=================================================================================================================================-->
+
+    <br><br><br><h3 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Javascript/javascript.png') }}">
+    Welcome to the Javascript Strings Homepage, <b>{{un}}</b>!</h3>
+
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+    <p class="intro">
+        <center><b>
+            Javascript | The storage and manipulation of text
+        </b></center>
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Strings | Text</h3>
+
+    <p>
+
+        Strings are just storage devices for text. The string is just storing a series of characters in a nice and neat fashion.
+        A string can be any text within a set of quotation marks, and the quotation marks can be single or double.
+
+        <br><br>
+
+        var vehicle = "2008 Honda Shadow";
+
+        <br><br>
+
+        var vehicle = '2008 Honda Shadow";
+
+        <br><br>
+
+        The two declarations above have the same meaning and value assigned to them. They are the same exact line of code, and the only
+        difference is the quotation marks around the values. Javascript allows the programmer to have the freedom of choice. You can
+        use quotation marks inside of a string, as long as they don't match the quotation marks surrounding the string object.
+
+        <br><br>
+
+        var myName = "James' names"; is alright
+
+        <br><br>
+
+        var myName = "James 'JP' Patterson"; is alright
+
+        <br><br>
+
+        var myName = 'James "JP" Patterson'; is alright
+
+        <br><br>
+
+        var myName = "James "JP" Patterson"; is <b>not</b> alright
+
+        <br><br>
+
+        The last one will not work due to the same quotation marks being used inside of the string text.
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Length</h3>
+
+    <p>
+
+        The length of a string can be found very easily. Javascript has a built in function, like most languages, to find the
+        length of any string object. The built in function named length will return the length of any string it is called
+        on.
+
+        <br><br>
+
+        var temp = "abcdefg"; is a standard string
+
+        <br><br>
+
+        var tempLength = temp.length; this should return the length of our string.
+
+        <br><br>
+
+        <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp;&nbsp;&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var txt = "abcdefg";<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML = txt.length;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        <br><br>
+
+        The above code will show how you can easily find the length of a string variable.
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Special Characters</h3>
+
+    <p>
+
+        If you must use certain characters inside a string without Javascript interpreting the code wrong, you must use <b>escaped</b>
+        characters. The backslash escape character turns special characters into string characters.
+
+        <br><br>
+
+        var myString = "James said, \"This will work out, okay.\" ";
+
+        <br><br>
+
+        <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp;&nbsp;&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;script&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var myString = "James said, \"This will work out, okay,\" ";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var myString2 = 'because escaped characters \'tend\' to work in Javascript.';<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML = myString + myString2; <br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        <br><br>
+
+        Escaped characters can be used to insert additional characters in a string that are deemed special. These are special
+        characters that can be inserted in a text with the backslash sign (\):
+
+        <br><br>
+
+        <ul>
+
+            <li>
+                <b>\' or \"</b> Single or Double Quotation mark
+            </li>
+
+            <li>
+                <b>\\</b> backslash
+            </li>
+
+            <li>
+                <b>\b</b> backspace
+            </li>
+
+            <li>
+                <b>\r</b> Carriage return
+            </li>
+
+            <li>
+                <b>\f</b> Form feed
+            </li>
+
+            <li>
+                <b>\t</b> Horizontal tabulator
+            </li>
+
+            <li>
+                <b>\v</b> Vertical tabulator
+            </li>
+
+        </ul>
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Breaking Code Lines</h3>
+
+    <p>
+
+        Sometimes, the code you write might get to be a bit long. With readability in mind, programmers often like to avoid code
+        lines longer than 70-80 characters long. If the a Javascript statement will not fit on one line comfortably, then the
+        best place to break the line is after an operation at the equals sign.
+
+        <br><br>
+
+        document.getElementById("tutorial").innerHTML = <br>
+        "Hello World";
+
+        <br><br>
+
+        The code above is one way to shorten the length of your code within Javascript. You could also break a line in the middle of a
+        string object using a single backslash:
+
+        <br><br>
+
+        document.getElementById("tutorial").innerHTML = "Hello \<br>
+        World";
+
+        <br><br>
+
+        <b>Remember,</b> some browsers do not allow spaces behind the backslash, and therefor you should only
+        use the method above when you absolutely have to. The backslash method is not preferred, and it might not have univeral support.
+        A much safer way to break a line in the middle of a string is to use a plus sign for string addition:
+
+        <br><br>
+
+        document.getElementById("tutorial").innerHTML = "Hello " +<br>
+        "World";
+
+        <br><br>
+
+        <b>Do Not Attempt The Following:</b>
+
+        <br><br>
+
+        document.getElementById("tutorial").innerHTML = \<br>
+        "Hello World";
+
+        <br><br>
+
+        The backslash does not work in this fashion, shown above, but you can use the backslash while inside a string or use
+        concatenation to bring the two texts together.
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Strings Can Be Objects</h3>
+
+    <p>
+
+        Strings within Javascript are normally primitive values that are created through the use of a literal.
+
+        <br><br>
+
+        var myName = "James Patterson";
+
+        <br><br>
+
+        Strings can be used as objects as well. I would say underneath all strings are treated as objects, since most data types
+        are treated as objects within Javascript.
+
+        <br><br>
+
+        var myName = new String("James Patterson");
+
+        <br><br>
+
+        Below, we will show what each one returns as we use typeof:
+
+        <br><br>
+
+        <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp;&nbsp;&nbsp; &lt;body&gt;<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var myFirst = "James";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var space = " ";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var separator = " : ";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var myLast = new String("Patterson"); &nbsp;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML =<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; myFirst + separator + typeof myFirst + space +<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; myLast + separator + typeof myLast;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        <br><br>
+
+        Output: James : string Patterson : Object
+
+        <br><br>
+
+        The code above concatenates two text variables with what type they are: string and object. The string returns a string as
+        you would expect, and the other returns an object as we expected. <b>Don't</b> create strings as objects, it will cause the
+        execution of your Javascript code to be slowed down. Writing code in this way also takes longer for the programmer to finish,
+        and it is best if you just don't program strings as objects. The object might produce unwanted results.
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>== to</h3>
+
+    <p>
+
+        Strings are equal to objects in a sense, if the objects are given text, and can be compared as such.
+
+        <br><br>
+
+        var myFirst = "James";
+
+        <br><br>
+
+        var myFirst2 = new String("James");
+
+        <br><br>
+
+        The two statements above are different, but they will yield the same result in the context of the following code:
+
+        <br><br>
+
+            <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp;&nbsp;&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var myFirst = "James";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var myFirst2 = new String("James"); <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML = <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "Does myFirst = myFirst2" + " : " +<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (myFirst == myFirst2);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        <br><br>
+
+        Output: true
+
+        <br><br>
+
+        Next, we will look at the === operator. The === operator not only tests for equality among value, but it tests for type as well:
+
+        <br><br>
+
+        <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp;&nbsp;&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var firstName = "James";&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var lastName = new String("James"); &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML = <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "Values = : " + (firstName == lastName) + " | " +<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "Types = : " + (firstName === lastName);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        <br><br>
+
+        Output: Values = : true | Types = : false
+
+        <br><br>
+
+        What would happen if we compared two Objects together:
+
+        <br><br>
+
+        <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp;&nbsp;&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;br&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="tutorial2"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var first = new String("James");&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var first2 = new String("James");&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML = (first == first2);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial2").innerHTML = (first === first2);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        <br><br>
+
+        Output: false false
+
+        <br><br>
+
+        Two objects cannot be compared for value or for type. The compare will return false in both cases, as seen above, and it is
+        best not to compare objects in this manner.
+
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3 style="text-align: center;">Next, we will take a look at how String methods work in Javascript.</h3>
+
+    <p style="text-align: center;">Just follow the buttons to continue the tutorial, {{un}}</p>
+
+
+    <br>
+
+    <a href="/Javascript/events"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Javascript - Events
+    </button></a>
+
+    <a href="/Javascript/string_methods"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+    Javascript - String Methods <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+{% endblock %}

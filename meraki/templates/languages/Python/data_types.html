@@ -1,0 +1,307 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<style>
+hr {
+    color: blue;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}
+</style>
+
+    <br><br><br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/python.jpg') }}">
+    Welcome to the Python Data Types page, <b>{{un}}</b></h1>
+
+    <hr>
+
+    <blockquote>
+
+        The data types present inside Python are all extremely important and beneficial to understand. The different data types will be listed
+        below with explanations behind each and every one of them. Python does have five main standard data types available to users: numbers, strings,
+        lists, tuples, and dictionaries.
+
+    </blockquote>
+
+    <hr>
+
+<!--
+    <h3>
+
+    </h3>
+
+    <p>
+
+    </p>
+
+    <br><hr><br>
+
+    <p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/folder/file.jpg') }}"></p>
+
+    <br><hr><br>
+-->
+
+    <h3>
+        Python Numbers
+    </h3>
+
+    <p>
+        Python has three different number data types available to be used. Integer, Float, and Complex
+        data types are the three available to Python users.
+    </p>
+
+    <br><br>
+
+    <h3>
+        Integers
+    </h3>
+
+    <p>
+        An integer can be created easily using Python. The integer value is the default data type for
+        numbers used in Python. Integer values are usually whole positive or negative numbers, and <b>d not</b>
+        have any decimal places. They are strictly real positive/negative whole numbers.
+        <ul>
+            <li> number = 100</li>
+            <li> num = number * 2</li>
+            <li> new_number = (num + 17) * 7</li>
+            <li> multiply_all = lambda a, b, c: a * b * c</li>
+            <li> print(multiply_all(number, num, new_number))</li>
+        </ul>
+
+        <br><p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/data_types/int.jpg') }}"></p>
+
+        <ul>
+            <h3>A list of some acceptable integer values according to Python</h3>
+            <li>10</li>
+            <li>1000</li>
+            <li>-78</li>
+            <li>-0x265</li>
+            <li>0x96</li>
+        </ul>
+    </p>
+
+    <br><hr><br>
+
+    <h3>
+        Float values
+    </h3>
+
+    <p>
+        A float value in Python is any number with or without a decimal place. A whole number can definitely
+        be a float value, but Python will most likely cast the value as an int data type instead of float unless
+        the user specifies otherwise. A float value stands for floating point real values.
+
+        <br>
+        <ul>
+            <h3>A list of some acceptable floating point values according to Python</h3>
+            <li>10.08</li>
+            <li>32.4+e29</li>
+            <li>-78.000000000000002</li>
+            <li>-32.56e100</li>
+            <li>70.1-E15</li>
+        </ul>
+        <br>
+    </p>
+
+    <br><hr><br>
+
+
+    <h3>
+        Complex Numbers
+    </h3>
+
+    <p>
+        Python is fully equiped to handle complex numbers, like 3.14j or 45.J, but
+        the complex number consists of the ordered pair of float numbers denoted by
+        x and the imaginary unit denoted by j. Complex numbers are used in scientific
+        programming, which some people steer clear of Python, but a lot of computer
+        scientists use Python for complex scientific programming. Python can handle
+        multithreading with the best of them, and the ability to be compiled allows
+        Python to be a contender for running large calculations used by scholars.
+    </p>
+
+    <br><hr><br>
+
+    <h3>
+        Python Strings
+    </h3>
+
+    <p>
+        Python strings are just a series of continuing characters within quotation marks. Python 3
+        would prefer the user to use "string" to give a string a value instead of 'string', but
+        Python will accept the input either way. Strings can be created by typing an identifier out, setting
+        the identifier equal to a empty set of "", and then placing text within the empty "" to finalize
+        the creation of a string variable.
+
+        <ul>
+            <li>a = "hello "</li>
+            <li>b = ", How are </li>
+            <li>c = a + b + "you today?"</li>
+            <li>d = c + " I'm fine, thanks for asking!"</li>
+            <li>print(d) # this will print out</li>
+            <li>>>>hello , How are you today? I'm fine, thanks for asking!</li>
+        </ul>
+    </p>
+
+    <br><hr><br>
+
+    <br><p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/data_types/string.jpg') }}"></p>
+
+    <br><hr><br>
+
+    <h3>
+        Python Lists
+    </h3>
+
+    <p>
+        Python has a unique data structure built into it called a list. Lists are one of the greatest
+        aspects of the Python language. A list can hold any kind of data type: int, float, string, list, etc.
+        Printing exactly what is in a list is easy, as shown below, but information needs to be within [] and inside
+        either '' or "" inside the []. Lists are similar to arrays, but the items inside a list can be any data type.
+        <br>
+        The values inside a list can be accessed easily using the [] and [:], the + sign is the concatenator and the * is
+        the repetition operator. As an avid Python programmer, I would recommend using a list whenever possible. They are
+        easy to use, easy to access, and even easier to manipulate. I would say lists are one of the top 5 reasons to
+        use Python over any other language. The size and elements inside of the list can be changed dynamically too.
+    </p>
+
+    <br><hr><br>
+
+    <br><p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/data_types/list.jpg') }}"></p>
+
+    <br><hr><br>
+
+    <h3>
+        Python Tuples
+    </h3>
+
+    <p>
+        A Python tuple is very similar to the list, but they have two major differences.
+        <h4>One, tuples use ( ) instead of [ ] like lists do</h4>
+        <h4>Two, tuples cannot be changed dynamically once created</h4>
+        <h5>tuples are thought of as "read only" lists in Python</h5>
+    </p>
+
+    <br><hr><br>
+
+    <br><p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/data_types/tuple.jpg') }}"></p>
+
+    <br><hr><br>
+
+    <p> The code below will show you what happens when you attempt to modify a tuple. You <b>can modify</b> a list variable, but
+        you <b>cannot modify</b> a tuple variable. Python will throw an exception every single time you try to modify the values
+        of a tuple. Tuples are handy when you need a permanent list of information that will not likely change. A tuple could be
+        useful when setting up class information. You could store all the information in a tuple, and feed the data into a data
+        base one column at a time. You could then read the information back from the database to reconstruct the tuple class information
+        for when it might be needed. That is only one off the top of my head application for tuples, but believe me, they are more
+        handy than they appear to be. You will find out if you continue to program with Python.
+    </p>
+
+    <br><hr><br><p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/data_types/tupleError.jpg') }}"></p>
+
+    <br><hr><br>
+
+    <h3>
+        Dictionaries within Python
+    </h3>
+
+    <p>
+        Dictionaries are another one of my favorite aspects of Python. Dictionaries are key value pairs written in Python.
+        Each key will have a value associated with it. A dictionary is an <b>unordered list</b>, and you should not
+        expect a dictionary to return values in any order. A dictionary can be ordered using Python, but if you need it ordered,
+        you really should use a list.
+    </p>
+
+    <br><hr><br>
+
+    <p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/data_types/dictionary.jpg') }}"></p>
+
+    <br><hr><br>
+
+    <p><b>Notice</b>, how printing the dictionaries resulted in the data being unordered. That is what happens
+        when a user prints a dictionary. Dictionaries are useful in certain situations. Situations in which you need key value pairs,
+         and the data isn't needed to be ordered. Dictionary keys are normally numbers or strings, but the values can be any type of
+         data type python will allow currently. A dictionary is created using the {}, but it can be modified using the [], as shown above.
+
+        </p>
+
+    <br><hr><br>
+
+    <h3>Data Conversion</h3>
+
+    <p>Data conversion is a necessary evil at times. Recently, I had to write a function in Python that would accept a string variable as a parameter
+       and return the string value as an encrypted string. I wont bore you with details on AES encryption, but I will say that you will run into
+       problems where you will need to encode a string into bytes or vice versa.
+
+       <ul>
+           <li>a = "hello"</li>
+           <h5>A string literal for hello</h5>
+           <li>b = b'hello'</li>
+           <h5>A string encoded into bytes using Python</h5>
+           <li>c = a.encode('utf-8')</li>
+           <h5>This will encode the string into bytes using the utf-8 standard</h5>
+       </ul>
+
+       <p>Below is a list of python conversions that can be made, and an explanation behind each one</p>
+
+       <ul>
+           <li>int(a [, b])</li>
+           <h6>Conversion of a to a int</h6>
+           <h6>b is a base incase x is a string</h6>
+           <li>float(x)</li>
+           <h6>Conversion of x to a float variable</h6>
+           <li>real = 10</li>
+           <li>a = complex(real)</li>
+           <h6>This will create a complex number using the conversion to</h6>
+           <li>str(x)</li>
+           <h6>Converts x into a string variable</h6>
+           <li>eval(str)</li>
+           <h6>Evaluates the string and will return the expression string</h6>
+           <li>tuple(x)</li>
+           <h6>Conversion of x to a tuple</h6>
+           <li>list(y)</li>
+           <h6>Converts y into a list</h6>
+           <li>dict(z)</li>
+           <h6>Conversion of z into a dictionary</h6>
+           <li>frozenset(a)</li>
+           <h6>Converts the a parameter into a frozen set</h6>
+           <li>chr(b) ----- b must be an integer value</li>
+           <h6>Converts the int into a character</h6>
+           <li>unichr(c)</li>
+           <h6>Converts c into a unicode character</h6>
+           <li>ord(d)</li>
+           <h6>Converts single character, d, into the associated integer value</h6>
+           <li>hex(int)</li>
+           <h6>Converts the integer value to a dexidecimal string</h6>
+           <li>oct(int)</li>
+           <h6>Conversion for int to octal string</h6>
+       </ul>
+
+    </p>
+
+    <br><hr><br>
+
+    <h3 style="text-align: center;">
+            Variables
+    </h3>
+
+    <p style="text-align: center;">
+        Next, we will look at Variables, and how they intertwine with data types and declaration.
+    </p>
+
+    <a href="/Python/comments"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Python - Comments
+    </button></a>
+
+    <a href="/Python/variables"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        Python - Variables   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+{% endblock %}

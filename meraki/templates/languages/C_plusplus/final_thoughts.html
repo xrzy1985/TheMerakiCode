@@ -1,0 +1,66 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<style>
+hr {
+    color: blue;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}
+</style>
+
+    <br><br><br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/c_plusplus.png') }}">
+    Welcome to the C++ Final Thoughts Homepage, mate!</h1>
+
+    <hr>
+
+    <blockquote>
+
+        C++ Final Thoughts Information
+
+    </blockquote>
+
+    <br><hr><br>
+<p>You have successfully gone through the entire C++ tutorial, congratulations!
+</br>
+Although your learning does not end here, there are still plenty of other data structures and things to learn regarding C++ and programming in general.
+</br>
+I recommend checking out the other tutorials on this website and compare C++ to the other languages, the intent is that you will begin to recognize many languages look similar.
+So the good news is once you have a solid understanding of one programming language, it should be extremely easy for you to pick up new programming languages with ease.
+</br>
+Below are some links I have provided to aid you on your continued quest of programming knowledge!</p>
+<h2>C++ Documentation</h2>
+<p><a href="https://msdn.microsoft.com/en-us/library/3bstk3k5.aspx">https://msdn.microsoft.com/en-us/library/3bstk3k5.aspx</a></p>
+<p>&nbsp;</p>
+<h2>Data Structures Visualization</h2>
+<p><a href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html">https://www.cs.usfca.edu/~galles/visualization/Algorithms.html</a></p>
+<p>&nbsp;</p>
+<h2>Algorithm Efficiency Cheat Sheet</h2>
+<p><a href="http://bigocheatsheet.com/">http://bigocheatsheet.com/</a></p>
+    <br><hr><br>
+
+    <h3 style="text-align: center;">
+            C# - Introduction
+    </h3>
+
+    <p style="text-align: center;">
+        Next, we will go over our Introduction on the language of C#, mate!
+    </p>
+
+    <a href="/C_plusplus/exceptions"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> C++ - Exceptions
+    </button></a>
+
+    <a href="/C_sharp/introduction"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        C# - Introduction   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+{% endblock %}

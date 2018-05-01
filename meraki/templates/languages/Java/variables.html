@@ -1,0 +1,220 @@
+{% extends "header.html" %}
+    {% block body %}
+
+    <title>Meraki : Java : Variables</title>
+
+    <style>
+    hr {
+        color: blue;
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: 10px;
+    }
+    </style>
+
+        <br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Java.png') }}">
+        Welcome to the Java Variables page, mate!</h1>
+
+        <hr>
+
+        <blockquote>
+
+            Java's Variables information: </br>
+            In Jaava, variables allow us to store values in a way that our methods can interact with.
+            Each variable has a defined type, which determines:
+            the allocated size of the variable's memory; the type of values that memory can store; and the operations you can use that value in.
+
+        </blockquote>
+
+<p>Variables must be "declared" (created) before they can be assigned values or otherwise used. The following is a generic example of variable declaration:</p>
+<pre class="result notranslate">
+dataType myVariable = ValueOfVariable;
+</pre>
+<p>Here <i>dataType</i> is generic representation of one of Java's data types (like an integer or string) and <i>myVariable</i> is the name of the variable. To declare multiple of the same type of variable in one line, you can use a comma-separated list.</p>
+<p>The following are a few more examples of declaring variables in Java:</p>
+<h2>Examples</h2>
+<pre class="prettyprint notranslate">
+int a, b, c;         // Declares three ints, a, b, and c.
+int a = 10, b = 10;  // Example of initialization
+byte B = 22;         // initializes a byte type variable B.
+double pi = 3.14159; // declares and assigns a value of PI.
+char a = 'a';        // the char variable a iis initialized with value 'a'
+</pre>
+<p>This chapter will explain various variable types available in Java Language. There are three kinds of variables in Java &minus;</p>
+<ul class="list">
+<li>Local variables</li>
+<li>Instance variables</li>
+<li>Class/Static variables</li>
+</ul>
+<h2>Local Variables</h2>
+<ul class="list">
+<li><p>Local variables are declared in methods, constructors, or blocks.</p></li>
+<li><p>Local variables are created when the method, constructor or block is entered and the variable will be destroyed once it exits the method, constructor, or block.</p></li>
+<li><p>Access modifiers cannot be used for local variables.</p></li>
+<li><p>Local variables are visible only within the declared method, constructor, or block.</p></li>
+<li><p>Local variables are implemented at stack level internally.</p></li>
+<li><p>There is no default value for local variables, so local variables should be declared and an initial value should be assigned before the first use.</p></li>
+</ul>
+<h3>Example</h3>
+<p>Here, <i>age</i> is a local variable. This is defined inside <i>geckoAge()</i> method and its scope is limited to only this method.</p>
+<pre class="prettyprint notranslate tryit">
+public class Test {
+   public void geckoAge() {
+      int age = 0;
+      age = age + 7;
+      System.out.println("Gecko's age is : " + age);
+   }
+
+   public static void main(String args[]) {
+      Test test = new Test();
+      test.geckoAge();
+   }
+}
+</pre>
+<p>This will produce the following result &minus;</p>
+<h3>Output</h3>
+<pre class="result notranslate">
+Gecko's age is: 7
+</pre>
+<h3>Example</h3>
+<p>Following example attempts to use the variable <i>age</i> without initializing it, so it would give an error at the time of compilation.</p>
+<pre class="prettyprint notranslate tryit">
+public class Test {
+   public void geckoAge() {
+      int age;
+      age = age + 7;
+      System.out.println("Gecko's age is : " + age);
+   }
+
+   public static void main(String args[]) {
+      Test test = new Test();
+      test.geckoAge();
+   }
+}
+</pre>
+<p>Attempting to compile it would give the following error</p>
+<h3>Output</h3>
+<pre class="result notranslate">
+Test.java:4:variable number might not have been initialized
+age = age + 7;
+         ^
+1 error
+</pre>
+<h2>Instance Variables</h2>
+<ul class="list">
+<li><p>Instance variables are declared in a class, but outside of its methods/functions.</p></li>
+<li><p>When a space is allocated for an object in the heap, a slot for each instance variable value is created.</p></li>
+<li><p>Instance variables are created when an object is created with the use of the keyword 'new' and destroyed when the object is destroyed.</p></li>
+<li><p>Instance variables are generally used for values that are referenced by more than one method, though an instance variable could be used by only one method.</p></li>
+<li><p>Access modifiers, like public or private, can specify the access scope of instance variables.</p></li>
+<li><p>Instance variables are visible for all methods/functions in the instance of the class/object.
+Instance variables are generally set as "private" to the class, unless a subclass needs access to them.</p></li>
+<li><p>Instance variables, like all variables, have default values. The default value for ints is 0, for Booleans it is false, and for object references it is null.
+Variables can be assigned values in the declaration of a variable or within the variable's constructor constructor.</p></li>
+<li><p>Instance variables can be accessed within the class by simply calling the variable by its name.
+From outside the class, though, (assuming public access to the variable), the fully qualified name for the variable should be used, <i>ObjectReference.VariableName</i>.</p></li>
+</ul>
+<h3>Example</h3>
+<pre class="prettyprint notranslate tryit">
+import java.io.*;
+public class Employee {
+
+   // this instance variable is visible for any child class.
+   public String name;
+
+   // salary  variable is visible in Employee class only.
+   private double salary;
+
+   // The name variable is assigned in the constructor.
+   public Employee (String empName) {
+      name = empName;
+   }
+
+   // The salary variable is assigned a value.
+   public void setSalary(double empSal) {
+      salary = empSal;
+   }
+
+   // This method prints the employee details.
+   public void printEmp() {
+      System.out.println("name  : " + name );
+      System.out.println("salary :" + salary);
+   }
+
+   public static void main(String args[]) {
+      Employee empOne = new Employee("Joshua");
+      empOne.setSalary(35000);
+      empOne.printEmp();
+   }
+}
+</pre>
+<p>This will produce the following result &minus;</p>
+<h3>Output</h3>
+<pre class="result notranslate">
+name  : Joshua
+salary :35000.0
+</pre>
+<h2>Class/Static Variables</h2>
+<ul class="list">
+<li><p>Static variables (also called "Class Variables") are declared outside of any method/constructor and use the "static" keywork.</p></li>
+<li><p>If a variable is static, there is only one instance of the variable and all instances of the class reference and use the same variable.</p></li>
+<li><p>Scope of accessibility is similar to instance variables. However, most static variables are declared public since they must be available for users of the class.</p></li>
+<li><p>Assuming the class calling them has access to them, Static variables can be accessed by calling with the class name <i>ClassName.VariableName</i>.</p></li>
+<li><p>When declaring class variables as public static final, Java naming conventions recommend making the name of the variable all upper case.
+Otherwise, regular variable naming conventions are used.</p></li>
+</ul>
+<h3>Example</h3>
+<pre class="prettyprint notranslate tryit">
+import java.io.*;
+public class Employee {
+
+   // salary  variable is a private static variable
+   private static double salary;
+
+   // DEPARTMENT is a constant
+   public static final String DEPARTMENT = "Development ";
+
+   public static void main(String args[]) {
+      salary = 1000;
+      System.out.println(DEPARTMENT + "average salary:" + salary);
+   }
+}
+</pre>
+<p>This will produce the following result &minus;</p>
+<h3>Output</h3>
+<pre class="result notranslate">
+Development average salary:1000
+</pre>
+<p><b>Note</b> &minus; If the variables are accessed from an outside class, the constant should be accessed as Employee.DEPARTMENT</p>
+
+
+
+
+
+
+
+    <br><hr><br>
+
+    <h3 style="text-align: center;">
+            Comments
+    </h3>
+
+    <p style="text-align: center;">
+        Next, we will look at the basics of some of Java's built in Data Structures.
+    </p>
+
+    <a href="/Java/objects_classes/"><button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Java - Objects and Classes
+    </button></a>
+
+    <a href="/Java/data_structures/"><button type="button" class="btn btn-default btn-lg" style="float: right;">
+        Java - Data Structures   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+    {% endblock %}

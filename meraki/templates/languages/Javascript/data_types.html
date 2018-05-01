@@ -1,0 +1,327 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<!-- The import required for AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<!--=================================================================================================================================
+
+White space         : &nbsp;
+bold tag            : <b></b>
+Indent              : <p style="text-indent: 50px;">    </p>
+Horz Bar with \n    : <br><hr class="ones"><br>
+hyper link          : <a href="/location/">TEXT</a>
+bootstrap glyphs    : <span class="glyph-goes-here" aria-hidden="true"></span>
+image               : <img src="{{url_for('static', filename='photos/cover.jpg') }}">
+DL of static file   : <a href="/static/resume/Resume30August2016.doc">Here</a>
+
+use .container for containing responsive fixed width containers
+unable to be nested
+
+    <div class="container">
+    ...
+    </div>
+
+use .container-fluid for a full width container, which will span across the entire viewport
+
+    <div class="container-fluid">
+    ...
+    </div>
+
+<p style="text-indent: 50px;">
+
+</p>
+
+<ul>
+    <li>
+        <b>
+
+        </b>
+        Text <br>
+    </li>
+</ul>
+
+=================================================================================================================================-->
+
+    <br><br><br><h3 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Javascript/javascript.png') }}">
+    Welcome to the Javascript Data Types Homepage, <b>{{un}}</b>!</h3>
+
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+    <p class="intro">
+        <center><b>
+            Javascript | Numbers, Strings, and Objects... oh My!
+        </b></center>
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Data Types</h3>
+
+    <p>
+
+        are the tools in which a programmer uses to accomplish goals using real world data. Javascript variables hold the values
+        for numbers, strings, objects, and more which are all data types. Data types are one of the most important topics in
+        programming, I believe. Data types are extremely important because they are essentially adjectives, describing the nature
+        in which the variable will be handled. A number will not be executed in the same way a string will be, and that is why
+        <b>var x = "10";</b> and <b>var x = 10;</b> will yield unpredictable results. A computer could not possibly solve the following
+        statement without some sense of direction from the programmer; <b>var x = 10 + "fifteen";</b>. Python would probably pick up
+        on the fact that 10 is a number and concatenate the two data types together, but a lot of other languages would end up
+        throwing an error. Javascript will treat the number as a string and concatenate the two together into <b>10fifteen</b>. Javascript will
+        read each line of code from left to right, and execute the statements as they are read. If JS encounters numbers before a string variable,
+        the output will perform arithmetic on the numbers until reaching a string. If JS encounters a string before a lot of numbers, each
+        individual number following the string will be treated as a string variable. The way we have been mixing data types within Javascript should
+        give a hint that JS types are quite dynamic. Javascript is programmed to allow dynamic data typing, and that means that a variable can
+        hold different data types along the variable's lifecycle.
+
+        <br><br>
+
+        <b>var pi = 3.14;</b> is a number<br><br>
+
+        <b>var lastName = "Patterson";</b> is a string with the given value of Patterson.<br><br>
+
+        <b>var person = { firstName:"James", lastName:"Patterson"};</b> here we declare an object called person with attributes: firstName and lastName.<br><br>
+
+        <b>var x = 10 + "fifteen";</b> will yield 10fifteen as an output.<br><br>
+
+        <b>var x = 10 + 20 + "fifteen";</b> Javascript reads lines from left to write, and will add the two numbers together before concatenation.<br>
+        Answer: 30fifteen<br><br>
+
+        <b>var x = "Pi:" + 3 + 0.1 + 0.04;</b> will yield Pi:30.10.04 because each value is treated as a string value. <br><br>
+
+        <b>var x;</b> x is being declared here, but x still remains undefined. <br><br>
+
+        <b>var x = 23;</b> x is being given the value 23, which is a number. <br><br>
+
+        <b>var x = "Michael Jordan wore number 23";</b> and now x has been reassigned to a string value. <br><br>
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Strings</h3>
+
+    <p>
+
+        Strings are quite popular data types within Javascript, and any programming language for that matter. A string is a
+        text value in which a series of characters are concatenated to create a structure, be it a word, equation, or sentence.
+        Strings are written with quotation marks, and within Javascript you may use single or double quotation marks. If you want
+        to program a quotation mark within your viewable text you must use the other form of quotation inside the quotation.
+
+        <br><br>
+
+        <b>var moonName = "Luna";</b> is a string using double quotation marks.<br><br>
+
+        <b>var moonName = 'Luna';</b> is perfectable acceptable within the syntax of JS.<br><br>
+
+        <b>var fullName = 'James "JP" Patterson';</b> is acceptable for yielding James "JP" Patterson<br><br>
+
+        <b>var fullName = "James 'JP' Patterson";</b> will yield the same result but different quotations: James 'JP' Patterson.<br><br>
+
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Numbers</h3>
+
+    <p>
+        Javascript only has one type of number data type: Numbers. Numbers can be written as decimals or not. Scientific notation
+        can be written within the Javascript code too.
+
+        <br><br>
+
+        <b>var pi = 3.14;</b> is a number variable written with decimals.<br><br>
+
+        <b>var mJ = 23;</b> is a number variable written without decimals. <br><br>
+
+        <b>var largeNumber = 987e5;</b> will yield the number 98700000 when executed. <br><br>
+
+        <b>var smallNUmber = 657e-7;</b> will yield the number 0.0000657 when execution occurs. <br><br>
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Booleans</h3>
+
+    <p>
+
+        Booleans are important in every programming language. Maybe you want to execute a line of code until some statement
+        returns false, a boolean value will be at the heart of that execution path. If you wish to iterate through a series
+        of numbers until your lucky number is drawn, a boolean will help you achieve this by returning a value of false until
+        your number arrives and returns a true to the statement. Booleans can be extremely useful, but a little difficult to
+        fully understand at first. Booleans are often used in conditional testing within programming. Booleans will only ever have
+        one of two values: true or false.
+
+        <br><br>
+
+        <b>var t = true;</b> in this declaration t will hold the boolean value true.<br><br>
+
+        <b>var f = false;</b> in this declaration f will be assigned the value false. <br><br>
+
+        Booleans are traditionally used in conditional statements or testing, and we will learn more on booleans later.
+
+    </p>
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Arrays</h3>
+
+    <p>
+
+        Javascript arrays are written with [ ] brackets, and the array items are separated by the commas. The following code
+        will create three separate arrays named dogs, cars, and movies. Arrays are zero based data types which means the first
+        item inserted into the array will be indexed at 0, the second is 1, and so forth. Arrays will be discuessed further in a few.
+        Arrays are treated as objects within Javascript.
+
+        <br><br>
+
+        <b>var dogs = ["Pug", "Chow Chow", "Pit Bull"]</b>
+
+        <br><br>
+
+        <b>var cars = ["Mustang", "Camaro", "Accord"]</b>
+
+        <br><br>
+
+        <b> var movies = ["Stephen King's IT", "Dune", "Edward Scissorhands"]</b>
+
+        </p>
+
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Objects</h3>
+
+    <p>
+
+        Javascript uses curly braces in order to write Javascript objects. Objects must have their attribute properties
+        written in the order of valueName: value, and the attributes are separated by commas.
+
+        <br><br>
+
+        <b>var individual = {firstName:"James", lastName:"Patterson", age:30, eyeColor:"Brown"}</b>
+
+        <br><br>
+
+        The object 'individual' haas four main properties: firstName, lastName, age, and eyeColor. Objects can be
+        used in many different ways, and we will learn more about objects in a bit.
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>typeof Operator</h3>
+
+    <p>
+
+        The typeof Javascript operator is only used to find the type of Javascript variable a value is. The typeof
+        operator will effectively return the user what type the variable is.
+
+        <br><br>
+
+        <b>typeof ""</b> will return String
+
+        <br><br>
+
+        <b>typeof "James"</b> will return String
+
+        <br><br>
+
+        <b>typeof "James P"</b> returns String
+
+        <br><br>
+
+        <b>typeof 0</b> returns a Number
+
+        <br><br>
+
+        <b>typeof 3.14</b> Number
+
+        <br><br>
+
+        <b>typeof (3 + 4)</b> returns a Number again
+
+        <br><br>
+
+        A <b>primitive data value</b> is a single simple data value with no addition information, properties,
+        or methods associated with it. The typeof operator can return any one of these primitives:
+
+        <ul>
+            <li>
+                <b>String</b> typeof "James"; will return String
+            </li>
+            <li>
+                <b>Number</b> typeof 13; will return Number
+            </li>
+            <li>
+                <b>Boolean</b> typeof true; will return boolean
+            </li>
+            <li>
+                <b>Null</b> var person = null; The value is null within JS, but the person remains an object. <br> Remember that null != undefined.
+            </li>
+            <li>
+                <b>Undefined</b> var x; is undefined, and typeof will return undefined
+            </li>
+            <li>
+                <b>Function</b> typeof [1,2,3,4,5]; will return Object, arrays are objects in JS. <br>
+                typeof function myFunction(){}; will return the value function. <br>
+            </li>
+            <li>
+                <b>Object</b> typeof {name: "James", age: 30}; will return object.
+            </li>
+        </ul>
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3 style="text-align: center;">Next, we will take a look at how Functions are created within Javascript.</h3>
+
+    <p style="text-align: center;">Just follow the buttons to continue the tutorial, {{un}}</p>
+
+
+    <br>
+
+    <a href="/Javascript/assignment"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Javascript - Assignments
+    </button></a>
+
+    <a href="/Javascript/functions"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+    Javascript - Functions <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+{% endblock %}

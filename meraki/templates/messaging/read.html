@@ -1,0 +1,19 @@
+{% extends "header.html" %}
+
+{% block body %}
+<br><hr class="ones"><br>
+<h2><b>From: </b>{{_username_from}}</h2>
+<h2><b>Subject: </b>{{_subject}}</h2>
+<br><hr>
+<h2>{{ dec(secret, _message) }}</h2>
+<br><hr>
+<FORM style="float:left; margin-right:5px;" METHOD="POST" ACTION="/delete_message/">
+    <input class="form-control" type="hidden" name="_id" value="{{_id}}">
+    <input class="form-control" type="hidden" name="_username_from" value="{{_username_from}}">
+    <input class="form-control" type="hidden" name="_subject" value="{{_subject}}">
+    <input class="form-control" type="hidden" name="_message" value="{{_message}}">
+    <input class="form-control" type="hidden" name="_username_to" value="{{_username_to}}">
+    <input type="submit" value="Reply/Delete" class="btn btn-danger btn-lg" style="clear: both;">
+</FORM><br><br>
+<br><hr class="ones"><br>
+{% endblock %}

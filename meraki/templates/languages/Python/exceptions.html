@@ -1,0 +1,409 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<style>
+hr {
+    color: blue;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}
+</style>
+
+    <br><br><br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/python.jpg') }}">
+    Welcome to the Python Exceptions page, <b>{{un}}</b>!</h1>
+
+    <hr>
+
+    <p>Python provides two very important features to handle any unexpected error in your Python programs and to add debugging capabilities in them &minus;</p>
+<ul class="list">
+<li>
+<p><strong>Exception Handling:</strong> This would be covered in this tutorial. Here is a list standard Exceptions available in Python: <a href="https://www.tutorialspoint.com/python3/standard_exceptions.htm">Standard Exceptions</a>.</p>
+</li>
+<li>
+<p><strong>Assertions:</strong> This would be covered in <a href="https://www.tutorialspoint.com/python3/assertions_in_python.htm">Assertions in Python 3</a> tutorial.</p>
+</li>
+</ul>
+<p>List of Standard Exceptions &minus;</p>
+<table class="table table-bordered">
+<tbody>
+<tr>
+<th><strong>EXCEPTION NAME</strong></th>
+<th><strong>DESCRIPTION</strong></th>
+</tr>
+<tr>
+<td>Exception</td>
+<td>Base class for all exceptions</td>
+</tr>
+<tr>
+<td>StopIteration</td>
+<td>Raised when the next() method of an iterator does not point to any object.</td>
+</tr>
+<tr>
+<td>SystemExit</td>
+<td>Raised by the sys.exit() function.</td>
+</tr>
+<tr>
+<td>StandardError</td>
+<td>Base class for all built-in exceptions except StopIteration and SystemExit.</td>
+</tr>
+<tr>
+<td>ArithmeticError</td>
+<td>Base class for all errors that occur for numeric calculation.</td>
+</tr>
+<tr>
+<td>OverflowError</td>
+<td>Raised when a calculation exceeds maximum limit for a numeric type.</td>
+</tr>
+<tr>
+<td>FloatingPointError</td>
+<td>Raised when a floating point calculation fails.</td>
+</tr>
+<tr>
+<td>ZeroDivisonError</td>
+<td>Raised when division or modulo by zero takes place for all numeric types.</td>
+</tr>
+<tr>
+<td>AssertionError</td>
+<td>Raised in case of failure of the Assert statement.</td>
+</tr>
+<tr>
+<td>AttributeError</td>
+<td>Raised in case of failure of attribute reference or assignment.</td>
+</tr>
+<tr>
+<td>EOFError</td>
+<td>Raised when there is no input from either the raw_input() or input() function and the end of file is reached.</td>
+</tr>
+<tr>
+<td>ImportError</td>
+<td>Raised when an import statement fails.</td>
+</tr>
+<tr>
+<td>KeyboardInterrupt</td>
+<td>Raised when the user interrupts program execution, usually by pressing Ctrl+c.</td>
+</tr>
+<tr>
+<td>LookupError</td>
+<td>Base class for all lookup errors.</td>
+</tr>
+<tr>
+<td>
+<p>IndexError</p>
+<p>KeyError</p>
+</td>
+<td>
+<p>Raised when an index is not found in a sequence.</p>
+<p>Raised when the specified key is not found in the dictionary.</p>
+</td>
+</tr>
+<tr>
+<td>NameError</td>
+<td>Raised when an identifier is not found in the local or global namespace.</td>
+</tr>
+<tr>
+<td>
+<p>UnboundLocalError</p>
+<p>EnvironmentError</p>
+</td>
+<td>
+<p>Raised when trying to access a local variable in a function or method but no value has been assigned to it.</p>
+<p>Base class for all exceptions that occur outside the Python environment.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>IOError</p>
+<p>IOError</p>
+</td>
+<td>
+<p>Raised when an input/ output operation fails, such as the print statement or the open() function when trying to open a file that does not exist.</p>
+<p>Raised for operating system-related errors.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>SyntaxError</p>
+<p>IndentationError</p>
+</td>
+<td>
+<p>Raised when there is an error in Python syntax.</p>
+<p>Raised when indentation is not specified properly.</p>
+</td>
+</tr>
+<tr>
+<td>SystemError</td>
+<td>Raised when the interpreter finds an internal problem, but when this error is encountered the Python interpreter does not exit.</td>
+</tr>
+<tr>
+<td>SystemExit</td>
+<td>Raised when Python interpreter is quit by using the sys.exit() function. If not handled in the code, causes the interpreter to exit.</td>
+</tr>
+<tr>
+<td>Raised when Python interpreter is quit by using the sys.exit() function. If not handled in the code, causes the interpreter to exit.</td>
+<td>Raised when an operation or function is attempted that is invalid for the specified data type.</td>
+</tr>
+<tr>
+<td>ValueError</td>
+<td>Raised when the built-in function for a data type has the valid type of arguments, but the arguments have invalid values specified.</td>
+</tr>
+<tr>
+<td>RuntimeError</td>
+<td>Raised when a generated error does not fall into any category.</td>
+</tr>
+<tr>
+<td>NotImplementedError</td>
+<td>Raised when an abstract method that needs to be implemented in an inherited class is not actually implemented.</td>
+</tr>
+</tbody>
+</table>
+<h3>Assertions in Python</h3>
+<p>An assertion is a sanity-check that you can turn on or turn off when you are done with your testing of the program.</p>
+<p>The easiest way to think of an assertion is to liken it to a <strong>raise-if</strong> statement (or to be more accurate, a raise-if-not statement). An expression is tested, and if the result comes up false, an exception is raised.</p>
+<p>Assertions are carried out by the assert statement, the newest keyword to Python, introduced in version 1.5.</p>
+<p>Programmers often place assertions at the start of a function to check for valid input, and after a function call to check for valid output.</p>
+<h3>The <em>assert</em> Statement</h3>
+<p>When it encounters an assert statement, Python evaluates the accompanying expression, which is hopefully true. If the expression is false, Python raises an <em>AssertionError</em> exception.</p>
+<p>The syntax for assert is &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">assert</span> <span class="typ">Expression</span><span class="pun">[,</span> <span class="typ">Arguments</span><span class="pun">]</span></pre>
+<p>If the assertion fails, Python uses ArgumentExpression as the argument for the AssertionError. AssertionError exceptions can be caught and handled like any other exception using the try-except statement, but if not handled, they will terminate the program and produce a traceback.</p>
+<h3>Example</h3>
+<p>Here is a function that converts a temperature from degrees Kelvin to degrees Fahrenheit. Since zero degrees Kelvin is as cold as it gets, the function bails out if it sees a negative temperature &minus;</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Program on any IDE, mate!</span>
+<span class="kwd">def</span> <span class="typ">KelvinToFahrenheit</span><span class="pun">(</span><span class="typ">Temperature</span><span class="pun">):</span>
+    <span class="kwd">assert</span> <span class="pun">(</span><span class="typ">Temperature</span> <span class="pun">&gt;=</span> <span class="lit">0</span><span class="pun">),</span><span class="str">"Colder than absolute zero!"</span>
+    <span class="kwd">return</span> <span class="pun">((</span><span class="typ">Temperature</span><span class="pun">-</span><span class="lit">273</span><span class="pun">)*</span><span class="lit">1.8</span><span class="pun">)+</span><span class="lit">32</span>
+
+<span class="kwd">print</span> <span class="pun">(</span><span class="typ">KelvinToFahrenheit</span><span class="pun">(</span><span class="lit">273</span><span class="pun">))</span>
+<span class="kwd">print</span> <span class="pun">(</span><span class="kwd">int</span><span class="pun">(</span><span class="typ">KelvinToFahrenheit</span><span class="pun">(</span><span class="lit">505.78</span><span class="pun">)))</span>
+<span class="kwd">print</span> <span class="pun">(</span><span class="typ">KelvinToFahrenheit</span><span class="pun">(-</span><span class="lit">5</span><span class="pun">))</span></pre>
+<p>When the above code is executed, it produces the following result &minus;</p>
+<pre class="result notranslate">32.0
+451
+Traceback (most recent call last):
+File "test.py", line 9, in
+print KelvinToFahrenheit(-5)
+File "test.py", line 4, in KelvinToFahrenheit
+assert (Temperature &gt;= 0),"Colder than absolute zero!"
+AssertionError: Colder than absolute zero!
+</pre>
+<h2>What is Exception?</h2>
+<p>An exception is an event, which occurs during the execution of a program that disrupts the normal flow of the program's instructions. In general, when a Python script encounters a situation that it cannot cope with, it raises an exception. An exception is a Python object that represents an error.</p>
+<p>When a Python script raises an exception, it must either handle the exception immediately otherwise it terminates and quits.</p>
+<h2>Handling an exception</h2>
+<p>If you have some <em>suspicious</em> code that may raise an exception, you can defend your program by placing the suspicious code in a <strong>try:</strong> block. After the try: block, include an <strong>except:</strong> statement, followed by a block of code which handles the problem as elegantly as possible.</p>
+<h3>Syntax</h3>
+<p>Here is simple syntax of <em>try....except...else</em> blocks &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">try</span><span class="pun">:</span>
+   <span class="typ">You</span> <span class="kwd">do</span><span class="pln"> your operations here
+   </span><span class="pun">......................</span>
+<span class="kwd">except</span> <em><span class="typ">ExceptionI</span></em><span class="pun">:</span>
+   <span class="typ">If</span><span class="pln"> there </span><span class="kwd">is</span> <span class="typ">ExceptionI</span><span class="pun">,</span> <span class="kwd">then</span><span class="pln"> execute </span><span class="kwd">this</span><span class="pln"> block</span><span class="pun">.</span>
+<span class="kwd">except</span> <em><span class="typ">ExceptionII</span></em><span class="pun">:</span>
+   <span class="typ">If</span><span class="pln"> there </span><span class="kwd">is</span> <span class="typ">ExceptionII</span><span class="pun">,</span> <span class="kwd">then</span><span class="pln"> execute </span><span class="kwd">this</span><span class="pln"> block</span><span class="pun">.</span>
+   <span class="pun">......................</span>
+<span class="kwd">else</span><span class="pun">:</span>
+   <span class="typ">If</span><span class="pln"> there </span><span class="kwd">is</span> <span class="kwd">no</span><span class="pln"> exception </span><span class="kwd">then</span><span class="pln"> execute </span><span class="kwd">this</span><span class="pln"> block</span><span class="pun">.</span> </pre>
+<p>Here are few important points about the above-mentioned syntax &minus;</p>
+<ul class="list">
+<li>
+<p>A single try statement can have multiple except statements. This is useful when the try block contains statements that may throw different types of exceptions.</p>
+</li>
+<li>
+<p>You can also provide a generic except clause, which handles any exception.</p>
+</li>
+<li>
+<p>After the except clause(s), you can include an else-clause. The code in the else-block executes if the code in the try: block does not raise an exception.</p>
+</li>
+<li>
+<p>The else-block is a good place for code that does not need the try: block's protection.</p>
+</li>
+</ul>
+<h3>Example</h3>
+<p>This example opens a file, writes content in the, file and comes out gracefully because there is no problem at all &minus;</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Program on any IDE, mate!</span>
+
+<span class="kwd">try</span><span class="pun">:</span><span class="pln">
+   fh </span><span class="pun">=</span><span class="pln"> open</span><span class="pun">(</span><span class="str">"testfile"</span><span class="pun">,</span> <span class="str">"w"</span><span class="pun">)</span><span class="pln">
+   fh</span><span class="pun">.</span><span class="pln">write</span><span class="pun">(</span><span class="str">"This is my test file for exception handling!!"</span><span class="pun">)</span>
+<span class="kwd">except</span> <span class="typ">IOError</span><span class="pun">:</span>
+   <span class="kwd">print</span> <span class="pun">(</span><span class="str">"Error: can\'t find file or read data"</span><span class="pun">)</span>
+<span class="kwd">else</span><span class="pun">:</span>
+   <span class="kwd">print</span> <span class="pun">(</span><span class="str">"Written content in the file successfully"</span><span class="pun">)</span><span class="pln">
+   fh</span><span class="pun">.</span><span class="pln">close</span><span class="pun">()</span>
+</pre>
+<p>This produces the following result &minus;</p>
+<pre class="result notranslate">Written content in the file successfully
+</pre>
+<h3>Example</h3>
+<p>This example tries to open a file where you do not have write permission, so it raises an exception &minus;</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Program on any IDE, mate!</span>
+
+<span class="kwd">try</span><span class="pun">:</span><span class="pln">
+   fh </span><span class="pun">=</span><span class="pln"> open</span><span class="pun">(</span><span class="str">"testfile"</span><span class="pun">,</span> <span class="str">"r"</span><span class="pun">)</span><span class="pln">
+   fh</span><span class="pun">.</span><span class="pln">write</span><span class="pun">(</span><span class="str">"This is my test file for exception handling!!"</span><span class="pun">)</span>
+<span class="kwd">except</span> <span class="typ">IOError</span><span class="pun">:</span>
+   <span class="kwd">print</span> <span class="pun">(</span><span class="str">"Error: can\'t find file or read data"</span><span class="pun">)</span>
+<span class="kwd">else</span><span class="pun">:</span>
+   <span class="kwd">print</span> <span class="pun">(</span><span class="str">"Written content in the file successfully"</span><span class="pun">)</span></pre>
+<p>This produces the following result &minus;</p>
+<pre class="result notranslate">Error: can't find file or read data
+</pre>
+<h2>The <em>except</em> Clause with No Exceptions</h2>
+<p>You can also use the except statement with no exceptions defined as follows &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">try</span><span class="pun">:</span>
+   <span class="typ">You</span> <span class="kwd">do</span><span class="pln"> your operations here
+   </span><span class="pun">......................</span>
+<span class="kwd">except</span><span class="pun">:</span>
+   <span class="typ">If</span><span class="pln"> there </span><span class="kwd">is</span><span class="pln"> any exception</span><span class="pun">,</span> <span class="kwd">then</span><span class="pln"> execute </span><span class="kwd">this</span><span class="pln"> block</span><span class="pun">.</span>
+   <span class="pun">......................</span>
+<span class="kwd">else</span><span class="pun">:</span>
+   <span class="typ">If</span><span class="pln"> there </span><span class="kwd">is</span> <span class="kwd">no</span><span class="pln"> exception </span><span class="kwd">then</span><span class="pln"> execute </span><span class="kwd">this</span><span class="pln"> block</span><span class="pun">.</span> </pre>
+<p>This kind of a <strong>try-except</strong> statement catches all the exceptions that occur. Using this kind of try-except statement is not considered a good programming practice though, because it catches all exceptions but does not make the programmer identify the root cause of the problem that may occur.</p>
+<h2>The <em>except</em> Clause with Multiple Exceptions</h2>
+<p>You can also use the same <em>except</em> statement to handle multiple exceptions as follows &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">try</span><span class="pun">:</span>
+   <span class="typ">You</span> <span class="kwd">do</span><span class="pln"> your operations here
+   </span><span class="pun">......................</span>
+<span class="kwd">except</span><span class="pun">(</span><span class="typ">Exception1</span><span class="pun">[,</span> <span class="typ">Exception2</span><span class="pun">[,...</span><span class="typ">ExceptionN</span><span class="pun">]]]):</span>
+   <span class="typ">If</span><span class="pln"> there </span><span class="kwd">is</span><span class="pln"> any exception </span><span class="kwd">from</span><span class="pln"> the given exception list</span><span class="pun">,</span>
+   <span class="kwd">then</span><span class="pln"> execute </span><span class="kwd">this</span><span class="pln"> block</span><span class="pun">.</span>
+   <span class="pun">......................</span>
+<span class="kwd">else</span><span class="pun">:</span>
+   <span class="typ">If</span><span class="pln"> there </span><span class="kwd">is</span> <span class="kwd">no</span><span class="pln"> exception </span><span class="kwd">then</span><span class="pln"> execute </span><span class="kwd">this</span><span class="pln"> block</span><span class="pun">.</span> </pre>
+<h2>The try-finally Clause</h2>
+<p>You can use a <strong>finally:</strong> block along with a <strong>try:</strong> block. The finally block is a place to put any code that must execute, whether the try-block raised an exception or not. The syntax of the try-finally statement is this &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">try</span><span class="pun">:</span>
+   <span class="typ">You</span> <span class="kwd">do</span><span class="pln"> your operations here</span><span class="pun">;</span>
+   <span class="pun">......................</span>
+   <span class="typ">Due</span><span class="pln"> to any exception</span><span class="pun">,</span> <span class="kwd">this</span><span class="pln"> may be skipped</span><span class="pun">.</span>
+<span class="kwd">finally</span><span class="pun">:</span>
+   <span class="typ">This</span><span class="pln"> would always be executed</span><span class="pun">.</span>
+   <span class="pun">......................</span></pre>
+<p>Note that you can provide except clause(s), or a finally clause, but not both. You cannot use <em>else</em> clause as well along with a finally clause.</p>
+<h3>Example</h3>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Program on any IDE, mate!</span>
+
+<span class="kwd">try</span><span class="pun">:</span><span class="pln">
+   fh </span><span class="pun">=</span><span class="pln"> open</span><span class="pun">(</span><span class="str">"testfile"</span><span class="pun">,</span> <span class="str">"w"</span><span class="pun">)</span><span class="pln">
+   fh</span><span class="pun">.</span><span class="pln">write</span><span class="pun">(</span><span class="str">"This is my test file for exception handling!!"</span><span class="pun">)</span>
+<span class="kwd">finally</span><span class="pun">:</span>
+   <span class="kwd">print</span> <span class="pun">(</span><span class="str">"Error: can\'t find file or read data"</span><span class="pun">)</span><span class="pln">
+   fh</span><span class="pun">.</span><span class="pln">close</span><span class="pun">()</span></pre>
+<p>If you do not have permission to open the file in writing mode, then this will produce the following result:</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="typ">Error</span><span class="pun">:</span><span class="pln"> can</span><span class="str">'t find file or read data</span></pre>
+<p>Same example can be written more cleanly as follows &minus;</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Program on any IDE, mate!</span>
+
+<span class="kwd">try</span><span class="pun">:</span><span class="pln">
+   fh </span><span class="pun">=</span><span class="pln"> open</span><span class="pun">(</span><span class="str">"testfile"</span><span class="pun">,</span> <span class="str">"w"</span><span class="pun">)</span>
+   <span class="kwd">try</span><span class="pun">:</span><span class="pln">
+      fh</span><span class="pun">.</span><span class="pln">write</span><span class="pun">(</span><span class="str">"This is my test file for exception handling!!"</span><span class="pun">)</span>
+   <span class="kwd">finally</span><span class="pun">:</span>
+      <span class="kwd">print</span> <span class="pun">(</span><span class="str">"Going to close the file"</span><span class="pun">)</span><span class="pln">
+      fh</span><span class="pun">.</span><span class="pln">close</span><span class="pun">()</span>
+<span class="kwd">except</span> <span class="typ">IOError</span><span class="pun">:</span>
+   <span class="kwd">print</span> <span class="pun">(</span><span class="str">"Error: can\'t find file or read data"</span><span class="pun">)</span></pre>
+<p>When an exception is thrown in the <em>try</em> block, the execution immediately passes to the <em>finally</em> block. After all the statements in the <em>finally</em> block are executed, the exception is raised again and is handled in the <em>except</em> statements if present in the next higher layer of the <em>try-except</em> statement.</p>
+<h2>Argument of an Exception</h2>
+<p>An exception can have an <em>argument</em>, which is a value that gives additional information about the problem. The contents of the argument vary by exception. You capture an exception's argument by supplying a variable in the except clause as follows &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">try</span><span class="pun">:</span>
+   <span class="typ">You</span> <span class="kwd">do</span><span class="pln"> your operations here
+   </span><span class="pun">......................</span>
+<span class="kwd">except</span> <em><span class="typ">ExceptionType</span> <span class="kwd">as</span> <span class="typ">Argument</span></em><span class="pun">:</span>
+   <span class="typ">You</span><span class="pln"> can </span><span class="kwd">print</span><span class="pln"> value of </span><span class="typ">Argument</span><span class="pln"> here</span><span class="pun">...</span></pre>
+<p>If you write the code to handle a single exception, you can have a variable follow the name of the exception in the except statement. If you are trapping multiple exceptions, you can have a variable follow the tuple of the exception.</p>
+<p>This variable receives the value of the exception mostly containing the cause of the exception. The variable can receive a single value or multiple values in the form of a tuple. This tuple usually contains the error string, the error number, and an error location.</p>
+<h3>Example</h3>
+<p>Following is an example for a single exception &minus;</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Program on any IDE, mate!</span>
+
+<span class="com"># Define a function here.</span>
+<span class="kwd">def</span><span class="pln"> temp_convert</span><span class="pun">(</span><span class="kwd">var</span><span class="pun">):</span>
+   <span class="kwd">try</span><span class="pun">:</span>
+      <span class="kwd">return</span> <span class="kwd">int</span><span class="pun">(</span><span class="kwd">var</span><span class="pun">)</span>
+   <span class="kwd">except</span> <span class="typ">ValueError</span><span class="pun">,</span> <span class="kwd">as</span> <span class="typ">Argument</span><span class="pun">:</span>
+      <span class="kwd">print</span> <span class="pun">(</span><span class="str">"The argument does not contain numbers\n"</span><span class="pun">,</span> <span class="typ">Argument</span><span class="pun">)</span>
+
+<span class="com"># Call above function here.</span><span class="pln">
+temp_convert</span><span class="pun">(</span><span class="str">"xyz"</span><span class="pun">)</span></pre>
+<p>This produces the following result &minus;</p>
+<pre class="result notranslate">The argument does not contain numbers
+invalid literal for int() with base 10: 'xyz'
+</pre>
+<h2>Raising an Exceptions</h2>
+<p>You can raise exceptions in several ways by using the raise statement. The general syntax for the <strong>raise</strong> statement is as follows.</p>
+<h3>Syntax</h3>
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">raise</span> <span class="pun">[</span><span class="typ">Exception</span> <span class="pun">[,</span><span class="pln"> args </span><span class="pun">[,</span><span class="pln"> traceback</span><span class="pun">]]]</span></pre>
+<p>Here, <em>Exception</em> is the type of exception (for example, NameError) and <em>argument</em> is a value for the exception argument. The argument is optional; if not supplied, the exception argument is None.</p>
+<p>The final argument, traceback, is also optional (and rarely used in practice), and if present, is the traceback object used for the exception.</p>
+<h3>Example</h3>
+<p>An exception can be a string, a class or an object. Most of the exceptions that the Python core raises are classes, with an argument that is an instance of the class. Defining new exceptions is quite easy and can be done as follows &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">def</span><span class="pln"> functionName</span><span class="pun">(</span><span class="pln"> level </span><span class="pun">):</span>
+    <span class="kwd">if</span><span class="pln"> level </span><span class="pun">&lt;</span><span class="lit">1</span><span class="pun">:</span>
+        <span class="kwd">raise</span> <span class="typ">Exception</span><span class="pun">(</span><span class="pln">level</span><span class="pun">)</span>
+        <span class="com"># The code below to this would not be executed</span>
+        <span class="com"># if we raise the exception</span>
+    <span class="kwd">return</span><span class="pln"> level</span></pre>
+<p><strong>Note:</strong> In order to catch an exception, an "except" clause must refer to the same exception thrown either class object or simple string. For example, to capture above exception, we must write the except clause as follows &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">try</span><span class="pun">:</span>
+   <span class="typ">Business</span> <span class="typ">Logic</span><span class="pln"> here</span><span class="pun">...</span>
+<span class="kwd">except</span> <span class="typ">Exception</span> <span class="kwd">as</span><span class="pln"> e</span><span class="pun">:</span>
+   <span class="typ">Exception</span><span class="pln"> handling here </span><span class="kwd">using</span><span class="pln"> e</span><span class="pun">.</span><span class="pln">args</span><span class="pun">...</span>
+<span class="kwd">else</span><span class="pun">:</span>
+   <span class="typ">Rest</span><span class="pln"> of the code here</span><span class="pun">...</span></pre>
+<p>Following example illustrates use of raising exception</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Program on any IDE, mate!</span>
+<span class="kwd">def</span><span class="pln"> functionName</span><span class="pun">(</span><span class="pln"> level </span><span class="pun">):</span>
+    <span class="kwd">if</span><span class="pln"> level </span><span class="pun">&lt;</span><span class="lit">1</span><span class="pun">:</span>
+        <span class="kwd">raise</span> <span class="typ">Exception</span><span class="pun">(</span><span class="pln">level</span><span class="pun">)</span>
+        <span class="com"># The code below to this would not be executed</span>
+        <span class="com"># if we raise the exception</span>
+    <span class="kwd">return</span><span class="pln"> level
+
+</span><span class="kwd">try</span><span class="pun">:</span><span class="pln">
+    l</span><span class="pun">=</span><span class="pln">functionName</span><span class="pun">(-</span><span class="lit">10</span><span class="pun">)</span>
+    <span class="kwd">print</span> <span class="pun">(</span><span class="str">"level="</span><span class="pun">,</span><span class="pln">l</span><span class="pun">)</span>
+<span class="kwd">except</span> <span class="typ">Exception</span> <span class="kwd">as</span><span class="pln"> e</span><span class="pun">:</span>
+    <span class="kwd">print</span> <span class="pun">(</span><span class="str">"error in level argument"</span><span class="pun">,</span><span class="pln">e</span><span class="pun">.</span><span class="pln">args</span><span class="pun">[</span><span class="lit">0</span><span class="pun">])</span></pre>
+<p>This will produce following result</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="pln">error </span><span class="kwd">in</span><span class="pln"> level argument </span><span class="pun">-</span><span class="lit">10</span></pre>
+<h2>User-Defined Exceptions</h2>
+<p>Python also allows you to create your own exceptions by deriving classes from the standard built-in exceptions.</p>
+<p>Here is an example related to <em>RuntimeError</em>. Here, a class is created that is subclassed from <em>RuntimeError</em>. This is useful when you need to display more specific information when an exception is caught.</p>
+<p>In the try block, the user-defined exception is raised and caught in the except block. The variable e is used to create an instance of the class <em>Networkerror</em>.</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">class</span> <span class="typ">Networkerror</span><span class="pun">(</span><span class="typ">RuntimeError</span><span class="pun">):</span>
+   <span class="kwd">def</span><span class="pln"> __init__</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">,</span><span class="pln"> arg</span><span class="pun">):</span>
+      <span class="kwd">self</span><span class="pun">.</span><span class="pln">args </span><span class="pun">=</span><span class="pln"> arg</span></pre>
+<p>So once you defined above class, you can raise the exception as follows &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">try</span><span class="pun">:</span>
+   <span class="kwd">raise</span> <span class="typ">Networkerror</span><span class="pun">(</span><span class="str">"Bad hostname"</span><span class="pun">)</span>
+<span class="kwd">except</span> <span class="typ">Networkerror</span><span class="pun">,</span><span class="pln">e</span><span class="pun">:</span>
+   <span class="kwd">print</span><span class="pln"> e</span><span class="pun">.</span><span class="pln">args</span></pre>
+
+   <hr><br>
+
+    <h3 style="text-align: center;">
+            Final Thoughts
+        </h3>
+
+        <p style="text-align: center;">
+            Next, James' personal feelings about Python.
+        </p>
+
+    <a href="/Python/files_io"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Python - Files and IO
+    </button></a>
+
+    <a href="/Python/final_thoughts"><button type="button" class="btn btn-primary btn-lg" style="float: right">
+        Python - Final Thoughts   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+{% endblock %}

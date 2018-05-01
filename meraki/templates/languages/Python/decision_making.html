@@ -1,0 +1,170 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<style>
+hr {
+    color: blue;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}
+</style>
+
+    <br><br><br><h2 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/python.jpg') }}">
+    Welcome to the Python Decision Making page, <b>{{un}}</b>!</h2>
+
+    <hr>
+
+    <blockquote>
+
+        Decision Making is an incredibly important aspect of programming with Python. Decision making is when the programmer understands
+        that there might be more than one outcome from a certain situation. Those outcomes will drive the Python program in multiple different
+        way according to the way the program has been written. The programmer must anticipate the way the specific conditions will occur and execute.
+        <br>
+        An if statement will essentially evaluate as True or False, and depending on how you write the if statement, it will either
+        roll through the statement executing the code you give it or kick out of the block. Python does assume that any non zero / non null values
+        are True, and if it is zero / null then it will evaluate as False.
+
+
+    </blockquote>
+
+    <br><hr><br>
+
+    <p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/decision_making/if.jpg') }}"></p>
+
+    <br><hr><br>
+
+    <p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/decision_making/statements.jpg') }}"></p>
+
+    <br><hr><br>
+
+    <h3>
+        If, If then else, Nested If Statements
+    </h3>
+
+    <p>
+        Python provides three varieties of if statements
+        <br>
+        <ul>
+            <li><b>If statements</b></li>
+            <h6>-- consisting of a boolean expression with one or more statements following</h6>
+            <li><b>If then else statements</b></li>
+            <h6>-- if statement that has the optional else statement that will execute when the if statement returns False</h6>
+            <li><b>Nested If Statements</b></li>
+            <h6>-- if statements that are inside a pre-existing if statement</h6>
+        </ul>
+        <br>
+    </p>
+
+    <br><hr><br>
+
+    <h3>
+        If Statements
+    </h3>
+
+    <p>
+        If statements can be stacked ontop of each in a sequence. The code below prints a new line, so we will have room to read.
+        The "while True:" statement is just a while loop that will never stop running. It will allow the user to continue to enter
+        inputs for as long as he/she wishes.
+        <p>
+            inp is a int casted variable from the user's input
+        </p>
+        <br>
+        <p>
+            I showcase each individual choice to show you how the statement works. If I had not entered 3, the "Any number higher than
+            3" would not have appeared because it did not get picked. If you were to code a else statement into this block, it would execute
+            each individual time you entered any acceptable input. The if statements kick you out of their local block once their individual
+            print statements are run, and then the program moves onto the next line. That line must be a true statement in order for the line
+            to be read.
+        </p>
+    </p>
+
+    <br><hr><br>
+
+    <p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/decision_making/ifstatementalone.jpg') }}"></p>
+
+    <br><hr><br>
+
+    <h3>
+            If then Else Statements
+    </h3>
+
+    <p>
+            If statements can have elif statements to go along with them. IF something is equal to something, but if that something
+            is equal to something else possibly have it do this, and so on. If than else statements are great for programmers who need
+            varying types of input. A website could be handling GET and POST requests, and a if statement == "GET" and a elif statement == "POST"
+            statement should be present as well.
+    </p>
+
+    <br><hr><br>
+
+    <p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/decision_making/ifthenelse.jpg') }}"></p>
+
+    <br><hr><br>
+
+    <h3>
+        Nested If statements
+    </h3>
+
+    <p>
+        Nested If statements are handy if you have a condition that relies on another condition. Let us say you use SQL to query the results
+        from a database table you have saved. If you have one or more results, return results, and if that data contains certain information
+        then return even more specific data from the original query result. If none of that is true, the block would not be executing anyway.
+    </p>
+
+    <br><hr><br>
+
+    <p>Decision making is extremely import when programming is concerned. The decisions you make within the logic of your code will
+    determine how the code runs and operates. The code needs to do exactly what you wanted it to do and nothing more. Deciding on a
+    course of action is essentially what if statements do. They help a programmer lead the interpreter in a specific direction down the
+    code instead of reading all the code it doesn't need. I like to imagine if statements as a map. You understand where you are now, where you
+    want to go, but you need to figure out the steps in between. The steps are the if statements. If I have the money to fly to Canada I will, but
+    if not I will take a bus. That is a real life scenario, but it wouldn't be hard to imagine one where programming is involved. </p>
+
+    <p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/decision_making/ifstatement.jpg') }}"></p>
+
+    <br><hr><br>
+
+    <p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/decision_making/ifstatementnested.png') }}"></p>
+<!--
+    <h3>
+
+    </h3>
+
+    <p>
+
+    </p>
+
+    <br><hr><br>
+
+    <p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/folder/file.jpg') }}"></p>
+
+    <br><hr><br>
+-->
+
+    <br><hr><br>
+
+    <h3 style="text-align: center;">
+            Loop Control
+    </h3>
+
+    <p style="text-align: center;">
+        Next, we will discuss loop control within Python, and understand why looping is a vital part of programming.
+    </p>
+
+    <a href="/Python/operators"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Python - Operators
+    </button></a>
+
+    <a href="/Python/loop_control"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        Python - Loop Control   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+{% endblock %}

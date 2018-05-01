@@ -1,0 +1,667 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<style>
+hr {
+    color: blue;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}
+</style>
+
+    <br><br><br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/c_sharp.png') }}">
+    Welcome to the C# Files & IO Homepage, mate!</h1>
+
+    <hr>
+
+    <blockquote>
+
+        C# Files & IO Information
+
+    </blockquote>
+<style>
+.code
+{
+	background-color: #E0FFFF;
+}
+.output
+{
+	background-color: #000000;
+	color: #ffffff;
+}
+h1
+{
+	text-align: center;
+	text-decoration: underline;
+}
+h2
+{
+	text-decoration: underline;
+}
+.content
+{
+	text-align: center;
+}
+table
+{
+background-color: #6495ed;
+color: #ffffff;
+border: solid 2px black;
+}
+</style>
+<p>A <strong>file</strong> is a collection of data stored in a disk with a specific name and a directory path. When a file is opened for reading or writing, it becomes a <strong>stream</strong>.</p>
+<p>The stream is basically the sequence of bytes passing through the communication path. There are two main streams: the <strong>input stream</strong> and the <strong>output stream</strong>. The<strong> input stream</strong> is used for reading data from file (read operation) and the <strong>output stream</strong> is used for writing into the file (write operation).</p>
+<h2>C# I/O Classes</h2>
+<p>The System.IO namespace has various classes that are used for performing numerous operations with files, such as creating and deleting files, reading from or writing to a file, closing a file etc.</p>
+<p>The following table shows some commonly used non-abstract classes in the System.IO namespace:</p>
+<table class="table table-bordered">
+<tbody>
+<tr>
+<th>I/O Class</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>BinaryReader</td>
+<td>Reads primitive data from a binary stream.</td>
+</tr>
+<tr>
+<td>BinaryWriter</td>
+<td>Writes primitive data in binary format.</td>
+</tr>
+<tr>
+<td>BufferedStream</td>
+<td>A temporary storage for a stream of bytes.</td>
+</tr>
+<tr>
+<td>Directory</td>
+<td>Helps in manipulating a directory structure.</td>
+</tr>
+<tr>
+<td>DirectoryInfo</td>
+<td>Used for performing operations on directories.</td>
+</tr>
+<tr>
+<td>DriveInfo</td>
+<td>Provides information for the drives.</td>
+</tr>
+<tr>
+<td>File</td>
+<td>Helps in manipulating files.</td>
+</tr>
+<tr>
+<td>FileInfo</td>
+<td>Used for performing operations on files.</td>
+</tr>
+<tr>
+<td>FileStream</td>
+<td>Used to read from and write to any location in a file.</td>
+</tr>
+<tr>
+<td>MemoryStream</td>
+<td>Used for random access to streamed data stored in memory.</td>
+</tr>
+<tr>
+<td>Path</td>
+<td>Performs operations on path information.</td>
+</tr>
+<tr>
+<td>StreamReader</td>
+<td>Used for reading characters from a byte stream.</td>
+</tr>
+<tr>
+<td>StreamWriter</td>
+<td>Is used for writing characters to a stream.</td>
+</tr>
+<tr>
+<td>StringReader</td>
+<td>Is used for reading from a string buffer.</td>
+</tr>
+<tr>
+<td>StringWriter</td>
+<td>Is used for writing into a string buffer.</td>
+</tr>
+</tbody>
+</table>
+<h2>The FileStream Class</h2>
+<p>The <strong>FileStream</strong> class in the System.IO namespace helps in reading from, writing to and closing files. This class derives from the abstract class Stream.</p>
+<p>You need to create a <strong>FileStream</strong> object to create a new file or open an existing file. The syntax for creating a <strong>FileStream</strong> object is as follows:</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="typ">FileStream</span> <span class="str">&lt;object_name&gt;</span> <span class="pun">=</span> <span class="kwd">new</span> <span class="typ">FileStream</span><span class="pun">(</span> <span class="str">&lt;file_name&gt;</span><span class="pun">,</span> <span class="pun">&lt;</span><span class="typ">FileMode</span> <span class="typ">Enumerator</span><span class="pun">&gt;,</span> <span class="pun">&lt;</span><span class="typ">FileAccess</span> <span class="typ">Enumerator</span><span class="pun">&gt;,</span> <span class="pun">&lt;</span><span class="typ">FileShare</span> <span class="typ">Enumerator</span><span class="pun">&gt;);</span></pre>
+<p>For example, we create a FileStream object <strong>F</strong> for reading a file named <strong>sample.txt as shown</strong>:</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="typ">FileStream</span><span class="pln"> F </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">FileStream</span><span class="pun">(</span><span class="str">"sample.txt"</span><span class="pun">,</span> <span class="typ">FileMode</span><span class="pun">.</span><span class="typ">Open</span><span class="pun">,</span> <span class="typ">FileAccess</span><span class="pun">.</span><span class="typ">Read</span><span class="pun">,</span> <span class="typ">FileShare</span><span class="pun">.</span><span class="typ">Read</span><span class="pun">);</span></pre>
+<table class="table table-bordered">
+<tbody>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>FileMode</td>
+<td>
+<p>The <strong>FileMode</strong> enumerator defines various methods for opening files. The members of the FileMode enumerator are:</p>
+<ul class="list">
+<li>
+<p><strong>Append</strong>: It opens an existing file and puts cursor at the end of file, or creates the file, if the file does not exist.</p>
+</li>
+<li>
+<p><strong>Create</strong>: It creates a new file.</p>
+</li>
+<li>
+<p><strong>CreateNew</strong>: It specifies to the operating system, that it should create a new file.</p>
+</li>
+<li>
+<p><strong>Open</strong>: It opens an existing file.</p>
+</li>
+<li>
+<p><strong>OpenOrCreate</strong>: It specifies to the operating system that it should open a file if it exists, otherwise it should create a new file.</p>
+</li>
+<li>
+<p><strong>Truncate</strong>: It opens an existing file and truncates its size to zero bytes.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>FileAccess</td>
+<td>
+<p><strong>FileAccess</strong> enumerators have members: <strong>Read</strong>, <strong>ReadWrite</strong>and <strong>Write</strong>.</p>
+</td>
+</tr>
+<tr>
+<td>FileShare</td>
+<td>
+<p><strong>FileShare</strong> enumerators have the following members:</p>
+<ul class="list">
+<li>
+<p><strong>Inheritable</strong>: It allows a file handle to pass inheritance to the child processes</p>
+</li>
+<li>
+<p><strong>None</strong>: It declines sharing of the current file</p>
+</li>
+<li>
+<p><strong>Read</strong>: It allows opening the file for reading</p>
+</li>
+<li>
+<p><strong>ReadWrite</strong>: It allows opening the file for reading and writing</p>
+</li>
+<li>
+<p><strong>Write</strong>: It allows opening the file for writing</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<h2>Example</h2>
+<p>The following program demonstrates use of the <strong>FileStream </strong>class:</p>
+<div class="code">
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="kwd">using</span> <span class="typ">System</span><span class="pun">;</span>
+<span class="kwd">using</span> <span class="typ">System</span><span class="pun">.</span><span class="pln">IO</span><span class="pun">;</span>
+
+<span class="kwd">namespace</span> <span class="typ">FileIOApplication</span>
+<span class="pun">{</span>
+   <span class="kwd">class</span> <span class="typ">Program</span>
+   <span class="pun">{</span>
+      <span class="kwd">static</span> <span class="kwd">void</span> <span class="typ">Main</span><span class="pun">(</span><span class="kwd">string</span><span class="pun">[]</span><span class="pln"> args</span><span class="pun">)</span>
+      <span class="pun">{</span>
+         <span class="typ">FileStream</span><span class="pln"> F </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">FileStream</span><span class="pun">(</span><span class="str">"test.dat"</span><span class="pun">,</span> <span class="typ">FileMode</span><span class="pun">.</span><span class="typ">OpenOrCreate</span><span class="pun">,</span> <span class="typ">FileAccess</span><span class="pun">.</span><span class="typ">ReadWrite</span><span class="pun">);</span>
+         <span class="kwd">for</span> <span class="pun">(</span><span class="kwd">int</span><span class="pln"> i </span><span class="pun">=</span> <span class="lit">1</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;=</span> <span class="lit">20</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span>
+         <span class="pun">{</span><span class="pln">
+            F</span><span class="pun">.</span><span class="typ">WriteByte</span><span class="pun">((</span><span class="kwd">byte</span><span class="pun">)</span><span class="pln">i</span><span class="pun">);</span>
+         <span class="pun">}</span><span class="pln">
+
+         F</span><span class="pun">.</span><span class="typ">Position</span> <span class="pun">=</span> <span class="lit">0</span><span class="pun">;</span>
+         <span class="kwd">for</span> <span class="pun">(</span><span class="kwd">int</span><span class="pln"> i </span><span class="pun">=</span> <span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;=</span> <span class="lit">20</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span>
+         <span class="pun">{</span>
+            <span class="typ">Console</span><span class="pun">.</span><span class="typ">Write</span><span class="pun">(</span><span class="pln">F</span><span class="pun">.</span><span class="typ">ReadByte</span><span class="pun">()</span> <span class="pun">+</span> <span class="str">" "</span><span class="pun">);</span>
+         <span class="pun">}</span><span class="pln">
+         F</span><span class="pun">.</span><span class="typ">Close</span><span class="pun">();</span>
+         <span class="typ">Console</span><span class="pun">.</span><span class="typ">ReadKey</span><span class="pun">();</span>
+      <span class="pun">}</span>
+   <span class="pun">}</span>
+<span class="pun">}</span></pre>
+</div>
+<p>When the above code is compiled and executed, it produces the following result:</p>
+<pre class="result notranslate">1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 -1
+</pre>
+<h2>Advanced File Operations in C#</h2>
+<p>The preceding example provides simple file operations in C#. However, to utilize the immense powers of C# System.IO classes, you need to know the commonly used properties and methods of these classes.</p>
+
+<h2>Reading from and Writing to text files</h2>
+<p>The <strong>StreamReader</strong> and <strong>StreamWriter</strong> classes are used for reading from and writing data to text files. These classes inherit from the abstract base class Stream, which supports reading and writing bytes into a file stream.</p>
+<h2>The StreamReader Class</h2>
+<p>The <strong>StreamReader</strong> class also inherits from the abstract base class TextReader that represents a reader for reading series of characters. The following table describes some of the commonly used <strong>methods</strong> of the StreamReader class:</p>
+<table class="table table-bordered">
+<tbody>
+<tr>
+<th>Sr.No.</th>
+<th>Methods</th>
+</tr>
+<tr>
+<td>1</td>
+<td><strong>public override void Close()</strong>
+<p>It closes the StreamReader object and the underlying stream, and releases any system resources associated with the reader.</p>
+</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>public override int Peek()</strong>
+<p>Returns the next available character but does not consume it.</p>
+</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>public override int Read()</strong>
+<p>Reads the next character from the input stream and advances the character position by one.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2>Example</h2>
+<p>The following example demonstrates reading a text file named Jamaica.txt. The file reads:</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="typ">Down</span><span class="pln"> the way </span><span class="kwd">where</span><span class="pln"> the nights are gay
+</span><span class="typ">And</span><span class="pln"> the sun shines daily on the mountain top
+I took a trip on a sailing ship
+</span><span class="typ">And</span> <span class="kwd">when</span><span class="pln"> I reached </span><span class="typ">Jamaica</span><span class="pln">
+I made a stop</span></pre>
+<div class="code">
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">using</span> <span class="typ">System</span><span class="pun">;</span>
+<span class="kwd">using</span> <span class="typ">System</span><span class="pun">.</span><span class="pln">IO</span><span class="pun">;</span>
+
+<span class="kwd">namespace</span> <span class="typ">FileApplication</span>
+<span class="pun">{</span>
+   <span class="kwd">class</span> <span class="typ">Program</span>
+   <span class="pun">{</span>
+      <span class="kwd">static</span> <span class="kwd">void</span> <span class="typ">Main</span><span class="pun">(</span><span class="kwd">string</span><span class="pun">[]</span><span class="pln"> args</span><span class="pun">)</span>
+      <span class="pun">{</span>
+         <span class="kwd">try</span>
+         <span class="pun">{</span>
+            <span class="com">// Create an instance of StreamReader to read from a file.</span>
+            <span class="com">// The using statement also closes the StreamReader.</span>
+            <span class="kwd">using</span> <span class="pun">(</span><span class="typ">StreamReader</span><span class="pln"> sr </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">StreamReader</span><span class="pun">(</span><span class="str">"c:/jamaica.txt"</span><span class="pun">))</span>
+            <span class="pun">{</span>
+               <span class="kwd">string</span><span class="pln"> line</span><span class="pun">;</span>
+
+               <span class="com">// Read and display lines from the file until </span>
+               <span class="com">// the end of the file is reached. </span>
+               <span class="kwd">while</span> <span class="pun">((</span><span class="pln">line </span><span class="pun">=</span><span class="pln"> sr</span><span class="pun">.</span><span class="typ">ReadLine</span><span class="pun">())</span> <span class="pun">!=</span> <span class="kwd">null</span><span class="pun">)</span>
+               <span class="pun">{</span>
+                  <span class="typ">Console</span><span class="pun">.</span><span class="typ">WriteLine</span><span class="pun">(</span><span class="pln">line</span><span class="pun">);</span>
+               <span class="pun">}</span>
+            <span class="pun">}</span>
+         <span class="pun">}</span>
+         <span class="kwd">catch</span> <span class="pun">(</span><span class="typ">Exception</span><span class="pln"> e</span><span class="pun">)</span>
+         <span class="pun">{</span>
+
+            <span class="com">// Let the user know what went wrong.</span>
+            <span class="typ">Console</span><span class="pun">.</span><span class="typ">WriteLine</span><span class="pun">(</span><span class="str">"The file could not be read:"</span><span class="pun">);</span>
+            <span class="typ">Console</span><span class="pun">.</span><span class="typ">WriteLine</span><span class="pun">(</span><span class="pln">e</span><span class="pun">.</span><span class="typ">Message</span><span class="pun">);</span>
+         <span class="pun">}</span>
+
+         <span class="typ">Console</span><span class="pun">.</span><span class="typ">ReadKey</span><span class="pun">();</span>
+      <span class="pun">}</span>
+   <span class="pun">}</span>
+<span class="pun">}</span></pre>
+</div>
+<p>Guess what it displays when you compile and run the program!</p>
+<h2>The StreamWriter Class</h2>
+<p>The <strong>StreamWriter</strong> class inherits from the abstract class TextWriter that represents a writer, which can write a series of character.</p>
+<p>The following table describes the most commonly used methods of this class:</p>
+<table class="table table-bordered">
+<tbody>
+<tr>
+<th>Sr.No.</th>
+<th>Methods</th>
+</tr>
+<tr>
+<td>1</td>
+<td><strong>public override void Close()</strong>
+<p>Closes the current StreamWriter object and the underlying stream.</p>
+</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>public override void Flush()</strong>
+<p>Clears all buffers for the current writer and causes any buffered data to be written to the underlying stream.</p>
+</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>public virtual void Write(bool value)</strong>
+<p>Writes the text representation of a Boolean value to the text string or stream. (Inherited from TextWriter.)</p>
+</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>public override void Write(char value)</strong>
+<p>Writes a character to the stream.</p>
+</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>public virtual void Write(decimal value)</strong>
+<p>Writes the text representation of a decimal value to the text string or stream.</p>
+</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>public virtual void Write(double value)</strong>
+<p>Writes the text representation of an 8-byte floating-point value to the text string or stream.</p>
+</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>public virtual void Write(int value)</strong>
+<p>Writes the text representation of a 4-byte signed integer to the text string or stream.</p>
+</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>public override void Write(string value)</strong>
+<p>Writes a string to the stream.</p>
+</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>public virtual void WriteLine()</strong>
+<p>Writes a line terminator to the text string or stream.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>For a complete list of methods, please visit Microsoft's C# documentation.</p>
+<h2>Example</h2>
+<p>The following example demonstrates writing text data into a file using the StreamWriter class:</p>
+<div class="code">
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="kwd">using</span> <span class="typ">System</span><span class="pun">;</span>
+<span class="kwd">using</span> <span class="typ">System</span><span class="pun">.</span><span class="pln">IO</span><span class="pun">;</span>
+
+<span class="kwd">namespace</span> <span class="typ">FileApplication</span>
+<span class="pun">{</span>
+   <span class="kwd">class</span> <span class="typ">Program</span>
+   <span class="pun">{</span>
+      <span class="kwd">static</span> <span class="kwd">void</span> <span class="typ">Main</span><span class="pun">(</span><span class="kwd">string</span><span class="pun">[]</span><span class="pln"> args</span><span class="pun">)</span>
+      <span class="pun">{</span>
+
+         <span class="kwd">string</span><span class="pun">[]</span><span class="pln"> names </span><span class="pun">=</span> <span class="kwd">new</span> <span class="kwd">string</span><span class="pun">[]</span> <span class="pun">{</span><span class="str">"Zara Ali"</span><span class="pun">,</span> <span class="str">"Nuha Ali"</span><span class="pun">};</span>
+         <span class="kwd">using</span> <span class="pun">(</span><span class="typ">StreamWriter</span><span class="pln"> sw </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">StreamWriter</span><span class="pun">(</span><span class="str">"names.txt"</span><span class="pun">))</span>
+         <span class="pun">{</span>
+
+            <span class="kwd">foreach</span> <span class="pun">(</span><span class="kwd">string</span><span class="pln"> s </span><span class="kwd">in</span><span class="pln"> names</span><span class="pun">)</span>
+            <span class="pun">{</span><span class="pln">
+               sw</span><span class="pun">.</span><span class="typ">WriteLine</span><span class="pun">(</span><span class="pln">s</span><span class="pun">);</span>
+            <span class="pun">}</span>
+         <span class="pun">}</span>
+
+         <span class="com">// Read and show each line from the file.</span>
+         <span class="kwd">string</span><span class="pln"> line </span><span class="pun">=</span> <span class="str">""</span><span class="pun">;</span>
+         <span class="kwd">using</span> <span class="pun">(</span><span class="typ">StreamReader</span><span class="pln"> sr </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">StreamReader</span><span class="pun">(</span><span class="str">"names.txt"</span><span class="pun">))</span>
+         <span class="pun">{</span>
+            <span class="kwd">while</span> <span class="pun">((</span><span class="pln">line </span><span class="pun">=</span><span class="pln"> sr</span><span class="pun">.</span><span class="typ">ReadLine</span><span class="pun">())</span> <span class="pun">!=</span> <span class="kwd">null</span><span class="pun">)</span>
+            <span class="pun">{</span>
+               <span class="typ">Console</span><span class="pun">.</span><span class="typ">WriteLine</span><span class="pun">(</span><span class="pln">line</span><span class="pun">);</span>
+            <span class="pun">}</span>
+         <span class="pun">}</span>
+
+         <span class="typ">Console</span><span class="pun">.</span><span class="typ">ReadKey</span><span class="pun">();</span>
+      <span class="pun">}</span>
+   <span class="pun">}</span>
+<span class="pun">}</span></pre>
+</div>
+<p>When the above code is compiled and executed, it produces the following result:</p>
+<div class="output">
+<pre class="result notranslate">Zara Ali
+Nuha Ali</pre>
+</div>
+<h2>Reading and writing into Binary files</h2>
+<p>The <strong>BinaryReader</strong> and <strong>BinaryWriter</strong> classes are used for reading from and writing to a binary file.</p>
+<h2>The BinaryReader Class</h2>
+<p>The <strong>BinaryReader</strong> class is used to read binary data from a file. A <strong>BinaryReader</strong> object is created by passing a <strong>FileStream</strong> object to its constructor.</p>
+<p>The following table describes commonly used <strong>methods</strong> of the <strong>BinaryReader</strong>class.</p>
+<table class="table table-bordered">
+<tbody>
+<tr>
+<th>Sr.No.</th>
+<th>Methods</th>
+</tr>
+<tr>
+<td>1</td>
+<td><strong>public override void Close()</strong>
+<p>It closes the BinaryReader object and the underlying stream.</p>
+</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>public virtual int Read()</strong>
+<p>Reads the characters from the underlying stream and advances the current position of the stream.</p>
+</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>public virtual bool ReadBoolean()</strong>
+<p>Reads a Boolean value from the current stream and advances the current position of the stream by one byte.</p>
+</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>public virtual byte ReadByte()</strong>
+<p>Reads the next byte from the current stream and advances the current position of the stream by one byte.</p>
+</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>public virtual byte[] ReadBytes(int count)</strong>
+<p>Reads the specified number of bytes from the current stream into a byte array and advances the current position by that number of bytes.</p>
+</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>public virtual char ReadChar()</strong>
+<p>Reads the next character from the current stream and advances the current position of the stream in accordance with the Encoding used and the specific character being read from the stream.</p>
+</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>public virtual char[] ReadChars(int count)</strong>
+<p>Reads the specified number of characters from the current stream, returns the data in a character array, and advances the current position in accordance with the Encoding used and the specific character being read from the stream.</p>
+</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>public virtual double ReadDouble()</strong>
+<p>Reads an 8-byte floating point value from the current stream and advances the current position of the stream by eight bytes.</p>
+</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>public virtual int ReadInt32()</strong>
+<p>Reads a 4-byte signed integer from the current stream and advances the current position of the stream by four bytes.</p>
+</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>public virtual string ReadString()</strong>
+<p>Reads a string from the current stream. The string is prefixed with the length, encoded as an integer seven bits at a time.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2>The BinaryWriter Class</h2>
+<p>The <strong>BinaryWriter</strong> class is used to write binary data to a stream. A BinaryWriter object is created by passing a FileStream object to its constructor.</p>
+<p>The following table describes commonly used methods of the BinaryWriter class.</p>
+<table class="table table-bordered">
+<tbody>
+<tr>
+<th>Sr.No.</th>
+<th>Functions</th>
+</tr>
+<tr>
+<td>1</td>
+<td><strong>public override void Close()</strong>
+<p>It closes the BinaryWriter object and the underlying stream.</p>
+</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>public virtual void Flush()</strong>
+<p>Clears all buffers for the current writer and causes any buffered data to be written to the underlying device.</p>
+</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>public virtual long Seek(int offset, SeekOrigin origin)</strong>
+<p>Sets the position within the current stream.</p>
+</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>public virtual void Write(bool value)</strong>
+<p>Writes a one-byte Boolean value to the current stream, with 0 representing false and 1 representing true.</p>
+</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>public virtual void Write(byte value)</strong>
+<p>Writes an unsigned byte to the current stream and advances the stream position by one byte.</p>
+</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>public virtual void Write(byte[] buffer)</strong>
+<p>Writes a byte array to the underlying stream.</p>
+</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>public virtual void Write(char ch)</strong>
+<p>Writes a Unicode character to the current stream and advances the current position of the stream in accordance with the Encoding used and the specific characters being written to the stream.</p>
+</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>public virtual void Write(char[] chars)</strong>
+<p>Writes a character array to the current stream and advances the current position of the stream in accordance with the Encoding used and the specific characters being written to the stream.</p>
+</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>public virtual void Write(double value)</strong>
+<p>Writes an eight-byte floating-point value to the current stream and advances the stream position by eight bytes.</p>
+</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>public virtual void Write(int value)</strong>
+<p>Writes a four-byte signed integer to the current stream and advances the stream position by four bytes.</p>
+</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>public virtual void Write(string value)</strong>
+<p>Writes a length-prefixed string to this stream in the current encoding of the BinaryWriter, and advances the current position of the stream in accordance with the encoding used and the specific characters being written to the stream.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>For a complete list of methods, please visit Microsoft C# documentation.</p>
+<h2>Example</h2>
+<p>The following example demonstrates reading and writing binary data:</p>
+<div class="code">
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="kwd">using</span> <span class="typ">System</span><span class="pun">;</span>
+<span class="kwd">using</span> <span class="typ">System</span><span class="pun">.</span><span class="pln">IO</span><span class="pun">;</span>
+
+<span class="kwd">namespace</span> <span class="typ">BinaryFileApplication</span>
+<span class="pun">{</span>
+   <span class="kwd">class</span> <span class="typ">Program</span>
+   <span class="pun">{</span>
+      <span class="kwd">static</span> <span class="kwd">void</span> <span class="typ">Main</span><span class="pun">(</span><span class="kwd">string</span><span class="pun">[]</span><span class="pln"> args</span><span class="pun">)</span>
+      <span class="pun">{</span>
+         <span class="typ">BinaryWriter</span><span class="pln"> bw</span><span class="pun">;</span>
+         <span class="typ">BinaryReader</span><span class="pln"> br</span><span class="pun">;</span>
+         <span class="kwd">int</span><span class="pln"> i </span><span class="pun">=</span> <span class="lit">25</span><span class="pun">;</span>
+         <span class="kwd">double</span><span class="pln"> d </span><span class="pun">=</span> <span class="lit">3.14157</span><span class="pun">;</span>
+         <span class="kwd">bool</span><span class="pln"> b </span><span class="pun">=</span> <span class="kwd">true</span><span class="pun">;</span>
+         <span class="kwd">string</span><span class="pln"> s </span><span class="pun">=</span> <span class="str">"I am happy"</span><span class="pun">;</span>
+
+         <span class="com">//create the file</span>
+         <span class="kwd">try</span>
+         <span class="pun">{</span><span class="pln">
+            bw </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">BinaryWriter</span><span class="pun">(</span><span class="kwd">new</span> <span class="typ">FileStream</span><span class="pun">(</span><span class="str">"mydata"</span><span class="pun">,</span> <span class="typ">FileMode</span><span class="pun">.</span><span class="typ">Create</span><span class="pun">));</span>
+         <span class="pun">}</span>
+         <span class="kwd">catch</span> <span class="pun">(</span><span class="typ">IOException</span><span class="pln"> e</span><span class="pun">)</span>
+         <span class="pun">{</span>
+            <span class="typ">Console</span><span class="pun">.</span><span class="typ">WriteLine</span><span class="pun">(</span><span class="pln">e</span><span class="pun">.</span><span class="typ">Message</span> <span class="pun">+</span> <span class="str">"\n Cannot create file."</span><span class="pun">);</span>
+            <span class="kwd">return</span><span class="pun">;</span>
+         <span class="pun">}</span>
+
+         <span class="com">//writing into the file</span>
+         <span class="kwd">try</span>
+         <span class="pun">{</span><span class="pln">
+            bw</span><span class="pun">.</span><span class="typ">Write</span><span class="pun">(</span><span class="pln">i</span><span class="pun">);</span><span class="pln">
+            bw</span><span class="pun">.</span><span class="typ">Write</span><span class="pun">(</span><span class="pln">d</span><span class="pun">);</span><span class="pln">
+            bw</span><span class="pun">.</span><span class="typ">Write</span><span class="pun">(</span><span class="pln">b</span><span class="pun">);</span><span class="pln">
+            bw</span><span class="pun">.</span><span class="typ">Write</span><span class="pun">(</span><span class="pln">s</span><span class="pun">);</span>
+         <span class="pun">}</span>
+
+         <span class="kwd">catch</span> <span class="pun">(</span><span class="typ">IOException</span><span class="pln"> e</span><span class="pun">)</span>
+         <span class="pun">{</span>
+            <span class="typ">Console</span><span class="pun">.</span><span class="typ">WriteLine</span><span class="pun">(</span><span class="pln">e</span><span class="pun">.</span><span class="typ">Message</span> <span class="pun">+</span> <span class="str">"\n Cannot write to file."</span><span class="pun">);</span>
+            <span class="kwd">return</span><span class="pun">;</span>
+         <span class="pun">}</span><span class="pln">
+         bw</span><span class="pun">.</span><span class="typ">Close</span><span class="pun">();</span>
+
+         <span class="com">//reading from the file</span>
+         <span class="kwd">try</span>
+         <span class="pun">{</span><span class="pln">
+            br </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">BinaryReader</span><span class="pun">(</span><span class="kwd">new</span> <span class="typ">FileStream</span><span class="pun">(</span><span class="str">"mydata"</span><span class="pun">,</span> <span class="typ">FileMode</span><span class="pun">.</span><span class="typ">Open</span><span class="pun">));</span>
+         <span class="pun">}</span>
+         <span class="kwd">catch</span> <span class="pun">(</span><span class="typ">IOException</span><span class="pln"> e</span><span class="pun">)</span>
+         <span class="pun">{</span>
+            <span class="typ">Console</span><span class="pun">.</span><span class="typ">WriteLine</span><span class="pun">(</span><span class="pln">e</span><span class="pun">.</span><span class="typ">Message</span> <span class="pun">+</span> <span class="str">"\n Cannot open file."</span><span class="pun">);</span>
+            <span class="kwd">return</span><span class="pun">;</span>
+         <span class="pun">}</span>
+         <span class="kwd">try</span>
+         <span class="pun">{</span><span class="pln">
+            i </span><span class="pun">=</span><span class="pln"> br</span><span class="pun">.</span><span class="typ">ReadInt32</span><span class="pun">();</span>
+            <span class="typ">Console</span><span class="pun">.</span><span class="typ">WriteLine</span><span class="pun">(</span><span class="str">"Integer data: {0}"</span><span class="pun">,</span><span class="pln"> i</span><span class="pun">);</span><span class="pln">
+            d </span><span class="pun">=</span><span class="pln"> br</span><span class="pun">.</span><span class="typ">ReadDouble</span><span class="pun">();</span>
+            <span class="typ">Console</span><span class="pun">.</span><span class="typ">WriteLine</span><span class="pun">(</span><span class="str">"Double data: {0}"</span><span class="pun">,</span><span class="pln"> d</span><span class="pun">);</span><span class="pln">
+            b </span><span class="pun">=</span><span class="pln"> br</span><span class="pun">.</span><span class="typ">ReadBoolean</span><span class="pun">();</span>
+            <span class="typ">Console</span><span class="pun">.</span><span class="typ">WriteLine</span><span class="pun">(</span><span class="str">"Boolean data: {0}"</span><span class="pun">,</span><span class="pln"> b</span><span class="pun">);</span><span class="pln">
+            s </span><span class="pun">=</span><span class="pln"> br</span><span class="pun">.</span><span class="typ">ReadString</span><span class="pun">();</span>
+            <span class="typ">Console</span><span class="pun">.</span><span class="typ">WriteLine</span><span class="pun">(</span><span class="str">"String data: {0}"</span><span class="pun">,</span><span class="pln"> s</span><span class="pun">);</span>
+         <span class="pun">}</span>
+         <span class="kwd">catch</span> <span class="pun">(</span><span class="typ">IOException</span><span class="pln"> e</span><span class="pun">)</span>
+         <span class="pun">{</span>
+            <span class="typ">Console</span><span class="pun">.</span><span class="typ">WriteLine</span><span class="pun">(</span><span class="pln">e</span><span class="pun">.</span><span class="typ">Message</span> <span class="pun">+</span> <span class="str">"\n Cannot read from file."</span><span class="pun">);</span>
+            <span class="kwd">return</span><span class="pun">;</span>
+         <span class="pun">}</span><span class="pln">
+         br</span><span class="pun">.</span><span class="typ">Close</span><span class="pun">();</span>
+
+         <span class="typ">Console</span><span class="pun">.</span><span class="typ">ReadKey</span><span class="pun">();</span>
+      <span class="pun">}</span>
+   <span class="pun">}</span>
+<span class="pun">}</span></pre>
+</div>
+<p>When the above code is compiled and executed, it produces the following result:</p>
+<div class="output">
+<pre class="result notranslate">Integer data: 25
+Double data: 3.14157
+Boolean data: True
+String data: I am happy</pre>
+</div>
+</br>
+</br>
+<a href="/C_sharp/imports"><button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> C# - Imports
+    </button></a>
+
+    <a href="/C_sharp/exceptions"><button type="button" class="btn btn-default btn-lg" style="float: right;">
+        C# - Exceptions <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+{% endblock %}

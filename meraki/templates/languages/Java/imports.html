@@ -1,0 +1,91 @@
+{% extends "header.html" %}
+    {% block body %}
+
+    <title>Meraki : Java : Imports</title>
+
+    <style>
+    hr {
+        color: blue;
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: 10px;
+    }
+    </style>
+
+        <br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Java.png') }}">
+        Welcome to the Java Imports page, mate!</h1>
+
+        <hr>
+
+        <blockquote>
+
+            Java's Imports information - This page contains information on package imports in Java.
+
+        </blockquote>
+
+<h2>The import Keyword</h2>
+<p>For a class to reference a class in the same package, it can do so without importing it.</p>
+<h3>Example</h3>
+<p>In the following example, a class name Boss references another class Employee that is in the same package ("payroll").
+The Boss class needs no special syntax or import to do so.</p>
+<pre class="prettyprint notranslate">
+package payroll;
+public class Boss {
+   public void payEmployee(Employee e) {
+      e.mailCheck();
+   }
+}
+</pre>
+<p>This would fail, however, if the Employee class was not in the same package.
+One of the following techniques would be necessary.</p>
+<ul class="list">
+<li>The Boss class could use the "fully qualified" title for it.</li>
+</ul>
+<pre class="prettyprint notranslate">
+payroll.Employee
+</pre>
+<ul class="list">
+<li><p>The boss class could import the entire package, using a wildcard.</p></li>
+</ul>
+<pre class="prettyprint notranslate">
+import payroll.*;
+</pre>
+<ul class="list">
+<li>The boss class could import just the Employee class, without a wildcard.</li>
+</ul>
+<pre class="prettyprint notranslate">
+import payroll.Employee;
+</pre>
+<p><b>Note</b> A class can important an unlimited number of packages, but be careful not to import large packages
+when only a class is needed or packages that are not needed. Each imported package increases the size and memory footprint of your program.</p>
+
+
+
+
+
+    <br><hr><br>
+
+    <h3 style="text-align: center;">
+            Files and I/O
+    </h3>
+
+    <p style="text-align: center;">
+        Next, we will look at Files and I/O, and the basics of how Java accepts user input as well as the reading/writing of files.
+    </p>
+
+    <a href="/Java/decision_making/"><button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Java - Decision Making
+    </button></a>
+
+    <a href="/Java/files_io/"><button type="button" class="btn btn-default btn-lg" style="float: right;">
+        Java - Files and I/O   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+
+    {% endblock %}

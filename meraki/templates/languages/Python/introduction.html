@@ -1,0 +1,324 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<style>
+hr {
+    color: blue;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}
+</style>
+
+    <br><br><br><h2 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/python.jpg') }}">
+    Welcome to the Python Introduction Homepage, <b>{{un}}</b>!</h2>
+
+    <hr>
+
+    <br>
+
+    <p>
+
+        Python is a great high level programming language. It was developed by
+        Guido Van Rossum during the late 1980's. Python is a all purpose programming
+        language that boasts many interactive capabilities.
+        Python is a fully object oriented programming language that is fully interpreted. Python 3
+        was introduced in 2008, but the community has been slow to adopt 3 fully. Python dev's respond
+        to this slow paste with, "There should be one -- and preferably only one -- obvious way to do it." Therefor,
+        I've chosen Python 3 as my development tool because I wish to further progress on Python. If we hold onto the past,
+        python 2.7, etc, then we will never grow as a community.
+
+    </p>
+
+    <br>
+
+    <hr>
+
+    <h3>Details</h3>
+
+    <p> This tutorial, of sorts, will detail Python 3.5, which is the latest Python version at the time of the <a href="/dashboard/">Meraki</a>
+        site creation. Python 3 has a lot of similarities to versions lower than 3.5. This page will walk you through getting started using Python 3, and
+        help you begin writing your first Hello World program!
+    </p>
+
+    <hr>
+
+    <h3>Interactive</h3>
+
+    <p> The user can enter python commands directly into a Python prompt, and the interpreter will interact directly with the user to write Python programs.
+    </p>
+
+    <br><br><p align="left"><img style="max-width: 200px; margin-top: -10px; " src="{{url_for('static', filename='photos/introduction/high-level-language.gif') }}"></p>
+
+    <hr>
+
+    <h3>What do you mean by High Level???</h3>
+
+    <p> Programming languages are categorized into levels; low, mid, and high level. Low level languages are the lowest level of programming
+        code a computer will understand, Machine code. Machine code is a programming language that is built upon binary or hexadecimal numbers.
+        All computers can understand and directly interact with machine code. Mid level code is the assembly language level. The high level
+        holds languages such as C++, C#, Java, Python, and more. Python is a advanced high level language, and is extremely easy to begin to
+        understand programming with. Python's high level attribute creates a very simplistic way to program for beginners.
+
+    </p>
+
+    <hr>
+
+    <h3>Object Orientation</h3>
+
+    <p>
+        Object oriented programming, OOP, is a type of computer programming. The programmer must program
+        the data types with accompanying data structures, and the programmer must import or define their
+        own functions to be applied to the data structures written. The data structure becomes an object
+        which contains data and functions to be used. The object orientation model creates a relationship
+        between one object and another one through inheritance. The characteristics of a parent object can
+        be inherited by the children of the object. Python fully supports the OOP technique that will encapsulate
+        the code written within objects inside Python. Some object oriented terminology consists of:
+
+    </p>
+
+    <h3>
+        &nbsp;Class
+    </h3>
+    <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A user-defined prototype for an object that defines a set of attributes that characterize any object of the class. The attributes are data members (class variables and instance variables) and methods, accessed via dot notation.
+    </p>
+
+    <h3>
+        &nbsp;Class variable
+    </h3>
+    <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A variable that is shared by all instances of a class. Class variables are defined within a class but outside any of the class's methods. Class variables are not used as frequently as instance variables are.
+    </p>
+
+    <h3>
+        &nbsp;Data member
+    </h3>
+    <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A class variable or instance variable that holds data associated with a class and its objects.
+    </p>
+
+    <h3>
+        &nbsp;Function overloading
+    </h3>
+    <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The assignment of more than one behavior to a particular function. The operation performed varies by the types of objects or arguments involved.
+    </p>
+
+    <h3>
+        &nbsp;Instance variable
+    </h3>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A variable that is defined inside a method and belongs only to the current instance of a class.</p>
+
+    <h3>
+        &nbsp;Inheritance
+    </h3>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The transfer of the characteristics of a class to other classes that are derived from it.</p>
+
+    <h3>
+        &nbsp;Instance
+    </h3>
+
+    <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An individual object of a certain class. An object obj that belongs to a class Circle, for example, is an instance of the class Circle.
+    </p>
+
+    <h3>
+        &nbsp;Instantiation
+    </h3>
+
+    <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The creation of an instance of a class.
+    </p>
+
+    <h3>
+        &nbsp;Method
+    </h3>
+
+    <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A special kind of function that is defined in a class definition.
+    </p>
+
+    <h3>
+        &nbsp;Object
+    </h3>
+
+    <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A unique instance of a data structure that's defined by its class. An object comprises both data members (class variables and instance variables) and methods.
+    </p>
+
+    <h3>
+        &nbsp;Operator overloading
+    </h3>
+
+    <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The assignment of more than one function to a particular operator.
+    </p>
+
+    <hr>
+
+    <h3>Compiled</h3>
+
+    <p> Compiled languages looks at the entire code, and creates a machine code representation of the code being
+        compiled. The machine code is made up of ones and zeros. The code is made into an executable file and ran.
+        One advantage to compiling code opposed to interpreting the code is when you want to perform a task over
+        and over again. The execution time will be much lower if the code is compiled opposed to being interpreted
+        because it is already in machine code, and does not require being interpreted every single time the program
+        is run.
+    </p>
+
+    <hr>
+
+    <h3>Interpreted</h3>
+
+    <p> The python file is run and read line by line individually and executes the commands that are found.
+        Interpreted languages take each individual line and compile line by line until the end is reached. Python is
+        primarily interpreted, especially if you follow this tutorial, but Python can be compiled and run too. Python
+        is formally processed at run time by the installed interpreter.
+    </p>
+
+    <hr>
+
+    <h3>How to obtain Python 3.5</h3>
+
+    <p>The first thing you want to do is install python onto your system.</p>
+
+    <p>
+        <ul>
+            <li>Visit the <b><a href="https://www.python.org/downloads/">Python</a></b> Website</li>
+            <li>Download Python 3.5 for your particular operating system</li>
+            <li><b>BE SURE TO</b> install python somewhere you will be able to find it easy</li>
+            <li>The location will be needed later on in the installed, trust me. </li>
+            <li>For Windows Users: Definitely install for all users</li>
+            <li>Finish the installation and restart your system</li>
+            <li>Python 3.5 and other versions of Python can run, but that is advanced and looking way ahead</li>
+        </ul>
+
+    </p>
+
+    <hr>
+
+    <h3>IDE?? Command Prompt??</h3>
+
+    <p>
+        This tutorial will use the IDE <a href="https://www.jetbrains.com/pycharm/">PyCharm</a>, which is free to students and faculty. You can alternatively
+        create .py files using a text editor, like notepad++, and run the files using a command prompt. You need to look up
+        how to change directories and show the contents of the directories on your specific system. Change into the directory
+        of the py file you created using the text editor and type -> python3 run filename.py
+
+    </p>
+
+    <p>The user can go <b><a href="https://www.tutorialspoint.com/python3/python_environment.htm">Here</a></b> to obtain more information on installing Python onto other operating systems.</p>
+
+    <p>Pycharm is my choice for IDEs. Pycharm has everything a user needs to run python scripts and any server related ideas you might have!</p>
+
+    <p>
+
+        Pycharm provides each student and faculty with a year subscription to their service free of charge upon verification of their institutional
+        credentials. Pycharm also provides a 30 day evaluation trial if needed. Once you have <a href="https://www.jetbrains.com/pycharm/">PyCharm</a>
+        downloaded, install the Pycharm onto your system. Keep the default settings unless you are sure you know what you're doing, mate. Once, the
+        installation is complete, go ahead and restart your system to ensure all changes are in order. Pycharm should've picked up on the fact that
+        you have Python3.5 installed, but if not, when we create a <b>New Project</b> we will see how to accomplish that.
+
+    </p>
+
+    <hr>
+
+    <h3>Pycharm Installation Cont...</h3>
+
+    <p>
+        Once <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> is up and running, click on File at the top left, then new project, and Pure python.
+        Pycharm shows you two options at the top: Location and Interpreter. The Location is just the absolute path to the file being saved. The
+        default usually names the file untitled.py unless specified otherwise. The <b>Interpreter</b> correspondes to where you installed Python 3.5 on your
+        system. I told you that you would need to know the location of Python, didn't I? Click create at the bottom right of the widget window. Now...
+    </p>
+
+    <br><br><p align="center"><img style="max-width: 800px; margin-top: -10px; " src="{{url_for('static', filename='photos/introduction/create_file.jpg') }}"></p>
+
+    <hr>
+
+    <h3>Getting Started</h3>
+
+    <p>Once you click on Python File, you will be prompted to enter a name, enter hello_world and click ok.</p>
+
+    <p>type this into the white space <b>print("Hello World, I've made my first Python program!")</b></p>
+
+    <p>Now...Right click on hello_world.py and Run 'hello_world'</p>
+
+    <br><br><p align="center"><img style="max-width: 800px; margin-top: -10px; " src="{{url_for('static', filename='photos/introduction/run_file.jpg') }}"></p>
+
+    <br><h3><b>Congratulations</b>, you have officially created your first python program, sort of. :D</h3>
+
+    <hr>
+
+    <h3>Advanced Beginners material</h3>
+
+    <p>From here on we will use a main function that will act like a main function in Java or C++. So, delete your print statement inside
+       the python file, and type the following in:
+    </p>
+
+    <blockquote>
+
+        <p>def my_name():</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;name = input("Enter your name: ")</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;return name</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp; </p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp; </p>
+        <p>def my_mood():</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;mood = input("How are you feeling today: ")</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;return mood</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp; </p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp; </p>
+        <p>def main():</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;your_name = my_name()</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;print("Hello " + str(your_name) + "!")</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;your_mood = my_mood()</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;print("Well, today is just going to get better, I promise!")</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp; </p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp; </p>
+        <p>if __name__ == "__main__":</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;main()</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp; </p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp; </p>
+    </blockquote>
+
+    <br>
+
+    <p>Make sure that there is two spaces between each function and two at the end after main()</p>
+
+    <p>We are defining two functions, my_name and my_mood, which prompts the user for his/her name and his/her mood
+       The responses are saved as string variables and returned back to be saved as variables themselves. The variable
+       your_name is saved as whatever you entered as your name, and the same goes for your_mood. We will discuss exactly
+       why you need two spaces in the syntax page for Python.
+    </p>
+
+    <br><br><p align="left"><img style="max-width: 800px; margin-top: -10px; " src="{{url_for('static', filename='photos/introduction/hello_world.jpg') }}"></p>
+
+    <br>
+
+    <hr>
+
+    <h3 style="text-align: center;">Next, is the syntax part of Python</h3>
+
+    <p style="text-align: center;">We will discuss the basic syntax rules of Python, and dive into what that __name__ == __main__ junk is all about, {{un}}</p>
+
+
+    <br>
+
+    <a href="/Java/final_thoughts"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Java - Final Thoughts
+    </button></a>
+
+    <a href="/Python/syntax"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        Python - Syntax <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><br><hr><br><br><br>
+{% endblock %}

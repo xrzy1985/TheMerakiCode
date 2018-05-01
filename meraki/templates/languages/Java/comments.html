@@ -1,0 +1,113 @@
+{% extends "header.html" %}
+    {% block body %}
+
+    <title>Meraki : Java : Comments</title>
+
+    <style>
+    hr {
+        color: blue;
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: 10px;
+    }
+    </style>
+
+        <br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Java.png') }}">
+        Welcome to the Java Comments page, mate!</h1>
+
+        <hr>
+
+        <blockquote>
+
+            Java's Comments and Their importance:
+            <br>
+            The Java language supports single-line and multi-line comments, in a fashion very similar to C and C++. Anything inside any comment is ignored by the Java compiler.
+
+        </blockquote>
+
+
+<p style="text-indent: 50px;">
+Comments are essential for any code that will be shared with others, worked on collaboratively, or even referenced/worked on by you in the future.</br>
+This is to say that comments are nearly always important. They allow you to describe, in the midst of the code, the things they code may be doing. The compiler ignores the comment entries
+and doesn't run it as code. </br>
+
+</br>
+Java's comment structure is identical to C++, so the same examples as the C++ page on comments are included here: </br>
+I will first demonstrate how single line
+comments are done.
+</p>
+</br>
+<h2>Single Line Comments</h2>
+<div class ="code">
+<p>
+//I'm a single line comment!
+</p>
+</div>
+<p>For Multi Line comments, you start with
+/* and terminate the comment section with */ </p>
+<h2>Multi Line Comments</h2>
+<div class="code">
+<p>/*This demonstrates
+</br>
+Multi Line Comments. */ </p>
+</div>
+
+    <br><hr><br>
+
+    <p style="text-indent: 50px;">
+
+        Again, I will use the same Java file from the syntax page to give you a perfect example of how to properly comment code out.
+        Comments are not stressed enough within programming classes, videos, or by professors. A good programmer can relearn what
+        he/she wrote a few years ago, but a smart programmer doesn't have to remember because he/she wrote out effective comments
+        within the code for themselves or other people who might read the code later on. Comments should be used in any fashion that
+        is suitable, or in any way your company or professor directs you to. I prefer to code with single line comments, I don't have to
+        close off them at the end, and it helps me keep things organized better. Find your own niche and run with it, but do get in the
+        habit of commenting the code out properly.
+
+    </p>
+
+    <br><hr><br>
+
+    <p>
+
+    <p>// Inside java, everything is a class or an object<br />// public class defines all the attributes, variables, <br />// data structures, functions, methods, or additional functionality<br /><br />// public means everyone should be able to access it<br /><br />public class Tutorial1 <br />{<br />&nbsp;&nbsp;&nbsp; // public allows all classes to use this function<br />&nbsp;&nbsp; &nbsp;// static only a class can call for this function, variable, etc to execute<br />&nbsp;&nbsp; &nbsp;// the class main will be called/used by helloWorld<br />&nbsp;&nbsp; &nbsp;// void means the function does not return any values when execution is finished<br />&nbsp;&nbsp; &nbsp;// (String[]args) means every main function must accept an array of string objects<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;// the static variable will be able to be used by the main function since its static<br />&nbsp;&nbsp; &nbsp;// the string gamerTag holds the string of characters xRzy</p>
+    <p><br />&nbsp;&nbsp; &nbsp;static String gamerTag = "xRzy";<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;// PIE is a double, but could be cast as a float as well<br />&nbsp;&nbsp; &nbsp;// Double is larger and more precise than a float</p>
+    <p><br />&nbsp;&nbsp; &nbsp;static final double PIE = 3.141529;<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;public static void main (String[]args)<br />&nbsp;&nbsp; &nbsp;{<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// The first two will print on the same line<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.print("James ");<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.print("Patterson; " + gamerTag + "\n");<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// The \n will drop to the next line<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("\nHello, World!");<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("\nPi: " +&nbsp; PIE);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// a integer variable is created and assigned the value of 21<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// this is a DECLARATION STATEMENT<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;int randomInteger = 21;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("\nOne must be " + randomInteger + " to drink legally.");<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// another int is created using the first variable minus 3<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// this is known as a EXPRESSION STATEMENT<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;int randomInteger2 = randomInteger -3; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("\nOne must be " + randomInteger2 + " to smoke legally.");<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// a byte data type cannot be larger than 127 and a minimum of -128<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;byte bigByte = 127;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// a short data type cannot be larger than 32767 and a minimum of -32768<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;short smallShort = 32767; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("\n" + smallShort);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;int bigInt = 2100000000;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("\n" + bigInt);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// a long must end in a L<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;long bigLong = 920000000000000000L;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("\n" + bigLong);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// a float variable is a long winded double variable<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// it is machine dependant<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;float bigFloat = 3.14F;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("\n" + bigFloat);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;double bigDouble = 3.143425352365645634563456;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("\n" + bigDouble);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.print("\nThe largest float your machine can create is: ");<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.print(Float.MAX_VALUE);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.print("\nThe largest double your machine can create is: ");<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.print(Double.MAX_VALUE);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// boolean variables are either true or false<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// they cannot hold any other type of input<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;boolean tF = true;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("\n" + tF);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// a char is just a character <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;char badge1 = 74;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//74 is the character code for J<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;char badge2 = 'P';<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;char badge3 = '8';<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;char badge4 = '5';<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;String badge = "Tag: ";<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// Escaped Characters<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// \f \b \n \r \t \" \' \\<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// the \ must be used before hand<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// and they need to be inclosed in a ''<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;char escaped = '\n';<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println(escaped + badge + badge1 + badge2 + badge3 + badge4);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;String sentence1 = escaped + "This is my first sentence, ";<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;String sentence2 = "but it will&nbsp; not be my last";<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println(sentence1 + sentence2);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// To convert any of the other types to a string<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// you must cast the variable as a string<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;String byteString = Byte.toString(bigByte);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println(escaped + bigByte);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println(escaped + byteString);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;double variable1 = 17.432;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;int doubleToInt = (int) variable1;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println(escaped + doubleToInt);&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("\nGoodbye, World!");<br /><br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// println will print on a new line each time<br />&nbsp;&nbsp; &nbsp;}<br />}</p>
+
+    </p>
+
+    <br><hr><br>
+
+
+    <p>
+
+        <p>James Patterson; xRzy<br /><br />Hello, World!<br /><br />Pi: 3.141529<br /><br />One must be 21 to drink legally.<br /><br />One must be 18 to smoke legally.<br /><br />32767<br /><br />2100000000<br /><br />920000000000000000<br /><br />3.14<br /><br />3.1434253523656457<br /><br />The largest float your machine can create is: 3.4028235E38<br />The largest double your machine can create is: 1.7976931348623157E308<br />true<br /><br />Tag: JP85<br /><br />This is my first sentence, but it will&nbsp; not be my last<br />137<br /><br />127<br />27<br /><br />Goodbye, World!</p>
+
+    </p>
+
+
+    <br><hr><br>
+
+    <h3 style="text-align: center;">
+            Objects and Classes
+    </h3>
+
+    <p style="text-align: center;">
+        Next, we will look at Objects and Classes, and how they form the cornerstone of Java's modular, "Object Oriented" design.
+    </p>
+
+    <a href="/Java/syntax/"><button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Java - Syntax
+    </button></a>
+
+    <a href="/Java/objects_classes/"><button type="button" class="btn btn-default btn-lg" style="float: right;">
+        Java - Objects and Classes   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+    {% endblock %}

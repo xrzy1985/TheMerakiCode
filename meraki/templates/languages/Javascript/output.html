@@ -1,0 +1,229 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<!-- The import required for AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<script>
+function myFunction() {
+    document.getElementById("tutorial").innerHTML = "You can do so much more with Javascript";
+}
+</script>
+
+<!--=================================================================================================================================
+
+White space         : &nbsp;
+bold tag            : <b></b>
+Indent              : <p style="text-indent: 50px;">    </p>
+Horz Bar with \n    : <br><hr class="ones"><br>
+hyper link          : <a href="/location/">TEXT</a>
+bootstrap glyphs    : <span class="glyph-goes-here" aria-hidden="true"></span>
+image               : <img src="{{url_for('static', filename='photos/cover.jpg') }}">
+DL of static file   : <a href="/static/resume/Resume30August2016.doc">Here</a>
+
+use .container for containing responsive fixed width containers
+unable to be nested
+
+    <div class="container">
+    ...
+    </div>
+
+use .container-fluid for a full width container, which will span across the entire viewport
+
+    <div class="container-fluid">
+    ...
+    </div>
+
+<p style="text-indent: 50px;">
+
+</p>
+=================================================================================================================================-->
+
+    <br><br><br><h3 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Javascript/javascript.png') }}">
+    Welcome to the Javascript Output Homepage, <b>{{un}}</b>!</h3>
+
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+    <p class="intro">
+        <center><b>
+            Javascript | Displayable Outputs
+        </b></center>
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <p>
+
+        <b>Javascript</b> can render data, code, or information in many different ways;
+
+        <ul>
+            <li>
+                <p>
+                    <b>
+                        innerHTML
+                    </b>
+                    can be used when writing into an HTML element
+                </p>
+            </li>
+            <li>
+                <p>
+                    <b>
+                        document.write()
+                    </b>
+                    can be used when writing into an HTML elements output
+                </p>
+            </li>
+            <li>
+                <p>
+                    <b>
+                        window.alert()
+                    </b>
+                    is used for writing information inside an alert box
+                </p>
+            </li>
+            <li>
+                <p>
+                    <b>
+                        console.log()
+                    </b>
+                    for when you need to write to the browser's console
+                </p>
+            </li>
+        </ul>
+
+    </p>
+
+    <br>
+
+    <p>
+        To access most HTML elements, Javascript will use the document.getElementById(id) method. This will allow
+        the programmer to give an element a specific id, and change the values stored inside of that element at will.
+        The id attribute will define the HTML element, but the innerHTML attribute will define the HTML content. The
+        following code will add text to an element that holds no data, but does have an id set to tutorial. Changing the
+        innerHTML value is one common way to display data inside HTML. You can create an empty element with a specific
+        id assigned to it, and when needed javascript can trigger the element to be populated. You could render the elemener
+        invisible, and cast it as visible using javascript when needed as well.
+    </p>
+
+    <div style="margin-left: 100px;">
+
+        <div class="w3-code notranslate htmlHigh"><span style="color: brown;"><span style="color: mediumblue;">&lt;</span>!DOCTYPE<span style="color: red;"> html</span><span style="color: mediumblue;">&gt;</span></span><br /><span style="color: brown;"><span style="color: mediumblue;">&lt;</span>html<span style="color: mediumblue;">&gt;</span></span><br />&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: brown;"><span style="color: mediumblue;">&lt;</span>body<span style="color: mediumblue;">&gt;</span></span><br /> <br /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <span style="color: brown;"><span style="color: mediumblue;">&lt;</span>h1<span style="color: mediumblue;">&gt;</span></span>This is a Large Heading; h1<span style="color: brown;"><span style="color: mediumblue;">&lt;</span>/h1<span style="color: mediumblue;">&gt;</span></span><br /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <span style="color: brown;"><span style="color: mediumblue;">&lt;</span>p<span style="color: mediumblue;">&gt;</span></span>This is a normal paragraph<span style="color: brown;"><span style="color: mediumblue;">&lt;</span>/p<span style="color: mediumblue;">&gt;</span></span><br /> <br /><span style="color: brown;"><span style="color: mediumblue;">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;</span>p<span style="color: red;"> id<span style="color: mediumblue;">="tutorial"</span></span><span style="color: mediumblue;">&gt;</span></span><span style="color: brown;"><span style="color: mediumblue;">&lt;</span>/p<span style="color: mediumblue;">&gt;</span></span><br /> <br /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <span style="color: brown;"><span style="color: mediumblue;">&lt;</span>script<span style="color: mediumblue;">&gt;</span></span><span style="color: black;"><br /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; document.getElementById(<span style="color: brown;">"tutorial"</span>).innerHTML = <span style="color: red;">James Patterson</span>;<br /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: brown;"><span style="color: mediumblue;">&lt;</span>/script<span style="color: mediumblue;">&gt;</span></span><br /> <br /> <span style="color: brown;"><span style="color: mediumblue;">&lt;</span>/body<span style="color: mediumblue;">&gt;</span></span><br /> <span style="color: brown;"><span style="color: mediumblue;">&lt;</span>/html<span style="color: mediumblue;">&gt;</span></span></div>
+
+    </div>
+
+    <p>
+        The h1 heading will be rendered first, then the p element with text, and finally a null p element will be rendered. Once
+        the code reaches the javascript script tags, the null element will display James Patterson. You could place any kind of
+        information to be stored this way. You can do calculations dynamically using javascript.
+    </p>
+
+<!--========================================================================================================================-->
+    <br>
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+    <br>
+<!--========================================================================================================================-->
+
+    <p>
+        <b>document.write()</b> for inserting data or information into a certain part of the HTML document without the need to
+        insert a null element. The script tags act as a variable, holding the information, and giving the programmer the ability
+        to place the block of variable wherever is convenient at the time. The code below will insert the line , 11 concatened with a string variable,
+        right after the paragraph element with text my first paragraph associated with it.
+    </p>
+
+    <div style="margin-left: 100px;">
+
+        <div class="w3-code notranslate htmlHigh"><span style="color: brown;"><span style="color: mediumblue;">&lt;</span>!DOCTYPE<span style="color: red;"> html</span><span style="color: mediumblue;">&gt;</span></span><br /><span style="color: brown;"><span style="color: mediumblue;">&lt;</span>html<span style="color: mediumblue;">&gt;</span></span><br />&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: brown;"><span style="color: mediumblue;">&lt;</span>body<span style="color: mediumblue;">&gt;</span></span><br /> <br /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <span style="color: brown;"><span style="color: mediumblue;">&lt;h2&gt;My First Web Page&lt;/h2&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;My first paragraph.&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.write(5 + 6 + " concatened with a string variable");<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/script&gt;</span></span><br /> <br /> <span style="color: brown;"><span style="color: mediumblue;">&lt;</span>/body<span style="color: mediumblue;">&gt;</span></span><br /> <span style="color: brown;"><span style="color: mediumblue;">&lt;</span>/html<span style="color: mediumblue;">&gt;</span></span></div>
+
+    </div>
+
+    <br>
+
+    <p>
+
+        <b>Although,</b> document.write() should not be used after the HTML document has been fully loaded. Let us say, we create a button
+        that will document.write(5 + 6) which will result in 11. The button will effectively delete all existing HTML elements on the HTML
+        document, and the document will be replaced with only the number 11. The following code will illustrate this fact:
+
+    </p>
+
+
+    <div style="margin-left: 100px;">
+
+        <div class="w3-code notranslate htmlHigh"><span style="color: brown;"><span style="color: mediumblue;">&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;h2&gt;My First Web Page&lt;/h2&gt;<br />&nbsp;&nbsp;&nbsp; &lt;p&gt;My first paragraph.&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;button type="button" onclick="document.write(5 + 6)"&gt;Try it&lt;/button&gt;<br /><br />&nbsp; &lt;/body&gt;<br />&lt;/html&gt; <br /></span></span></div>
+
+    </div>
+
+    <h4>It is said that document.write() should only be used during testing or for testing purposes.</h4>
+
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <p>
+        <b>window.alert()</b> can be used when you want to use an alert box to display all sorts of data.
+    </p>
+
+    <div style="margin-left: 100px;">
+
+        <div class="w3-code notranslate htmlHigh"><span style="color: brown;"><span style="color: mediumblue;">&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;h2&gt;My First Web Page&lt;/h2&gt;<br />&nbsp;&nbsp;&nbsp; &lt;p&gt;My first paragraph.&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp; window.alert(5 + 6 + ": It is annoying to just have a window pop up");<br />&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp; &lt;/body&gt;<br />&lt;/html&gt; </span></span></div>
+
+    </div>
+
+    <br>
+
+    <p>
+
+        The window.alert() can be used with buttons, but displaying a window alert automatically is annoying and should not be done.
+        I repeat, avoid using the window.alert() without the use of a button assigned to it. Your users will be annoyed, and frequent
+        your web application a lot less if you apply automatic window alerts.
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <p>
+        <b>console.log()</b> is for debugging purposes only, and the console.log() method will display data via the web browser's console.
+    </p>
+
+    <div style="margin-left: 100px;">
+
+        <div class="w3-code notranslate htmlHigh"><span style="color: brown;"><span style="color: mediumblue;">&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;h2&gt;Activate debugging with F12&lt;/h2&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p&gt;Select "Console" in the debugger menu.&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; console.log("James is a genius! Nah, not really");<br />&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp; &lt;/body&gt;<br />&lt;/html&gt; </span></span></div>
+
+    </div>
+
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+
+        <h3 style="text-align: center;">Next, we will take a look at </h3>
+
+        <p style="text-align: center;">Just follow the buttons to continue the tutorial, {{un}}</p>
+
+
+        <br>
+
+        <a href="/Javascript/installation"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Javascript - Installation
+        </button></a>
+
+        <a href="/Javascript/syntax"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        Javascript - Syntax <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        </button></a>
+
+{% endblock %}

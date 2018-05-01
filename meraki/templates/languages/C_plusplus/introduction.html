@@ -1,0 +1,135 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<style>
+hr {
+    color: blue;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}
+</style>
+
+    <br><br><br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/c_plusplus.png') }}">
+    Welcome to the C++ Introduction Homepage, mate!</h1>
+
+    <hr>
+
+    <blockquote>
+
+        C++ Introduction Information
+
+    </blockquote>
+<style>
+.code
+{
+	background-color: #E0FFFF;
+}
+.output
+{
+	background-color: #000000;
+	color: #ffffff;
+}
+h1
+{
+	text-align: center;
+	text-decoration: underline;
+}
+h2
+{
+	text-decoration: underline;
+}
+.content
+{
+	text-align: center;
+}
+table
+{
+background-color: #6495ed;
+color: #ffffff;
+border: solid 2px black;
+}
+</style>
+<p>C++ is a general purpose object oriented programming language that was developed by Bjarne Stroustrup back in 1979 at Bell Labs.
+</br>
+C++ is capable of running on a variety of platforms including Windows, Mac OS, and the many versions of UNIX.
+</br>
+C++ has served as an influence for many programming languages such as C#, D and Java.
+</br>
+</br>
+Unlike C# and Java, C++ is not a memory safe language.
+</br>
+C++ is not considered memory safe because it allows pointer arithmetic and doesn't have an implicit garbage collection unlike C# and Java.
+</br>
+C++ got its name since it is considered one step ahead of C. The ++ implies an increment of 1, and thus C++ is considered an incremenation of C.
+</br>
+</br>
+To get started coding, you will need to download an IDE(Integrated Development Environment) located here
+</p>
+<p><a href="https://codelite.org/">https://codelite.org/</a></p>
+<p>Now that you have a coding environment, let's check out a simple hello world program!</p>
+<h2>Hello World</h2>
+<div class="code">
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com">#include</span> <span class="str">&lt;iostream&gt;</span>
+
+<span class="kwd">int</span><span class="pln"> main</span><span class="pun">()</span> <span class="pun">{</span><span class="pln">
+   std::cout </span><span class="pun">&lt;&lt;</span> <span class="str">"Hello World"</span><span class="pun">;</span>
+   <span class="kwd">return</span> <span class="lit">0</span><span class="pun">;</span>
+<span class="pun">}</span></pre>
+</div>
+<h2>Output</h2>
+<div class="output">
+<p>Hello World</p>
+</div>
+<p>Notice that std::cout? There's an easier way to write console output by adding using namespace std like so!</p>
+<h2>Hello World With Namespace </h2>
+<div class="code">
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com">#include</span> <span class="str">&lt;iostream&gt;</span>
+using namespace std;
+<span class="kwd">int</span><span class="pln"> main</span><span class="pun">()</span> <span class="pun">{</span><span class="pln">
+   cout </span><span class="pun">&lt;&lt;</span> <span class="str">"Hello World"</span><span class="pun">;</span>
+   <span class="kwd">return</span> <span class="lit">0</span><span class="pun">;</span>
+<span class="pun">}</span></pre>
+</div>
+<h2>Output</h2>
+<div class="output">
+<p>Hello World</p>
+</div>
+<p>Notice how much how easier that it is to type? You're accomplishing the same thing with less work.</p>
+<p>I'll break down what's going on here down for you</p>
+<ul>
+<li><strong>using</strong>: You are going to use it</li>
+<li><strong>namespace</strong>: To use what? A namespace</li>
+<li><strong>std</strong>: The <code>std</code> namespace (where features of the C++ Standard Library, such as <code>string</code> or <code>vector</code>, are declared).</li>
+</ul>
+<br><hr><br>
+
+    <h3 style="text-align: center;">
+            Syntax
+    </h3>
+
+    <p style="text-align: center;">
+        Next, we will discuss the syntax of C++.
+    </p>
+
+    <a href="/Python/final_thoughts"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Python - Final Thoughts
+    </button></a>
+
+    <a href="/C_plusplus/syntax"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        C++ - Syntax   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,398 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<style>
+hr {
+    color: blue;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}
+</style>
+
+    <br><br><br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/python.jpg') }}">
+    Welcome to the Python functions page, <b>{{un}}</b>!</h1>
+
+    <hr>
+
+    <blockquote>
+
+       A function is a block of code that can be reused at any time. The function should only perform
+       one specific action. If can set something, return something, take parameters, delete something,
+       and just about anything you can imagine. Functions allow for a higher modularity for the program,
+       and allow the programmer to reuse the code. Python has a lot of built in functions, like the
+       print() function or casting a integer to string str(number). You can define your own functions easily, {{un}}.
+       <p>Lets see how</p>
+
+    </blockquote>
+
+    <br>
+
+    <h3>
+        Defining a Function inside Python
+    </h3>
+
+    <br>
+
+    <p>
+        Here are simple rules to define a function in Python.
+    </p>
+
+    <ul>
+        <li>Function blocks begin with the keyword def followed by the function name and parentheses ( ( ) ).</li>
+        <li>Any input parameters or arguments should be placed within these parentheses. You can also define parameters inside these parentheses.</li>
+        <li>The first statement of a function can be an optional statement - the documentation string of the function or docstring.</li>
+        <li>The code block within every function starts with a colon (:) and is indented.</li>
+        <li>The statement return [expression] exits a function, optionally passing back an expression to the caller. A return statement with no arguments is the same as return None.</li>
+    </ul>
+
+    <br>
+
+    <h3>
+        Syntax behind Functions
+    </h3>
+
+    <br>
+
+    <p>
+        <b>Parameters</b> are what can be passed to a function. They are variables, placeholders, for a real variable that will
+        be used in the Python code. For example, the following photo is a python script that asks for the users name, takes the name and
+        feeds it into a print_name function. The print_name function takes the string and casts it to uppercase letters. The string is
+        then printed. You could've returned the string and printed it after the print_name(st) call, or you could've
+        <br>
+        <p>
+            print (print_name(st))
+        </p>
+        <br>
+        <p>
+            That would work if you had set print_name to return s instead of printing. You could print it within print_name and return the variable
+            to be printed or used further down the road. {{un}}, the sky is the limit with Python!
+        </p>
+
+        <h3>
+            Calling a Function
+        </h3>
+
+        <p>
+            We used a function call within our script below. On line 9, print_name(st) is calling the function print_name giving the function
+            the st parameter which is a string data type with the name we entered stored inside of it.
+        </p>
+
+    </p>
+
+    <br><hr><br>
+
+    <p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/functions/function.jpg') }}"></p>
+
+    <br><hr><br>
+
+    <h3>
+        By Reference or By Value
+    </h3>
+
+    <p>
+        All of the parameters within the Python programming language are passed by reference. That means, if you change
+        what a parameter refers to within the function, the change will have results in the calling function. The photo below
+        is an example of how the results can be felt globally, not just locally within the scope of your program.
+    </p>
+
+    <br><hr><br>
+
+    <p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/functions/callfunction.jpg') }}"></p>
+
+    <br><hr><br>
+
+    <p>Here, we are maintaining reference of the passed object and appending values in the same object. So, this would produce the following result &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="typ">Values</span><span class="pln"> inside the </span><span class="kwd">function</span><span class="pln"> before change</span><span class="pun">:</span>  <span class="pun">[</span><span class="lit">10</span><span class="pun">,</span> <span class="lit">20</span><span class="pun">,</span> <span class="lit">30</span><span class="pun">]</span>
+<span class="typ">Values</span><span class="pln"> inside the </span><span class="kwd">function</span><span class="pln"> after change</span><span class="pun">:</span>  <span class="pun">[</span><span class="lit">10</span><span class="pun">,</span> <span class="lit">20</span><span class="pun">,</span> <span class="lit">50</span><span class="pun">]</span>
+<span class="typ">Values</span><span class="pln"> outside the </span><span class="kwd">function</span><span class="pun">:</span>  <span class="pun">[</span><span class="lit">10</span><span class="pun">,</span> <span class="lit">20</span><span class="pun">,</span> <span class="lit">50</span><span class="pun">]</span></pre>
+<p>There is one more example where argument is being passed by reference and the reference is being overwritten inside the called function.</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Run on any IDE, mate!</span>
+
+<span class="com"># Function definition is here</span>
+<span class="kwd">def</span><span class="pln"> changeme</span><span class="pun">(</span><span class="pln"> mylist </span><span class="pun">):</span>
+   <span class="str">"This changes a passed list into this function"</span><span class="pln">
+   mylist </span><span class="pun">=</span> <span class="pun">[</span><span class="lit">1</span><span class="pun">,</span><span class="lit">2</span><span class="pun">,</span><span class="lit">3</span><span class="pun">,</span><span class="lit">4</span><span class="pun">]</span> <span class="com"># This would assi new reference in mylist</span>
+   <span class="kwd">print</span> <span class="pun">(</span><span class="str">"Values inside the function: "</span><span class="pun">,</span><span class="pln"> mylist</span><span class="pun">)</span>
+   <span class="kwd">return</span>
+
+<span class="com"># Now you can call changeme function</span><span class="pln">
+mylist </span><span class="pun">=</span> <span class="pun">[</span><span class="lit">10</span><span class="pun">,</span><span class="lit">20</span><span class="pun">,</span><span class="lit">30</span><span class="pun">]</span><span class="pln">
+changeme</span><span class="pun">(</span><span class="pln"> mylist </span><span class="pun">)</span>
+<span class="kwd">print</span> <span class="pun">(</span><span class="str">"Values outside the function: "</span><span class="pun">,</span><span class="pln"> mylist</span><span class="pun">)</span></pre>
+<p>The parameter <em>mylist</em> is local to the function changeme. Changing mylist within the function does not affect <em>mylist</em>. The function accomplishes nothing and finally this would produce the following result:</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="typ">Values</span><span class="pln"> inside the </span><span class="kwd">function</span><span class="pun">:</span>  <span class="pun">[</span><span class="lit">1</span><span class="pun">,</span> <span class="lit">2</span><span class="pun">,</span> <span class="lit">3</span><span class="pun">,</span> <span class="lit">4</span><span class="pun">]</span>
+<span class="typ">Values</span><span class="pln"> outside the </span><span class="kwd">function</span><span class="pun">:</span>  <span class="pun">[</span><span class="lit">10</span><span class="pun">,</span> <span class="lit">20</span><span class="pun">,</span> <span class="lit">30</span><span class="pun">]</span></pre>
+<h2>Function Arguments</h2>
+<p>You can call a function by using the following types of formal arguments:</p>
+<ul class="list">
+<li>
+<p>Required arguments</p>
+</li>
+<li>
+<p>Keyword arguments</p>
+</li>
+<li>
+<p>Default arguments</p>
+</li>
+<li>
+<p>Variable-length arguments</p>
+</li>
+</ul>
+<h2>Required arguments</h2>
+<p>Required arguments are the arguments passed to a function in correct positional order. Here, the number of arguments in the function call should match exactly with the function definition.</p>
+<p>To call the function <em>printme()</em>, you definitely need to pass one argument, otherwise it gives a syntax error as follows &minus;</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Run on any IDE, mate!</span>
+
+<span class="com"># Function definition is here</span>
+<span class="kwd">def</span><span class="pln"> printme</span><span class="pun">(</span><span class="pln"> str </span><span class="pun">):</span>
+   <span class="str">"This prints a passed string into this function"</span>
+   <span class="kwd">print</span> <span class="pun">(</span><span class="pln">str</span><span class="pun">)</span>
+   <span class="kwd">return</span>
+
+<span class="com"># Now you can call printme function</span><span class="pln">
+printme</span><span class="pun">()</span></pre>
+<p>When the above code is executed, it produces the following result:</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="typ">Traceback</span> <span class="pun">(</span><span class="pln">most recent call </span><span class="kwd">last</span><span class="pun">):</span>
+  <span class="typ">File</span> <span class="str">"test.py"</span><span class="pun">,</span><span class="pln"> line </span><span class="lit">11</span><span class="pun">,</span> <span class="kwd">in</span> <span class="str">&lt;module&gt;</span><span class="pln">
+    printme</span><span class="pun">();</span>
+<span class="typ">TypeError</span><span class="pun">:</span><span class="pln"> printme</span><span class="pun">()</span><span class="pln"> takes exactly </span><span class="lit">1</span><span class="pln"> argument </span><span class="pun">(</span><span class="lit">0</span><span class="pln"> given</span><span class="pun">)</span></pre>
+<h2>Keyword arguments</h2>
+<p>Keyword arguments are related to the function calls. When you use keyword arguments in a function call, the caller identifies the arguments by the parameter name.</p>
+<p>This allows you to skip arguments or place them out of order because the Python interpreter is able to use the keywords provided to match the values with parameters. You can also make keyword calls to the <em>printme()</em> function in the following ways &minus;</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Run on any IDE, mate!</span>
+
+<span class="com"># Function definition is here</span>
+<span class="kwd">def</span><span class="pln"> printme</span><span class="pun">(</span><span class="pln"> str </span><span class="pun">):</span>
+   <span class="str">"This prints a passed string into this function"</span>
+   <span class="kwd">print</span> <span class="pun">(</span><span class="pln">str</span><span class="pun">)</span>
+   <span class="kwd">return</span>
+
+<span class="com"># Now you can call printme function</span><span class="pln">
+printme</span><span class="pun">(</span><span class="pln"> str </span><span class="pun">=</span> <span class="str">"My string"</span><span class="pun">)</span></pre>
+<p>When the above code is executed, it produces the following result &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="typ">My</span> <span class="kwd">string</span></pre>
+<p>The following example gives more clear picture. Note that the order of parameters does not matter.</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Run on any IDE, mate!</span>
+
+<span class="com"># Function definition is here</span>
+<span class="kwd">def</span><span class="pln"> printinfo</span><span class="pun">(</span><span class="pln"> name</span><span class="pun">,</span><span class="pln"> age </span><span class="pun">):</span>
+   <span class="str">"This prints a passed info into this function"</span>
+   <span class="kwd">print</span> <span class="pun">(</span><span class="str">"Name: "</span><span class="pun">,</span><span class="pln"> name</span><span class="pun">)</span>
+   <span class="kwd">print</span> <span class="pun">(</span><span class="str">"Age "</span><span class="pun">,</span><span class="pln"> age</span><span class="pun">)</span>
+   <span class="kwd">return</span>
+
+<span class="com"># Now you can call printinfo function</span><span class="pln">
+printinfo</span><span class="pun">(</span><span class="pln"> age</span><span class="pun">=</span><span class="lit">50</span><span class="pun">,</span><span class="pln"> name</span><span class="pun">=</span><span class="str">"miki"</span> <span class="pun">)</span></pre>
+<p>When the above code is executed, it produces the following result &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="typ">Name</span><span class="pun">:</span><span class="pln">  miki
+</span><span class="typ">Age</span>  <span class="lit">50</span></pre>
+<h2>Default arguments</h2>
+<p>A default argument is an argument that assumes a default value if a value is not provided in the function call for that argument. The following example gives an idea on default arguments, it prints default age if it is not passed &minus;</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Run on any IDE, mate!</span>
+
+<span class="com"># Function definition is here</span>
+<span class="kwd">def</span><span class="pln"> printinfo</span><span class="pun">(</span><span class="pln"> name</span><span class="pun">,</span><span class="pln"> age </span><span class="pun">=</span> <span class="lit">35</span> <span class="pun">):</span>
+   <span class="str">"This prints a passed info into this function"</span>
+   <span class="kwd">print</span> <span class="pun">(</span><span class="str">"Name: "</span><span class="pun">,</span><span class="pln"> name</span><span class="pun">)</span>
+   <span class="kwd">print</span> <span class="pun">(</span><span class="str">"Age "</span><span class="pun">,</span><span class="pln"> age</span><span class="pun">)</span>
+   <span class="kwd">return</span>
+
+<span class="com"># Now you can call printinfo function</span><span class="pln">
+printinfo</span><span class="pun">(</span><span class="pln"> age</span><span class="pun">=</span><span class="lit">50</span><span class="pun">,</span><span class="pln"> name</span><span class="pun">=</span><span class="str">"miki"</span> <span class="pun">)</span><span class="pln">
+printinfo</span><span class="pun">(</span><span class="pln"> name</span><span class="pun">=</span><span class="str">"miki"</span> <span class="pun">)</span></pre>
+<p>When the above code is executed, it produces the following result &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="typ">Name</span><span class="pun">:</span><span class="pln">  miki
+</span><span class="typ">Age</span>  <span class="lit">50</span>
+<span class="typ">Name</span><span class="pun">:</span><span class="pln">  miki
+</span><span class="typ">Age</span>  <span class="lit">35</span></pre>
+<h2>Variable-length arguments</h2>
+<p>You may need to process a function for more arguments than you specified while defining the function. These arguments are called <em>variable-length</em> arguments and are not named in the function definition, unlike required and default arguments.</p>
+<p>Syntax for a function with non-keyword variable arguments is this &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">def</span><span class="pln"> functionname</span><span class="pun">([</span><span class="pln">formal_args</span><span class="pun">,]</span> <span class="pun">*</span><span class="pln">var_args_tuple </span><span class="pun">):</span>
+   <span class="str">"function_docstring"</span><span class="pln">
+   function_suite
+   </span><span class="kwd">return</span> <span class="pun">[</span><span class="pln">expression</span><span class="pun">]</span></pre>
+<p>An asterisk (*) is placed before the variable name that holds the values of all nonkeyword variable arguments. This tuple remains empty if no additional arguments are specified during the function call. Following is a simple example &minus;</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Run on any IDE, mate!</span>
+
+<span class="com"># Function definition is here</span>
+<span class="kwd">def</span><span class="pln"> printinfo</span><span class="pun">(</span><span class="pln"> arg1</span><span class="pun">,</span> <span class="pun">*</span><span class="pln">vartuple </span><span class="pun">):</span>
+   <span class="str">"This prints a variable passed arguments"</span>
+   <span class="kwd">print</span> <span class="pun">(</span><span class="str">"Output is: "</span><span class="pun">)</span>
+   <span class="kwd">print</span> <span class="pun">(</span><span class="pln">arg1</span><span class="pun">)</span>
+   <span class="kwd">for</span> <span class="kwd">var</span> <span class="kwd">in</span><span class="pln"> vartuple</span><span class="pun">:</span>
+      <span class="kwd">print</span> <span class="pun">(</span><span class="kwd">var</span><span class="pun">)</span>
+   <span class="kwd">return</span>
+
+<span class="com"># Now you can call printinfo function</span><span class="pln">
+printinfo</span><span class="pun">(</span> <span class="lit">10</span> <span class="pun">)</span><span class="pln">
+printinfo</span><span class="pun">(</span> <span class="lit">70</span><span class="pun">,</span> <span class="lit">60</span><span class="pun">,</span> <span class="lit">50</span> <span class="pun">)</span></pre>
+<p>When the above code is executed, it produces the following result &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="typ">Output</span> <span class="kwd">is</span><span class="pun">:</span>
+<span class="lit">10</span>
+<span class="typ">Output</span> <span class="kwd">is</span><span class="pun">:</span>
+<span class="lit">70</span>
+<span class="lit">60</span>
+<span class="lit">50</span></pre>
+<h2>The <em>Anonymous</em> Functions</h2>
+<p>These functions are called anonymous because they are not declared in the standard manner by using the <em>def</em> keyword. You can use the <em>lambda</em> keyword to create small anonymous functions.</p>
+<ul class="list">
+<li>
+<p>Lambda forms can take any number of arguments but return just one value in the form of an expression. They cannot contain commands or multiple expressions.</p>
+</li>
+<li>
+<p>An anonymous function cannot be a direct call to print because lambda requires an expression</p>
+</li>
+<li>
+<p>Lambda functions have their own local namespace and cannot access variables other than those in their parameter list and those in the global namespace.</p>
+</li>
+<li>
+<p>Although it appears that lambda's are a one-line version of a function, they are not equivalent to inline statements in C or C++, whose purpose is by passing function stack allocation during invocation for performance reasons.</p>
+</li>
+</ul>
+<h2>Syntax</h2>
+<p>The syntax of <em>lambda</em> functions contains only a single statement, which is as follows &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">lambda</span> <span class="pun">[</span><span class="pln">arg1 </span><span class="pun">[,</span><span class="pln">arg2</span><span class="pun">,.....</span><span class="pln">argn</span><span class="pun">]]:</span><span class="pln">expression</span></pre>
+<p>Following is the example to show how <em>lambda</em> form of function works &minus;</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Run on any IDE, mate!</span>
+
+<span class="com"># Function definition is here</span><span class="pln">
+sum </span><span class="pun">=</span> <span class="kwd">lambda</span><span class="pln"> arg1</span><span class="pun">,</span><span class="pln"> arg2</span><span class="pun">:</span><span class="pln"> arg1 </span><span class="pun">+</span><span class="pln"> arg2
+
+
+
+</span><span class="com"># Now you can call sum as a function</span>
+<span class="kwd">print</span> <span class="pun">(</span><span class="str">"Value of total : "</span><span class="pun">,</span><span class="pln"> sum</span><span class="pun">(</span> <span class="lit">10</span><span class="pun">,</span> <span class="lit">20</span> <span class="pun">))</span>
+<span class="kwd">print</span> <span class="pun">(</span><span class="str">"Value of total : "</span><span class="pun">,</span><span class="pln"> sum</span><span class="pun">(</span> <span class="lit">20</span><span class="pun">,</span> <span class="lit">20</span> <span class="pun">))</span></pre>
+<p>When the above code is executed, it produces the following result &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="typ">Value</span><span class="pln"> of total </span><span class="pun">:</span>  <span class="lit">30</span>
+<span class="typ">Value</span><span class="pln"> of total </span><span class="pun">:</span>  <span class="lit">40</span></pre>
+<h2>The <em>return</em> Statement</h2>
+<p>The statement return [expression] exits a function, optionally passing back an expression to the caller. A return statement with no arguments is the same as return None.</p>
+<p>All the above examples are not returning any value. You can return a value from a function as follows &minus;</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Run on any IDE, mate!</span>
+
+<span class="com"># Function definition is here</span>
+<span class="kwd">def</span><span class="pln"> sum</span><span class="pun">(</span><span class="pln"> arg1</span><span class="pun">,</span><span class="pln"> arg2 </span><span class="pun">):</span>
+   <span class="com"># Add both the parameters and return them."</span><span class="pln">
+   total </span><span class="pun">=</span><span class="pln"> arg1 </span><span class="pun">+</span><span class="pln"> arg2
+   </span><span class="kwd">print</span> <span class="pun">(</span><span class="str">"Inside the function : "</span><span class="pun">,</span><span class="pln"> total</span><span class="pun">)</span>
+   <span class="kwd">return</span><span class="pln"> total
+
+</span><span class="com"># Now you can call sum function</span><span class="pln">
+total </span><span class="pun">=</span><span class="pln"> sum</span><span class="pun">(</span> <span class="lit">10</span><span class="pun">,</span> <span class="lit">20</span> <span class="pun">)</span>
+<span class="kwd">print</span> <span class="pun">(</span><span class="str">"Outside the function : "</span><span class="pun">,</span><span class="pln"> total </span><span class="pun">)</span></pre>
+<p>When the above code is executed, it produces the following result &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="typ">Inside</span><span class="pln"> the </span><span class="kwd">function</span> <span class="pun">:</span>  <span class="lit">30</span>
+<span class="typ">Outside</span><span class="pln"> the </span><span class="kwd">function</span> <span class="pun">:</span>  <span class="lit">30</span></pre>
+<h2>Scope of Variables</h2>
+<p>All variables in a program may not be accessible at all locations in that program. This depends on where you have declared a variable.</p>
+<p>The scope of a variable determines the portion of the program where you can access a particular identifier. There are two basic scopes of variables in Python &minus;</p>
+<ul class="list">
+<li>
+<p>Global variables</p>
+</li>
+<li>
+<p>Local variables</p>
+</li>
+</ul>
+<h2>Global vs. Local variables</h2>
+<p>Variables that are defined inside a function body have a local scope, and those defined outside have a global scope.</p>
+<p>This means that local variables can be accessed only inside the function in which they are declared, whereas global variables can be accessed throughout the program body by all functions. When you call a function, the variables declared inside it are brought into scope. Following is a simple example &minus;</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Run on any IDE, mate!</span><span class="pln">
+
+total </span><span class="pun">=</span> <span class="lit">0</span> <span class="com"># This is global variable.</span>
+<span class="com"># Function definition is here</span>
+<span class="kwd">def</span><span class="pln"> sum</span><span class="pun">(</span><span class="pln"> arg1</span><span class="pun">,</span><span class="pln"> arg2 </span><span class="pun">):</span>
+   <span class="com"># Add both the parameters and return them."</span><span class="pln">
+   total </span><span class="pun">=</span><span class="pln"> arg1 </span><span class="pun">+</span><span class="pln"> arg2</span><span class="pun">;</span> <span class="com"># Here total is local variable.</span>
+   <span class="kwd">print</span> <span class="pun">(</span><span class="str">"Inside the function local total : "</span><span class="pun">,</span><span class="pln"> total</span><span class="pun">)</span>
+   <span class="kwd">return</span><span class="pln"> total
+
+</span><span class="com"># Now you can call sum function</span><span class="pln">
+sum</span><span class="pun">(</span> <span class="lit">10</span><span class="pun">,</span> <span class="lit">20</span> <span class="pun">)</span>
+<span class="kwd">print</span> <span class="pun">(</span><span class="str">"Outside the function global total : "</span><span class="pun">,</span><span class="pln"> total </span><span class="pun">)</span></pre>
+<p>When the above code is executed, it produces the following result &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="typ">Inside</span><span class="pln"> the </span><span class="kwd">function</span> <span class="kwd">local</span><span class="pln"> total </span><span class="pun">:</span>  <span class="lit">30</span>
+<span class="typ">Outside</span><span class="pln"> the </span><span class="kwd">function</span> <span class="kwd">global</span><span class="pln"> total </span><span class="pun">:</span>  <span class="lit">0</span></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+    <h3>
+
+    </h3>
+
+    <p>
+
+    </p>
+
+    <br><hr><br>
+
+    <p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/folder/file.jpg') }}"></p>
+
+    <br><hr><br>
+-->
+
+    <h3 style="text-align: center;">
+            Objects & Classes
+    </h3>
+
+    <p style="text-align: center;">
+        Next, we will discuss Objects & Classes within Python
+    </p>
+
+    <br><hr><br>
+
+    <a href="/Python/loop_control"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Python - Loop Control
+    </button></a>
+
+    <a href="/Python/objects_classes"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        Python - Objects & Classes   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+{% endblock %}

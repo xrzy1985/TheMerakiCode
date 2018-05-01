@@ -1,0 +1,248 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<!-- The import required for AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<script>
+function myFunction() {
+    document.getElementById("tutorial").innerHTML = "You can do so much more with Javascript";
+}
+</script>
+
+<!--=================================================================================================================================
+
+White space         : &nbsp;
+bold tag            : <b></b>
+Indent              : <p style="text-indent: 50px;">    </p>
+Horz Bar with \n    : <br><hr class="ones"><br>
+hyper link          : <a href="/location/">TEXT</a>
+bootstrap glyphs    : <span class="glyph-goes-here" aria-hidden="true"></span>
+image               : <img src="{{url_for('static', filename='photos/cover.jpg') }}">
+DL of static file   : <a href="/static/resume/Resume30August2016.doc">Here</a>
+
+use .container for containing responsive fixed width containers
+unable to be nested
+
+    <div class="container">
+    ...
+    </div>
+
+use .container-fluid for a full width container, which will span across the entire viewport
+
+    <div class="container-fluid">
+    ...
+    </div>
+
+<p style="text-indent: 50px;">
+
+</p>
+=================================================================================================================================-->
+
+    <br><br><br><h3 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Javascript/javascript.png') }}">
+    Welcome to the Javascript Installation Homepage, <b>{{un}}</b>!</h3>
+
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+    <p class="intro">
+        <center><b>
+            Javascript | Installation
+        </b></center>
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <p style="text-indent: 50px;">
+
+        <b>Javascript</b> is easy to get set up and running. You can write script elements to store your javascript code within
+        your HTML code, but that is not recommended. I would recommend creating a separate javascript file, like in the folder
+        in the last tutorial, and using the javascript file to keep all of your javascript code. You can use notepad++ to edit
+        HTML files, javascript files, and CSS files. Javascript is the default scripting language in HTML today. Javascript has
+        functions, much like other OOP languages, that will be executed when called on. For example,
+
+    </p>
+
+    <br>
+
+    <p id="tutorial">Javascript can change text, CSS features, or even make hidden objects appear.</p>
+    <button style="background: white; color: blue;" type="button" onclick="myFunction(); document.getElementById('tutorial_installation1').style.display='block'; document.getElementById('tutorial_installation2').style.display='block'; document.getElementById('tutorial_installation3').style.display='block'">Click here to Try it</button>
+
+
+
+<!--========================================================================================================================-->
+    <br>
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+    <br>
+<!--========================================================================================================================-->
+
+    <p style="text-indent: 50px;" >
+
+        <h2>Javascript within the Head element</h2>
+
+        <br>
+
+        <div id="tutorial_installation1" style="margin-left: 100px; display:none;">
+
+            <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&lt;head&gt;<br />&lt;script&gt;<br />function myFunction() {<br />&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML = "You can do so much more with Javascript.";<br />}<br />&lt;/script&gt;<br />&lt;/head&gt;<br /><br />&lt;body&gt;<br /><br />&lt;h2&gt;The sentence below will change once you click the button.&lt;/h2&gt;<br /><br />&lt;p id="tutorial"&gt;If you click the button, you can see a glimpse of what JS offers.&lt;/p&gt;<br /><br />&lt;button type="button" onclick="myFunction()"&gt;Try it&lt;/button&gt;<br /><br />&lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        </div>
+
+    </p>
+
+
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <p style="text-indent: 50px;" >
+
+        <h2>Javascript within the Body element</h2>
+
+        <br>
+
+        <div id="tutorial_installation2" style="margin-left: 100px; display:none;">
+
+            <div>&lt;!DOCTYPE html&gt;<br /> &lt;html&gt;<br /> &lt;body&gt; <br /><br />&lt;h1&gt;A Web Page&lt;/h1&gt;<br /> &lt;p id="demo"&gt;A Paragraph&lt;/p&gt;<br /> &lt;button type="button" onclick="myFunction()"&gt;Try it&lt;/button&gt;<br /> <br />&lt;script&gt;<br /> function myFunction() {<br /> document.getElementById("demo").innerHTML = "Paragraph changed.";<br /> }<br /> &lt;/script&gt;<br /> <br />&lt;/body&gt;<br /> &lt;/html&gt;</div>
+
+        </div>
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <p style="text-indent: 50px;" >
+
+        <h2>Javascript Externally</h2>
+
+        <br>
+
+        <div id="tutorial_installation3" style="margin-left: 100px; display:none;">
+
+            <h4>You will place the following code inside your script.js file: </h4>
+
+            <br>
+
+            <p>function myFunction() {<br /> document.getElementById("tutorial").innerHTML = "You can do so much more with Javascript";<br /> }</p>
+
+            <br>
+
+            <h4>Your html file will resemble this outline: </h4>
+
+            <br>
+
+            <div>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br /> &lt;body&gt;<br /><br /> &lt;script src="script.js"&gt;&lt;/script&gt;<br /> <br />&lt;/body&gt;<br /> &lt;/html&gt;</div>
+
+            <br>
+
+            <h4>You can use the following html code to run the above example: </h4>
+
+            <br>
+
+            <div>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&lt;body&gt;<br /><br />&lt;h2&gt;External JavaScript&lt;/h2&gt;<br /><br />&lt;p id="tutorial"&gt;If you click the button, you can see a glimpse of what JS offers.&lt;/p&gt;<br /><br />&lt;button type="button" onclick="myFunction()"&gt;Try it&lt;/button&gt;<br /><br />&lt;p&gt;(myFunction is stored in an external file called "script.js")&lt;/p&gt;<br /><br />&lt;script src="script.js"&gt;&lt;/script&gt;<br /><br />&lt;/body&gt;<br />&lt;/html&gt;</div>
+
+        </div>
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <p style="text-indent: 50px;" >
+
+        <b>Javascript</b> can be located in the body or head elements of an HTML document, or both of them at the same time.
+        The examples above illustrate how javascript can be inserted into the head, the body, or externally depending on
+        what your preferences and needs are. If you are planning on just using a small bit of javascript, use script tags, and
+        insert the code within your HTML document. If you plan on having a very javascript dependent web application, you will
+        need to create external javascript files to encompass your vision. External scripts are feasible when the programmer
+        needs to reuse the same code on many different web pages. I prefer to create individual javascript files along with
+        specific HTML files to ensure I do not mix and match information. I might have different needs on one HTML document then
+        I have on another one. So, I like to organize the HTML files and javascript files accordingly.
+
+    </p>
+
+    <br>
+
+    <p><b>Javascript</b> uses the file extension; <b>.js</b></p>
+
+    <br>
+
+    <p>To place the external script inside an HTML document the user will need to have one of these</p>
+
+    <br>
+
+    <p><div>&lt;script src="/location/to/static/script/script.js"&gt;&lt;/script&gt;</div></p>
+
+    <br>
+
+    <p>The external script must be referenced in the head or the body element. The script will assume the data
+        that would otherwise be located within the script tags you create. External js files do not contain script
+        tags, of course. External files separates HTML and JS, which will ease some of the clutter caused by too
+        much code being inside one file. The separation makes HTML, CSS, and JS much easier to read and maintain,
+        and cached Javascript files can speed up the loading time of the web application. You can multiple scripts
+        to one file just by adding addition script tags:
+    </p>
+
+    <br>
+
+    <p><div>&lt;script src="/location/to/static/javascript/file_1.js"&gt;&lt;/script&gt;</div></p>
+
+    <br>
+
+    <p><div>&lt;script src="/location/to/static/javascript/file_2.js"&gt;&lt;/script&gt;</div></p>
+
+    <br>
+
+    <p>
+        <b>Javascript</b> external scripts can be referenced with a full URL:
+    </p>
+
+    <br>
+
+    <div>
+        <div>&lt;script src="https://www.whateverwebsiteisyours.com/js/script1.js"&gt;&lt;/script&gt;</div>
+
+        <div><b>Import by placing the code below in the head or body elements</b></div>
+
+        <div>
+            <div>&lt;script src="/js/script1.js"&gt;&lt;/script&gt;</div>
+        </div>
+    </div>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+
+        <h3 style="text-align: center;">Next, we will take a look at the different ways Javascript renders Output</h3>
+
+        <p style="text-align: center;">Just follow the buttons to continue the tutorial, {{un}}</p>
+
+
+        <br>
+
+        <a href="/Javascript/introduction"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Javascript - Introduction
+        </button></a>
+
+        <a href="/Javascript/output"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        Javascript - Output <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        </button></a>
+
+{% endblock %}

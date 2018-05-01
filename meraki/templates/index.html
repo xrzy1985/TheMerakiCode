@@ -1,0 +1,1065 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<div>
+
+    <!-- Nav tabs -->
+    <div>
+        <ul class="nav nav-pills" role="tablist">
+            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+            <li role="presentation"><a href="#angularjs" aria-controls="angularjs" role="tab" data-toggle="tab">AngularJS</a></li>
+            <li role="presentation"><a href="#c_plusplus" aria-controls="c_plusplus" role="tab" data-toggle="tab">C++</a></li>
+            <li role="presentation"><a href="#c_sharp" aria-controls="c_sharp" role="tab" data-toggle="tab">C#</a></li>
+            <li role="presentation"><a href="#html" aria-controls="html" role="tab" data-toggle="tab">HTML</a></li>
+            <li role="presentation"><a href="#java" aria-controls="java" role="tab" data-toggle="tab">Java</a></li>
+            <li role="presentation"><a href="#javascript" aria-controls="javascript" role="tab" data-toggle="tab">Javascript</a></li>
+            <li role="presentation"><a href="#python" aria-controls="python" role="tab" data-toggle="tab">Python</a></li>
+            <li role="presentation"><a href="#sql" aria-controls="sql" role="tab" data-toggle="tab">SQL</a></li>
+        </ul>
+    </div>
+      <!-- Tab panes -->
+        <div class="tab-content">
+
+            {% if session.logged_in %}
+		        <div role="tabpanel" class="tab-pane fade in active" id="home">
+                <br>
+                    <h4 align="center">Hello <b>{{un}}</b>, We hope you're having a great day.</h4>
+
+                        <center><img style="margin: 10px 10px 10px 10px;" src="{{url_for('static', filename='/webpages/index/index_bg.jpg')}}" alt="coming.jpg"></center>
+                        <h4 align="center">To get started learning about a programming language</h4>
+                        <h4 align="center">Click on one of the language tabs, or</h4>
+                        <h4 align="center">Click on Navigation at the top left, Mate.</h4>
+                        <br>
+                        <hr>
+                        <br>
+                        <div><center>
+                            <h5>
+                            <b>Update: </b><span> 08/23/17 : Functions completed and Objects are currently underway on Javascript.</span>
+                            </h5>
+
+                            <br>
+
+                            <h5>
+                            <b>Update: </b><span> 08/18/17 : Comments, Variables, Operators, Arithmetic, Assignments, Data Types, and Functions added to Javascript.</span>
+                            </h5>
+
+                            <br>
+
+                            <h5>
+                            <b>Update: </b><span> 08/15/17 : Additional Javascript tutorials on comments, variables, and arithmetic coming soon.</span>
+                            </h5>
+
+                            <br>
+
+                            <h5>
+                            <b>Update: </b><span> 08/11/17 : Plan on adding more AngularJS, Javascript, and New Swift tutorials soon.</span>
+                            </h5>
+
+                            <br>
+
+                            <h5>
+                                <b>Update: </b><span> 08/11/17 : Added 7 new Javascript tutorials and 5 new AngularJS tutorials.</span>
+                            </h5>
+
+                            <br>
+
+                            <h5>
+                                <b>Update: </b><span> 08/01/17 : Added 1 new Javascript tutorials and 1 new AngularJS tutorials.</span>
+                            </h5>
+
+                            <br>
+
+                            <h5>
+                                <b>Update: </b><span> 07/24/17 : Added a new HTML introduction to the tutorials.</span>
+                            </h5>
+
+                            <br>
+
+                            <h5>
+                                <b>Update: </b><span> 06/19/17 : Currently working on indexing all of my Java code.</span>
+                            </h5>
+                        </center></div>
+                </div>
+		    {% else %}
+		        <div role="tabpanel" class="tab-pane fade in active" id="home">
+
+                    <h4><center>Hello and welcome to meraki, you beautiful people.</center></h4>
+                    <center><img style="margin: 10px 10px 10px 10px;" src="{{url_for('static', filename='/webpages/index/index_bg.jpg')}}" alt="coming.jpg"></center>
+                    <h4 align="center">Click on one of the language tabs to get started learning about a language, or</h4>
+                    <h4 align="center">click on register at the top right to become a member, Mate.</h4>
+                    <br>
+                    <hr>
+                    <br>
+                    <div><center>
+                            <h5>
+                            <b>Update: </b><span> 08/23/17 : Functions completed and Objects are currently underway on Javascript.</span>
+                            </h5>
+                            <br>
+                            <h5>
+                            <b>Update: </b><span> 08/18/17 : Comments, Variables, Operators, Arithmetic, Assignments, Data Types, and Functions added to Javascript.</span>
+                            </h5>
+                            <br>
+                            <h5>
+                            <b>Update: </b><span> 08/15/17 : Additional Javascript tutorials on comments, variables, and arithmetic coming soon.</span>
+                            </h5>
+                            <br>
+                            <h5>
+                            <b>Update: </b><span> 08/11/17 : Plan on adding more AngularJS, Javascript, and New Swift tutorials soon.</span>
+                            </h5>
+                            <br>
+                            <h5>
+                                <b>Update: </b><span> 08/11/17 : Added 7 new Javascript tutorials and 5 new AngularJS tutorials.</span>
+                            </h5>
+                            <br>
+                            <h5>
+                                <b>Update: </b><span> 08/01/17 : Added 1 new Javascript tutorials and 1 new AngularJS tutorials.</span>
+                            </h5>
+                            <br>
+                            <h5>
+                                <b>Update: </b><span> 07/24/17 : Added a new HTML introduction to the tutorials.</span>
+                            </h5>
+                            <br>
+                            <h5>
+                                <b>Update: </b><span> 06/19/17 : Currently working on indexing all of my Java code.</span>
+                            </h5>
+                        </center></div>
+
+
+                </div>
+			{% endif %}
+
+
+            <div role="tabpanel" class="tab-pane fade" id="java">
+
+                <h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='webpages/Java/introduction/Java.jpg') }}">
+                Welcome to the Java Introduction, mate!</h1>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                <blockquote>
+
+                    <h2>What is Java?</h2>
+                    <ul>
+                    <li>Java is an object-oriented programming language originally developed by Sun Microsystems and released in 1995.</li>
+                    <li>Java was originally developed by <strong>James Gosling</strong> at <strong>Sun Microsystems</strong> (which has since merge into Oracle Corporation).</li>
+                    <li>Java programs are platform independent which means they can be run on any operating system with any type of processor as long as the Java interpreter is available on that system.</li>
+                    <li>Java code that runs on one platform does not need to be recompiled to run on another platform, it&#8217;s called &#8220;write once, run anywhere&#8221; (WORA).</li>
+                    <li><a href="/java-tutorial/java-virtual-machine/" target="_blank">Java Virtual Machine (JVM)</a> executes Java code, but is written in platform specific languages such as <a href="/c/intro/" target="_blank">C</a>/<a href="/cplusplus/intro/" target="_blank">C++</a>/ASM etc. JVM is not written in Java and hence <strong>cannot be platform independent</strong> and Java interpreter is actually a part of JVM.</li>
+                    </ul>
+
+                    </blockquote>
+
+                    <!--========================================================================================================================-->
+                        <br>
+                        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                        <br>
+                    <!--========================================================================================================================-->
+
+                    <h2>Types of Java Applications</h2>
+                    <ol>
+                    <li><strong>Web Application</strong> Java is used to create server-side web applications. Currently, servlet, jsp, struts, jsf etc. technologies are used.</li>
+                    <li><strong>Standalone Application</strong> It is also known as desktop application or window-based application. An application that we need to install on every machine or server such as media player, antivirus etc. AWT and Swing are used in java for creating standalone applications.</li>
+                    <li><strong>Enterprise Application</strong> An application that is distributed in nature, such as banking applications etc. It has the advantage of high level security, load balancing and clustering. In java, EJB is used for creating enterprise applications.</li>
+                    <li><strong>Mobile Application</strong> Java is used to create application softwares for mobile devices. Currently Java ME is used for creating applications for small devices, and also Java is programming language for Google Android application development.</li>
+                    </ol>
+
+                        <blockquote>
+
+                    <h2>Popular Java Editors</h2>
+                        <p>To write your java programs you will need a text editor. There are even more sophisticated IDE available in the market. But for now, you can consider one of the following:
+                    <ul>
+                    <li><strong>Notepad &#8211; </strong>On Windows machine you can use any simple text editor like Notepad (Recommended for this tutorial), TextPad.</li>
+                    <li><strong>Netbeans</strong> &#8211; is a Java IDE that is open source and free which can be downloaded from <a href="http://www.netbeans.org/index.html" target="_blank" rel="nofollow">http://www.netbeans.org/index.html</a></li>
+                    <li><strong>Eclipse &#8211; </strong>is also a java IDE developed by the eclipse open source community and can be downloaded from <a href="http://www.eclipse.org/" target="_blank" rel="nofollow">http://www.eclipse.org/</a></li>
+                    </ul>
+                    <hr>
+
+                        </blockquote>
+                        <blockquote>
+                        <h2>Example of a basic Java program</h2>
+                        <div class ="code">
+
+                            <p><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #0000ff;">public class Hello</span></span></span></span></span></span></p>
+                            <p><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #0000ff;">{</span></span></span></span></span></span></p>
+                            <p><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #0000ff;">&nbsp;&nbsp;&nbsp; public static void main(String[] args)</span></span></span></span></span></span></p>
+                            <p><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #0000ff;">&nbsp;&nbsp;&nbsp; {</span></span></span></span></span></span></p>
+                            <p><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #0000ff;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.println("Hello Java");<br />&nbsp;&nbsp;&nbsp; }<br />}</span></span></span></span></span></span></p>
+
+                        </div>
+                        </blockquote>
+
+                    <!--========================================================================================================================-->
+                        <br>
+                        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                        <br>
+                    <!--========================================================================================================================-->
+
+                        <h3 align="center">To get started learning more about Java, <a href="/register/"><b>Register</b></a> and become a member!</h3>
+
+                    <!--========================================================================================================================-->
+                        <br>
+                        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                        <br>
+                    <!--========================================================================================================================-->
+
+            </div>
+
+<!-- ===============================================================================================================================================-->
+
+            <div role="tabpanel" class="tab-pane fade" id="python">
+
+                <h2 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='webpages/Python/python.jpg') }}">
+                Welcome to the Python Introduction Homepage, <b>{{un}}</b>!</h2>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                <p>
+
+                    Python is a great high level programming language. It was developed by
+                    Guido Van Rossum during the late 1980's. Python is a all purpose programming
+                    language that boasts many interactive capabilities.
+                    Python is a fully object oriented programming language that is fully interpreted. Python 3
+                    was introduced in 2008, but the community has been slow to adopt 3 fully. Python dev's respond
+                    to this slow paste with, "There should be one -- and preferably only one -- obvious way to do it." Therefor,
+                    I've chosen Python 3 as my development tool because I wish to further progress on Python. If we hold onto the past,
+                    python 2.7, etc, then we will never grow as a community.
+
+                </p>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                <h3>Details</h3>
+
+                <p> This tutorial, of sorts, will detail Python 3.5, which is the latest Python version at the time of the <a href="/dashboard/">Meraki</a>
+                    site creation. Python 3 has a lot of similarities to versions lower than 3.5. This page will walk you through getting started using Python 3, and
+                    help you begin writing your first Hello World program!
+                </p>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                <h3>Interactive</h3>
+
+                <p> The user can enter python commands directly into a Python prompt, and the interpreter will interact directly with the user to write Python programs.
+                </p>
+
+                <br><br><p align="left"><img style="max-width: 200px; margin-top: -10px; " src="{{url_for('static', filename='photos/introduction/high-level-language.gif') }}"></p>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                <h3>What do you mean by High Level???</h3>
+
+                <p> Programming languages are categorized into levels; low, mid, and high level. Low level languages are the lowest level of programming
+                    code a computer will understand, Machine code. Machine code is a programming language that is built upon binary or hexadecimal numbers.
+                    All computers can understand and directly interact with machine code. Mid level code is the assembly language level. The high level
+                    holds languages such as C++, C#, Java, Python, and more. Python is a advanced high level language, and is extremely easy to begin to
+                    understand programming with. Python's high level attribute creates a very simplistic way to program for beginners.
+
+                </p>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                <h3>Object Orientation</h3>
+
+                <p>
+                    Object oriented programming, OOP, is a type of computer programming. The programmer must program
+                    the data types with accompanying data structures, and the programmer must import or define their
+                    own functions to be applied to the data structures written. The data structure becomes an object
+                    which contains data and functions to be used. The object orientation model creates a relationship
+                    between one object and another one through inheritance. The characteristics of a parent object can
+                    be inherited by the children of the object. Python fully supports the OOP technique that will encapsulate
+                    the code written within objects inside Python. Some object oriented terminology consists of:
+
+                </p>
+
+                <h3>
+                    &nbsp;Class
+                </h3>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A user-defined prototype for an object that defines a set of attributes that characterize any object of the class. The attributes are data members (class variables and instance variables) and methods, accessed via dot notation.
+                </p>
+
+                <h3>
+                    &nbsp;Class variable
+                </h3>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A variable that is shared by all instances of a class. Class variables are defined within a class but outside any of the class's methods. Class variables are not used as frequently as instance variables are.
+                </p>
+
+                <h3>
+                    &nbsp;Data member
+                </h3>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A class variable or instance variable that holds data associated with a class and its objects.
+                </p>
+
+                <h3>
+                    &nbsp;Function overloading
+                </h3>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The assignment of more than one behavior to a particular function. The operation performed varies by the types of objects or arguments involved.
+                </p>
+
+                <h3>
+                    &nbsp;Instance variable
+                </h3>
+
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A variable that is defined inside a method and belongs only to the current instance of a class.</p>
+
+                <h3>
+                    &nbsp;Inheritance
+                </h3>
+
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The transfer of the characteristics of a class to other classes that are derived from it.</p>
+
+                <h3>
+                    &nbsp;Instance
+                </h3>
+
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An individual object of a certain class. An object obj that belongs to a class Circle, for example, is an instance of the class Circle.
+                </p>
+
+                <h3>
+                    &nbsp;Instantiation
+                </h3>
+
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The creation of an instance of a class.
+                </p>
+
+                <h3>
+                    &nbsp;Method
+                </h3>
+
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A special kind of function that is defined in a class definition.
+                </p>
+
+                <h3>
+                    &nbsp;Object
+                </h3>
+
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A unique instance of a data structure that's defined by its class. An object comprises both data members (class variables and instance variables) and methods.
+                </p>
+
+                <h3>
+                    &nbsp;Operator overloading
+                </h3>
+
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The assignment of more than one function to a particular operator.
+                </p>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                <h3>Compiled</h3>
+
+                <p> Compiled languages looks at the entire code, and creates a machine code representation of the code being
+                    compiled. The machine code is made up of ones and zeros. The code is made into an executable file and ran.
+                    One advantage to compiling code opposed to interpreting the code is when you want to perform a task over
+                    and over again. The execution time will be much lower if the code is compiled opposed to being interpreted
+                    because it is already in machine code, and does not require being interpreted every single time the program
+                    is run.
+                </p>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                <h3>Interpreted</h3>
+
+                <p> The python file is run and read line by line individually and executes the commands that are found.
+                    Interpreted languages take each individual line and compile line by line until the end is reached. Python is
+                    primarily interpreted, especially if you follow this tutorial, but Python can be compiled and run too. Python
+                    is formally processed at run time by the installed interpreter.
+                </p>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                <h3>How to obtain Python 3.5</h3>
+
+                <p>The first thing you want to do is install python onto your system.</p>
+
+                <p>
+                    <ul>
+                        <li>Visit the <b><a href="https://www.python.org/downloads/">Python</a></b> Website</li>
+                        <li>Download Python 3.5 for your particular operating system</li>
+                        <li><b>BE SURE TO</b> install python somewhere you will be able to find it easy</li>
+                        <li>The location will be needed later on in the installed, trust me. </li>
+                        <li>For Windows Users: Definitely install for all users</li>
+                        <li>Finish the installation and restart your system</li>
+                        <li>Python 3.5 and other versions of Python can run, but that is advanced and looking way ahead</li>
+                    </ul>
+
+                </p>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                <h3>IDE?? Command Prompt??</h3>
+
+                <p>
+                    This tutorial will use the IDE <a href="https://www.jetbrains.com/pycharm/">PyCharm</a>, which is free to students and faculty. You can alternatively
+                    create .py files using a text editor, like notepad++, and run the files using a command prompt. You need to look up
+                    how to change directories and show the contents of the directories on your specific system. Change into the directory
+                    of the py file you created using the text editor and type -> python3 run filename.py
+
+                </p>
+
+                <p>The user can go <b><a href="https://www.tutorialspoint.com/python3/python_environment.htm">Here</a></b> to obtain more information on installing Python onto other operating systems.</p>
+
+                <p>Pycharm is my choice for IDEs. Pycharm has everything a user needs to run python scripts and any server related ideas you might have!</p>
+
+                <p>
+
+                    Pycharm provides each student and faculty with a year subscription to their service free of charge upon verification of their institutional
+                    credentials. Pycharm also provides a 30 day evaluation trial if needed. Once you have <a href="https://www.jetbrains.com/pycharm/">PyCharm</a>
+                    downloaded, install the Pycharm onto your system. Keep the default settings unless you are sure you know what you're doing, mate. Once, the
+                    installation is complete, go ahead and restart your system to ensure all changes are in order. Pycharm should've picked up on the fact that
+                    you have Python3.5 installed, but if not, when we create a <b>New Project</b> we will see how to accomplish that.
+
+                </p>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                <h3>Pycharm Installation Cont...</h3>
+
+                <p>
+                    Once <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> is up and running, click on File at the top left, then new project, and Pure python.
+                    Pycharm shows you two options at the top: Location and Interpreter. The Location is just the absolute path to the file being saved. The
+                    default usually names the file untitled.py unless specified otherwise. The <b>Interpreter</b> correspondes to where you installed Python 3.5 on your
+                    system. I told you that you would need to know the location of Python, didn't I? Click create at the bottom right of the widget window. Now...
+                </p>
+
+                <br><br><p align="center"><img style="max-width: 800px; margin-top: -10px; " src="{{url_for('static', filename='photos/introduction/create_file.jpg') }}"></p>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                <h3>Getting Started</h3>
+
+                <p>Once you click on Python File, you will be prompted to enter a name, enter hello_world and click ok.</p>
+
+                <p>type this into the white space <b>print("Hello World, I've made my first Python program!")</b></p>
+
+                <p>Now...Right click on hello_world.py and Run 'hello_world'</p>
+
+                <br><br><p align="center"><img style="max-width: 800px; margin-top: -10px; " src="{{url_for('static', filename='photos/introduction/run_file.jpg') }}"></p>
+
+                <br><h3><b>Congratulations</b>, you have officially created your first python program, sort of. :D</h3>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                <h3>Advanced Beginners material</h3>
+
+                <p>From here on we will use a main function that will act like a main function in Java or C++. So, delete your print statement inside
+                   the python file, and type the following in:
+                </p>
+
+                <blockquote>
+
+                    <p>def my_name():</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;name = input("Enter your name: ")</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;return name</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; </p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; </p>
+                    <p>def my_mood():</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;mood = input("How are you feeling today: ")</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;return mood</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; </p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; </p>
+                    <p>def main():</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;your_name = my_name()</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;print("Hello " + str(your_name) + "!")</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;your_mood = my_mood()</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;print("Well, today is just going to get better, I promise!")</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; </p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; </p>
+                    <p>if __name__ == "__main__":</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;main()</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; </p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; </p>
+                </blockquote>
+
+                <br>
+
+                <p>Make sure that there is two spaces between each function and two at the end after main()</p>
+
+                <p>We are defining two functions, my_name and my_mood, which prompts the user for his/her name and his/her mood
+                   The responses are saved as string variables and returned back to be saved as variables themselves. The variable
+                   your_name is saved as whatever you entered as your name, and the same goes for your_mood. We will discuss exactly
+                   why you need two spaces in the syntax page for Python.
+                </p>
+
+                <br><br><p align="left"><img style="max-width: 800px; margin-top: -10px; " src="{{url_for('static', filename='photos/introduction/hello_world.jpg') }}"></p>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                    <h3 align="center">To get started learning more about Python, <a href="/register/"><b>Register</b></a> and become a member!</h3>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+
+
+            </div>
+
+<!-- ===============================================================================================================================================-->
+
+            <div role="tabpanel" class="tab-pane fade" id="c_plusplus">
+
+                <h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='webpages/C_PlusPlus/c_plusplus.jpg') }}">
+                    Welcome to the C++ Introduction Homepage, mate!</h1>
+
+                    <!--========================================================================================================================-->
+                        <br>
+                        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                        <br>
+                    <!--========================================================================================================================-->
+
+                    <blockquote>
+
+                        C++ Introduction Information
+
+                    </blockquote>
+                <style>
+                .code
+                {
+                	background-color: #E0FFFF;
+                }
+                .output
+                {
+                	background-color: #000000;
+                	color: #ffffff;
+                }
+                h1.o
+                {
+                	text-align: center;
+                	text-decoration: underline;
+                }
+                h2.o
+                {
+                	text-decoration: underline;
+                }
+                .content
+                {
+                	text-align: center;
+                }
+                table
+                {
+                background-color: #6495ed;
+                color: #ffffff;
+                border: solid 2px black;
+                }
+                </style>
+                <p>C++ is a general purpose object oriented programming language that was developed by Bjarne Stroustrup back in 1979 at Bell Labs.
+                </br>
+                C++ is capable of running on a variety of platforms including Windows, Mac OS, and the many versions of UNIX.
+                </br>
+                C++ has served as an influence for many programming languages such as C#, D and Java.
+                </br>
+                </br>
+                Unlike C# and Java, C++ is not a memory safe language.
+                </br>
+                C++ is not considered memory safe because it allows pointer arithmetic and doesn't have an implicit garbage collection unlike C# and Java.
+                </br>
+                C++ got its name since it is considered one step ahead of C. The ++ implies an increment of 1, and thus C++ is considered an incremenation of C.
+                </br>
+                </br>
+                To get started coding, you will need to download an IDE(Integrated Development Environment) located here
+                </p>
+                <p><a href="https://codelite.org/">https://codelite.org/</a></p>
+                <p>Now that you have a coding environment, let's check out a simple hello world program!</p>
+                <h2>Hello World</h2>
+                <div class="code">
+                <pre class="prettyprint notranslate tryit prettyprinted"><span class="com">#include</span> <span class="str">&lt;iostream&gt;</span>
+
+                <span class="kwd">int</span><span class="pln"> main</span><span class="pun">()</span> <span class="pun">{</span><span class="pln">
+                   std::cout </span><span class="pun">&lt;&lt;</span> <span class="str">"Hello World"</span><span class="pun">;</span>
+                   <span class="kwd">return</span> <span class="lit">0</span><span class="pun">;</span>
+                <span class="pun">}</span></pre>
+                </div>
+                <h2>Output</h2>
+                <div class="output">
+                <p>Hello World</p>
+                </div>
+                <p>Notice that std::cout? There's an easier way to write console output by adding using namespace std like so!</p>
+                <h2>Hello World With Namespace </h2>
+                <div class="code">
+                <pre class="prettyprint notranslate tryit prettyprinted"><span class="com">#include</span> <span class="str">&lt;iostream&gt;</span>
+                using namespace std;
+                <span class="kwd">int</span><span class="pln"> main</span><span class="pun">()</span> <span class="pun">{</span><span class="pln">
+                   cout </span><span class="pun">&lt;&lt;</span> <span class="str">"Hello World"</span><span class="pun">;</span>
+                   <span class="kwd">return</span> <span class="lit">0</span><span class="pun">;</span>
+                <span class="pun">}</span></pre>
+                </div>
+                <h2>Output</h2>
+                <div class="output">
+                <p>Hello World</p>
+                </div>
+                <p>Notice how much how easier that it is to type? You're accomplishing the same thing with less work.</p>
+                <p>I'll break down what's going on here down for you</p>
+                <ul>
+                <li><strong>using</strong>: You are going to use it</li>
+                <li><strong>namespace</strong>: To use what? A namespace</li>
+                <li><strong>std</strong>: The <code>std</code> namespace (where features of the C++ Standard Library, such as <code>string</code> or <code>vector</code>, are declared).</li>
+                </ul>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                    <h3 align="center">To get started learning more about C++, <a href="/register/"><b>Register</b></a> and become a member!</h3>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+            </div>
+
+<!-- ===============================================================================================================================================-->
+
+            <div role="tabpanel" class="tab-pane fade" id="c_sharp">
+
+                <h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='webpages/C_Sharp/c_sharp.jpg') }}">
+                    Welcome to the C# Introduction Homepage, mate!</h1>
+
+                    <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                    <blockquote>
+
+                        C# Programming Language Information
+
+                    </blockquote>
+                    <style>
+                .code
+                {
+                	background-color: #E0FFFF;
+                }
+                .output
+                {
+                	background-color: #000000;
+                	color: #ffffff;
+                }
+                h1.o
+                {
+                	text-align: center;
+                	text-decoration: underline;
+                }
+                h2.0
+                {
+                	text-decoration: underline;
+                }
+                .content
+                {
+                	text-align: center;
+                }
+                table
+                {
+                background-color: #6495ed;
+                color: #ffffff;
+                border: solid 2px black;
+                }
+                </style>
+                <title>C# Introduction</title>
+                <h2>C# Introduction</h2>
+                <p>
+                C# is a wonderful general purpose object oriented language that was developed by Microsoft.
+                The name “C sharp” was inspired by musical notation in which a sharp indicates
+                that a written note should be made higher in pitch.
+                The sharp symbol also represents a ligature of four + symbols in a 2 by 2 grid.
+                C++ name was designed to say a variable should be incremented by one.
+                Since, C# has four plus symbols, it is thus considered to be an increment of C++.
+                </p>
+                <p>Unlike C++, C# is a memory safe language.</p>
+                </br>
+                <p>To download an IDE(Integrated Development Environment) for C# go to
+                <p><a href="https://www.visualstudio.com/">https://www.visualstudio.com/</a></p></p>
+                <h2>Let's checkout a simple Hello World Program</h2>
+                <div class ="code">
+                <p>
+                using System;
+                <br/>
+                class Program
+                <br/>{
+                    <br/>static void Main(String[] args)
+                    <br/>{
+                <br/>       Console.WriteLine("Hello, world!");
+                 <br/>    }
+                <br/> }
+                </p>
+                </div>
+                <h2>Output</h2>
+                <div class="output">
+                <p>Hello, World!</p>
+                </div>
+                <h2>Uses of C#</h2
+                <ul>
+                <li>Mobile Apps</li>
+                <li>Web Applications</li>
+                <li>Enterprise Software</li>
+                <li>Backend and service-oriented applications</li>
+                <li>And many more uses!</li>
+                </ul>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                    <h3 align="center">To get started learning more about C#, <a href="/register/"><b>Register</b></a> and become a member!</h3>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+            </div>
+
+<!-- ===============================================================================================================================================-->
+
+            <div role="tabpanel" class="tab-pane fade" id="sql">
+
+                <h2 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='webpages/SQL/Sql.jpg') }}">
+                Welcome to the Sql Introduction Homepage, <b>{{un}}</b>!</h2>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                <p class="intro">SQL is a standard language for accessing and manipulating databases.</p>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                <h2>What is SQL?</h2>
+                <ul>
+                <li>SQL stands for Structured Query Language</li>
+                <li>SQL lets you access and manipulate databases</li>
+                <li>SQL is an ANSI (American National Standards Institute) standard</li>
+                </ul>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                <h2>What Can SQL do?</h2>
+                <ul>
+                <li>SQL can execute queries against a database</li>
+                <li>SQL can retrieve data from a database</li>
+                <li>SQL can insert records in a database</li>
+                <li>SQL can update records in a database</li>
+                <li>SQL can delete records from a database</li>
+                <li>SQL can create new databases</li>
+                <li>SQL can create new tables in a database</li>
+                <li>SQL can create stored procedures in a database</li>
+                <li>SQL can create views in a database</li>
+                <li>SQL can set permissions on tables, procedures, and views</li>
+                </ul>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                <h2>SQL is a Standard - BUT....</h2>
+                <p>Although SQL is an ANSI (American National Standards Institute) standard, there are different versions of the SQL language.</p>
+                <p>However, to be compliant with the ANSI standard, they all support at least the major commands (such as SELECT, UPDATE, DELETE, INSERT, WHERE) in a similar manner.</p>
+                <div class="w3-panel w3-note">
+                <p><strong>Note:</strong> Most of the SQL database programs also have their own proprietary extensions in addition to the SQL standard!</p>
+                </div>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                <h2>Using SQL in Your Web Site</h2>
+                <p>To build a web site that shows data from a database, you will need:</p>
+                <ul>
+                <li>An RDBMS database program (i.e. MS Access, SQL Server, MySQL)</li>
+                <li>To use a server-side scripting language, like PHP or ASP</li>
+                <li>To use SQL to get the data you want</li>
+                <li>To use HTML / CSS</li>
+                </ul>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                <h2>RDBMS</h2>
+                <p>RDBMS stands for Relational Database Management System.</p>
+                <p>RDBMS is the basis for SQL, and for all modern database systems such as MS SQL Server, IBM DB2, Oracle, MySQL, and Microsoft Access.</p>
+                <p>The data in RDBMS is stored in database objects called tables.</p>
+                <p>A table is a collection of related data entries and it consists of columns and rows.</p>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                <h3 align="center">To get started learning more about SQL, <a href="/register/"><b>Register</b></a> and become a member!</h3>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+            </div>
+
+<!-- ===============================================================================================================================================-->
+
+            <div role="tabpanel" class="tab-pane fade" id="html">
+
+                <h3 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='webpages/HTML/HTML.jpg') }}">
+                Welcome to the HTML Introduction Homepage, <b>{{un}}</b>!</h3>
+
+                <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+                <p class="intro">
+                    <center><b>
+                        HTML | Hyper Text Markup Language
+                    </b></center>
+                </p>
+
+                <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+                <p style="text-indent: 50px;">
+                    HTML documents are designed and built using elements. Elements are represented by tags on the HTML document. Some of the most common
+                    tags are heading, body, paragraph, table, and more. The HTML tags are used by browsers to render the content to the user of the browser.
+
+                </p>
+
+                <br>
+
+                 <ul>
+                    <li><b>&lt;!DOCTYPE html&gt;</b></li>
+
+                        <p>
+                            The doctype element is the way to let the browser know the document is HTML5
+                        </p>
+
+                    <li><b>&lt;html&gt;</b></li>
+
+                        <p>
+                            The html element is the back bone element of the HTML page being designed
+                        </p>
+
+                    <li><b>&lt;head&gt;</b></li>
+
+                        <p>
+                            The head element contains the meta data the document requires
+                        </p>
+
+                    <li><b>&lt;title&gt;</b></li>
+
+                        <p>
+                            The title element will allow the programmer to set the title of the page
+                        </p>
+
+                    <li><b>&lt;body&gt;</b></li>
+
+                        <p>
+                            The body element holds the page content that will be rendered by a browser
+                        </p>
+
+                    <li><b>&lt;h1-h6&gt;</b></li>
+
+                        <p>
+                            The h1 element is the largest text heading, and h6 would represent the smallest text heading.
+                        </p>
+
+                    <li><b>&lt;p&gt;</b></li>
+
+                        <p>
+                            The p element represents the paragraph, and the paragraph is a great way to display text.
+                        </p>
+
+
+                </ul>
+
+                <br>
+
+                <p style="text-indent: 50px;">
+                    HTML elements are represented using tags, and the tags are surrounded by angle brackets; &lt;&gt; and &lt;/&gt;.
+                    &lt;tagname&gt;the content you wish to display...&lt;/tagname&gt;. Tagname are notoriously seen in pairs; one to open the tag
+                    and one to close the tag. The first tag is known as the start tag, and the closing tag is known as the end tag. The end tag is
+                    designated by a forward slash inserted before the tag name.
+                </p>
+
+            <!--========================================================================================================================-->
+                <br>
+                <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                <br>
+            <!--========================================================================================================================-->
+
+                <p><center><b>Web Browsers</b></center></p>
+
+                <p style="text-indent: 50px;">
+
+                    A web browser is a way to render the elements written on an HTML document. The web browser does not specifically display
+                    HTML tags, but the browser does use them to render the display for the HTML document. The following image is a visualization of
+                    how HTML documents could be designed. The only content that will be displayed will be within the body tags.
+
+                </p>
+
+                <br>
+
+                <center><img src="{{url_for('static', filename='webpages/HTML/introduction/html_structure.jpg') }}"></center>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                <h3 align="center">To get started learning more about HTML, <a href="/register/"><b>Register</b></a> and become a member!</h3>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+
+            </div>
+
+<!-- ===============================================================================================================================================-->
+
+<!-- ===============================================================================================================================================-->
+
+            <div role="tabpanel" class="tab-pane fade" id="angularjs">
+
+
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                <h3 align="center">To get started learning more about AngularJS, <a href="/register/"><b>Register</b></a> and become a member!</h3>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+
+            </div>
+
+<!-- ===============================================================================================================================================-->
+
+<!-- ===============================================================================================================================================-->
+
+            <div role="tabpanel" class="tab-pane fade" id="javascript">
+
+
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+                <h3 align="center">To get started learning more about Javascript, <a href="/register/"><b>Register</b></a> and become a member!</h3>
+
+                <!--========================================================================================================================-->
+                    <br>
+                    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+                    <br>
+                <!--========================================================================================================================-->
+
+
+            </div>
+
+<!-- ===============================================================================================================================================-->
+
+        </div>
+
+    </div>
+
+
+
+{% endblock %}

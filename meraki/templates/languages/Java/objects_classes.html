@@ -1,0 +1,153 @@
+{% extends "header.html" %}
+    {% block body %}
+
+    <title>Meraki : Java : Objects and Classes</title>
+
+    <style>
+    hr {
+        color: blue;
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: 10px;
+    }
+    </style>
+
+        <br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Java.png') }}">
+        Welcome to the Java Objects and Classes page, mate!</h1>
+
+        <hr>
+
+        <blockquote>
+
+            Java's Objects and Classes information: </br>
+            Java is an Object-Oriented Language.
+            Objects have behaviours and states.
+            For example, a gecko has "states" (traits like color, size, morphism) as well as "behaviours" (actions like eating, climbing, or escaping).
+            An object is an instance of a class.
+
+        </blockquote>
+
+    <h2>Objects in Java</h2>
+    <p>Now we will consider and discuss objects in Java. In the real world, nearly everything can be considered an object, like a basketball, an automobile, or leopards. All these objects have one or more states and a behavior.</p>
+    <p>Consider the example of a gecko. It has states - name, color, morph, and behaviours, like climbing, jumping, or eating.</p>
+    <p>If you compare the digital object with a real-world object, they have very similar characteristics.</p>
+    <p>Digital objects also have a state and a behavior. A digital object's state is stored in fields/variables and behavior is defined in methods.</p>
+    <p>So in software development, methods operate on the internal state of an object and the object-to-object communication is also done with methods.</p>
+
+    <hr>
+
+
+
+    <ul class="list">
+    <li><p><b>Object</b> &minus; Objects have states and behaviors. Example: A gecko has states - name, color, morph, and behaviours, like climbing, jumping, or eating. An object is an "instance" of a class.</p></li>
+    <li><p><b>Class</b> &minus; A class can be defined as a template/design that describes the states and behaviors that the object can exhibit.</p></li>
+    </ul>
+
+    <hr>
+    <h2>Classes in Java</h2>
+    <p>A class is a blueprint/design from which individual objects are created.</p>
+    <p>Following is a sample of a class.</p>
+    <h3>Example</h3>
+    <div class ="code">
+    </br>public class Gecko {
+    </br>   String Morph;
+    </br>   int ageC
+    </br>   String size;
+    </br>
+    </br>   void eating() {
+    </br>   }
+    </br>
+    </br>   void hungry() {
+    </br>   }
+    </br>
+    </br>   void jumping() {
+    </br>   }
+    </br>}
+    </div></br>
+    <p>A class can contain any of the following variable types.</p>
+    <ul class="list">
+    <li><p><b>Local variables</b> &minus; Variables defined inside a method, constructors or blocks are called local variables. The variable will be declared and initialized within the method and the variable will be destroyed when the method has completed.</p></li>
+    <li><p><b>Instance variables</b> &minus; Instance variables are variables within a class but outside any method. These variables are initialized when the class is instantiated. Instance variables can be accessed from inside any method, constructor or blocks of that particular class.</p></li>
+    <li><p><b>Class variables</b> &minus; Class variables are variables declared within a class, outside any method, with the static keyword.</p></li>
+    </ul>
+    <p>A class can have any number of methods, which can access local variables in themselves or instance and class variables. In the above example, eating(), hungry() and jumping() are methods.</p>
+
+    <hr>
+
+    <h2>Constructors</h2>
+    <p>Constructors are a vital component to know about Java classes. Every class has a constructor, either one we've written or a default constructor for that class built by the Java Compiler.</p>
+    <p>Each time a new object is created, at least one constructor will be invoked. The main rule of constructors is that they should have the same name as the class. A class can have more than one constructor.</p>
+    <p>Following is an example of a constructor &minus;</p>
+    <h3>Example</h3>
+    <div class ="code">
+    </br>public class Gecko {
+    </br>   public Gecko() {
+    </br>   }
+    </br>
+    </br>   public Gecko(String name) {
+    </br>      // This constructor has one parameter, <i>name</i>.
+    </br>   }
+    </br>}
+    </div></br>
+    <p>Java also supports Singleton Classes, which only allow a single instance of them to exist at a time.</p>
+
+
+
+    <hr>
+
+    <h2>Creating an Object</h2>
+    <p>As mentioned previously, a class provides the blueprints for objects. So basically, an object is created from a class. In Java, the new keyword is used to create new objects.</p>
+    <p>There are three steps when creating an object from a class &minus;</p>
+    <ul class="list">
+    <li><p><b>Declaration</b> &minus; A variable declaration with a variable name with an object type.</p></li>
+    <li><p><b>Instantiation</b> &minus; The 'new' keyword is used to create the object.</p></li>
+    <li><p><b>Initialization</b> &minus; The 'new' keyword is followed by a call to a constructor. This call initializes the new object.</p></li>
+    </ul>
+    <p>Following is an example of creating an object &minus;</p>
+    <h3>Example</h3>
+    <div class ="code">
+    </br>public class Gecko {
+    </br>   public Gecko(String name) {
+    </br>      // This constructor has one parameter, <i>name</i>.
+    </br>      System.out.println("Gecko's name is : " + name );
+    </br>   }
+    </br>   public static void main(String []args) {
+    </br>      // Following statement would create an object myGecko
+    </br>      Gecko myLizard = new Gecko( "Snake Eyes" );
+    </br>   }
+    </br>}
+    </div>
+    <p>If we compile and run the above program, then it will produce the following result &minus;</p>
+    <h3>Output</h3>
+    <div class ="code">
+    </br>Gecko's name is : Snake Eyes
+    </div>
+
+
+
+    <br><hr><br>
+
+    <h3 style="text-align: center;">
+            Variables
+    </h3>
+
+    <p style="text-align: center;">
+        Next, we will look at Variables, and how they are created, assigned values, and referenced.
+    </p>
+
+    <a href="/Java/comments/"><button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Java - Comments
+    </button></a>
+
+    <a href="/Java/variables/"><button type="button" class="btn btn-default btn-lg" style="float: right;">
+        Java - Variables   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+
+    {% endblock %}

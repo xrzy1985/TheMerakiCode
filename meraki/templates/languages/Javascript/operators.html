@@ -1,0 +1,581 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<!-- The import required for AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+
+
+<!--=================================================================================================================================
+
+White space         : &nbsp;
+bold tag            : <b></b>
+Indent              : <p style="text-indent: 50px;">    </p>
+Horz Bar with \n    : <br><hr class="ones"><br>
+hyper link          : <a href="/location/">TEXT</a>
+bootstrap glyphs    : <span class="glyph-goes-here" aria-hidden="true"></span>
+image               : <img src="{{url_for('static', filename='photos/cover.jpg') }}">
+DL of static file   : <a href="/static/resume/Resume30August2016.doc">Here</a>
+
+use .container for containing responsive fixed width containers
+unable to be nested
+
+    <div class="container">
+    ...
+    </div>
+
+use .container-fluid for a full width container, which will span across the entire viewport
+
+    <div class="container-fluid">
+    ...
+    </div>
+
+<p style="text-indent: 50px;">
+
+</p>
+=================================================================================================================================-->
+
+    <br><br><br><h3 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Javascript/javascript.png') }}">
+    Welcome to the Javascript Operators Homepage, <b>{{un}}</b>!</h3>
+
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+    <p class="intro">
+        <center><b>
+            Javascript | Operators of many functions
+        </b></center>
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Operators</h3>
+
+    <p>
+
+        Javascript operators can assign values to variables, and then add the two variables together. The assignment operators, = ,
+        will assign a value to the variable on the left hand side. The addition operator, + , will add two numbers together and
+        to concatenate two strings together. The most commonly used arithmetic operators are:
+
+        <br>
+
+        <ul>
+            <li>
+                + -> Addition
+                <br>
+                <p style="margin-left:50px;">
+                    var x = 5; <br>
+                    var y = 10; <br>
+                    var z = x + y; <br>
+                    z = 15 <br>
+                </p>
+            </li>
+            <li>
+                - -> Subtraction
+                <br>
+                <p style="margin-left:50px;">
+                    var x = 5; <br>
+                    var y = 10; <br>
+                    var z = x - y; <br>
+                    z = -5 <br>
+                </p>
+            </li>
+            <li>
+                * -> Multiplication
+                <br>
+                <p style="margin-left:50px;">
+                    var x = 5; <br>
+                    var y = 10; <br>
+                    var z = x * y; <br>
+                    z = 50 <br>
+                </p>
+            </li>
+            <li>
+                / -> Division
+                <br>
+                <p style="margin-left:50px;">
+                    var x = 5; <br>
+                    var y = 10; <br>
+                    var z = x / y; <br>
+                    z = 0.5 <br>
+                </p>
+            </li>
+            <li>
+                % -> Modulus
+                <br>
+                <p style="margin-left:50px;">
+                    var x = 5; <br>
+                    var y = 10; <br>
+                    var z = x + y; <br>
+                    z = 5 <br>
+                </p>
+            </li>
+            <li>
+                ++ -> Increment
+                <br>
+                <p style="margin-left:50px;">
+                    var x = 5; <br>
+                    var y = x++; <br>
+                    y = 6<br>
+                </p>
+            </li>
+            <li>
+                -- -> Decrement
+                <br>
+                <p style="margin-left:50px;">
+                    var x = 5; <br>
+                    var y = x--; <br>
+                    y = 4<br>
+                </p>
+            </li>
+        </ul>
+
+        <br>
+
+        Additional arithmetic operators will be featured in the next tutorial. Javascript has a few useful assignment
+        operators available to Javascript programmers:
+
+        <br>
+
+        <ul>
+            <li>
+                = -> x = y means x = y
+                <br>
+                <p style="margin-left:50px;">
+                    var x = 5; <br>
+                    var y = 10; <br>
+                    x = y; <br>
+                    x = 10 <br>
+                </p>
+            </li>
+            <li>
+                += -> x += y means x = x + y
+                <p style="margin-left:50px;">
+                    var x = 5; <br>
+                    var y = 10; <br>
+                    x += y; <br>
+                    x = 15 <br>
+                </p>
+            </li>
+            <li>
+                -= -> x -= y means x = x - y
+                <p style="margin-left:50px;">
+                    var x = 5; <br>
+                    var y = 10; <br>
+                    x -= y; <br>
+                    x = -5 <br>
+                </p>
+            </li>
+            <li>
+                *= -> x *= y means x = x * y
+                <p style="margin-left:50px;">
+                    var x = 5; <br>
+                    var y = 10; <br>
+                    x *= y; <br>
+                    x = 50 <br>
+                </p>
+            </li>
+            <li>
+                /= -> x /= y means x = x / y
+                <p style="margin-left:50px;">
+                    var x = 5; <br>
+                    var y = 10; <br>
+                    x /= y; <br>
+                    x = 0.5 <br>
+                </p>
+            </li>
+            <li>
+                %= -> x %= y means x = x % y
+                <p style="margin-left:50px;">
+                    var x = 5; <br>
+                    var y = 10; <br>
+                    x %= y; <br>
+                    x = 5 <br>
+                </p>
+            </li>
+        </ul>
+
+        <br>
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>String Operators</h3>
+
+    <p>
+
+        String operators concatenate two string objects together into one larger string object to be displayed within the html
+        document. Strings can be any length within Javascript, but are typically not very long if programmed by hand. The majority
+        of longer more detailed documents are the work on programs feeding in the right information at the right time. I personally
+        use a python script to write all of the python functions I need for this website. The script will prompt me to type in
+        specific data, ask additional data when needed, and indent the proper spacing for python. The use of string concatenation is
+        huge in a python script like that. The use of string operators really helped me ease the pain of programming every individual
+        little detail. When the + operator is used with strings, it is known as the concatenation operator.
+
+        <br><br>
+
+        <div style="margin-left: 100px;">
+
+            var firstName = "James";<br>
+            <br>
+            var lastName = "Patterson";<br>
+            <br>
+            var name = firstName + lastName;<br>
+            <br>
+            Output name: James Patterson<br>
+            <br>
+
+        </div>
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Concatenation</h3>
+
+    <p>
+
+        Concatenation is the direct addition of two string variables together to create a new longer string variable. The + sign
+        becomes the concatenation operator. The concatenation of a number and a string will result in a new string object.
+
+        <br><br>
+
+        <div style="margin-left: 100px;">
+
+            var phrase = "I am #";<br>
+            <br>
+            var one = 1;<br>
+            <br>
+            var greeting = phrase + one + 2;<br>
+            <br>
+            Output name: I am #12<br>
+            <br>
+
+        </div>
+
+    </p>
+
+<!--========================================================================================================================-->
+    <br>
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+    <br>
+<!--========================================================================================================================-->
+
+    <h3>Comparison Operators</h3>
+
+    <p>
+
+        Javascript has comparison operators such as equal to, not equal, and more. Comparison operators can be used inside of conditional
+        statements to compare values. The conditional statements take action depending on the result returned.
+
+        <br>
+
+        <p>
+
+            if(age < 18) text = "Too young"; <br><br> The example above is one way that a comparison operator could be used.
+
+        </p>
+
+        <br>
+
+        <ul>
+            <li>
+                ==  ->  equal to
+                <br>
+                <p style="margin-left:50px;">
+                    var x = 5; <br>
+                    var y = 5; <br>
+                    x == y; <br>
+                    Would return true <br>
+                </p>
+            </li>
+            <li>
+                === -> equal value and equal type
+                <p style="margin-left:50px;">
+                    var x = 5; <br>
+                    x === "5" <br>
+                    Would return false, but if it were a number it would return true <br>
+                </p>
+            </li>
+            <li>
+                != -> not equal
+                <p style="margin-left:50px;">
+                    var x = 5; <br>
+                    var y = 10; <br>
+                    x != y; <br>
+                    Would return true <br>
+                </p>
+            </li>
+            <li>
+                !== -> not equal value and not equal type
+                <p style="margin-left:50px;">
+                    var x = 5; <br>
+                    var y = "5"; <br>
+                    x !== y; <br>
+                    Would return true because x is a number and y is a string<br>
+                </p>
+            </li>
+            <li>
+                > -> greater than
+                <p style="margin-left:50px;">
+                    var x = 5; <br>
+                    var y = 10; <br>
+                    x > y; <br>
+                    Would return false because 5 is not greater than 10<br>
+                </p>
+            </li>
+            <li>
+                < -> less than
+                <p style="margin-left:50px;">
+                    var x = 5; <br>
+                    var y = 10; <br>
+                    x < y; <br>
+                    Would return true because 5 is less than 10<br>
+                </p>
+            </li>
+            <li>
+                >= -> greater than or equal to
+                <p style="margin-left:50px;">
+                    var x = 5; <br>
+                    var y = 10; <br>
+                    x >= y; <br>
+                    Would return false because 5 is not greater than or equal to 10<br>
+                </p>
+            </li>
+            <li>
+                <= -> less than or equal to
+                <p style="margin-left:50px;">
+                    var x = 5; <br>
+                    var y = 10; <br>
+                    x < y; <br>
+                    Would return true because 5 is less than or equal to 10<br>
+                </p>
+            </li>
+            <li>
+                ? -> ternary
+                <br>
+                <hr>
+                <br>
+                <p style="margin-left:50px;">
+
+                    <p><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #0000ff;">&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p&gt;This will tell you if you can vote or not, legally:&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;input id="age" value="18" /&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;button onclick="myFunction()"&gt;Click Here&lt;/button&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p id="<span style="color: #ff0000;">tutorial</span>"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function myFunction() {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var age, voteable;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; age = document.getElementById("age").value;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; voteable = (age &lt; 18) ? "Too young":"Old enough";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("<span style="color: #ff0000;">tutorial</span>").innerHTML = voteable + " to vote.";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</span></span></span></span></span></span></p>
+
+                </p>
+            </li>
+        </ul>
+
+        <br>
+
+    </p>
+
+<!--========================================================================================================================-->
+    <br>
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+    <br>
+<!--========================================================================================================================-->
+
+    <h3>Logical Operators</h3>
+
+    <p>
+
+        Javascript has built in logical operators to help the programmer with logic. Logical operators are used
+        to determine the logic between variables and values. Let us say <b>x = 5</b> and <b>y = 3</b>. The following
+        examples will use the two variables to express logical expressions using logical operators.
+
+        <br>
+
+        <ul>
+            <li>
+                &&  ->  and
+                <br>
+                <p style="margin-left:50px;">
+                    ( x < 10 && y > 2) <br>
+                    Would return true because x is less than 10 and y is greater than 2.<br>
+                </p>
+            </li>
+            <li>
+                ||  ->  Or
+                <br>
+                <p style="margin-left:50px;">
+                    ( x != 5 || y == 2) <br>
+                    Would return true because x does equal 5, but y doesn't equal two. The or only needs to satisfy one of the criteria<br>
+                </p>
+            </li>
+            <li>
+                !  ->  not
+                <br>
+                <p style="margin-left:50px;">
+                    ( y!=2 ) <br>
+                    Would return true because y does not equal 2.<br>
+                </p>
+            </li>
+
+        </ul>
+
+        <br>
+
+    </p>
+
+    <br><hr><br>
+
+    <h3>Conditional (Ternary) Operators</h3>
+
+    <p>Javascript has a built in conditional operator that will assign a value to a variable once a specific condition is triggered.</p>
+
+    <br>
+
+    <div>
+        variableName = (condition) ? value1:value2;<br>
+        <br>
+        var eligibleToVote = (age < 18) ? "Too Young":"Old Enough";<br>
+        <br>
+        If the age is a value below 18, the string returned will be too young to vote, and vice versa.
+    </div>
+
+<!--========================================================================================================================-->
+    <br>
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+    <br>
+<!--========================================================================================================================-->
+
+    <h3>Comparing Different Types</h3>
+
+    <p>
+        You can compare different types of data against each other.  Comparing two different data types can yield
+        unexpected results. When comparing a string with a number for example, JS will convert the string over to a
+        number. In doing so, the string will be comparable to a number. Empty strings will convert to a 0, and
+        non-numerix strings convert to NaN. NaN will always return a false.
+
+        <ul>
+            <li>
+                <b>
+                    2 < 12
+                </b> Returns: true
+            </li>
+            <li>
+                <b>
+                    2 < "12"
+                </b> Returns: true
+            </li>
+            <li>
+                <b>
+                    2 < "James"
+                </b> Returns: false
+            </li>
+            <li>
+                <b>
+                    2 > "James"
+                </b> Returns: false
+            </li>
+            <li>
+                <b>
+                    2 == "James"
+                </b> Returns: false
+            </li>
+            <li>
+                <b>
+                    "2" < "12"
+                </b> Returns: false
+            </li>
+            <li>
+                <b>
+                    "2" > "12"
+                </b> Returns: true because when you are comparing strings, 2 will be alphabetically less than 12.
+            </li>
+            <li>
+                <b>
+                    "2" == "12"
+                </b> Returns: false
+            </li>
+        </ul>
+
+        <br>
+
+        You should always use proper data types together to ensure proper results. Variables should be converted using
+        known functions to parse data types instead of trying to force the computer to read different types as one.
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>NaN Input</h3>
+
+    <p>
+
+        A <b>javascript</b> function can handle NaN input types. When you are expecting a number instead of a string,
+        you can use an if statement to test if the input is a string or not. The following code will use a preprogrammed
+        input element with value set to 18. The button will compare the user's input to see if they are old enough to vote.
+        An empty element will be used to display the results of the comparison. The Javascript function declares two
+        variables; age and voteable. Age is then assigned the value of the element set to 18. SO, if age is not a number,
+        the program will say the input is wrong, but if it is a number the program will either specify the ability to vote
+        or not vote.
+
+    </p>
+
+    <br>
+
+    <div style="margin-left: 100px;">
+        <p><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #0000ff;">&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;h2&gt;JavaScript Comparisons&lt;/h2&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p&gt;Input your proper age: &lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;input id="age" value="<span style="color: #ff0000;">18</span>" /&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;button onclick="<span style="color: #ff0000;">myFunction</span>()"&gt;Click here&lt;/button&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p id="<span style="color: #ff0000;">tutorial</span>"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function <span style="color: #ff0000;">myFunction</span>() {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: #ff0000;">var</span> age, voteable;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; age = Number(document.getElementById("age").value);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (<span style="color: #ff0000;">isNaN</span>(age)) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; voteable = "Input is not a number";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; voteable = (age &lt; 18) ? "Too young" : "Old enough";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("<span style="color: #ff0000;">tutorial</span>").innerHTML = voteable;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</span></span></span></span></span></span></p>
+    </div>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Type Operators</h3>
+
+    <p>
+
+        1. typeof will return the type of a specific variable. <br>
+
+        <br>
+
+        2. instanceof will return true if an object is an instance of an object type. <br>
+
+        <br>
+
+        Type operators will be discussed further later in an additional tutorial.
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+        <h3 style="text-align: center;">Next, we will take a look at Arithmetics function within Javascript.</h3>
+
+        <p style="text-align: center;">Just follow the buttons to continue the tutorial, {{un}}</p>
+
+
+        <br>
+
+        <a href="/Javascript/variables"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Javascript - Variables
+        </button></a>
+
+        <a href="/Javascript/arithmetic"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        Javascript - Arithmetic <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        </button></a>
+
+{% endblock %}

@@ -1,0 +1,446 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<!-- The import required for AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+
+
+<!--=================================================================================================================================
+
+White space         : &nbsp;
+bold tag            : <b></b>
+Indent              : <p style="text-indent: 50px;">    </p>
+Horz Bar with \n    : <br><hr class="ones"><br>
+hyper link          : <a href="/location/">TEXT</a>
+bootstrap glyphs    : <span class="glyph-goes-here" aria-hidden="true"></span>
+image               : <img src="{{url_for('static', filename='photos/cover.jpg') }}">
+DL of static file   : <a href="/static/resume/Resume30August2016.doc">Here</a>
+
+use .container for containing responsive fixed width containers
+unable to be nested
+
+    <div class="container">
+    ...
+    </div>
+
+use .container-fluid for a full width container, which will span across the entire viewport
+
+    <div class="container-fluid">
+    ...
+    </div>
+
+<p style="text-indent: 50px;">
+
+</p>
+=================================================================================================================================-->
+
+    <br><br><br><h3 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Javascript/javascript.png') }}">
+    Welcome to the Javascript Variables Homepage, <b>{{un}}</b>!</h3>
+
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+    <p class="intro">
+        <center><b>
+            Javascript | Variables are the containers for storing values
+        </b></center>
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Variables</h3>
+
+    <p>
+        Javascript variables are essentially containers that store the data values you present them with. The variables are
+        similar to the concepts of algebraic equations; some variable equals something. In math, the variable will equal
+        something that needs to be worked out, more variables, or a number value. In programming, the languages use variables
+        to hold the specific values we wish to represent using that variable name. The variables are used in expressions; myBirthday
+        = 10/16/1985.
+    </p>
+
+    <div style='margin-left: 100px;'>
+
+        var x = 10;<br>
+        var y = 16;<br>
+        var z = x + "/" + y;<br>
+        <br>
+        // x stores the value of 10, and y stores 16, z will be a string concatenated together using the two variables
+        If z is printed out to the screen: 10/16<br>
+        <br>
+        // We could also use the variables to do math
+        var xyz = x + (2 * y);
+        xyz would print out to screen: 42<br>
+
+    </div>
+
+    <br><hr><br>
+
+    <div style='margin-left: 100px;'>
+
+        var weight = 180;<br>
+        var name = "James";<br>
+        var person = name + " " + weight;<br>
+        <br>
+        // This will concatenate the two together<br>
+        if person was printed to screen: James 180<br>
+
+    </div>
+
+    <br>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Identifiers</h3>
+
+    <p>
+        Javascript identifiers are unique names used to identify Javascript variables. All JS variables must be identified by
+        a specific unique name; an identifier. Identifiers can be shorter names, x or y, but usually more descriptive names should
+        be used, myAge or myName. There is a list of standard rules for creating descriptive names for identifiers:
+
+        <br>
+
+        <ul>
+            <li>
+                Identifiers can use letters, numbers, digits, underscores, or dollar signs
+            </li>
+            <li>
+                The identifier must begin with a letter
+            </li>
+            <li>
+                Identifiers are case sensitive; myAge and MyAge are two different identifiers
+            </li>
+            <li>
+                Identifiers will accept keywords as names
+            </li>
+        </ul>
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Assignment Operator</h3>
+
+    <p>
+        Javascript utilizes the equals sign to make an assignment. The equals sign stands for an assignment operator, and definitely
+        not an equal to assignment. In algebra, the equals sign means both sides of the equation must be equal. In Javascript,
+        the equals sign represents what data the variable will hold after reading the line of code.
+
+        <br><br>
+
+        In algebra:
+
+        <br><br>
+
+        x = 10 + 5 makes perfect sense, but x = x+5 does not because one side cannot equal 5 more than itself.
+
+        <br><br>
+
+        In Javascript:
+
+        <br><br>
+
+        x = 10 + 5 makes sense, and x = x + 5 makes perfect sense. The second just says, x will hold the value of x + 5 after
+        this line of code is read and executed.
+
+        <br><br>
+
+    </p>
+
+<!--========================================================================================================================-->
+    <br>
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+    <br>
+<!--========================================================================================================================-->
+
+    <h3>Data Types</h3>
+
+    <p>
+
+        Javascript can handle many different types of data types, but for now this tutorial will mainly focus on just Strings and
+        numbers. Text values are referred to as strings. Strings are written inside of double or single quotation marks, while
+        numbers are written without any kind of quotation. If a number is placed within a set of quotation marks, the number will
+        be represented as a string variable.
+
+        <br><br>
+
+        var pi = 3.14;<br>
+
+        <br>
+
+        Ouptut pi: 3.14<br>
+
+        <br>
+
+        var name = "James Patterson";<br>
+
+        <br>
+
+        Ouptut name: James Patterson<br>
+
+        <br>
+
+        var namePi = "Pi: 3.14";<br>
+
+        <br>
+
+        Ouptut namePi: Pi: 3.14<br>
+
+        <br>
+
+    </p>
+
+<!--========================================================================================================================-->
+    <br>
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+    <br>
+<!--========================================================================================================================-->
+
+    <h3>Steps</h3>
+
+    <p>
+
+        <b>Declaring</b> a variable in Javascript is creating a variable. You will declare a variable every time you use the
+        <b>var</b> keyword; var myName. After the declaration, the variable is null or undefined unless you assign a value
+        to the variable being declared; var myName = "James". The value can be assigned while the variable is being delcared,
+        or you can wait to assign the variable after the declaration. Some programmers will declare all of their variables, and
+        later on in the code they will assign the values to their variables. I like to assign values as soon as I know what they
+        will be. It is a good programming practice to actually declare all of the variables at the beginning of a script.
+
+        <br><br>
+
+        You can declare the variable, and then assign a value for the undefined variable:<br>
+
+        <br>
+
+        var myName;<br>
+
+        <br>
+
+        myName = "James";<br>
+
+        <br>
+
+        You can also kill two birds with one stone by declaring and assigning:<br>
+
+        <br>
+
+        var myName = "James";<br>
+
+        <br>
+
+    </p>
+
+<!--========================================================================================================================-->
+    <br>
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+    <br>
+<!--========================================================================================================================-->
+
+    <div style="margin-left: 100px;">
+
+        <p><span style="color: #0000ff;">&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;h2&gt;JavaScript Variables&lt;/h2&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p&gt;We are going to declare the variable and then assign values :&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var myName;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; myName = "James Patterson";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML = myName;<br />&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</span></p>
+
+        <br>
+    </div>
+        <hr>
+    <div style="margin-left: 100px;">
+        <br>
+
+        <p><span style="color: #0000ff;">&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;h2&gt;JavaScript Variables&lt;/h2&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p&gt;We are going to declare the variable and assign values instantly:&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var myName = "James Patterson";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML = myName;<br />&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</span></p>
+
+    </div>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Multiple variables</h3>
+
+    <p>
+
+        You can declare a lot of variables in just one statement of code. The keyword var will be the start, and then just separate
+        the variables using a comma with a semicolon on the end.
+
+        <br><br>
+
+        var myName = "James", myBDay = "10/16/1985", myAge = 30;<br>
+
+        <br>
+
+        You can also use multiple lines to make one declaration if you choose to do so:<br>
+
+        <br>
+
+        var myName = "James Patterson", <br>
+
+        <br>
+
+        myAge = 30, <br>
+
+        <br>
+
+        myBDay = "10/16/1985";<br>
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Value is undefined</h3>
+
+    <p>
+
+        When a programmer declares a new variable, but does not give that variable an initial value. The variable will be marked as
+        undefined by Javascript.
+
+        <br><br>
+
+        var userName;<br>
+
+        <br>
+
+        The variable userName will hold the value of the user's name, but we don't know the user's name yet. The value will more than
+        likely be assigned to the user's name when the user gives his/her name as input.
+
+    </p>
+
+    <h3>Re-Declaration</h3>
+
+    <p>
+
+        If you accidentally redeclare a variable inside of your code, do not worry too much, but you do need to ensure you fix the issue.
+        There really should be no reason to redeclare your variable after declaration, or at least none that I can think of. In Javascript,
+        the web browser will not replace the value already stored inside the variable, but it will essentially reload the variable. So..
+
+        <br><br>
+
+        var userName = "Billy Joe";<br>
+
+        <br>
+
+        var userName;<br>
+
+        <br>
+
+        The redeclaration of userName will not effect the value of userName, and userName will still output Billy Joe when called.
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Arithmetic and Concatenation</h3>
+
+    <p>
+
+        <b>Arithmetic</b> can be done inside of Javascript code very easily.
+
+        <br><br>
+
+        var sumTotal = 5 + 2 + 17;<br>
+
+        <br>
+
+        The output for sumTotal will be 24<br>
+
+        <br>
+
+        var weight = 100 + 81;<br>
+
+        <br>
+
+        The output for weight will be 181<br>
+
+    </p>
+
+    <br>
+
+    <p>
+
+        <b>Concatenation</b> is the addition of two strings together, or the joining of two separate data types together to be displayed
+        by the output as a string. Quotation marks around a number will yield the number being treated as a string data type. The string
+        will not interact with numbers the way other numbers will, remember that.
+
+        <br><br>
+
+        var sumTotal = "The sum total is: " + sum + total;<br>
+
+        <br>
+
+        The output for sumTotal will be -> The sum total is: sum + total<br>
+
+        <br>
+
+        var myFirstName = "James";<br>
+
+        <br>
+
+        var myLastName = "Patterson";<br>
+
+        <br>
+
+        var myName = myFirst Name + myLastName;<br>
+
+        <br>
+
+        The output for myName: James Patterson<br>
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Wrap Up</h3>
+
+    <div style="margin-left: 100px;">
+
+        <p><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #0000ff;">&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;h2&gt;JavaScript Variables&lt;/h2&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p&gt;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Declare the variable then assign a value,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and declare a variable while assigning a value<br />&nbsp;&nbsp;&nbsp; &lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p id="<span style="color: #ff0000;">tutorial</span>"&gt;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="<span style="color: #ff0000;">tutorial2</span>"&gt;&lt;/p&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp; &lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: #ff0000;">var</span> greeting;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; greeting = "Hello, my name is ";<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: #ff0000;">var</span> myName = "James Patterson";<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("<span style="color: #ff0000;">tutorial</span>").innerHTML = greeting;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("<span style="color: #ff0000;">tutorial2</span>").innerHTML = myName;<br />&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</span></span></span></span></span></span></p>
+
+    </div>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+        <h3 style="text-align: center;">Next, we will take a look at Operators and their function.</h3>
+
+        <p style="text-align: center;">Just follow the buttons to continue the tutorial, {{un}}</p>
+
+
+        <br>
+
+        <a href="/Javascript/comments"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Javascript - Comments
+        </button></a>
+
+        <a href="/Javascript/operators"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        Javascript - Operators <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        </button></a>
+
+{% endblock %}

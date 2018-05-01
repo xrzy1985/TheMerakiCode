@@ -1,0 +1,330 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<!-- The import required for AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<script>
+function myFunction() {
+    document.getElementById("tutorial").innerHTML = "You can do so much more with Javascript";
+}
+</script>
+
+<!--=================================================================================================================================
+
+White space         : &nbsp;
+bold tag            : <b></b>
+Indent              : <p style="text-indent: 50px;">    </p>
+Horz Bar with \n    : <br><hr class="ones"><br>
+hyper link          : <a href="/location/">TEXT</a>
+bootstrap glyphs    : <span class="glyph-goes-here" aria-hidden="true"></span>
+image               : <img src="{{url_for('static', filename='photos/cover.jpg') }}">
+DL of static file   : <a href="/static/resume/Resume30August2016.doc">Here</a>
+
+use .container for containing responsive fixed width containers
+unable to be nested
+
+    <div class="container">
+    ...
+    </div>
+
+use .container-fluid for a full width container, which will span across the entire viewport
+
+    <div class="container-fluid">
+    ...
+    </div>
+
+<p style="text-indent: 50px;">
+
+</p>
+=================================================================================================================================-->
+
+    <br><br><br><h3 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Javascript/javascript.png') }}">
+    Welcome to the Javascript Statements Homepage, <b>{{un}}</b>!</h3>
+
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+    <p class="intro">
+        <center><b>
+            Javascript | Statements, instructions that will be executed
+        </b></center>
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Statements</h3>
+
+    <p>
+        The web browser is responsible for executing the Javascript statements present inside the HTML document or linked
+        javascript file. Javascript statements are similar to the following:
+    </p>
+
+    <div style="margin-left: 100px;">
+        document.getElementById("tutorial").innerHTML = "Hello world, How are you today?"
+    </div>
+
+    <br>
+
+    <p>
+        The statement tells the browser to write Hello world, How are you today? inside the HTML element with id set to tutorial.
+        Javascript programs and statements are often considered to be called javascript code. Most of the javascript programs
+        may contain multiple javascript statements. The statements are read in the order they are written, just like a file written
+        in C++, C, Java, or Python would be. In the example below, the variables created are given specific values, and displayed
+        using the variable z:
+    </p>
+
+    <div style="margin-left: 100px;">
+
+        var x, y, z;<br>
+        x = 10; <br>
+        y = 5; <br>
+        z = x + y; <br>
+        document.getElementById("tutorial").innerHTML = z;
+    </div>
+
+    <br>
+
+    <p>The value stored in the element with id tutorial will be replaced by the value assigned to z, which is 15, and updated dynamically.</p>
+
+<!--========================================================================================================================-->
+    <br>
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+    <br>
+<!--========================================================================================================================-->
+
+    <h3>Semicolons</h3>
+
+    <p>
+        You should notice that each line of javascript code ends in a semicolon. You don't have to separate the lines out into many either.
+        The following line of code is perfectly acceptable in the Javascript rules, but I prefer to space them out. So, I can read them easier,
+        and I can comment accordingly without having to refer to just one line of code for multiple commands. It is useful for declaring a
+        bunch of variables all at one time, like the example below, but ending a javascript line with a semicolon is not necessarily required.
+        The semicolon is not necessarily required for the code to function, but the use of a semicolon is highly recommended from just about
+        everyone who codes with Javascript. There are too many issues that could arise when not using a semicolon. So, just use one and comment.
+    </p>
+
+    <div style = "margin-left: 100px;">
+
+        a = 10; b = 20; c = 30; d = a+b*c;
+
+    </div>
+
+    <br>
+
+    <p>
+        Javascript will ignore multiple white spaces. You can add more white space to your script files, and javascript will still read the code
+        perfectly fine. The following lines of code are equal to each other under the rules of Javascript:
+    </p>
+
+    <div style = "margin-left: 100px;">
+
+        var myName = "James";<br>
+
+        var myName="James";<br>
+
+    </div>
+
+    <br>
+
+    <p>
+        A good technique to adhere to is to put white space around operators, such as =, +, -, *, and /. The technique will help you read the
+        code easier. The white space will allow the user to understand what is going on, and will also give you room to think. The code may take
+        up more room, but lengthy code is not always a bad thing. I would rather have 10 short lines of code that can be read easily, instead of
+        5 longer and more condensed lines of code.
+    </p>
+
+    <div style = "margin-left: 100px;">
+
+        var myName = "James";
+
+        var myName="James";
+
+    </div>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>
+        Line Breaks
+    </h3>
+
+    <p>
+        For the best readability, the programmer should avoid lines of code that are longer than 80 characters in length. The
+        longer the code is, the harder the code will be to read overall. The line of code should really not be any longer than
+        the typical length of a line spanning your screen. If you do have to cut a line, the best way to do so is at the operator:
+    </p>
+
+    <div style="margin-left: 100px;">
+
+        document.getElementById("").innerHTML = <br>
+        "Hello world"; <br>
+
+    </div>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>
+        Code Blocks
+    </h3>
+
+    <p>
+        Javascript's statements can be grouped together in code blocks, like a function, encased in curly brackets.
+        The purpose of the code block is to define a group of statements to be executed together. The code blocks will
+        have one to multiple Javascript statements together in one place. Good programming techniques say we should not
+        put too many statements into one function. You should break the code into functions, and limit each function to
+        one specific task.
+    </p>
+
+    <div style="margin-left: 100px;">
+        <p>function myFunctionThatWillExecute()<br />{ <br />&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial1").innerHTML = "Hello World, "; <br />&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial2").innerHTML = "how are you today? "; <br />}</p>
+    </div>
+
+    <br>
+
+    <p>Functions will return later on in this tutorial, but for now let us finish the statements page up with more specific keywords.</p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>
+        Keywords
+    </h3>
+
+    <p>
+        Javascript statements will often begin with a reserved keyword to identify the action to be performed by the web browser.
+        A list of a few specific keywords are below:
+    </p>
+
+    <div style="margin-left: 50px;">
+
+        <ul>
+            <li>
+                <p>
+                    <b>
+                        break
+                    </b>
+                    will terminate a switch or a loop
+                </p>
+            </li>
+            <li>
+                <p>
+                    <b>
+                        continue
+                    </b>
+                    will jump out of a loop and start back at the top
+                </p>
+            </li>
+            <li>
+                <p>
+                    <b>
+                        debugger
+                    </b>
+                    stops execution of JS code, and will call the debugger if possible
+                </p>
+            </li>
+            <li>
+                <p>
+                    <b>
+                        do .. while
+                    </b>
+                    will repeat a block of code while the conditional statement returns true
+                </p>
+            </li>
+            <li>
+                <p>
+                    <b>
+                        for
+                    </b>
+                    is reserved for specific for loops
+                </p>
+            </li>
+            <li>
+                <p>
+                    <b>
+                        function
+                    </b>
+                    will declare the use of a function inside Javascript
+                </p>
+            </li>
+            <li>
+                <p>
+                    <b>
+                        if .. else
+                    </b>
+                    are reserved for if then else statements inside Javascript code
+                </p>
+            </li>
+            <li>
+                <p>
+                    <b>
+                        return
+                    </b>
+                    exits a function
+                </p>
+            </li>
+            <li>
+                <p>
+                    <b>
+                        switch
+                    </b>
+                    will execute a block of code depending on the conditions present
+                </p>
+            </li>
+            <li>
+                <p>
+                    <b>
+                        try .. catch
+                    </b>
+                    are blocks of code used to implement error handling for Javascript statements
+                </p>
+            </li>
+            <li>
+                <p>
+                    <b>
+                        var
+                    </b>
+                    is a reserved word that will declare a variable
+                </p>
+            </li>
+        </ul>
+
+    </div>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+
+        <h3 style="text-align: center;">Next, we will take a look at comments in Javascript more closely.</h3>
+
+        <p style="text-align: center;">Just follow the buttons to continue the tutorial, {{un}}</p>
+
+
+        <br>
+
+        <a href="/Javascript/syntax"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Javascript - Syntax
+        </button></a>
+
+        <a href="/Javascript/comments"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        Javascript - Comments <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        </button></a>
+
+{% endblock %}

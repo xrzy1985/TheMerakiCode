@@ -1,0 +1,161 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<!-- The import required for AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<!--=================================================================================================================================
+
+White space         : &nbsp;
+bold tag            : <b></b>
+Indent              : <p style="text-indent: 50px;">    </p>
+Horz Bar with \n    : <br><hr class="ones"><br>
+hyper link          : <a href="/location/">TEXT</a>
+bootstrap glyphs    : <span class="glyph-goes-here" aria-hidden="true"></span>
+image               : <img src="{{url_for('static', filename='photos/cover.jpg') }}">
+DL of static file   : <a href="/static/resume/Resume30August2016.doc">Here</a>
+
+use .container for containing responsive fixed width containers
+unable to be nested
+
+    <div class="container">
+    ...
+    </div>
+
+use .container-fluid for a full width container, which will span across the entire viewport
+
+    <div class="container-fluid">
+    ...
+    </div>
+
+<p style="text-indent: 50px;">
+
+</p>
+
+
+
+=================================================================================================================================-->
+
+    <br><br><br><h3 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/angularjs.png') }}">
+    Welcome to the AngularJS MVC Architecture Homepage, <b>{{un}}</b>!</h3>
+
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+    <p class="intro">
+        <center><b>
+            AngularJS | Model View Controller Architecture
+        </b></center>
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <p style="text-indent: 50px;">
+
+        <b>MVC</b> stands for <b>M</b>odel <b>V</b>iew and <b>C</b>ontroller, is a software engineering design pattern for
+        developing and maintaing dynamic web applications. A MVC pattern is made up of three parts; Model, View, and Controller.
+
+        <ul>
+            <li>
+                Model : Responsible for maintaining the data or information
+            </li>
+            <li>
+                View : Responsible for displaying the data to the user
+            </li>
+            <li>
+                Controller : Code that is responsible for controlling the interactions and relationships between the model and view.
+            </li>
+        </ul>
+
+        <br>
+    </p>
+
+    <p style="text-indent: 50px;">
+
+        The MVC is quite popular due to the way the logic from the application is separated from the
+        UI layer. The controller will handle all of the requests for the web application, and will begin
+        to work with the model to que the data required by the view. The view will generate a response based
+        upon the data made available by the controller.
+
+    </p>
+
+    <p><center><img src="{{url_for('static', filename='photos/mvc.jpg') }}"></center></p>
+
+<!--========================================================================================================================-->
+    <br>
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+    <br>
+<!--========================================================================================================================-->
+
+    <h2>The Model</h2>
+
+    <p>
+
+        The Model is responsible for maintaining application data, and it will respond to requests made from the view,
+        and the model will also update itself when given instruction to do so by the controller.
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h2>The View</h2>
+
+    <p>
+
+        The View is a representation of the data formatted to be viewed by the user when the controller serves the data. The views
+        are typically script based template systems similar to JSP, ASP, and PHP; the views are typically easy to integreate with
+        AJAX technology.
+
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h2>The Controller</h2>
+
+    <p>
+
+        The Controller responds to input given by the users, while executing interactions on the data model objects. The controller
+        will receive valid input from a user, validate the input to ensure proper data, and will in return perform the operations
+        to modify the data model.
+
+    </p>
+
+    <br>
+
+    <p>Soon, we will discuss just how important the MVC model is to AngularJS, and exactly why AngularJS is considered a MVC based framework.</p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+
+        <h3 style="text-align: center;">Next, we will take a look at Expressions inside of AngularJS</h3>
+
+        <p style="text-align: center;">Just follow the buttons to continue the tutorial, {{un}}</p>
+
+
+        <br>
+
+        <a href="/AngularJS/environment"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> AngularJS - Environment
+        </button></a>
+
+        <a href="/AngularJS/expressions"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        AngularJS - Expressions <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        </button></a>
+
+{% endblock %}

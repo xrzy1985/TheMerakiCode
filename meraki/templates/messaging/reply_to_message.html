@@ -1,0 +1,17 @@
+{% extends "header.html" %}
+
+{% block body %}
+                    <form method="post" action="/reply_confirmation/">
+
+                        <div class="dropdown">
+                        <h1>Hello, {{ un }}</h1>
+                        <h3><b>Reply To:</b> {{ _username_to }}</h3>
+                        <h3 id="_sub"><b>Subject: </b> {{ "re:" + _subject }} </h3>
+                        </div>
+                        <input class="form-control" type="hidden" name="_username_from" value="{{ un }}">
+                        <input class="form-control" type="hidden" name="_subject" value="re:{{ _subject }}">
+                        <textarea class="form-control" name="_message" placeholder="Write your reply, mate"></textarea><br>
+                        <input class="form-control" type="hidden" name="_username_to" value="{{ _username_to }}">
+                        <input class="form-control" type="submit" name="action" value="Send Reply to {{ _username_to }}">
+                    </form>
+{% endblock %}

@@ -1,0 +1,307 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<style>
+hr {
+    color: blue;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}
+</style>
+
+    <br><br><br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/c_sharp.png') }}">
+    Welcome to the C# Data Structures Homepage, mate!</h1>
+
+    <hr>
+
+    <blockquote>
+
+        C# Data Structures Information
+
+    </blockquote>
+<style>
+.code
+{
+	background-color: #E0FFFF;
+}
+.output
+{
+	background-color: #000000;
+	color: #ffffff;
+}
+h1
+{
+	text-align: center;
+	text-decoration: underline;
+}
+h2
+{
+	text-decoration: underline;
+}
+.content
+{
+	text-align: center;
+}
+table
+{
+background-color: #6495ed;
+color: #ffffff;
+border: solid 2px black;
+}
+</style>
+<h2>Data Structures</h2>
+<h2>Arrays</h2>
+<p>An array stores a fixed-size sequential collection of elements of the homogenous(same) type. An array is used to store a collection of data, but it is often more useful to think of an array as a collection of variables of the same type stored at contiguous memory locations.</p>
+<p>Instead of declaring individual variables, such as number0, number1, ..., and number99, you declare one array variable such as numbers and use numbers[0], numbers[1], and ..., numbers[99] to represent individual variables. A specific element in an array is accessed by an index.</p>
+<p>All arrays consist of contiguous memory locations. The lowest address corresponds to the first element and the highest address to the last element.</p>
+<img src="https://www.tutorialspoint.com/csharp/images/arrays.jpg" style="width:504px;height:228px;">
+
+<p>&nbsp;</p>
+<h2>Declaring Arrays</h2>
+<h2>Array Declaration Example</h2>
+<div class="code">
+<p>datatype[] arrayName;</p>
+</div>
+<p>where,</p>
+<ul>
+<li>d<em>atatype</em> is used to specify the type of elements in the array.</li>
+<li><em>[ ]</em> specifies the rank of the array. The rank specifies the size of the array.</li>
+<li><em>arrayName</em> specifies the name of the array.</li>
+</ul>
+<h2>Initializing an Array</h2>
+<div class="code">
+<p>double[] balance;</p>
+</div>
+<p>Declaring an array does not initialize the array in the memory. When the array variable is initialized, you can assign values to the array.</p>
+<p>Array is a reference type, so you need to use the&nbsp;<strong>new</strong>&nbsp;keyword to create an instance of the array.</p>
+<h2>Create Instance of Array</h2>
+<div class="code">
+<p>double[] balance = new double[10];</p>
+</div>
+<h2>Assigning Values to an Array</h2>
+<p>You can assign values to individual array elements, by using the corresponding index number</p>
+<div class="code">
+<p>double[] balance = new double[10];</p>
+<p>balance[0] = 4500.0;</p>
+</div>
+<p>You can assign values to the array at the time of declaration, as shown:</p>
+<div class="code">
+<p>double[] balance = { 2340.0, 4523.69, 3421.0};</p>
+</div>
+<p>You can also create and initialize an array, as shown:</p>
+<div class="code">
+<p>int [] marks = new int[5]&nbsp; { 99,&nbsp; 98, 92, 97, 95};</p>
+</div>
+<p>You may also omit the size of the array, as shown:</p>
+<div class="code">
+<p>int [] marks = new int[]&nbsp; { 99,&nbsp; 98, 92, 97, 95};</p>
+</div>
+<p>You can copy an array variable into another target array variable. In such case, both the target and source point to the same memory location:</p>
+<div class="code">
+<p>int [] marks = new int[]&nbsp; { 99,&nbsp; 98, 92, 97, 95};</p>
+<p>int[] score = marks;</p>
+</div>
+<p>When you create an array, C# compiler implicitly initializes each array element to a default value depending on the array type. For example, for an int array all elements are initialized to 0.</p>
+<h2>Accessing Array Elements</h2>
+<p>An element is accessed by indexing the array name. This is done by placing the index of the element within square brackets after the name of the array. For example,</p>
+<div class="code">
+<p>double salary = balance[9];</p>
+</div>
+<h2>Array Example</h2>
+</br>
+<div class="code">
+<p>//This example demonstrates array declaration, assignmnet, and accessing arrays</p>
+</br>
+<p>using System;</p>
+<p>namespace ArrayApplication</p>
+<p>{</p>
+<p>&nbsp;&nbsp; class MyArray</p>
+<p>&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; static void Main(string[] args)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int []&nbsp; n = new int[10]; /* n is an array of 10 integers */</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int i,j;</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* initialize elements of array n */</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for ( i = 0; i &lt; 10; i++ )</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; n[ i ] = i + 100;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* output each array element's value */</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (j = 0; j &lt; 10; j++ )</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine("Element[{0}] = {1}", j, n[j]);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.ReadKey();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;&nbsp; }</p>
+<p>}</p>
+</div>
+<h2>Output</h2>
+<div class="output">
+<p>Element[0] = 100</p>
+<p>Element[1] = 101</p>
+<p>Element[2] = 102</p>
+<p>Element[3] = 103</p>
+<p>Element[4] = 104</p>
+<p>Element[5] = 105</p>
+<p>Element[6] = 106</p>
+<p>Element[7] = 107</p>
+<p>Element[8] = 108</p>
+<p>Element[9] = 109</p>
+</div>
+<h2>Using the Foreach loop</h2>
+<p>In the previous example, we used a for loop for accessing each array element. You can also use a&nbsp;<strong>foreach</strong>&nbsp;statement to iterate through an array.</p>
+<div class="code">
+<p>using System;</p>
+<p>namespace ArrayApplication</p>
+<p>{</p>
+<p>&nbsp;&nbsp; class MyArray</p>
+<p>&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; static void Main(string[] args)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int []&nbsp; n = new int[10]; /* n is an array of 10 integers */</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* initialize elements of array n */</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for ( int i = 0; i &lt; 10; i++ )</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; n[i] = i + 100;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* output each array element's value */</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach (int j in n )</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int i = j-100;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine("Element[{0}] = {1}", i, j);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.ReadKey();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;&nbsp; }</p>
+<p>}</p>
+</div>
+<h2>Output</h2>
+<div class="output">
+<p>Element[0] = 100</p>
+<p>Element[1] = 101</p>
+<p>Element[2] = 102</p>
+<p>Element[3] = 103</p>
+<p>Element[4] = 104</p>
+<p>Element[5] = 105</p>
+<p>Element[6] = 106</p>
+<p>Element[7] = 107</p>
+<p>Element[8] = 108</p>
+<p>Element[9] = 109</p>
+</div>
+<h2>Lists</h2>
+A <b>list</b> is an object which holds variables in a specific order. The type of variable that the list can store is defined using the generic syntax.
+</p>
+<h2>List Declaration Example</h2>
+<div class="code">
+<pre class="  language-csharp"><code class="  language-csharp">List<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> numbers <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">List</span><span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</div>
+<h2>Array & List Differences </h2>
+<p>The difference between an array and a list is that lists are dynamically sized and arrays are fixed in size.</p>
+<p>When you are uncertain about the size of the container required, just use a list.</p>
+<h2>List Add Example</h2>
+<div class="code">
+<p>
+<pre class="  language-csharp"><code class="  language-csharp">List<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> numbers <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">List</span><span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+numbers<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+numbers<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+numbers<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</p>
+</div>
+<p>It's also possible to add an entire array to a list using the <em>AddRange</em> function.</p>
+<h2>Add Array To List</h2>
+<div class="code">
+<p>
+<pre class="  language-csharp"><code class="  language-csharp">List<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> numbers <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">List</span><span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> array <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+numbers<span class="token punctuation">.</span><span class="token function">AddRange</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</p>
+</div>
+<p>You can also remove contents from a list using <em>Remove</em>
+<h2>Remove List Item</h2>
+<div class="code">
+<p>
+<pre class="  language-csharp"><code class="  language-csharp">List<span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">&gt;</span> groceries <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">List</span><span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// add groceries</span>
+groceries<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"soda"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+groceries<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"cookies"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+groceries<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"ham"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// now remove the cookies</span>
+groceries<span class="token punctuation">.</span><span class="token function">Remove</span><span class="token punctuation">(</span><span class="token string">"cookies"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>groceries<span class="token punctuation">.</span>Count<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</p>
+</div>
+<h2>Output</h2>
+<div class="output">
+<p>
+2
+</p>
+</div>
+<p>We can also use the <em>RemoveAt</em> function to specifiy an index of an item to remove. In our case, to remove the cookies, we will use the index 1.</p>
+<h2>RemoveAt</h2>
+<div class="code">
+<p>
+<pre class="  language-csharp"><code class="  language-csharp">List<span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">&gt;</span> groceries <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">List</span><span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// add groceries</span>
+groceries<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"soda"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+groceries<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"cookies"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+groceries<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"ham"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// now remove the cookies</span>
+groceries<span class="token punctuation">.</span><span class="token function">RemoveAt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>groceries<span class="token punctuation">.</span>Count<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</p>
+</div>
+<h2>Output</h2>
+<div class="output">
+<p>
+2
+</p>
+</div>
+</br>
+</br>
+<h2> Concatenating Lists</h2>
+<p>You can use the <em>AddRange</em> function to join lists</p>
+<h2>Concatenating Lists Example</h2>
+<div class="code">
+<p>
+<pre class="  language-csharp"><code class="  language-csharp">List<span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">&gt;</span> food <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">List</span><span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+food<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"steak"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+food<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"chicken"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+List<span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">&gt;</span> vegetables <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">List</span><span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+vegetables<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"tomato"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+vegetables<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"carrot"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+food<span class="token punctuation">.</span><span class="token function">AddRange</span><span class="token punctuation">(</span>vegetables<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>food<span class="token punctuation">.</span>Count<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</p>
+</div>
+<h2>Output</h2>
+<div class="output">
+<p>
+4
+</p>
+</div>
+</br>
+</br>
+<a href="/C_sharp/variables"><button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> C# - Variables
+    </button></a>
+
+    <a href="/C_sharp/modifiers"><button type="button" class="btn btn-default btn-lg" style="float: right;">
+        C# - Modifiers <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+{% endblock %}

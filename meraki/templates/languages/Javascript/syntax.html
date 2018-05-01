@@ -1,0 +1,430 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<title>Meraki-Javascript-Syntax</title>
+
+<!-- The import required for AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<script>
+function myFunction() {
+    document.getElementById("tutorial").innerHTML = "You can do so much more with Javascript";
+}
+</script>
+
+<!--=================================================================================================================================
+
+White space         : &nbsp;
+bold tag            : <b></b>
+Indent              : <p style="text-indent: 50px;">    </p>
+Horz Bar with \n    : <br><hr class="ones"><br>
+hyper link          : <a href="/location/">TEXT</a>
+bootstrap glyphs    : <span class="glyph-goes-here" aria-hidden="true"></span>
+image               : <img src="{{url_for('static', filename='photos/cover.jpg') }}">
+DL of static file   : <a href="/static/resume/Resume30August2016.doc">Here</a>
+
+use .container for containing responsive fixed width containers
+unable to be nested
+
+    <div class="container">
+    ...
+    </div>
+
+use .container-fluid for a full width container, which will span across the entire viewport
+
+    <div class="container-fluid">
+    ...
+    </div>
+
+<p style="text-indent: 50px;">
+
+</p>
+=================================================================================================================================-->
+
+    <br><br><br><h3 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Javascript/javascript.png') }}">
+    Welcome to the Javascript Syntax Homepage, <b>{{un}}</b>!</h3>
+
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+
+    <p class="intro">
+        <center><b>
+            Javascript | Syntax
+        </b></center>
+    </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <p style="text-indent: 50px;">
+
+        <b>Syntax</b> is the set of exact rules for a specific language. Javascript syntax relates to how the programs are
+        built, designed, or constructred. A program is generally an organized list of instructions the computer will read,
+        and the computer will execute the instructions given to it by the programmer. The instructions given to the computer
+        to be read are called <b>statements.</b> Javascript is considered a programming, but I am not sure if it is a Turing
+        complete language or not. Javascript separates the statements by <b>semicolons.</b> The use of semicolons alone does
+        not make Javascript a programming language, but we will dive deeper into that subject as the tutorial progresses. In
+        HTML, Javascript programs are executed by the web browser, and could be called interpreted.
+
+        <br>
+        <br>
+        <br>
+
+        <b>var</b> x, y, z;
+
+        <br>
+
+        Three variables are created; x, y, and z. The variable statement ends in a semicolon.
+
+        <br>
+
+        <b>x</b> = 10;
+
+        <br>
+
+        <b>y</b> = 16;
+
+        <br>
+
+        <b>z</b> = 1985;
+
+    </p>
+
+    <div style="margin-left: 100px;">
+
+        <div class="w3-code notranslate htmlHigh"><span style="color: brown;"><span style="color: mediumblue;">&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;h2&gt;JavaScript Tutorials&lt;/h2&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p&gt;The variables x, y, and z are assigned the values 10, 16, and 1985.&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p&gt;Then a string is concatenated with the three variables to display James' birthday.&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p id="birthday"&gt;&lt;/p&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!-- notice the null element --&gt;<br /><br />&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var x, y, z;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x = 10;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y = 16;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; z = 1985;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; result = "James' Birthday: " + x + "/" + y + "/" + z;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("birthday").innerHTML = result;<br />&nbsp; &lt;/script&gt;<br /><br />&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</span></span></div>
+
+    </div>
+
+    <br>
+
+    <p>
+        The string variable result is a concatenated variable designed with x, y, and z in mind. The result variable is then
+        interjected into a null element via the getElementById(id) method. This is a way to create dynamic functions within
+        your website or web application to serve the information quicker. If the information is dynamically created and displayed,
+        that means the information didn't need to be stored on the db, didn't need to be queried, didn't need to have countless
+        function calls to modify the resulting information in a way you need, and it certainly didn't need to take 100s of lines
+        of code to achieve what you can achieve with a few Javascript lines, right?
+    </p>
+
+<!--========================================================================================================================-->
+    <br>
+    <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+    <br>
+<!--========================================================================================================================-->
+
+    <h3>Javascript Statements encompass:</h3>
+    <ul>
+        <li>
+            <b>
+                Values
+            </b>
+            literals and variables
+        </li>
+        <li>
+            <b>
+                Operators
+            </b>
+            arithmetic and assignment
+        </li>
+        <li>
+            <b>
+                Expressions
+            </b>
+            computes an evaluation
+        </li>
+        <li>
+            <b>
+                Keywords
+            </b>
+            actions to be taken
+        </li>
+        <li>
+            <b>
+                Comments
+            </b>
+            leave a trace of what you were thinking
+        </li>
+    </ul>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Values</h3>
+
+    <p>
+
+        can be defined within Javascript in two ways; a literal fixed value or a change variable value. A
+        literal is a value that is fixed, or a value that does not change at all. Variables are named because they variably
+        change, depending on the program, and you can not be certain what the value will be from time to time.
+
+    </p>
+
+    <div style="margin-left: 100px; margin-right: 100px;">
+
+        <h3>Literals</h3>
+
+        <p>Numbers are one of the most common literals, and they can be written with or without decimals.</p>
+
+        <p style="margin-left: 100px;">10.16</p>
+
+        <p style="margin-left: 100px;">OR</p>
+
+        <p style="margin-left: 100px;">1016</p>
+
+        <p><b>Strings</b> are text that must be written inside of single or double quotation marks inside Javascript.</p>
+
+        <div style="margin-left: 100px;">
+            "James Patterson"
+            or
+            'James Patterson'
+        </div>
+
+        <hr>
+
+        <h3>Variables</h3>
+
+        <p>
+            the var keyword is used to declare variables in Javascript. The equals sign is used to assign the values to the variables
+            The following code reads: a variable is created called month, and month is assigned the value of 10.
+        </p>
+
+        <p style="margin-left: 100px;"><b>var</b> month;</p>
+
+        <p style="margin-left: 100px;">month = 10;</p>
+
+        <p>
+            The value can then be inserted into a null element waiting for a data set, or replace a small bit of dynamic data.
+        </p>
+
+    </div>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Operators</h3>
+
+    <p>
+
+        can be used in multiple different ways, but mainly are used for arithmetic operations and assignment operations.
+        Arithmetic operations are exactly what they seem to be; operations that involve arithmetic to a set value. Arithmetic
+        operations include addition, subtraction, multiplication, division, and modulus to name a few. Javascript uses the
+        assignment operator to assign a value to a variable. The equals sign is used during the assignment. The variable name,
+        the equals sign, and then the values associated with the assignment.
+
+    </p>
+
+    <div style="margin-left: 100px; margin-right: 100px;">
+
+        <h3>Arithmetic</h3>
+
+        <p>can be used within javascript quite easily. Javascript uses an extensive math library to perform any
+        kind of calculation required of it.</p>
+
+        <div style="margin-left: 100px; color: blue;">
+
+            <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;h2&gt;JavaScript Arithmetic Operators&lt;/h2&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;document.getElementById("tutorial").innerHTML = ((16 - 4 + ((2 + 4) * 6))/2);<br />&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        </div>
+
+        <h3>Assignment</h3>
+
+        <p>is when you create the variables and assign the variables values.</p>
+
+        <div style="margin-left: 100px;">
+
+            <p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;h2&gt;Assigning JavaScript Values&lt;/h2&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p&gt;In JavaScript the = operator is used to assign values to variables.&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p id="tutorial"&gt;&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp; var x, y;<br />&nbsp;&nbsp;&nbsp; x = 10;<br />&nbsp;&nbsp;&nbsp; y = 16;<br />&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML = x + "/" + y;<br />&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</p>
+
+        </div>
+
+    </div>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+        <h3>Expressions</h3>
+
+        <p>
+
+            are a combination of different values, variables, literals, operators, and more that might computer or document a
+            value. The computation is known as an evaluation. Five times ten will always equal fifty. Expressions can use variables
+            in their computation. The values can be different types; floats, doubles, integers, and strings.
+
+        </p>
+
+        <hr>
+
+        <div>
+
+            "James" + " " + "Patterson" will evaulate to "James Patterson".
+
+        </div>
+
+        <hr>
+
+        <p>
+
+            The expression will incorporate the evaluation of variables with numbers concatenated with
+            strings. The code below will show you how to achieve this goal.
+
+        </p>
+
+        <div style="margin-left: 100px;">
+
+            <p><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #0000ff;">&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br />&nbsp; &lt;body&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;h2&gt;JavaScript Expressions&lt;/h2&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;p&gt;James Patterson has $<span style="color: #ff0000;">&lt;span id="tutorial"&gt;&lt;/span&gt;</span> in his pocket.&lt;/p&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var x;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x = 5;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById("tutorial").innerHTML = x * 10;<br />&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br /><br />&nbsp; &lt;/body&gt;<br />&lt;/html&gt;</span></span></span></span></span></p>
+
+        </div>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+        <h3>Keywords</h3>
+
+        <p>
+
+            are used in Javascript to identify the actions to be performed within the HTML code. The <b>var</b> keyword
+            informs the browser to create the variables. There will be more on keywords as the tutorials progress. The
+            <b>var</b> keyword creates a variable or literal out of the programmers actions.
+
+        </p>
+
+        <hr>
+
+        <div>
+
+            var x, y; <br>
+            x = 10 + 5;<br>
+            y = x + 15;<br>
+            result = x + y;<br>
+
+        </div>
+
+        <hr>
+
+        <p>
+            The answer is not 30 if that is what you were thinking. Because x equals 15 when it is used in y to make y 30, but then
+            result takes x, which is 15, and adds that to y which is 30. So, result will equal 45 when returned using Javascript.
+        </p>
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+        <h3>Comments</h3>
+
+        <p>
+
+            are essential in any language, including Javascript, but creating effective comments is the goal one wants to achieve.
+            Comments are used after two double slashes, //, or between two similar tags /* and */. Comments are always ignored
+            within any programming language, and should be utilized to ensure reusability. Comments are great to catelog what you
+            were thinking while programming the specific code. The comments will always be there, and will help you if you forget
+            what is going on in the code.
+
+        </p>
+
+        <hr>
+
+        <h3>Identifiers</h3>
+
+        <p>
+
+            are basically names, the names are used to name variables, keywords, functions, and labels to name a few. The
+            rules for the legal names are similar to most other programming languages. Javascript must have the first character
+            be a letter, underscore, or a dollar sign. The characters followed by one of the three can be letters, digits, underscores,
+            or dollar signs. Numbers are not allowed to allow JS to easily determine numbers from identifiers.
+
+        </p>
+
+        <h5>Case Sensitive Identifiers</h5>
+
+        <p>
+
+            are identifiers where the case of the name completely matters. The variable names lastName and lastname are
+            not the same two variables, but they are instead totally different variables. Javascript does not even
+            interpret the words VAR and Var as the keyword <b>var</b>.
+
+            <div>
+
+                var lastname, lastName; <br>
+                lastname = "Doe";<br>
+                lastName = "Patterson";<br>
+
+            </div>
+
+        </p>
+
+        <h3>Naming conventions</h3>
+
+        <p>
+
+            Javascript allows for naming conventions to be in the following ways:
+
+            <ul>
+                <li>
+                    <b>
+                        Use Underscores
+                    </b>
+                    first_name, last_name, ga_Tech
+                </li>
+                <li>
+                    <b>
+                        Upper Camel Case
+                    </b>
+                    FirstName, LastName, GaTech
+                </li>
+                <li>
+                    <b>
+                        Lower Camel Case (my go to)
+                    </b>
+                    firstName, lastName, gaTech
+                </li>
+            </ul>
+
+            Javascript does use the Unicode character set, and that does cover the majority
+            of the characters, punctuations, and symbols known throughout the world. Google
+            the term Complete Unicode Reference for a larger scale understanding of the topic.
+
+        </p>
+
+
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+
+        <h3 style="text-align: center;">Next, we will take a look at </h3>
+
+        <p style="text-align: center;">Just follow the buttons to continue the tutorial, {{un}}</p>
+
+
+        <br>
+
+        <a href="/Javascript/output"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Javascript - Output
+        </button></a>
+
+        <a href="/Javascript/statements"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        Javascript - Statements <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        </button></a>
+
+{% endblock %}

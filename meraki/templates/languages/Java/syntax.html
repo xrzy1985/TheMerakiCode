@@ -1,0 +1,234 @@
+{% extends "header.html" %}
+    {% block body %}
+
+    <title>Meraki : Java : Syntax</title>
+
+    <style>
+    hr {
+        color: blue;
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: 10px;
+    }
+    </style>
+
+        <br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Java.png') }}">
+        Welcome to the Java Syntax page, <b>{{un}}</b>!</h1>
+
+        <hr>
+
+        <blockquote>
+
+            Essentials of Java Syntax
+
+        </blockquote>
+
+<h4>
+    <p style="text-indent: 50px;">
+        Java is an amazing high level object oriented language. Java is designed around the idea of object oriented programming. In Java,
+        everything can be considered an object. Java is a class based programming language; every Java file created is effectively a new class, but
+        interfaces, abstract classes, and a few other exceptions do apply. Java was designed to allow a programming to write the code, and
+        then be able to run the code on any machine. Java code is broken into java byte code upon compilation, and the java virtual machine located
+        on the host computer will break the java byte code down into machine specific code. Java use to hold the reputation for being slower than
+        C++ and other competitors, but since 1997 the company has made vast improvements on the speed of compilation.
+        <br><br>
+    </p>
+    <p style="text-indent: 50px;">
+        Java was influenced
+        heavily by C++. Java code is written all inside of classes with every item being an object. Java will not allow multiple inheritance for
+        classes, but does offer interfaces and abstract classes. Java has a similar commenting system as C++.
+
+        <br><br> // is a single line comment
+
+        <br><br> /* will start a long comment, but it must be closed with a */ at the end in order to close off the comment. <br><br>
+    </p>
+    <p style="text-indent: 50px;">
+        Javadoc commenting style opened with /** and closed with */.
+        The Javadoc style of commenting allows the user to run the Javadoc executable to create documentation for the program, and can be read by some
+        integrated development environments (IDEs) such as Eclipse to allow developers to access documentation within the IDE.
+    </p>
+</h4>
+
+<br>
+<ul class="list">
+<li><p><b>Object</b> &minus; Objects have behaviours and states. For example, a gecko has "states" (traits like color, size, morphism) as well as "behaviours" (actions like eating, climbing, or escaping).</p></li>
+<li><p><b>Class</b> &minus; A class can be described as a template/design that defines an object, as well as its states/behaviours.</p></li>
+<li><p><b>Methods</b> &minus; A Java class's methods define its possible behaviour. There is virtually no limit to the number of methods your class can contain.</p></li>
+<li><p><b>Instance Variables</b> &minus; Each class also has instance variables that describe its current state.</p></li>
+</ul>
+
+<hr>
+
+<h2>Basic Syntax</h2>
+<p>About Java programs, it is very important to keep in mind the following points.</p>
+<ul class="list">
+<li><p><b>Case Sensitivity</b> &minus; Java is case sensitive, which means the identifier names <b>Hello</b> and <b>hello</b> would be interepreted as different names by Java</p></li>
+<li><p><b>Class Names</b> &minus; In standard practice, all class names should start with a capital letter. If the name is multiple words, "Camel Case", where the first letter of each word is capitalized, should be used.</p>
+<p><b>Example:</b> <i>class HelloWorld.java</i></p></li>
+<li><p><b>Method Names</b> &minus; Mmethod names should generally start with a Lower Case letter. CamelCase should be used for every word but the first word in a longer name.</p>
+<p><b>Example:</b> <i>public void getName()</i></p></li>
+<li><p><b>Program File Name</b> &minus; The name of a java program should match the name of the class.</p>
+<p>When saving a program, you should save it using the class name (while remembering that Java is case sensitive) and append '.java' to the end of the name (if the file name and the class name do not match, your program will not compile).</p>
+<p><b>Example:</b> Assume 'MyFirstCoolJavaProgram' is the class name. Then the file should be saved as <i>'MyFirstCoolJavaProgram.java'</i></p></li>
+<li><p><b>public static void main(String args[])</b> &minus; Java program processing starts from the main() method which is a mandatory part of every Java program.</p></li>
+</ul>
+
+<hr>
+
+<h2>Java Keywords</h2>
+<p>The table that follows lists the "reserved words" in Java. These words may not be used as constant or variable or any other identifier names, as they are reserved for specific use/references.</p>
+<table class="table table-bordered" style="text-align:center;">
+<tr>
+<td>abstract</td>
+<td>assert</td>
+<td>boolean</td>
+<td>break</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>case</td>
+<td>catch</td>
+<td>char</td>
+</tr>
+<tr>
+<td>class</td>
+<td>const</td>
+<td>continue</td>
+<td>default</td>
+</tr>
+<tr>
+<td>do</td>
+<td>double</td>
+<td>else</td>
+<td>enum</td>
+</tr>
+<tr>
+<td>extends</td>
+<td>final</td>
+<td>finally</td>
+<td>float</td>
+</tr>
+<tr>
+<td>for</td>
+<td>goto</td>
+<td>if</td>
+<td>implements</td>
+</tr>
+<tr>
+<td>import</td>
+<td>instanceof</td>
+<td>int</td>
+<td>interface</td>
+</tr>
+<tr>
+<td>long</td>
+<td>native</td>
+<td>new</td>
+<td>package</td>
+</tr>
+<tr>
+<td>private</td>
+<td>protected</td>
+<td>public</td>
+<td>return</td>
+</tr>
+<tr>
+<td>short</td>
+<td>static</td>
+<td>strictfp</td>
+<td>super</td>
+</tr>
+<tr>
+<td>switch</td>
+<td>synchronized</td>
+<td>this</td>
+<td>throw</td>
+</tr>
+<tr>
+<td>throws</td>
+<td>transient</td>
+<td>try</td>
+<td>void</td>
+</tr>
+<tr>
+<td>volatile</td>
+<td>while</td>
+<td></td>
+<td></td>
+</tr>
+</table>
+
+<br><hr><br>
+
+<p style="text-indent: 50px;">
+
+
+    The following will be some basics to starting your first Java program!
+
+    <br><br>
+
+    <p align="center"><img style="max-width: 800px; margin-top: -10px; " src="{{url_for('static', filename='photos/Java_Introduction/HelloWorld.jpg') }}"></p>
+
+    <br><br>
+
+    Now, run the code within an IDE, or the right side of the screen has access to an online Java compiler.
+
+    <br><hr><br>
+
+    I recommend using <a href="https://eclipse.org/">Eclipse</a>, which is an amazing Java IDE. Eclipse allows
+    users to set a different background color which allows the user to better see key words. The IDE is intelligent,
+    allowing the user to effectively save typing time. JGrasp is an option which most universities use, but Eclipse
+    is free to use and should be utilized. The following is a tutorial program written, heavily commented, to help
+    a beginner understand the basics behind different values, Strings, printing, and basic introduction materials
+    that can be useful in the future. Please, copy the code inside an IDE, and take a look at the entire code.
+    Change the code, modify the code, break the code, and reverse engineer the code until you fully understand the
+    basic concepts in the Tutorial file provided below.
+
+
+    <br><br>
+</p>
+
+<br><hr><br>
+
+<p>
+
+    <p>// Inside java, everything is a class or an object<br />// public class defines all the attributes, variables, <br />// data structures, functions, methods, or additional functionality<br /><br />// public means everyone should be able to access it<br /><br />public class Tutorial1 <br />{<br />&nbsp;&nbsp;&nbsp; // public allows all classes to use this function<br />&nbsp;&nbsp; &nbsp;// static only a class can call for this function, variable, etc to execute<br />&nbsp;&nbsp; &nbsp;// the class main will be called/used by helloWorld<br />&nbsp;&nbsp; &nbsp;// void means the function does not return any values when execution is finished<br />&nbsp;&nbsp; &nbsp;// (String[]args) means every main function must accept an array of string objects<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;// the static variable will be able to be used by the main function since its static<br />&nbsp;&nbsp; &nbsp;// the string gamerTag holds the string of characters xRzy</p>
+    <p><br />&nbsp;&nbsp; &nbsp;static String gamerTag = "xRzy";<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;// PIE is a double, but could be cast as a float as well<br />&nbsp;&nbsp; &nbsp;// Double is larger and more precise than a float</p>
+    <p><br />&nbsp;&nbsp; &nbsp;static final double PIE = 3.141529;<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;public static void main (String[]args)<br />&nbsp;&nbsp; &nbsp;{<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// The first two will print on the same line<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.print("James ");<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.print("Patterson; " + gamerTag + "\n");<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// The \n will drop to the next line<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("\nHello, World!");<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("\nPi: " +&nbsp; PIE);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// a integer variable is created and assigned the value of 21<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// this is a DECLARATION STATEMENT<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;int randomInteger = 21;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("\nOne must be " + randomInteger + " to drink legally.");<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// another int is created using the first variable minus 3<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// this is known as a EXPRESSION STATEMENT<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;int randomInteger2 = randomInteger -3; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("\nOne must be " + randomInteger2 + " to smoke legally.");<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// a byte data type cannot be larger than 127 and a minimum of -128<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;byte bigByte = 127;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// a short data type cannot be larger than 32767 and a minimum of -32768<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;short smallShort = 32767; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("\n" + smallShort);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;int bigInt = 2100000000;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("\n" + bigInt);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// a long must end in a L<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;long bigLong = 920000000000000000L;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("\n" + bigLong);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// a float variable is a long winded double variable<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// it is machine dependant<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;float bigFloat = 3.14F;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("\n" + bigFloat);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;double bigDouble = 3.143425352365645634563456;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("\n" + bigDouble);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.print("\nThe largest float your machine can create is: ");<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.print(Float.MAX_VALUE);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.print("\nThe largest double your machine can create is: ");<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.print(Double.MAX_VALUE);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// boolean variables are either true or false<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// they cannot hold any other type of input<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;boolean tF = true;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("\n" + tF);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// a char is just a character <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;char badge1 = 74;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//74 is the character code for J<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;char badge2 = 'P';<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;char badge3 = '8';<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;char badge4 = '5';<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;String badge = "Tag: ";<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// Escaped Characters<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// \f \b \n \r \t \" \' \\<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// the \ must be used before hand<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// and they need to be inclosed in a ''<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;char escaped = '\n';<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println(escaped + badge + badge1 + badge2 + badge3 + badge4);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;String sentence1 = escaped + "This is my first sentence, ";<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;String sentence2 = "but it will&nbsp; not be my last";<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println(sentence1 + sentence2);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// To convert any of the other types to a string<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// you must cast the variable as a string<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;String byteString = Byte.toString(bigByte);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println(escaped + bigByte);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println(escaped + byteString);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;double variable1 = 17.432;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;int doubleToInt = (int) variable1;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println(escaped + doubleToInt);&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("\nGoodbye, World!");<br /><br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// println will print on a new line each time<br />&nbsp;&nbsp; &nbsp;}<br />}</p>
+
+</p>
+
+<br><hr><br>
+
+<p>
+
+    <p>James Patterson; xRzy<br /><br />Hello, World!<br /><br />Pi: 3.141529<br /><br />One must be 21 to drink legally.<br /><br />One must be 18 to smoke legally.<br /><br />32767<br /><br />2100000000<br /><br />920000000000000000<br /><br />3.14<br /><br />3.1434253523656457<br /><br />The largest float your machine can create is: 3.4028235E38<br />The largest double your machine can create is: 1.7976931348623157E308<br />true<br /><br />Tag: JP85<br /><br />This is my first sentence, but it will&nbsp; not be my last<br />137<br /><br />127<br />27<br /><br />Goodbye, World!</p>
+
+</p>
+
+
+    <br><hr><br>
+
+    <h3 style="text-align: center;">
+            Comments
+    </h3>
+
+    <p style="text-align: center;">
+        Next, we will look at Comments, and how they are an essential discipline of good programming.
+    </p>
+
+    <a href="/Java/introduction/"><button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Java - Introduction
+    </button></a>
+
+    <a href="/Java/comments/"><button type="button" class="btn btn-default btn-lg" style="float: right;">
+        Java - Comments   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+    {% endblock %}

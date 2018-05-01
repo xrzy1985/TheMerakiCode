@@ -1,0 +1,145 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<!-- The import required for AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<style>
+
+    #interview{
+        background-color: #6b6362;
+        color: white;
+        margin: 5px;
+        padding: 100px;
+    }
+
+</style>
+
+<!--=================================================================================================================================
+
+White space         : &nbsp;
+bold tag            : <b></b>
+Indent              : <p style="text-indent: 50px;">    </p>
+Horz Bar with \n    : <br><hr class="ones"><br>
+hyper link          : <a href="/location/">TEXT</a>
+bootstrap glyphs    : <span class="glyph-goes-here" aria-hidden="true"></span>
+image               : <img src="{{url_for('static', filename='photos/cover.jpg') }}">
+DL of static file   : <a href="/static/resume/Resume30August2016.doc">Here</a>
+
+use .container for containing responsive fixed width containers
+unable to be nested
+
+    <div class="container">
+    ...
+    </div>
+
+use .container-fluid for a full width container, which will span across the entire viewport
+
+    <div class="container-fluid">
+    ...
+    </div>
+
+<p style="text-indent: 50px;">
+
+</p>
+
+<ul>
+    <li>
+        <b>
+
+        </b>
+        Text <br>
+    </li>
+</ul>
+
+=================================================================================================================================-->
+
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+    <h3>Interview Questions</h3>
+
+    <br><br>
+
+    <div id="interview">
+
+        <h3>Data Structures</h3>
+
+        <br><br>
+
+        <p>
+
+            Data Structures are one of the most important topics related to computer science. Linked lists, trees, recursive functions,
+            stacks, queues, and more. In computer science, a data structure is a particular way of organizing data in a computer so
+            that it can be used efficiently.
+
+        </p>
+
+    </div>
+
+    <br><br>
+
+    <h3>linked List</h3>
+
+    <br><br>
+
+    <h3>Bubble Sort using Linked List</h3>
+
+    <br><br>
+
+    <h3>Recursion</h3>
+
+    <br><br>
+
+    <h3></h3>
+
+    <h3>Stacks</h3>
+
+    <br><br>
+
+    <h3>Queues</h3>
+
+    <br><br>
+
+    <h3>Trees</h3>
+
+    <br><br>
+
+    <h3>Big O Notation</h3>
+
+    <br><br>
+
+    <h3>Binary Search</h3>
+
+    <br><br>
+
+    <h3>Objects</h3>
+
+    <br><br>
+
+    <h3>Inheritance</h3>
+
+    <br><br>
+
+    <h3>SQL</h3>
+
+    <br><br>
+
+    <h3>Inner and Outer Joins</h3>
+
+
+
+<!--========================================================================================================================-->
+        <br>
+        <hr style="color: blue;display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 10px;">
+        <br>
+<!--========================================================================================================================-->
+
+
+
+{% endblock %}

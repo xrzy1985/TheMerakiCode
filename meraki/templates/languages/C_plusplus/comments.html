@@ -1,0 +1,108 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<style>
+hr {
+    color: blue;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}
+</style>
+
+    <br><br><br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/c_plusplus.png') }}">
+    Welcome to the C++ Comments Homepage, mate!</h1>
+
+    <hr>
+
+    <blockquote>
+
+        C++ Comments and Their Importance Information
+
+    </blockquote>
+
+    <br>
+<style>
+.code
+{
+	background-color: #E0FFFF;
+}
+.output
+{
+	background-color: #000000;
+	color: #ffffff;
+}
+h1
+{
+	text-align: center;
+	text-decoration: underline;
+}
+h2
+{
+	text-decoration: underline;
+}
+.content
+{
+	text-align: center;
+}
+table
+{
+background-color: #6495ed;
+color: #ffffff;
+border: solid 2px black;
+}
+</style>
+<p>
+Comments are useful to explain code to the reader </br>
+The compiler ignores the comment entries
+and doesn't run it as code. </br>
+I will first demonstrate how single line
+comments are done.
+</p>
+</br>
+<h2>Single Line Comments</h2>
+<div class ="code">
+<p>
+//I'm a single line comment!
+</p>
+</div>
+<p>For Multi Line comments, you start with
+/* and terminate the comment section with */ </p>
+<h2>Multi Line Comments</h2>
+<div class="code">
+<p>/*This demonstrates
+</br>
+Multi Line Comments. */ </p>
+</div>
+
+
+
+
+    <br><hr><br>
+
+    <h3 style="text-align: center;">
+            Objects & Classes
+    </h3>
+
+    <p style="text-align: center;">
+        Next, we will discuss Objects within the language of C++, and how to create Classes to use those objects.
+    </p>
+
+    <a href="/C_plusplus/syntax"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> C++ - Syntax
+    </button></a>
+
+    <a href="/C_plusplus/objects_classes"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        C++ - Objects & Classes   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+
+
+{% endblock %}

@@ -1,0 +1,361 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<style>
+hr {
+    color: blue;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}
+</style>
+
+    <br><br><br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/python.jpg') }}">
+    Welcome to the Python operators page, <b>{{un}}</b>!</h1>
+
+    <hr>
+
+    <blockquote>
+
+        Operators manipulate the value of a single operand. x + y = 12 is an expression. X and Y are operands while
+        the operator is the + sign. Python supports multiple types or operators:
+        <ul>
+            <li>Arithmetic Operators</li>
+            <li>Comparison Operators (relational)</li>
+            <li>Assignment Operators</li>
+            <li>Logical Operators</li>
+            <li>Bitwise Operators</li>
+            <li>Membership Operators</li>
+            <li>Identity Operators</li>
+        </ul>
+
+        <p>Lets take a closer look at each individual one</p>
+
+    </blockquote>
+
+    <br><hr><br>
+
+    <h3>
+        Arithmetic Operators
+    </h3>
+
+    <p>
+        Let us assume for a minute that the following is true:
+        <br>
+        <ul>
+            <li>x = 10</li>
+            <li>y = 2</li>
+        </ul>
+        <br>
+        <p>x + y = 12</p>
+        <p>x - y = 8</p>
+        <p>x * y = 20</p>
+        <p>x / y = 5</p>
+        <p>(x + 5) % y = 1</p>
+        <h6>X is 10, and has 5 added to it to become 15, then modulus y with a remainder of 1</h6>
+        <h6>The modulus will divide the left hand operand by the right and return the remainder</h6>
+        <p>x**y = 100</p>
+    </p>
+
+    <br><hr><br>
+
+    <h3>
+        Python's Comparison Operators
+    </h3>
+
+    <p>
+        Python has what is called comparison operators. These comparison operators will compare
+        values on both sides of the operator.
+        <ul>
+            <li>x = 10</li>
+            <li>y = 2</li>
+        </ul>
+        <br>
+        <p>There are several uses for the comparison operator, which we will see now:</p>
+        <p> x == y will return False</p>
+        <h6> 10 does not equal 2 and returns False</h6>
+        <p> x == (y*5) will return True</p>
+        <h6> 10 does equal 10 and returns True</h6>
+        <p> x != y ; will return True</p>
+        <h6> This is saying, x does not equal y, and if it doesn't return True</h6>
+        <p> x > y ; will return True</p>
+        <h6> 10 is greater than 2 </h6>
+        <p> x < y ; will return False</p>
+        <h6> 10 is not smaller than 2</h6>
+        <p> x >= y ; will return True</p>
+        <h6> 10 is greater than or equal to 2</h6>
+        <p> x <= y ; will return False</p>
+        <h6> 10 is not less than or equal to 2 </h6>
+        <br>
+        <p>There are so many applications behind using comparison operators. Depending on the certain situation
+           This website for instance, uses a lot of comparison operators to compare the value of the currently
+           logged in user with values stored in the database of the website. A user who has a message waiting,
+           will have his/her username compared against a database table query, and dynamically make the information
+           available to use among the general public.
+        </p>
+
+    </p>
+
+    <br><hr><br>
+
+    <h3>
+        Python's Assignment Operators
+    </h3>
+
+    <p>
+        Python has assignment operators, which you should all be familar with by now.
+    </p>
+    <p>
+        <b>
+            The = Operator
+        </b>
+        <h6>
+            Assigns the values from the right side operands to left side
+        </h6>
+    </p>
+
+    <p>
+        <b>
+        The += Operator
+        </b>
+        <h6>
+            It adds the right side to the left and assigns the result to the left operand
+        </h6>
+    </p>
+
+    <p>
+        <b>
+            The -= Operator
+        </b>
+        <h6>
+            Will subtrace the right from the left and assign the result to the left operand
+        </h6>
+    </p>
+
+    <p>
+        <b>
+            The *= Operator
+        </b>
+        <h6>
+            Will multiply the right with the left and assign the result to the left operand
+        </h6>
+    </p>
+
+    <p>
+        <b>
+            The /= Operator
+        </b>
+        <h6>
+            Will divide the right from the left and assign the results to the left operand
+        </h6>
+    </p>
+
+    <p>
+        <b>
+            The %= Operator
+        </b>
+        <h6>
+            Will perform left side % right side and assign the results to the left operand
+        </h6>
+    </p>
+
+    <p>
+        <b>
+            The **= Operator
+        </b>
+        <h6>
+            will take the the left side and raise it to the power of the right side and assign results to left operand
+        </h6>
+    </p>
+
+    <br><hr><br>
+
+    <h3>
+        Python's Logical Operators
+    </h3>
+
+    <p>
+        A Logical operator is when you have two variables and both conditionally equal one thing or the other.
+        Let us assume that x = True and y = False
+    </p>
+
+    <p>Logical AND operator</p>
+    <h6>If both x AND y are true, then the condition evaluates as True</h6>
+
+    <p>Logical OR operator</p>
+    <h6>If either x or y are true, then the condition evaluates as True</h6>
+
+    <p>Logical NOT operator</p>
+    <h6>Used to reverse the state of the operand</h6>
+    <h6>Not(x and y) will evaluate to True</h6>
+
+    <p>These could come in handy if you are evaluating two conditions based on certain circumstances</p>
+    <p>I can see this being useful for a traffic light system, when a detector needs to register more than
+        one value and return certain states upon certain values.
+    </p>
+
+    <br><hr><br>
+
+    <h3>
+        Bitwise Operators within Python
+    </h3>
+
+    <p>
+        Bitwise operators work on bits only, and perform specific tasks bit by bit.
+    </p>
+
+    <p>x = 60</p>
+    <h6>This means the binary format for x will be 0011 1100</h6>
+    <p>x = 13</p>
+    <h6> 0000 1101 </h6>
+
+    <br><hr><br>
+
+    <p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/operators/bitwise.jpg') }}"></p>
+
+    <br><hr><br>
+
+    <h3>
+        Python has membership operators, which test for membership in a sequence, like a string, a list, or a tuple.
+    </h3>
+
+    <p>
+        <ul>
+            <li><b>in operator</b></li>
+            <li>-- Evaluates to true if a variable is present in the sequence</li>
+            <li><b>not in operator</b></li>
+            <li>-- Evaluates to true if a variable is not present in the sequence</li>
+        </ul>
+    </p>
+
+    <br><hr><br>
+
+    <h3>
+        Python's Identity Operators
+    </h3>
+
+    <p>
+        Python has identity operators built into it. An identity operator will compare the memory locations of two objects.
+    </p>
+
+    <p>
+        When you have two objects and need to be sure if they are the same or not, use a identity operator
+        <br>
+        <ul>
+            <li>
+                <b>is operator</b>
+                <h6>-- Evaluates to true if the variables on either side point to the same object in memory</h6>
+                <h6>-- x is y; if function(x) == function(y)</h6>
+            </li>
+            <br>
+            <li>
+                <b>is not operator</b>
+                <h6>-- Evaluates to false if the variables on either side point to the same object in memory</h6>
+                <h6>-- x is not y; if function(x) != function(y)</h6>
+            </li>
+        </ul>
+    </p>
+
+    <br><hr><br>
+
+    <h3>
+        Operator Precedence
+    </h3>
+
+    <p>
+        Precedence is the order in which a line of code will be evaluated by the interpreter. In other words, it is like
+        arithmetic except a few more to remember.
+    </p>
+
+    <br>
+
+    <p>
+        <ul>
+            <li><h4><b> ** </b></h4></li>
+            <ld>-- Exponentials</ld>
+            <li><h4><b> ~+- </b></h4></li>
+            <li>-- Ccomplement, a unary plus and minus</li>
+            <li><h4><b> *, /, %, or // </b></h4></li>
+            <li>-- Multiply, divide, modulus, or floor division</li>
+            <li><h4><b> +, - </b></h4></li>
+            <li>-- Plus or Minus</li>
+            <li><h4><b> >> << </b></h4></li>
+            <li>-- Right/Left bitwise shift</li>
+            <li><h4><b> & </b></h4></li>
+            <li>-- Bitwise AND</li>
+            <li><h4><b> ^| </b></h4></li>
+            <li>-- Bitwise excluse OR and regular OR</li>
+            <li><h4><b> <=, <, >, >= </b></h4></li>
+            <li>-- Comparison operators</li>
+            <li><h4><b> <>, ==, != </b></h4></li>
+            <li>-- Equality operators</li>
+            <li><h4><b> =, %=, /=, -=, +=, *=, **= </b></h4></li>
+            <li>-- Assignment operators</li>
+            <li><h4><b> is, is not </b></h4></li>
+            <li>-- The Identity operators</li>
+            <li><h4><b> in, not in </b></h4></li>
+            <li>-- Membership operators</li>
+            <li><h4><b> not, or, and </b></h4></li>
+            <li>-- Logical operators</li>
+        </ul>
+    </p>
+
+    <br><hr><br>
+
+    <p>Operators are one of the most useful aspects of programming with Python. A brief
+        use of operators for me is the code among this website. A lot of the code is
+        Python, and I have to handle GET and POST request using Python. I write one line
+        of code for Python, and the whole method is taken care of for me.
+        <br>
+        if request.method == 'POST':
+        <br>
+        do stuff
+        <br>
+        redirect(url_for('dashboard'))
+        <br>
+        <br>
+        I know that might not make sense, but Python uses the requests module to determine the method,
+        and if the method equals POST, I will handle the code in whatever way I need to.
+
+    </p>
+
+<!--
+    <h3>
+
+    </h3>
+
+    <p>
+
+    </p>
+
+    <br><hr><br>
+
+    <p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/folder/file.jpg') }}"></p>
+
+    <br><hr><br>
+-->
+
+    <br><hr><br>
+
+    <h3 style="text-align: center;">
+            Decision Making
+    </h3>
+
+    <p style="text-align: center;">
+        Next, we will look at decision making and how it will change the way you program.
+    </p>
+
+    <a href="/Python/variables"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Python - Variables
+    </button></a>
+
+    <a href="/Python/decision_making"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        Python - Decision Making   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a><br><hr><br>
+
+{% endblock %}

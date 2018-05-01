@@ -1,0 +1,260 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<style>
+hr {
+    color: blue;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}
+</style>
+
+    <br><br><br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/python.jpg') }}">
+    Welcome to the Python Imports page, <b>{{un}}</b>!</h1>
+
+    <hr>
+
+    <p>A module allows you to logically organize your Python code. Grouping related code into a module makes the code easier to understand and use. A module is a Python object with arbitrarily named attributes that you can bind and reference.</p>
+<p>Simply, a module is a file consisting of Python code. A module can define functions, classes and variables. A module can also include runnable code.</p>
+<h2>Example</h2>
+<p>The Python code for a module named <em>aname</em> normally resides in a file named <em>aname.py</em>. Here's an example of a simple module, support.py</p>
+<pre id="hello" class="prettyprint notranslate prettyprinted"><span class="kwd">def</span><span class="pln"> print_func</span><span class="pun">(</span><span class="pln"> par </span><span class="pun">):</span>
+   <span class="kwd">print</span> <span class="str">"Hello : "</span><span class="pun">,</span><span class="pln"> par
+   </span><span class="kwd">return</span></pre>
+<h2>The <em>import</em> Statement</h2>
+<p>You can use any Python source file as a module by executing an import statement in some other Python source file. The <em>import</em> has the following syntax:</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">import</span><span class="pln"> module1</span><span class="pun">[,</span><span class="pln"> module2</span><span class="pun">[,...</span><span class="pln"> moduleN</span><span class="pun">]</span></pre>
+<p>When the interpreter encounters an import statement, it imports the module if the module is present in the search path. A search path is a list of directories that the interpreter searches before importing a module. For example, to import the module hello.py, you need to put the following command at the top of the script &minus;</p>
+<pre class="prettyprint notranslate tryit prettyprinted" title="hello"><span class="com"># Run on any IDE, mate!</span>
+
+<span class="com"># Import module support</span>
+<span class="kwd">import</span><span class="pln"> support
+
+</span><span class="com"># Now you can call defined function that module as follows</span><span class="pln">
+support</span><span class="pun">.</span><span class="pln">print_func</span><span class="pun">(</span><span class="str">"Zara"</span><span class="pun">)</span>
+</pre>
+<p>When the above code is executed, it produces the following result &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="typ">Hello</span> <span class="pun">:</span> <span class="typ">Zara</span></pre>
+<p>A module is loaded only once, regardless of the number of times it is imported. This prevents the module execution from happening over and over again if multiple imports occur.</p>
+<h2>The <em>from...import</em> Statement</h2>
+<p>Python's <em>from</em> statement lets you import specific attributes from a module into the current namespace. The <em>from...import</em> has the following syntax &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">from</span><span class="pln"> modname </span><span class="kwd">import</span><span class="pln"> name1</span><span class="pun">[,</span><span class="pln"> name2</span><span class="pun">[,</span> <span class="pun">...</span><span class="pln"> nameN</span><span class="pun">]]</span></pre>
+<p>For example, to import the function fibonacci from the module fib, use the following statement &minus;</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Run on any IDE, mate!</span>
+
+<span class="com"># Fibonacci numbers module</span>
+
+<span class="kwd">def</span><span class="pln"> fib</span><span class="pun">(</span><span class="pln">n</span><span class="pun">):</span> <span class="com"># return Fibonacci series up to n</span><span class="pln">
+    result </span><span class="pun">=</span> <span class="pun">[]</span><span class="pln">
+    a</span><span class="pun">,</span><span class="pln"> b </span><span class="pun">=</span> <span class="lit">0</span><span class="pun">,</span> <span class="lit">1</span>
+    <span class="kwd">while</span><span class="pln"> b </span><span class="pun">&lt;</span><span class="pln"> n</span><span class="pun">:</span><span class="pln">
+        result</span><span class="pun">.</span><span class="pln">append</span><span class="pun">(</span><span class="pln">b</span><span class="pun">)</span><span class="pln">
+        a</span><span class="pun">,</span><span class="pln"> b </span><span class="pun">=</span><span class="pln"> b</span><span class="pun">,</span><span class="pln"> a</span><span class="pun">+</span><span class="pln">b
+    </span><span class="kwd">return</span><span class="pln"> result</span></pre>
+<pre class="prettyprint notranslate prettyprinted"><span class="pun">&gt;&gt;&gt;</span> <span class="kwd">from</span><span class="pln"> fib </span><span class="kwd">import</span><span class="pln"> fib
+</span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> fib</span><span class="pun">(</span><span class="lit">100</span><span class="pun">)</span>
+<span class="pun">[</span><span class="lit">1</span><span class="pun">,</span> <span class="lit">1</span><span class="pun">,</span> <span class="lit">2</span><span class="pun">,</span> <span class="lit">3</span><span class="pun">,</span> <span class="lit">5</span><span class="pun">,</span> <span class="lit">8</span><span class="pun">,</span> <span class="lit">13</span><span class="pun">,</span> <span class="lit">21</span><span class="pun">,</span> <span class="lit">34</span><span class="pun">,</span> <span class="lit">55</span><span class="pun">,</span> <span class="lit">89</span><span class="pun">]</span></pre>
+<p>This statement does not import the entire module fib into the current namespace; it just introduces the item fibonacci from the module fib into the global symbol table of the importing module.</p>
+<h2>The <em>from...import *</em> Statement:</h2>
+<p>It is also possible to import all names from a module into the current namespace by using the following import statement &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">from</span><span class="pln"> modname </span><span class="kwd">import</span> <span class="pun">*</span></pre>
+<p>This provides an easy way to import all the items from a module into the current namespace; however, this statement should be used sparingly.</p>
+<h2>Executing modules as scripts</h2>
+<p>Within a module, the module&rsquo;s name (as a string) is available as the value of the global variable __name__. The code in the module will be executed, just as if you imported it, but with the __name__ set to "__main__". That means that by adding this code at the end of your module:</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Run on any IDE, mate!</span>
+
+<span class="com"># Fibonacci numbers module</span>
+
+<span class="kwd">def</span><span class="pln"> fib</span><span class="pun">(</span><span class="pln">n</span><span class="pun">):</span> <span class="com"># return Fibonacci series up to n</span><span class="pln">
+    result </span><span class="pun">=</span> <span class="pun">[]</span><span class="pln">
+    a</span><span class="pun">,</span><span class="pln"> b </span><span class="pun">=</span> <span class="lit">0</span><span class="pun">,</span> <span class="lit">1</span>
+    <span class="kwd">while</span><span class="pln"> b </span><span class="pun">&lt;</span><span class="pln"> n</span><span class="pun">:</span><span class="pln">
+        result</span><span class="pun">.</span><span class="pln">append</span><span class="pun">(</span><span class="pln">b</span><span class="pun">)</span><span class="pln">
+        a</span><span class="pun">,</span><span class="pln"> b </span><span class="pun">=</span><span class="pln"> b</span><span class="pun">,</span><span class="pln"> a</span><span class="pun">+</span><span class="pln">b
+    </span><span class="kwd">return</span><span class="pln"> result
+</span><span class="kwd">if</span><span class="pln"> __name__ </span><span class="pun">==</span> <span class="str">"__main__"</span><span class="pun">:</span><span class="pln">
+    f</span><span class="pun">=</span><span class="pln">fib</span><span class="pun">(</span><span class="lit">100</span><span class="pun">)</span>
+    <span class="kwd">print</span><span class="pun">(</span><span class="pln">f</span><span class="pun">)</span></pre>
+<p>When we run above code, following output will be displayed</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="pun">[</span><span class="lit">1</span><span class="pun">,</span> <span class="lit">1</span><span class="pun">,</span> <span class="lit">2</span><span class="pun">,</span> <span class="lit">3</span><span class="pun">,</span> <span class="lit">5</span><span class="pun">,</span> <span class="lit">8</span><span class="pun">,</span> <span class="lit">13</span><span class="pun">,</span> <span class="lit">21</span><span class="pun">,</span> <span class="lit">34</span><span class="pun">,</span> <span class="lit">55</span><span class="pun">,</span> <span class="lit">89</span><span class="pun">]</span></pre>
+<h2>Locating Modules</h2>
+<p>When you import a module, the Python interpreter searches for the module in the following sequences &minus;</p>
+<ul class="list">
+<li>
+<p>The current directory.</p>
+</li>
+<li>
+<p>If the module isn't found, Python then searches each directory in the shell variable PYTHONPATH.</p>
+</li>
+<li>
+<p>If all else fails, Python checks the default path. On UNIX, this default path is normally /usr/local/lib/python3/.</p>
+</li>
+</ul>
+<p>The module search path is stored in the system module sys as the <strong>sys.path</strong> variable. The sys.path variable contains the current directory, PYTHONPATH, and the installation-dependent default.</p>
+<h2>The <em>PYTHONPATH</em> Variable:</h2>
+<p>The PYTHONPATH is an environment variable, consisting of a list of directories. The syntax of PYTHONPATH is the same as that of the shell variable PATH.</p>
+<p>Here is a typical PYTHONPATH from a Windows system:</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">set</span><span class="pln"> PYTHONPATH</span><span class="pun">=</span><span class="pln">c</span><span class="pun">:</span><span class="pln">\python34\lib</span><span class="pun">;</span></pre>
+<p>And here is a typical PYTHONPATH from a UNIX system:</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">set</span><span class="pln"> PYTHONPATH</span><span class="pun">=</span><span class="str">/usr/</span><span class="kwd">local</span><span class="pun">/</span><span class="pln">lib</span><span class="pun">/</span><span class="pln">python</span></pre>
+<h2>Namespaces and Scoping</h2>
+<p>Variables are names (identifiers) that map to objects. A <em>namespace</em> is a dictionary of variable names (keys) and their corresponding objects (values).</p>
+<p>A Python statement can access variables in a <em>local namespace</em> and in the <em>global namespace</em>. If a local and a global variable have the same name, the local variable shadows the global variable.</p>
+<p>Each function has its own local namespace. Class methods follow the same scoping rule as ordinary functions.</p>
+<p>Python makes educated guesses on whether variables are local or global. It assumes that any variable assigned a value in a function is local.</p>
+<p>Therefore, in order to assign a value to a global variable within a function, you must first use the global statement.</p>
+<p>The statement <em>global VarName</em> tells Python that VarName is a global variable. Python stops searching the local namespace for the variable.</p>
+<p>For example, we define a variable <em>Money</em> in the global namespace. Within the function <em>Money</em>, we assign <em>Money</em> a value, therefore Python assumes <em>Money</em> as a local variable. However, we accessed the value of the local variable <em>Money</em> before setting it, so an UnboundLocalError is the result. Uncommenting the global statement fixes the problem.</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Run on any IDE, mate!</span>
+
+<span class="typ">Money</span> <span class="pun">=</span> <span class="lit">2000</span>
+<span class="kwd">def</span> <span class="typ">AddMoney</span><span class="pun">():</span>
+   <span class="com"># Uncomment the following line to fix the code:</span>
+   <span class="com"># global Money</span>
+   <span class="typ">Money</span> <span class="pun">=</span> <span class="typ">Money</span> <span class="pun">+</span> <span class="lit">1</span>
+
+<span class="kwd">print</span> <span class="pun">(</span><span class="typ">Money</span><span class="pun">)</span>
+<span class="typ">AddMoney</span><span class="pun">()</span>
+<span class="kwd">print</span> <span class="pun">(</span><span class="typ">Money</span><span class="pun">)</span></pre>
+<h2>The dir( ) Function</h2>
+<p>The dir() built-in function returns a sorted list of strings containing the names defined by a module.</p>
+<p>The list contains the names of all the modules, variables and functions that are defined in a module. Following is a simple example &minus;</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="com"># Run on any IDE, mate!</span>
+
+<span class="com"># Import built-in module math</span>
+<span class="kwd">import</span><span class="pln"> math
+
+content </span><span class="pun">=</span><span class="pln"> dir</span><span class="pun">(</span><span class="pln">math</span><span class="pun">)</span>
+
+<span class="kwd">print</span> <span class="pun">(</span><span class="pln">content</span><span class="pun">)</span></pre>
+<p>When the above code is executed, it produces the following result &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="pun">[</span><span class="str">'__doc__'</span><span class="pun">,</span> <span class="str">'__file__'</span><span class="pun">,</span> <span class="str">'__name__'</span><span class="pun">,</span> <span class="str">'acos'</span><span class="pun">,</span> <span class="str">'asin'</span><span class="pun">,</span> <span class="str">'atan'</span><span class="pun">,</span>
+<span class="str">'atan2'</span><span class="pun">,</span> <span class="str">'ceil'</span><span class="pun">,</span> <span class="str">'cos'</span><span class="pun">,</span> <span class="str">'cosh'</span><span class="pun">,</span> <span class="str">'degrees'</span><span class="pun">,</span> <span class="str">'e'</span><span class="pun">,</span> <span class="str">'exp'</span><span class="pun">,</span>
+<span class="str">'fabs'</span><span class="pun">,</span> <span class="str">'floor'</span><span class="pun">,</span> <span class="str">'fmod'</span><span class="pun">,</span> <span class="str">'frexp'</span><span class="pun">,</span> <span class="str">'hypot'</span><span class="pun">,</span> <span class="str">'ldexp'</span><span class="pun">,</span> <span class="str">'log'</span><span class="pun">,</span>
+<span class="str">'log10'</span><span class="pun">,</span> <span class="str">'modf'</span><span class="pun">,</span> <span class="str">'pi'</span><span class="pun">,</span> <span class="str">'pow'</span><span class="pun">,</span> <span class="str">'radians'</span><span class="pun">,</span> <span class="str">'sin'</span><span class="pun">,</span> <span class="str">'sinh'</span><span class="pun">,</span>
+<span class="str">'sqrt'</span><span class="pun">,</span> <span class="str">'tan'</span><span class="pun">,</span> <span class="str">'tanh'</span><span class="pun">]</span></pre>
+<p>Here, the special string variable <em>__name__</em> is the module's name, and <em>__file__</em> is the filename from which the module was loaded.</p>
+<h2>The <em>globals()</em> and <em>locals()</em> Functions &minus;</h2>
+<p>The <em>globals()</em> and <em>locals()</em> functions can be used to return the names in the global and local namespaces depending on the location from where they are called.</p>
+<p>If locals() is called from within a function, it will return all the names that can be accessed locally from that function.</p>
+<p>If globals() is called from within a function, it will return all the names that can be accessed globally from that function.</p>
+<p>The return type of both these functions is dictionary. Therefore, names can be extracted using the keys() function.</p>
+<h2>The <em>reload()</em> Function</h2>
+<p>When the module is imported into a script, the code in the top-level portion of a module is executed only once.</p>
+<p>Therefore, if you want to reexecute the top-level code in a module, you can use the <em>reload()</em> function. The reload() function imports a previously imported module again. The syntax of the reload() function is this &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="pln">reload</span><span class="pun">(</span><span class="pln">module_name</span><span class="pun">)</span></pre>
+<p>Here, <em>module_name</em> is the name of the module you want to reload and not the string containing the module name. For example, to reload <em>hello</em> module, do the following &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="pln">reload</span><span class="pun">(</span><span class="pln">hello</span><span class="pun">)</span></pre>
+<h2>Packages in Python</h2>
+<p>A package is a hierarchical file directory structure that defines a single Python application environment that consists of modules and subpackages and sub-subpackages, and so on.</p>
+<p>Consider a file <em>Pots.py</em> available in <em>Phone</em> directory. This file has following line of source code &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="com"># Run on any IDE, mate!</span>
+
+<span class="kwd">def</span> <span class="typ">Pots</span><span class="pun">():</span>
+   <span class="kwd">print</span> <span class="pun">(</span><span class="str">"I'm Pots Phone"</span><span class="pun">)</span>  </pre>
+<p>Similar way, we have another two files having different functions with the same name as above &minus;</p>
+<ul class="list">
+<li>
+<p><em>Phone/Isdn.py</em> file having function Isdn()</p>
+</li>
+<li>
+<p><em>Phone/G3.py</em> file having function G3()</p>
+</li>
+</ul>
+<p>Now, create one more file __init__.py in <em>Phone</em> directory &minus;</p>
+<ul class="list">
+<li>Phone/__init__.py</li>
+</ul>
+<p>To make all of your functions available when you've imported Phone, you need to put explicit import statements in __init__.py as follows &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">from</span> <span class="typ">Pots</span> <span class="kwd">import</span> <span class="typ">Pots</span>
+<span class="kwd">from</span> <span class="typ">Isdn</span> <span class="kwd">import</span> <span class="typ">Isdn</span>
+<span class="kwd">from</span><span class="pln"> G3 </span><span class="kwd">import</span><span class="pln"> G3</span></pre>
+<p>After you add these lines to __init__.py, you have all of these classes available when you import the Phone package.</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="com"># Run on any IDE, mate!</span>
+
+<span class="com"># Now import your Phone Package.</span>
+<span class="kwd">import</span> <span class="typ">Phone</span>
+
+<span class="typ">Phone</span><span class="pun">.</span><span class="typ">Pots</span><span class="pun">()</span>
+<span class="typ">Phone</span><span class="pun">.</span><span class="typ">Isdn</span><span class="pun">()</span>
+<span class="typ">Phone</span><span class="pun">.</span><span class="pln">G3</span><span class="pun">()</span></pre>
+<p>When the above code is executed, it produces the following result &minus;</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="pln">I</span><span class="str">'m Pots Phone
+I'</span><span class="pln">m </span><span class="lit">3G</span> <span class="typ">Phone</span><span class="pln">
+I</span><span class="str">'m ISDN Phone</span></pre>
+<p>In the above example, we have taken example of a single functions in each file, but you can keep multiple functions in your files. You can also define different Python classes in those files and then you can create your packages out of those classes.</p>
+
+<br><hr><br>
+<h3>PyCrypto</h3>
+<p>One of my favorite modules to mess around with is the PyCrypto module for Python. It has all of the AES, DES, 3DES, Blowfish encryption algorithms
+    available that is NIST accepted.
+</p>
+
+<p>The photo below is an example of PyCrypto using the AES encryption algorithm with a block size of 16 bytes. AES acceps 16, 24, and 32
+byte sizes. Not all files will be a multiple of 16 bytes, and the use of padding is required to fluff the string to a multiple of 16 bytes.
+</p>
+
+<p>
+    <b>lambda</b> functions are used within the pad, EncodeAES, and DecodeAES functions. Lambda functions are a great tool within Python, mate!
+    The lambda function allows you to define a function within a single line of code. The function will return the value of whatever you code inside,
+    but lambda functions have so many great useful functions.
+</p>
+
+<p>The enc function is the encryption function needed to encrypt the strings of information. The cipher is a key created from a 16 byte secret
+key, not pictured. The cipher will be encoded along with the string in utf-8, which will create the encrypted bytes like object, and return the encrypted
+bytes object.
+</p>
+
+<p> The dec function works in reverse, the user will feed the encrypted data into the decryption algorithm along with the secret key. The decrypted
+message will then be displayed on the screen, or however the programmer saw fit. </p>
+
+<br><hr><br>
+
+    <p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/imports/pycrypto.jpg') }}"></p>
+
+    <br><hr><br>
+
+
+<!--
+    <h3>
+
+    </h3>
+
+    <p>
+
+    </p>
+
+    <br><hr><br>
+
+    <p align="center"><img style="max-width: 1000px; margin-top: -10px; " src="{{url_for('static', filename='photos/folder/file.jpg') }}"></p>
+
+    <br><hr><br>
+-->
+
+    <h3 style="text-align: center;">
+            Files & IO
+    </h3>
+
+    <p style="text-align: center;">
+        Next, we will discuss Files and IO
+    </p>
+
+    <br><hr><br>
+
+    <a href="/Python/data_structures"><button type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Python - Data Structures
+    </button></a>
+
+    <a href="/Python/files_io"><button type="button" class="btn btn-primary btn-lg" style="float: right;">
+        Python - Files and IO   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+{% endblock %}

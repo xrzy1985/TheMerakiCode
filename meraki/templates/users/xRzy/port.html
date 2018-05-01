@@ -1,0 +1,491 @@
+<!--
+    James Earl Patterson
+    Owner of Meraki
+
+    Front End: HTML5, CSS3, Jinja2
+
+-->
+
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+
+<!--
+
+=================================================================================================================================
+White space         : &nbsp;
+bold tag            : <b></b>
+Indent              : <p style="text-indent: 50px;">    </p>
+Horz Bar with \n    : <br><hr class="ones"><br>
+hyper link          : <a href="/location/">TEXT</a>
+bootstrap glyphs    : <span class="glyph-goes-here" aria-hidden="true"></span>
+image               : <img src="{{url_for('static', filename='photos/cover.jpg') }}">
+DL of static file   : <a href="/static/resume/Resume30August2016.doc">Here</a>
+
+use .container for containing responsive fixed width containers
+unable to be nested
+
+    <div class="container">
+    ...
+    </div>
+
+use .container-fluid for a full width container, which will span across the entire viewport
+
+    <div class="container-fluid">
+    ...
+    </div>
+
+<center><img src="{{url_for('static', filename='photos/cover.jpg') }}" class="img-circle"></center>
+
+
+=================================================================================================================================
+-->
+
+
+<!-- ============================= Head: meta, link, title, css, js, etc ======================================================== -->
+	<head>
+        <meta charse="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="user-scalable = yes">
+        <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='portfolio/portfoliocss.css') }}">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <title>James Patterson | Software Engineer</title>
+
+	</head>
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+    <body>
+
+        <div id="home">
+            <header>
+                <nav class="navbar navbar-inverse navbar-fixed-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                          <a class="navbar-brand" href="#home">Home</a>
+                        </div>
+                        <div id="navbar" class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav">
+
+                                <li><a href="#about">About</a></li>
+
+                                <li><a href="#strengths">Strengths</a></li>
+
+                                <li><a href="#skills">Skills</a></li>
+
+                                <li><a href="#experience">Experience</a></li>
+
+                            </ul>
+                        </div><!--/.nav-collapse -->
+                    </div>
+                </nav>
+            </header>
+
+
+            <div id="content">
+
+                <div id="cover" class="cover">
+
+                    <div>
+
+                        <br><br><br><br>
+
+                        <div ng-init="fullName='James Earl Patterson'; contact='james.patterson@themerakicode.com | https://github.com/xrzy1985'; linkedin=''; jobTitle='Entry Level Software Engineer'; collegeInformation='Kennesaw State University | College of Computing and Software Engineering'">
+
+                            <h1><center>
+                                <span ng-bind="fullName"></span>
+                            </center></h1>
+
+                            <h6><center>
+                                <span ng-bind="collegeInformation"></span>
+                            </center></h6>
+
+                            <br>
+
+                            <h3><center>
+                                <span ng-bind="jobTitle"></span>
+                            </center></h3>
+
+                            <h4><center>
+                                <span ng-bind="contact"></span>
+                            </center></h3>
+
+                        </div>
+
+                        <br><br><br><br><br><br><br><br>
+
+                        <h1>
+                            <center>
+                                <a href="#about">
+                                    <span id="colorID4GlyphCover" class="glyphicon glyphicon-fire" aria-hidden="true">
+                                    </span>
+                                </a>
+                            </center>
+                        </h1>
+
+                    </div>
+                </div>
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+                <div id="about" class="about"><br><br><br>
+
+
+                        <div class="divClassInsideClass2">
+
+                            <div class="div1InsideClass2">
+
+                                <h1>Good day {{un}}, I'm James...</h1>
+
+                                <p class="pDivClass2">
+                                    <b>I am a recent graduate</b> of Kennesaw State University's College of Computing and Software Engineering with a
+                                    3.71 GPA majoring in computer science. I graduated from Dalton State College with an A.S. in computer science,
+                                    and then proceeded to move to Kennesaw to attend Southern Polytechnic State University to start working on a
+                                    B.S. in computer science. SPSU was eventually merged with Kennesaw State University, and that is how I became
+                                    a Kennesaw State University student. I followed the computer science curriculum while trying to focus on
+                                    database design, software engineering, and various information technology classes.
+
+                                </p>
+
+                                <p class="pHR">______________________</p>
+
+                                <p class="pDivClass2">
+                                    <b>Since graduation</b>, I have been taking time to relax, visit family, and travel as much as possible.
+                                    I feel that I am ready to get back to work, and find a great entry level position working as a software engineer.
+                                    I have experience in developing and designing software applications, weblications, and more. I strive to create
+                                    clean, concise, and beautifully working products. I am a hard working individual who understands the value of
+                                    creating something that I can be proud of.
+                                </p>
+
+                                <p class="pHR">______________________</p>
+
+                                <p class="pDivClass2">
+                                    <b>When I'm not working, </b>I can be found running at a local park, enjoying a long hike, riding my motor bike,
+                                    or playing guitar on the patio of my house.
+                                </p>
+
+
+                            </div>
+
+                            <div class="div2InsideClass2">
+
+                                <center><img src="{{url_for('static', filename='portfolio/cover.jpg') }}" class="img-circle"></center>
+
+                            </div>
+
+                        </div>
+
+                    <br>
+
+                </div>
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+                <div id="strengths" class="strengths"><br><br><br>
+
+                    <h1 id="h1ID">Strengths</h1>
+
+                    <div id="divInsideDivClass3ID">
+
+                        <div id="top-left">
+
+                            <h3>
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;
+                                Object Oriented Principles
+                            </h3>
+
+                            <p class="pHR">______________________</p>
+
+                            <p class="pDivClass3">
+                                <b>I have the knowledge</b> to construct OOP functions, methods, various
+                                data structures, recursion, and so on. The languages I'm familiar
+                                with are C#, C++, Java, and Python. I plan on researching the model
+                                view control method to further my understanding of how web applications
+                                function on a larger scale.
+                            </p>
+
+                        </div>
+
+                        <div id="top-right">
+
+                            <h3>
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;
+                                GUI / UI Design
+                            </h3>
+
+                            <p class="pHR">______________________</p>
+
+                            <p class="pDivClass3">
+                                <b>A well built GUI/UI</b> shouldn't need instructions if the design is
+                                correctly built. I make efforts to decrease any learning curve
+                                on the applications I've been apart of. I strive to increase the
+                                aesthetics associated with the applications, create an interface
+                                that requires no additional reading, and amplify the security of
+                                the application to the best of my ability.
+                            </p>
+
+                        </div>
+
+                        <div id="bottom-left">
+
+                            <h3>
+                                <span class="glyphicon glyphicon-alert" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;
+                                Security
+                            </h3>
+
+                            <p class="pHR">______________________</p>
+
+                            <p class="pDivClass3">
+                                <b>A working knowledge</b> of security standards is a good weapon for
+                                any programmer to have. The ability to use encryption and decryption
+                                algorithms to encrypt information, securely store sensitive information,
+                                and decrypt the information without storing any plain text data on the
+                                database. The importance of attempting to prevent phishing, SQL injection,
+                                cross-site scripting, denial of service, and man in the middle attacks are
+                                vital to any web application developer.
+                            </p>
+
+                        </div>
+
+                        <div id="bottom-right">
+
+                            <h3>
+                                <span class="glyphicon glyphicon-modal-window" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;
+                                Weblications
+                            </h3>
+
+                            <p class="pHR">______________________</p>
+
+                            <p class="pDivClass3">
+                                <b>Web applications</b> are becoming the norm with information being
+                                store progressively on the cloud. Programmers are opting to create web applications
+                                that would not require any software downloads, instead websites are
+                                being designed to work as fully fledged applications. Micro
+                                frameworks, such as Django and Flask, utilize the model, view,
+                                and control method to achieve their goal. The encryption standards
+                                have been raised higher than ever before with 512 and 1024 bit
+                                encryption techniques taking center stage.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+                <div id="skills" class="skills"><br><br><br>
+
+                    <h1 id="h1ID">Skillset</h1><br>
+
+                    <p class="pHR2">______________________</p>
+
+                        <div id="divInsideDivClass4ID">
+
+                            <p><strong>Programming Languages/Frameworks: </strong>VB, Java, C++, C#, Python, Prolog, SQL, PL/SQL, HTML, CSS, Bootstrap, Javascript, AngularJS, Django, Flask, Jinja2, REST</p>
+                            <p><strong><strong>Database Management: </strong></strong>SQLite3, Oracle 8.x, MySQL Server 5.7, MS Access, Sql Alchemy</p>
+                            <p><strong><strong>Software Engineering: </strong></strong>Requirements gathering, planning, proper time line establishment, dynamic problem solving skills, proper documentation of projects, and finalization of projects on time.</p>
+                            <p><strong><strong>Methodologies: </strong></strong> Agile, Waterfall, Extreme Programming</p>
+                            <p><strong><strong>IT: </strong></strong>Database management, Encryption techniques, Web application attack prevention, Hash algorithms</p>
+                            <p><strong><strong>Encryption/Decryption: </strong></strong>&nbsp;Public, Private, and Hybrid key, AES 256/512 bit, digital signatures</p>
+                            <p><strong><strong>Design Tools: </strong></strong> Notepad++, Dia, Eclipse, JGrasp, Visual Studio, Net beans, PyCharm, Gimp, Unity Engine</p>
+                            <p><strong><strong>MS Applications: </strong></strong> Word, Powerpoint, Excel</p>
+                            <p><strong><strong>Operating Systems: </strong></strong>Microsoft Windows based systems, Linux/Unix based systems, and Mac/p>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+                <div id="experience" class="experience"><br><br><br>
+
+                    <h1 id="h1ID">Experience</h1><br>
+
+                    <p class="pHR3">______________________</p>
+
+                        <div id="divInsideDivClass5ID">
+
+                            <br>
+
+                            <h3 id="h2ID"><a href="wwwthemerakicode.com/">Meraki</a></h3>
+
+                            <br>
+
+                            <p>
+
+                                Right now, the site is deemed as untrustworthy. I just switched hosts, and my current
+                                host is taking longer than expected to get a certificate with my personalized private
+                                key. So, I'm running without an SSL connection right now, but I plan on fixing this issue
+                                as soon as I possibly can. In order to ensure a secure, safe, and positive connection
+                                with the host servers and the users.
+
+                            </p>
+
+                            <br>
+
+                            <p>
+                                Meraki is a web application that allows users to learn how to program in several
+                                different languages; C#, C++, HTML, Java, Python, and more to come. The website
+                                was developed to help users understand coding concepts easier while allowing me to
+                                compile all of my programming knowledge in one place. The web application was a final
+                                project for an internet programming class in the Spring of 2016. The group working on
+                                Meraki consisted of a stakeholder, product owner, team lead, and a lead programmer. I
+                                assumed the role of lead programmer; writing a majority of front end HTML, CSS, JINJA2, and
+                                JS, writing all of the back end python functions to handle the server side, while
+                                maintaining the database. The website not only hosts programming information. Users
+                                can register, no plaintext passwords are ever stored on our databases, with the site
+                                to access all the programming information, send messages and files between users which
+                                are encrypted, change their profiles for viewing, access off site interpreters/compilers
+                                for the code found here, and more. The information for the coding tutorials were broken
+                                up among the three group members. I assumed the role of gathering information for the
+                                Python section of the site, while my partners took C#, C++, and Java. HTML and SQL have
+                                beginning tutorials, but they will soon be updated to offer additional information. I am
+                                currently in the process of rewriting the HTML code for Java to add my personal information.
+                                I don't plan on making any money or investing a lot of time in this website, but I do
+                                plan on having it loaded with information on multiple languages. I love having the access
+                                to the information when needed instead of having to google or find my old school books. I
+                                fully believe in the idea of reusing code, and sharing the information to help others.
+                                Soon I might write an IOS application to offer the information on the go with ease instead
+                                of using a web application written for desktop use.
+                            </p>
+
+                            <br>
+
+                            <h3 id="h2ID"><a href="http://bgplayer.pythonanywhere.com/">SSSAJ [No Longer Available]</a></h3>
+
+                            <br>
+
+                            <p>
+                                SSSAJ, pernounced sage, is a web application developed to allow users to
+                                send encrypted files back and forth while utilizing password protection
+                                on any encrypted files being stored on the database. The files are encrypted
+                                using the latest AES techniques, while only being able to be decrypted by a
+                                user with the proper pass phrase. The web applications was created for a class
+                                final project. The project was to create an application utilizing as much
+                                computer science related topics as possible while learning new techniques
+                                in the process. The group I was apart of used an agile methodology to
+                                achieve the finished product. We utilized our time management skills,
+                                broke up work individually, and worked on separate parts while piecing the
+                                whole application together. The team learned two different frameworks built
+                                upon Python for the project; Django and Flask. Django was used in the beginning,
+                                but the application was better suited for Flask in the end. Flask seemed to
+                                have more libraries available for use that would increase our chances of
+                                success. Learning how to use Jinja2 was a huge advantage over javascript code.
+                                Jinja can be embedded to produce dynamic quality functions in an instant without
+                                the security related issues.
+                            </p>
+
+                            <br>
+
+                            <h3 id="h2ID"><a href="/static/java/Java.rar">Java Rar Archive</a></h3>
+
+                            <br>
+
+                            <p>
+                                The file is a compressed rar file that holds most of the Java tutorials
+                                I have planned for the website, Meraki. The rar file contains 40 tutorials
+                                along with a txt file. The txt file is an organized list of the tutorials.
+                                If you wish to view just the txt file, it can be found <b><a href="/static/java/Key.txt">here.</a></b>
+                                The java code is heavily commented, and easily read due to indention techniques.
+                                The topics vary among the tutorials, but they are in order from easy to
+                                more difficult. The topics covered are objects, data structures, databases,
+                                swing, and more. Please, have a look at the files, and use any of the code
+                                you would like. I believe in sharing information and knowledge, and
+                                by sharing this information perhaps I can help someone.
+
+                            </p>
+
+                            <br>
+
+                            <h3 id="h2ID"><a href="/static/games/pong/xRzyPong.rar">Pong</a></h3>
+
+                            <br>
+
+                            <p>
+                                The very first game I ever played, as a child, was pong. So, I thought
+                                it would only be fitting to create pong while learning how to use Unity.
+                                Unity is a fully functional 2D, 3D, and possibly text based video game
+                                design engine that offers users the chance to be creative in their own ways.
+                                Unity does have a learning curve; the users need to understand how
+                                C# scripts interact with objects, how objects interact with each other, how
+                                scene progression works, and many more aspects. Pong was much harder than I
+                                originally believed it would be to create, but the rar file can be downloaded
+                                from the link at the top, or you can download just the standalone exe file
+                                that is located <b><a href="/static/games/pong/xRzyPong.exe">here.</a></b>
+                                Creating games is a way to learn more about C# and express your own individual
+                                creativity. I used <a href="https://www.gimp.org/">GIMP</a> to create the sprites
+                                needed for the game. GIMP is an amazing alternative to photoshop, and is a
+                                must for anyone that does not have access to a legit copy of photoshop.
+
+
+                            </p>
+
+
+                            <br>
+
+                            <h3 id="h2ID"><a href="/static/games/space_invaders/SpaceInvaders.exe">Space Invaders</a></h3>
+
+                            <br>
+
+                            <p>
+                                The second game I've recreated using Unity, C#, and using the free photoshop like tool
+                                <a href="https://www.gimp.org/">GIMP</a>. Gimp be used to create all kinds of pixel
+                                art that can then be rendered inside of Unity. Animations can even be achieved through
+                                the GUI portion of Unity, or the actual programming code using C# scripts that are tagged
+                                onto certain game objects. For instance, the alien space ships speed, direction, and
+                                alternate images need to be programmed inside a C# script. I'm still learning how to use
+                                C#, Unity, and Gimp. I will continue to add additional games as I complete them.
+
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

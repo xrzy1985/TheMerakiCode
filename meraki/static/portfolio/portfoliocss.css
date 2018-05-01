@@ -1,0 +1,234 @@
+html,
+body {
+                    min-height: 100%;
+                    padding: 50px 0px 0px 0px;
+                    margin: 0;
+}
+
+p, h1, h2, h3, h4, h5, h6{
+                    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+
+#home {
+                    padding: 50px 0;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+}
+
+#content {
+                    min-height: 100%;
+                    background-color: black;
+}
+
+header {
+                    margin-top: -50px;
+                    height: 50px;
+                    background-color: black;
+}
+
+#colorID4GlyphCover{
+                    color: white;
+}
+
+.cover {        height: 700px;
+                    background-color: black;
+                    color: white;
+                    background-image: url("coverBackground.jpg");
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+}
+
+#cover    {        height: 700px;
+                    background-color: black;
+                    color: white;
+                    background-image: url("coverBackground.jpg");
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+}
+
+.about {            min-height: 800px;
+                    background-color:  #292929;
+                    color: white;
+                    background-image: url("aboutBG.jpg");
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+}
+
+#about    {        min-height: 800px;
+                    background-color: #292929;
+                    color: white;
+                    background-image: url("aboutBG.jpg");
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+}
+
+
+.divClassInsideClass2{
+                    min-height: 400px;
+                    width: 80%;
+                    margin: auto;
+                    color: white;
+}
+
+.div1InsideClass2 {
+                    width: 60%;
+                    max-height: 400px;
+                    float: left;
+                    padding: 15px;
+                    margin: 15px;
+}
+
+.div2InsideClass2 {
+                    width: 30%;
+                    max-height: 400px;
+                    float: right;
+                    padding: 15px;
+                    margin: 15px;
+}
+
+.hrDivClass2{
+                    float: left;
+                    width: 200px;
+                    border-width: 1px;
+}
+
+.pDivClass2{
+                    clear: left;
+}
+
+.pHR{
+                    float: left;
+                    color: red;
+}
+
+.strengths {        height: 800px;
+                    background-color: black;
+                    color: white;
+                    background-image: url("strengthsBG.jpg");
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+}
+
+#strengths    {        height: 800px;
+                    background-color: black;
+                    color: white;
+                    background-image: url("strengthsBG.jpg");
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+}
+
+#h1ID       {
+                    margin-left: 10%;
+}
+
+#divInsideDivClass3ID{
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    margin-right: 10%;
+                    margin-left: 10%;
+}
+
+#top-left {
+                    width: 45%;
+                    height: 200px;
+                    float: left;
+                    margin: 10px;
+}
+#top-right {
+                    width: 45%;
+                    height: 200px;
+                    margin: 10px;
+                    float: right;
+}
+#bottom-left {
+                    width: 45%;
+                    height: 200px;
+                    margin: 10px;
+                    clear: both;
+                    float: left;
+}
+#bottom-right {
+                    width: 45%;
+                    height: 200px;
+                    margin: 10px;
+                    float: right;
+}
+
+.pDivClass3{
+                    clear: left;
+}
+
+.skills {        height: 800px;
+                    color: white;
+                    background-image: url("skillsBG.jpg");
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+}
+
+#skills    {        height: 800px;
+                    color: white;
+                    background-image: url("skillsBG.jpg");
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+}
+
+#skillsID   {
+                    margin-left: 10%;
+                    margin-right: 10%;
+}
+
+#divInsideDivClass4ID{
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    margin-right: 10%;
+                    margin-left: 10%;
+                    clear: left;
+}
+
+.pHR2{
+                    float: left;
+                    margin-left: 10%;
+                    color: red;
+}
+
+.experience {       height: 2000px;
+                    color: white;
+                    background-color: black;
+                    background: black; /* For browsers that do not support gradients */
+                    background: -webkit-linear-gradient(black, #232020); /* For Safari 5.1 to 6.0 */
+                    background: -o-linear-gradient(black, #232020); /* For Opera 11.1 to 12.0 */
+                    background: -moz-linear-gradient(black, #232020); /* For Firefox 3.6 to 15 */
+                    background: linear-gradient(black, #232020); /* Standard syntax */
+}
+
+#experience    {    height: 2000px;
+                    color: white;
+                    background-color: black;
+                    background: -webkit-linear-gradient(black, #232020); /* For Safari 5.1 to 6.0 */
+                    background: -o-linear-gradient(black, #232020); /* For Opera 11.1 to 12.0 */
+                    background: -moz-linear-gradient(black, #232020); /* For Firefox 3.6 to 15 */
+                    background: linear-gradient(black, #232020); /* Standard syntax */
+}
+
+#experienceID   {
+                    margin-left: 10%;
+                    margin-right: 10%;
+}
+
+#divInsideDivClass5ID{
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    margin-right: 10%;
+                    margin-left: 10%;
+                    clear: left;
+}
+
+.pHR3{
+                    float: left;
+                    margin-left: 10%;
+                    color: red;
+}

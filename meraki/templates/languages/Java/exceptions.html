@@ -1,0 +1,113 @@
+{% extends "header.html" %}
+    {% block body %}
+
+    <title>Meraki : Java : Exceptions</title>
+
+    <style>
+    hr {
+        color: blue;
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: 10px;
+    }
+    </style>
+
+        <br><h1 style="text-align: center;"><img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='photos/Java.png') }}">
+        Welcome to the Java Exceptions page, mate!</h1>
+
+        <hr>
+
+        <blockquote>
+
+            Java's Exceptions information:</br>
+            <p>This page deals with common exceptions in Java, as well as the basics of dealing with exceptions.</p>
+
+
+        </blockquote>
+
+
+<p>Exceptions are "events" when problems occur during a program's execution.
+An uncaught exception interrupts the flow of a program and causes it to close, which is generally not the desired behavior of a program. Because of that, it is important to
+catch and appropriately handle exceptions wherever they are likely to occur in your program.</p>
+<p>There are many reasons that exceptions occur. Some of the following are common exceptions:</p>
+<ul class="list">
+<li><p>A user has entered an invalid data.</p></li>
+<li><p>A file that needs to be opened cannot be found.</p></li>
+<li><p>A network connection has been lost in the middle of communications or the JVM has run out of memory.</p></li>
+</ul>
+<p>Some of these exceptions are due to: programmer errors, user errors, or failed resource access.</p>
+<p>These three reasons form the basis for each of the three categories of exceptions in Java.</p>
+<ul class="list">
+<li><p><b>Checked exceptions</b> &minus; Checked exceptions occur at compile time,
+so they are also called compile time exceptions. These exceptions prevent the program from being compiled, so must be dealt with before
+it is compiled or run.</p></li>
+</ul>
+<p>For example, if you use <b>FileReader</b> class in your program to read data from a file, if the file specified in its constructor doesn't exist, then a <i>FileNotFoundException</i> occurs, and the compiler prompts the programmer to handle the exception.</p>
+
+<hr>
+
+<h2>Catching Exceptions</h2>
+<p>Catching an exception is a method of dealing with exceptions. This is done using a combination of the <b>try</b> and <b>catch</b> keywords.
+A "try/catch block" is surrounds the code that may throw an exception to handle any exceptions it throws.
+This code surrounded by a try/catch is called "protected code", and the syntax for using try/catch looks like the following &minus;</p>
+<h3>Syntax</h3>
+<pre class="result notranslate">
+try {
+   // Protected code
+}catch(ExceptionName e1) {
+   // Catch block
+}
+</pre>
+<p>The code that may throw the exception is placed in the try block of the try/catch. This is the code the compiler runs like usual.</p>
+<p>The catch statement (or catch statements, plural) follow directly after thee try block.
+These statments catch specific exceptions thrown by the try block and run the code they contain.
+You should be sure to add code that addresses the exception to these blocks. If no appropriate catch block exists for the
+exception, the "finally" block is run instead, if present.</p>
+
+
+<hr>
+
+<h2>The Throws/Throw Keywords</h2>
+<p>If a method does not handle an exception itself, then it must throw the exception instead.
+The keyword <b>throws</b>, along with the exception it throws, is written at the end of the method signature.</p>
+<p>The <b>throw</b> keyword is used to throw exceptions.</p>
+<p>The example below shows a method that throws the RemoteException:</p>
+<pre class="prettyprint notranslate">
+import java.io.*;
+public class className {
+
+   public void deposit(double amount) throws RemoteException {
+      // Method implementation
+      throw new RemoteException();
+   }
+   // Remainder of class definition
+}
+</pre>
+<p>A method can throw more than one exception, in which case it has a common-delineated list to show each exception it throws.
+The following example throws the custom exceptions RemoteException and InsufficientFundsException:</p>
+
+    <br><hr><br>
+
+    <h3 style="text-align: center;">
+            Final Thoughts
+    </h3>
+
+    <p style="text-align: center;">
+        As the conclusion to our tutorial section on Java, we offer some closing thoughts and recommendations to continue your learning.
+    </p>
+
+    <a href="/Java/files_io/"><button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Java - Files and I/O
+    </button></a>
+
+    <a href="/Java/final_thoughts/"><button type="button" class="btn btn-default btn-lg" style="float: right;">
+        Java - Final Thoughts   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button></a>
+
+    <br><hr><br>
+
+    {% endblock %}
